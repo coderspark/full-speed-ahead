@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://v2hjcofj8iip"]
+
+[ext_resource type="Texture2D" uid="uid://bikvt55in0esa" path="res://Menu screen.png" id="1_cmhrf"]
+[ext_resource type="Texture2D" uid="uid://t072jksobllx" path="res://logo.png" id="2_d2nv2"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_loy4s"]
+texture = ExtResource("1_cmhrf")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wgsso"]
+texture = ExtResource("2_d2nv2")
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_loy4s")
+
+[node name="Panel" type="Panel" parent="Panel"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 14.0
+offset_right = 491.13043
+offset_bottom = 153.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_wgsso")
+
+[node name="Button" type="Button" parent="Panel/Panel"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Play"
