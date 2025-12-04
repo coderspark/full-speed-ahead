@@ -292,6 +292,8 @@ sources/0 = SubResource("TileSetAtlasSource_0hol4")
 
 [node name="Node2D" type="Node2D"]
 
+[node name="MapGen" type="Node2D" parent="."]
+
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 position = Vector2(-455, 342)
 scale = Vector2(3, 3)
