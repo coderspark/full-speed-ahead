@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpk154ckaycpr"
-path="res://.godot/imported/motorboat_1.png-a07a9efdd7694fbb6a155939a72df935.ctex"
+uid="uid://ct8jpo3l1w4n1"
+path="res://.godot/imported/raft.png-24b8da05ae5ad185fcda0c62fcc06d0c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://motorboat_1.png"
-dest_files=["res://.godot/imported/motorboat_1.png-a07a9efdd7694fbb6a155939a72df935.ctex"]
+source_file="res://Assets/Art/Boats/raft.png"
+dest_files=["res://.godot/imported/raft.png-24b8da05ae5ad185fcda0c62fcc06d0c.ctex"]
 
 [params]
 

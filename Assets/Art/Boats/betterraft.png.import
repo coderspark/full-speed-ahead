@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1t6687krajsx"
-path="res://.godot/imported/canoe.png-b1c8d097610bc47ebac6e5cd36f1bd69.ctex"
+uid="uid://bu18xywouviyc"
+path="res://.godot/imported/betterraft.png-a327dfa1d143af423bd2460ac562a2d4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://canoe.png"
-dest_files=["res://.godot/imported/canoe.png-b1c8d097610bc47ebac6e5cd36f1bd69.ctex"]
+source_file="res://Assets/Art/Boats/betterraft.png"
+dest_files=["res://.godot/imported/betterraft.png-a327dfa1d143af423bd2460ac562a2d4.ctex"]
 
 [params]
 

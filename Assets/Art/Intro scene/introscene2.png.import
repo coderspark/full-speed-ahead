@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpq3gvmmsttu"
-path="res://.godot/imported/the bergentruck.png-3a1e987b76b1850612dbd1d3b4f187a8.ctex"
+uid="uid://b2umr7uejsrl8"
+path="res://.godot/imported/introscene2.png-2bce56bdd0a8ead1bfc688393cb61e54.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://the bergentruck.png"
-dest_files=["res://.godot/imported/the bergentruck.png-3a1e987b76b1850612dbd1d3b4f187a8.ctex"]
+source_file="res://Assets/Art/Intro scene/introscene2.png"
+dest_files=["res://.godot/imported/introscene2.png-2bce56bdd0a8ead1bfc688393cb61e54.ctex"]
 
 [params]
 

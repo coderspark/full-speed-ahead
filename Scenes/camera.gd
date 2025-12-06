@@ -1,4 +1,4 @@
 extends Camera2D
 
 func _process(delta: float) -> void:
-	position = $"../CharacterBody2D".position
+	position.x = $"../Players/Player".position.x

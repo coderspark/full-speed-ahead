@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cu7hqhk655a7l"
-path="res://.godot/imported/motorboat_2.png-e20633aa17d21e06d83009d4ae29bf26.ctex"
+uid="uid://cit6la2domptf"
+path="res://.godot/imported/shit sailboat.png-6004cdb2882492badb3b9bd72ad30ff8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://motorboat_2.png"
-dest_files=["res://.godot/imported/motorboat_2.png-e20633aa17d21e06d83009d4ae29bf26.ctex"]
+source_file="res://Assets/Art/Boats/shit sailboat.png"
+dest_files=["res://.godot/imported/shit sailboat.png-6004cdb2882492badb3b9bd72ad30ff8.ctex"]
 
 [params]
 

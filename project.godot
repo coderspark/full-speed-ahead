@@ -10,16 +10,24 @@ config_version=5
 
 [application]
 
-config/name="voc ding echt"
+config/name="Full Speed Ahead"
 run/main_scene="uid://v2hjcofj8iip"
 config/features=PackedStringArray("4.5", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://Assets/Art/Temp/icon.svg"
 
 [display]
 
 window/size/viewport_width=960
 window/size/viewport_height=540
 window/stretch/mode="viewport"
+
+[file_customization]
+
+folder_colors={
+"res://Assets/": "green",
+"res://Scenes/": "red",
+"res://Scripts/": "blue"
+}
 
 [input]
 
@@ -37,5 +45,3 @@ move_left={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"

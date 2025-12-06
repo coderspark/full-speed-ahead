@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cit6la2domptf"
-path="res://.godot/imported/shit sailboat.png-c1d4dc9ab3ef17f9b356906b0529fd13.ctex"
+uid="uid://mifejbkehvcs"
+path="res://.godot/imported/introscene.png-26b10f1e23088b88fbeb3899df1486fa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://shit sailboat.png"
-dest_files=["res://.godot/imported/shit sailboat.png-c1d4dc9ab3ef17f9b356906b0529fd13.ctex"]
+source_file="res://Assets/Art/Intro scene/introscene.png"
+dest_files=["res://.godot/imported/introscene.png-26b10f1e23088b88fbeb3899df1486fa.ctex"]
 
 [params]
 

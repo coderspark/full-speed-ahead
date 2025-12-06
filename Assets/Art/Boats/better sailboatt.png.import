@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmhf1o6sj0mhl"
-path="res://.godot/imported/unnamed ship from 1914.png-795c324e83a0fa5f5fe62b47d2f92f18.ctex"
+uid="uid://c101sa4y877b4"
+path="res://.godot/imported/better sailboatt.png-8d0387e93b407f1f1f2770a59edea08a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://unnamed ship from 1914.png"
-dest_files=["res://.godot/imported/unnamed ship from 1914.png-795c324e83a0fa5f5fe62b47d2f92f18.ctex"]
+source_file="res://Assets/Art/Boats/better sailboatt.png"
+dest_files=["res://.godot/imported/better sailboatt.png-8d0387e93b407f1f1f2770a59edea08a.ctex"]
 
 [params]
 

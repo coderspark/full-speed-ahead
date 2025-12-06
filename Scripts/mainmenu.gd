@@ -1,5 +1,5 @@
 extends Control
-var game = preload("res://node_2d.tscn")
+var game = preload("res://Scenes/MainScene.tscn")
 
 func _on_play_pressed() -> void:
 	print("PLAY")

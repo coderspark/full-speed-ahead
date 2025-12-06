@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bu18xywouviyc"
-path="res://.godot/imported/betterraft.png-85d0a91feb123395ea34b69de6329691.ctex"
+uid="uid://dpk154ckaycpr"
+path="res://.godot/imported/motorboat_1.png-5b7ef0a2d2a22e2fc5ca0bbd02aad2f0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://betterraft.png"
-dest_files=["res://.godot/imported/betterraft.png-85d0a91feb123395ea34b69de6329691.ctex"]
+source_file="res://Assets/Art/Boats/motorboat_1.png"
+dest_files=["res://.godot/imported/motorboat_1.png-5b7ef0a2d2a22e2fc5ca0bbd02aad2f0.ctex"]
 
 [params]
 
