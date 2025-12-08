@@ -10,6 +10,7 @@ size = Vector2(19, 4)
 size = Vector2(21, 6)
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 128
 script = ExtResource("1_kyqiw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -29,3 +30,4 @@ position = Vector2(-3.5, 0)
 shape = SubResource("RectangleShape2D_kyqiw")
 
 [connection signal="body_entered" from="Collision Detector" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Collision Detector" to="." method="_on_collision_detector_body_exited"]

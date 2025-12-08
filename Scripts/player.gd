@@ -3,8 +3,8 @@ extends CharacterBody2D
 var delta_rot = 0
 @export var max_turn_speed = 5
 var IsOwner = true
-var tsincestopped = 0
-
+var boatvel = 0
+var isbounce = false
 var health = 5
 
 func getoverlappingtiles() -> Array:
@@ -30,10 +30,14 @@ func _physics_process(delta: float) -> void:
 	delta_rot += Input.get_axis("move_left","move_right") * 0.1
 	if abs(delta_rot) >= max_turn_speed:
 		delta_rot = max_turn_speed * delta_rot/abs(delta_rot)
+	if isbounce:
+		boatvel = -30
+		delta_rot = 0
 	rotation += delta_rot * 0.01
-	velocity = transform.x * tsincestopped
-	if tsincestopped < 50:
-		tsincestopped += 1
+	velocity = transform.x * boatvel
+	
+	if boatvel < 50:
+		boatvel += 1
 	var overlap = getoverlappingtiles()
 	for t in overlap:
 		if t[0] == Vector2i(0, 3):
@@ -43,5 +47,7 @@ func _physics_process(delta: float) -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	delta_rot = 0
-	tsincestopped = -30
 	health -= 1
+	isbounce = true
+func _on_collision_detector_body_exited(body: Node2D) -> void:
+	isbounce = false
