@@ -37,4 +37,3 @@ func _ready() -> void:
 		map.append(randi_range(0, 7))
 	for t in range(len(map)):
 		paste_template(map[t], 6+(10*t))
-	

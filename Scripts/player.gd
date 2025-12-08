@@ -6,6 +6,7 @@ var IsOwner = true
 var boatvel = 0
 var isbounce = false
 var health = 5
+var paused = false
 
 func getoverlappingtiles() -> Array:
 	var res = []
@@ -25,6 +26,7 @@ func getoverlappingtiles() -> Array:
 	return res
 
 func _physics_process(delta: float) -> void: 
+	if paused: return
 	if Input.get_axis("move_left", "move_right") == 0:
 		delta_rot *= 0.9
 	delta_rot += Input.get_axis("move_left","move_right") * 0.1
@@ -32,7 +34,6 @@ func _physics_process(delta: float) -> void:
 		delta_rot = max_turn_speed * delta_rot/abs(delta_rot)
 	if isbounce:
 		boatvel = -30
-		delta_rot = 0
 	rotation += delta_rot * 0.01
 	velocity = transform.x * boatvel
 	
@@ -48,6 +49,9 @@ func _physics_process(delta: float) -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	delta_rot = 0
 	health -= 1
+	if health <= 0:
+		$"../../Camera/Control/GameOver".gameover()
+		paused = true
 	isbounce = true
 func _on_collision_detector_body_exited(body: Node2D) -> void:
 	isbounce = false

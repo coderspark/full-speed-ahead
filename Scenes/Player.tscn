@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c101sa4y877b4" path="res://Assets/Art/Boats/better sailboatt.png" id="2_kyqiw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gntrk"]
-size = Vector2(19, 4)
+size = Vector2(18, 4)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kyqiw"]
 size = Vector2(21, 6)
@@ -14,7 +14,8 @@ collision_layer = 128
 script = ExtResource("1_kyqiw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-3.5, 0)
+position = Vector2(-3.48, 0)
+scale = Vector2(1.1, 1.1)
 shape = SubResource("RectangleShape2D_gntrk")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
