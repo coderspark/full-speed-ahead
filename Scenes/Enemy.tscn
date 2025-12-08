@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkpa0spc81bqw"]
+
+[ext_resource type="Script" uid="uid://b0drc37ugq3fk" path="res://Scripts/Enemy.gd" id="1_wovta"]
+[ext_resource type="Texture2D" uid="uid://cdcho04a66tlu" path="res://Assets/Art/Boats/Enemy_boat.png" id="2_xeo28"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y4jh7"]
+size = Vector2(15.999998, 10)
+
+[node name="RigidBody2D" type="RigidBody2D"]
+rotation = 1.5707964
+script = ExtResource("1_wovta")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4, 0)
+shape = SubResource("RectangleShape2D_y4jh7")
+
+[node name="sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_xeo28")

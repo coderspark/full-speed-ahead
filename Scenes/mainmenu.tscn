@@ -113,3 +113,4 @@ mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxTexture_igs2m")
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
