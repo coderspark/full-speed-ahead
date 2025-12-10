@@ -1,6 +1,7 @@
 extends Panel
 
 func gameover():
+	get_tree().paused = true
 	visible = true
 
 func _on_restart_pressed() -> void:
