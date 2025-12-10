@@ -8,6 +8,8 @@ var isbounce = false
 var health = 5
 var paused = false
 
+
+
 func getoverlappingtiles() -> Array:
 	var res = []
 	var rect = $"Collision Detector/CollisionShape2D2".shape.get_rect()
@@ -26,7 +28,7 @@ func getoverlappingtiles() -> Array:
 	return res
 
 func _physics_process(delta: float) -> void: 
-	if paused: return
+	get_tree().paused = paused
 	if Input.get_axis("move_left", "move_right") == 0:
 		delta_rot *= 0.9
 	delta_rot += Input.get_axis("move_left","move_right") * 0.1
