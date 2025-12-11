@@ -30,5 +30,14 @@ zoom = Vector2(3, 3)
 position = Vector2(-3.5, 0)
 shape = SubResource("RectangleShape2D_kyqiw")
 
+[node name="ShopDetection" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ShopDetection"]
+position = Vector2(-3.5, 0)
+shape = SubResource("RectangleShape2D_kyqiw")
+
 [connection signal="body_entered" from="Collision Detector" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Collision Detector" to="." method="_on_collision_detector_body_exited"]
+[connection signal="body_entered" from="ShopDetection" to="." method="_on_shop_detection_body_entered"]

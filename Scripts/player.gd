@@ -52,8 +52,15 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	delta_rot = 0
 	health -= 1
 	if health <= 0:
-		$"../../Camera/Control/GameOver".gameover()
+		$"../../Camera/Control".gameover()
 		paused = true
 	isbounce = true
 func _on_collision_detector_body_exited(body: Node2D) -> void:
 	isbounce = false
+
+
+func _on_shop_detection_body_entered(body: Node2D) -> void:
+	get_tree().paused = true
+	$"../../Camera/Control/Shop".show()
+	
+	
