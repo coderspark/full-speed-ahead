@@ -4,7 +4,7 @@ var shop_current_id = 0
 
 func gameover():
 	get_tree().paused = true
-	visible = true
+	$GameOver.visible = true
 
 func _on_restart_pressed() -> void:
 	get_tree().paused = false

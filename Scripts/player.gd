@@ -20,9 +20,9 @@ func getoverlappingtiles() -> Array:
 			var coords = Vector2i(x, y)
 			var ttype = $"../../TileMap".get_cell_atlas_coords(coords)
 			var tdata = $"../../TileMap".get_cell_alternative_tile(coords)
-			var rot = 0
+			var rot = PI
 			if tdata & TileSetAtlasSource.TRANSFORM_TRANSPOSE and tdata & TileSetAtlasSource.TRANSFORM_FLIP_H: rot = 0.5*PI
-			if tdata & TileSetAtlasSource.TRANSFORM_FLIP_H and tdata & TileSetAtlasSource.TRANSFORM_FLIP_V: rot = PI
+			if tdata & TileSetAtlasSource.TRANSFORM_FLIP_H and tdata & TileSetAtlasSource.TRANSFORM_FLIP_V: rot = 0
 			if tdata & TileSetAtlasSource.TRANSFORM_TRANSPOSE and tdata & TileSetAtlasSource.TRANSFORM_FLIP_V: rot = 1.5*PI
 			res.append([ttype, rot])
 	return res
