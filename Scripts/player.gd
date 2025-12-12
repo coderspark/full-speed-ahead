@@ -45,7 +45,8 @@ func _physics_process(delta: float) -> void:
 	for t in overlap:
 		if t[0] == Vector2i(0, 3):
 			velocity += Vector2(sin(t[1]), cos(t[1])) * 10
-	$"../../Camera/Control/Label".text = "Health: " + str(health)
+	$"../../Camera/Control/HP".HP = health
+	$"../../Camera/Control/HP".Update()
 	move_and_slide()
 
 func _on_area_2d_body_entered(body: Node2D) -> void:

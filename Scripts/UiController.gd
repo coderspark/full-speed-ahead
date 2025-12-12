@@ -12,7 +12,6 @@ func _on_restart_pressed() -> void:
 
 func _ready() -> void:
 	UpdateShopLocations()
-	get_tree().paused = true
 
 func _on_next_pressed() -> void:
 	if $Shop/MainAnimations.is_playing():
