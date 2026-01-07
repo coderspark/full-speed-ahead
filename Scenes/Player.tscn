@@ -1,20 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://cxv7wb44ynnkf"]
+[gd_scene load_steps=6 format=3 uid="uid://cxv7wb44ynnkf"]
 
 [ext_resource type="Script" uid="uid://cqmx4lw13bmqq" path="res://Scripts/player.gd" id="1_kyqiw"]
 [ext_resource type="Texture2D" uid="uid://c101sa4y877b4" path="res://Assets/Art/Boats/better sailboatt.png" id="2_kyqiw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gntrk"]
-size = Vector2(18, 4)
+size = Vector2(8.563637, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dewec"]
+size = Vector2(12, 6)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kyqiw"]
-size = Vector2(21, 6)
+size = Vector2(13, 6)
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 128
 script = ExtResource("1_kyqiw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-3.48, 0)
+position = Vector2(1.71, 0)
 scale = Vector2(1.1, 1.1)
 shape = SubResource("RectangleShape2D_gntrk")
 
@@ -27,15 +30,15 @@ zoom = Vector2(3, 3)
 [node name="Collision Detector" type="Area2D" parent="."]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Collision Detector"]
-position = Vector2(-3.5, 0)
-shape = SubResource("RectangleShape2D_kyqiw")
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_dewec")
 
 [node name="ShopDetection" type="Area2D" parent="."]
 collision_layer = 4
 collision_mask = 4
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="ShopDetection"]
-position = Vector2(-3.5, 0)
+position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_kyqiw")
 
 [connection signal="body_entered" from="Collision Detector" to="." method="_on_area_2d_body_entered"]

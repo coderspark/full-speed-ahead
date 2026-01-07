@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bup3m1rujradq"
+path="res://.godot/imported/mario kart ahh.wav-fe3bc594b7f1c671f1aa342e83864311.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/mario kart ahh.wav"
+dest_files=["res://.godot/imported/mario kart ahh.wav-fe3bc594b7f1c671f1aa342e83864311.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
