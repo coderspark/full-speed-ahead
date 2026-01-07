@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://v2hjcofj8iip"]
+[gd_scene load_steps=15 format=3 uid="uid://v2hjcofj8iip"]
 
 [ext_resource type="Script" uid="uid://c4d486soskj4u" path="res://Scripts/mainmenu.gd" id="1_3pujl"]
 [ext_resource type="Texture2D" uid="uid://bikvt55in0esa" path="res://Assets/Art/Menu screen.png" id="1_cmhrf"]
@@ -6,7 +6,7 @@
 [ext_resource type="FontFile" uid="uid://dqqnsnb5xkqx7" path="res://Assets/Fonts/8bitoperator_jve.ttf" id="3_igs2m"]
 [ext_resource type="Texture2D" uid="uid://b6a7pab0tyxve" path="res://Assets/Art/Boats/button.png" id="4_3pujl"]
 [ext_resource type="AudioStream" uid="uid://dl8d6cchew8pf" path="res://Assets/Audio/title theme.wav" id="6_5326e"]
-[ext_resource type="Script" uid="uid://1e50qlieqvq2" path="res://Scenes/LoopPointMusic.gd" id="7_l2o7r"]
+[ext_resource type="Script" path="res://Scenes/LoopPointMusic.gd" id="7_l2o7r"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_loy4s"]
 texture = ExtResource("1_cmhrf")
@@ -17,29 +17,84 @@ texture = ExtResource("2_d2nv2")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_igs2m"]
 texture = ExtResource("4_3pujl")
 
-[node name="Control6" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -1.0
-offset_bottom = -1.0
-grow_horizontal = 2
-grow_vertical = 2
-focus_mode = 1
+[sub_resource type="Animation" id="Animation_l2o7r"]
+resource_name = "fade_in"
+length = 0.6
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_juwjy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_t8w0y"]
+resource_name = "fade_out"
+length = 0.60001004
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.60001004),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_eybw1"]
+_data = {
+&"RESET": SubResource("Animation_juwjy"),
+&"fade_in": SubResource("Animation_l2o7r"),
+&"fade_out": SubResource("Animation_t8w0y")
+}
+
+[node name="Main" type="Node2D"]
 script = ExtResource("1_3pujl")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="MainMenu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+focus_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="MainMenu"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 832.0
+offset_bottom = 832.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_loy4s")
 
-[node name="logo" type="Panel" parent="."]
+[node name="logo" type="Panel" parent="MainMenu"]
 layout_mode = 0
 offset_left = 56.0
 offset_top = 14.0
@@ -48,7 +103,7 @@ offset_bottom = 153.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_wgsso")
 
-[node name="Play" type="Button" parent="."]
+[node name="Play" type="Button" parent="MainMenu"]
 z_index = 3
 layout_mode = 0
 offset_left = 86.0
@@ -64,7 +119,7 @@ button_mask = 7
 text = "PLAY"
 flat = true
 
-[node name="Panel2" type="Panel" parent="Play"]
+[node name="Panel2" type="Panel" parent="MainMenu/Play"]
 z_index = -1
 layout_mode = 0
 offset_right = 255.0
@@ -72,7 +127,7 @@ offset_bottom = 80.0
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxTexture_igs2m")
 
-[node name="Optons" type="Button" parent="."]
+[node name="Optons" type="Button" parent="MainMenu"]
 z_index = 3
 layout_mode = 0
 offset_left = 86.0
@@ -86,7 +141,7 @@ theme_override_font_sizes/font_size = 64
 text = "OPTIONS"
 flat = true
 
-[node name="Panel2" type="Panel" parent="Optons"]
+[node name="Panel2" type="Panel" parent="MainMenu/Optons"]
 z_index = -1
 layout_mode = 0
 offset_right = 255.0
@@ -94,7 +149,7 @@ offset_bottom = 80.0
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxTexture_igs2m")
 
-[node name="Quit" type="Button" parent="."]
+[node name="Quit" type="Button" parent="MainMenu"]
 z_index = 3
 layout_mode = 0
 offset_left = 86.0
@@ -108,7 +163,7 @@ theme_override_font_sizes/font_size = 64
 text = "QUIT"
 flat = true
 
-[node name="Panel2" type="Panel" parent="Quit"]
+[node name="Panel2" type="Panel" parent="MainMenu/Quit"]
 z_index = -1
 layout_mode = 0
 offset_right = 255.0
@@ -116,11 +171,23 @@ offset_bottom = 80.0
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxTexture_igs2m")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="MainMenu"]
 stream = ExtResource("6_5326e")
 script = ExtResource("7_l2o7r")
 looppoint = 16
 
-[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
-[connection signal="finished" from="AudioStreamPlayer2D" to="AudioStreamPlayer2D" method="_on_finished"]
+[node name="Fade" type="ColorRect" parent="."]
+visible = false
+z_index = 100
+offset_right = 960.0
+offset_bottom = 540.0
+color = Color(0, 0, 0, 0)
+
+[node name="Animations" type="AnimationPlayer" parent="Fade"]
+libraries = {
+&"": SubResource("AnimationLibrary_eybw1")
+}
+
+[connection signal="pressed" from="MainMenu/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MainMenu/Quit" to="." method="_on_quit_pressed"]
+[connection signal="finished" from="MainMenu/AudioStreamPlayer2D" to="MainMenu/AudioStreamPlayer2D" method="_on_finished"]
