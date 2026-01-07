@@ -21,7 +21,7 @@ position = Vector2(1.71, 0)
 scale = Vector2(1.1, 1.1)
 shape = SubResource("RectangleShape2D_gntrk")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_kyqiw")
 
 [node name="Camera" type="Camera2D" parent="."]

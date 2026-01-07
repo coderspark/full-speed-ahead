@@ -7,7 +7,7 @@
 [ext_resource type="FontFile" uid="uid://dqqnsnb5xkqx7" path="res://Assets/Fonts/8bitoperator_jve.ttf" id="3_7rqgy"]
 [ext_resource type="Script" uid="uid://klae0u71y1go" path="res://Scripts/UiController.gd" id="5_y4jh7"]
 [ext_resource type="Texture2D" uid="uid://b6a7pab0tyxve" path="res://Assets/Art/Boats/button.png" id="6_q68mp"]
-[ext_resource type="Texture2D" uid="uid://cm5h1c54c0p4o" path="res://Assets/Art/arrow (probably temporary ).png" id="7_8ju71"]
+[ext_resource type="Texture2D" uid="uid://cm5h1c54c0p4o" path="res://Assets/Art/Temp/arrow (probably temporary ).png" id="7_8ju71"]
 [ext_resource type="Texture2D" uid="uid://ct8jpo3l1w4n1" path="res://Assets/Art/Boats/raft.png" id="8_xb4mg"]
 [ext_resource type="Texture2D" uid="uid://bu18xywouviyc" path="res://Assets/Art/Boats/betterraft.png" id="9_6t1o7"]
 [ext_resource type="Texture2D" uid="uid://d1t6687krajsx" path="res://Assets/Art/Boats/canoe.png" id="10_5qxwa"]
@@ -18,7 +18,6 @@
 [ext_resource type="Texture2D" uid="uid://drj77blyscrtv" path="res://Assets/Art/under.png" id="15_i0j58"]
 [ext_resource type="Texture2D" uid="uid://cxq572smso73i" path="res://Assets/Art/over.png" id="16_c1ier"]
 [ext_resource type="Texture2D" uid="uid://ykh1qxd24nqw" path="res://Assets/Art/progress.png" id="17_gyaec"]
-[ext_resource type="Script" uid="uid://khvpqdd06kvh" path="res://Scenes/hp.gd" id="18_bpy1e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0hol4"]
 texture = ExtResource("2_7rqgy")
@@ -391,6 +390,29 @@ colors = PackedColorArray(0.19215687, 0.19215687, 0.19215687, 1, 0.19215687, 0.1
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_bpy1e"]
 gradient = SubResource("Gradient_gyaec")
 width = 96
+
+[sub_resource type="GDScript" id="GDScript_hx8n4"]
+script/source = "extends TextureProgressBar
+
+var HP := 5.0
+var MAX_HP := 5.0
+
+func _ready() -> void:
+	Update()
+
+
+func Update():
+	if HP > MAX_HP:
+		HP = MAX_HP
+	max_value = 100
+
+	var hpPercent : float = HP / MAX_HP * 100
+	print(hpPercent)
+	var tween = create_tween()
+	tween.tween_property(self, \"value\",hpPercent,1).set_trans(Tween.TRANS_SINE)
+	tint_progress = Color.from_hsv(clampi(hpPercent-20,0,100)/360,1,1)
+		
+"
 
 [node name="MainScene" type="Node2D"]
 
@@ -804,12 +826,12 @@ offset_left = -160.0
 offset_top = -89.0
 offset_right = -60.0
 offset_bottom = -79.0
-value = 37.0
+value = 1.0
 texture_under = ExtResource("15_i0j58")
 texture_over = ExtResource("16_c1ier")
 texture_progress = ExtResource("17_gyaec")
-tint_progress = Color(0, 0.7885199, 0, 1)
-script = ExtResource("18_bpy1e")
+tint_progress = Color(1, 0, 0, 1)
+script = SubResource("GDScript_hx8n4")
 
 [node name="Players" type="Node2D" parent="."]
 
@@ -819,3 +841,4 @@ position = Vector2(-144, 96)
 [connection signal="pressed" from="Camera/Control/GameOver/restart" to="Camera/Control" method="_on_restart_pressed"]
 [connection signal="pressed" from="Camera/Control/Shop/Next" to="Camera/Control" method="_on_next_pressed"]
 [connection signal="pressed" from="Camera/Control/Shop/Prev" to="Camera/Control" method="_on_prev_pressed"]
+[connection signal="pressed" from="Camera/Control/Shop/Boats/3/Button" to="Camera/Control" method="_on_button_pressed"]
