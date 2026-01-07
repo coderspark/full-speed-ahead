@@ -7,8 +7,8 @@ var boatvel = 0
 var isbounce = false
 var health = 5
 var paused = false
-
-
+var starve = 0
+var foodtime = 60
 
 func getoverlappingtiles() -> Array:
 	var res = []
