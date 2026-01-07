@@ -34,7 +34,7 @@ func paste_template(id: int, pos: int) -> void:
 func _ready() -> void:
 	var map = []
 	for _n in range(50):
-		map.append(randi_range(0, 29))
+		map.append(randi_range(0, 30))
 	map[10] = -1
 	for t in range(len(map)):
 		paste_template(map[t], 6+(10*t))
