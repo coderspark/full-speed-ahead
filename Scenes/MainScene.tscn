@@ -385,6 +385,7 @@ gradient = SubResource("Gradient_i0j58")
 width = 32
 
 [sub_resource type="Gradient" id="Gradient_gyaec"]
+offsets = PackedFloat32Array(0, 0)
 colors = PackedColorArray(0.19215687, 0.19215687, 0.19215687, 1, 0.19215687, 0.19215687, 0.19215687, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_bpy1e"]
@@ -410,7 +411,7 @@ func Update():
 	print(hpPercent)
 	var tween = create_tween()
 	tween.tween_property(self, \"value\",hpPercent,1).set_trans(Tween.TRANS_SINE)
-	tint_progress = Color.from_hsv(clampi(hpPercent-20,0,100)/360,1,1)
+	tint_progress = Color.from_hsv(hpPercent/300,1,1)
 		
 "
 
