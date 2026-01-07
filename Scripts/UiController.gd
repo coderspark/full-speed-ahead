@@ -38,4 +38,14 @@ func UpdateShopLocations():
 		if n.name != str(n.name.to_int()):
 			printerr(n.name, " isnt an int")
 		n.position.x = 144 - (48 * (shop_current_id - n.name.to_int()))
+		n.get_node("Button").disabled = !(int(n.name) == shop_current_id)
 	$Shop/Boats.position = Vector2.ZERO
+
+
+func _on_button_pressed() -> void:
+	'''
+	TODO: Player laten weten welke boat hij wordt 
+	
+	Je kan shop_current_id gebruiken voor welke button is geklikt
+	'''
+	print("klik")
