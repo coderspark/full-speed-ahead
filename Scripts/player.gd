@@ -7,8 +7,8 @@ var boatvel = 0
 var isbounce = false
 var health = 5
 var paused = false
-
-
+var starve = 0
+var foodtime = 60
 
 func getoverlappingtiles() -> Array:
 	var res = []
@@ -50,10 +50,10 @@ func _physics_process(delta: float) -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	delta_rot = 0
 	health -= 1
-	$"../../Camera/Control/HP".HP = health
-	$"../../Camera/Control/HP".Update()
+	$"../../Camera/UI/HP".HP = health
+	$"../../Camera/UI/HP".Update()
 	if health <= 0:
-		$"../../Camera/Control".gameover()
+		$"../../Camera/UI".gameover()
 		paused = true
 	isbounce = true
 func _on_collision_detector_body_exited(body: Node2D) -> void:
@@ -62,6 +62,6 @@ func _on_collision_detector_body_exited(body: Node2D) -> void:
 
 func _on_shop_detection_body_entered(body: Node2D) -> void:
 	get_tree().paused = true
-	$"../../Camera/Control/Shop".show()
+	$"../../Camera/UI/Shop".show()
 	
 	
