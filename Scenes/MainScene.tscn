@@ -290,7 +290,7 @@ position = Vector2(-144, 96)
 zoom = Vector2(3, 3)
 script = ExtResource("2_nhkr4")
 
-[node name="Control" parent="Camera" instance=ExtResource("4_qxria")]
+[node name="UI" parent="Camera" instance=ExtResource("4_qxria")]
 
 [node name="Players" type="Node2D" parent="."]
 

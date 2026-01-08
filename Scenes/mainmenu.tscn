@@ -17,6 +17,21 @@ texture = ExtResource("2_d2nv2")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_igs2m"]
 texture = ExtResource("4_3pujl")
 
+[sub_resource type="Animation" id="Animation_juwjy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_l2o7r"]
 resource_name = "fade_in"
 length = 0.6
@@ -32,21 +47,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_juwjy"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_t8w0y"]
@@ -87,8 +87,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 832.0
-offset_bottom = 832.0
+offset_right = 976.0
+offset_bottom = 544.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -177,16 +177,19 @@ script = ExtResource("7_l2o7r")
 looppoint = 16
 
 [node name="Fade" type="ColorRect" parent="."]
-visible = false
 z_index = 100
 offset_right = 960.0
 offset_bottom = 540.0
+mouse_filter = 2
 color = Color(0, 0, 0, 0)
 
 [node name="Animations" type="AnimationPlayer" parent="Fade"]
 libraries = {
 &"": SubResource("AnimationLibrary_eybw1")
 }
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(491.13043, 272)
 
 [connection signal="pressed" from="MainMenu/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MainMenu/Quit" to="." method="_on_quit_pressed"]
