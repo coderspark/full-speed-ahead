@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://dbq85xa0fcnii"]
+[gd_scene load_steps=39 format=3 uid="uid://dbq85xa0fcnii"]
 
 [ext_resource type="Script" uid="uid://klae0u71y1go" path="res://Scripts/UiController.gd" id="1_wi7yl"]
 [ext_resource type="FontFile" uid="uid://dqqnsnb5xkqx7" path="res://Assets/Fonts/8bitoperator_jve.ttf" id="2_5q4fb"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://drj77blyscrtv" path="res://Assets/Art/under.png" id="12_612k1"]
 [ext_resource type="Texture2D" uid="uid://cxq572smso73i" path="res://Assets/Art/over.png" id="13_us6mg"]
 [ext_resource type="Texture2D" uid="uid://ykh1qxd24nqw" path="res://Assets/Art/progress.png" id="14_8blbl"]
+[ext_resource type="Texture2D" uid="uid://bw2gvkaylchw8" path="res://Assets/Art/coinicon.png" id="15_5q4fb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qxria"]
 bg_color = Color(0.19215687, 0.19215687, 0.19215687, 0.49411765)
@@ -228,7 +229,10 @@ _data = {
 &"RESET": SubResource("Animation_5q4fb")
 }
 
-[node name="Control" type="Control"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mqm5i"]
+texture = ExtResource("15_5q4fb")
+
+[node name="UI" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -623,9 +627,9 @@ texture = SubResource("GradientTexture1D_bpy1e")
 
 [node name="HP" type="TextureProgressBar" parent="."]
 layout_mode = 0
-offset_left = -160.0
+offset_left = -50.0
 offset_top = -89.0
-offset_right = -60.0
+offset_right = 50.0
 offset_bottom = -79.0
 value = 1.0
 texture_under = ExtResource("12_612k1")
@@ -646,9 +650,10 @@ color = Color(0.0885599, 0.0885599, 0.0885599, 0.4117647)
 
 [node name="Label" type="Label" parent="Countdown"]
 layout_mode = 0
-offset_top = 38.328583
-offset_right = 320.0
-offset_bottom = 243.32858
+offset_left = 512.0
+offset_top = -240.0
+offset_right = 832.0
+offset_bottom = -35.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_5q4fb")
 theme_override_font_sizes/font_size = 100
@@ -659,6 +664,25 @@ horizontal_alignment = 1
 libraries = {
 &"": SubResource("AnimationLibrary_mqm5i")
 }
+
+[node name="Coins" type="Label" parent="."]
+layout_mode = 0
+offset_left = -140.0
+offset_top = -90.0
+offset_right = -88.0
+offset_bottom = -67.0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 16
+text = "coin: 0 :("
+
+[node name="Panel" type="Panel" parent="Coins"]
+layout_mode = 0
+offset_left = -20.0
+offset_top = -1.0
+offset_right = 20.0
+offset_bottom = 39.0
+scale = Vector2(0.5, 0.5)
+theme_override_styles/panel = SubResource("StyleBoxTexture_mqm5i")
 
 [connection signal="pressed" from="GameOver/restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="Shop/Next" to="." method="_on_next_pressed"]

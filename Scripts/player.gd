@@ -9,6 +9,7 @@ var health = 5
 var paused = false
 var starve = 0
 var foodtime = 60
+var coins = 0
 
 func getoverlappingtiles() -> Array:
 	var res = []
@@ -24,7 +25,7 @@ func getoverlappingtiles() -> Array:
 			if tdata & TileSetAtlasSource.TRANSFORM_TRANSPOSE and tdata & TileSetAtlasSource.TRANSFORM_FLIP_H: rot = 0.5*PI
 			if tdata & TileSetAtlasSource.TRANSFORM_FLIP_H and tdata & TileSetAtlasSource.TRANSFORM_FLIP_V: rot = 0
 			if tdata & TileSetAtlasSource.TRANSFORM_TRANSPOSE and tdata & TileSetAtlasSource.TRANSFORM_FLIP_V: rot = 1.5*PI
-			res.append([ttype, rot])
+			res.append([ttype, rot, coords])
 	return res
 
 func _physics_process(delta: float) -> void: 
@@ -45,6 +46,10 @@ func _physics_process(delta: float) -> void:
 	for t in overlap:
 		if t[0] == Vector2i(0, 3):
 			velocity += Vector2(sin(t[1]), cos(t[1])) * 10
+		if t[0] == Vector2i(0, 14):
+			coins += 1
+			$"../../TileMap".remove_coin(t[2])
+	$"../../Camera/UI/Coins".text = str(coins)
 	move_and_slide()
 
 func _on_area_2d_body_entered(body: Node2D) -> void:

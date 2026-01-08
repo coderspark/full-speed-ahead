@@ -30,7 +30,8 @@ func paste_template(id: int, pos: int) -> void:
 			var tmpenemy = enemy.instantiate()
 			tmpenemy.init(e, randf_range(0, 100)/100)
 			add_child(tmpenemy)
-
+func remove_coin(pos: Vector2i) -> void:
+	set_cell(pos, 0, Vector2i(0, 0), 0)
 func _ready() -> void:
 	var map = []
 	for _n in range(50):
