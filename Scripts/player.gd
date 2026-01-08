@@ -44,7 +44,7 @@ func _physics_process(delta: float) -> void:
 		boatvel += 1
 	var overlap = getoverlappingtiles()
 	for t in overlap:
-		if t[0] == Vector2i(0, 3):
+		if t[0] == Vector2i(0, 3) && !isbounce:
 			velocity += Vector2(sin(t[1]), cos(t[1])) * 10
 		if t[0] == Vector2i(0, 14):
 			coins += 1
