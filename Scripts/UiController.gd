@@ -1,6 +1,11 @@
 extends Control
 
+signal StartGame
+
 var shop_current_id = 0
+
+func CallStartGame():
+	StartGame.emit()
 
 func gameover():
 	get_tree().paused = true
