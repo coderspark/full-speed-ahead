@@ -35,7 +35,7 @@ func getoverlappingtiles() -> Array:
 func _physics_process(delta: float) -> void: 
 	if !GameStarted:
 		return
-	get_tree().paused = paused
+	
 	if Input.get_axis("move_left", "move_right") == 0:
 		delta_rot *= 0.9
 	delta_rot += Input.get_axis("move_left","move_right") * 0.1

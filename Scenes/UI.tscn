@@ -143,7 +143,7 @@ func Update():
 
 [sub_resource type="Animation" id="Animation_wi7yl"]
 resource_name = "Countdown"
-length = 6.00001
+length = 4.0
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -152,10 +152,10 @@ tracks/0/path = NodePath("Label:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.7, 1, 1.1, 1.7, 2, 2.1, 2.7, 3, 3.1, 3.7, 4, 4.1, 4.7, 5, 5.1, 5.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.70000005, 1.0000002, 1.0999997, 1.7000002, 2.0000002, 2.0999997, 2.7, 3.0000002, 3.0999997, 3.6999998),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(0, -100), Vector2(0, 32), Vector2(0, 32), Vector2(0, -100), Vector2(0, 32), Vector2(0, 32), Vector2(0, -100), Vector2(0, 32), Vector2(0, 32), Vector2(0, -100), Vector2(0, 32), Vector2(0, 32), Vector2(0, -100), Vector2(0, 32), Vector2(0, 32), Vector2(0, -100), Vector2(0, 32)]
+"values": [Vector2(0, -100), Vector2(0, 32), Vector2(0, 32), Vector2(0, -100), Vector2(0, 32), Vector2(0, 32), Vector2(0, -100), Vector2(0, 32), Vector2(0, 32), Vector2(0, -100), Vector2(0, 32)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -164,10 +164,10 @@ tracks/1/path = NodePath("Label:theme_override_colors/font_color")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.7, 1, 1.7, 2, 2.7, 3, 3.7, 4, 4.7, 5, 5.7, 6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.70000005, 1.0000002, 1.7000002, 2.0000002, 2.7, 3.0000002, 3.6999998, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -176,11 +176,10 @@ tracks/2/path = NodePath("Label:text")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 1, 2, 3, 4, 5, 6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 1.0000002, 2.0000002, 3.0000002, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": ["5", "4
-", "3
+"values": ["3
 ", "2", "1", "GO", "4"]
 }
 tracks/3/type = "value"
@@ -190,10 +189,10 @@ tracks/3/path = NodePath("Label:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 1, 1.1, 2, 2.1, 3, 3.1, 4, 4.1, 5, 5.1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.099999905, 1.0000002, 1.0999997, 2.0000002, 2.0999997, 3.0000002, 3.0999997),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [true, false, true, false, true, false, true, false, true, false, true]
+"values": [false, true, false, true, false, true, false, true]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -202,7 +201,7 @@ tracks/4/path = NodePath(".:color")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(5.7000003, 6),
+"times": PackedFloat32Array(3.6999998, 4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0.0885599, 0.0885599, 0.0885599, 0.4117647), Color(0.09, 0.09, 0.09, 0)]
@@ -214,7 +213,7 @@ tracks/5/path = NodePath("..")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(6),
+"times": PackedFloat32Array(4),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
@@ -319,6 +318,7 @@ _data = {
 texture = ExtResource("15_5q4fb")
 
 [node name="UI" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -753,6 +753,29 @@ libraries = {
 &"": SubResource("AnimationLibrary_mqm5i")
 }
 autoplay = "Countdown"
+
+[node name="Paused" type="ColorRect" parent="."]
+visible = false
+z_index = 100
+layout_mode = 0
+offset_left = -160.0
+offset_top = -90.0
+offset_right = 160.0
+offset_bottom = 90.0
+mouse_filter = 2
+color = Color(0.0885599, 0.0885599, 0.0885599, 0.4117647)
+
+[node name="Label" type="Label" parent="Paused"]
+layout_mode = 0
+offset_left = 128.00002
+offset_top = 11.0
+offset_right = 194.00002
+offset_bottom = 41.0
+scale = Vector2(0.170195, 0.170195)
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 145
+text = "Paused"
+horizontal_alignment = 1
 
 [node name="Coins" type="Label" parent="."]
 layout_mode = 0

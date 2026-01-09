@@ -4,9 +4,15 @@ signal StartGame
 
 var shop_current_id = 0
 
+var paused = false
+
 func CallStartGame():
 	StartGame.emit()
-
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("pause"):
+		paused = !paused
+		get_tree().paused = paused
+		$Paused.visible = paused
 func gameover():
 	get_tree().paused = true
 	$GameOver.visible = true
