@@ -298,3 +298,5 @@ script = ExtResource("2_nhkr4")
 
 [node name="Player" parent="Players" instance=ExtResource("1_nhkr4")]
 position = Vector2(-144, 96)
+
+[connection signal="StartGame" from="Camera/UI" to="Players/Player" method="_on_ui_start_game"]

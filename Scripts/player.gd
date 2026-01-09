@@ -11,6 +11,10 @@ var starve = 0
 var foodtime = 60
 var coins = 0
 
+var GameStarted = false
+func _ready() -> void:
+	UpdateCoinCount()
+
 func getoverlappingtiles() -> Array:
 	var res = []
 	var rect = $"Collision Detector/CollisionShape2D2".shape.get_rect()
@@ -29,6 +33,8 @@ func getoverlappingtiles() -> Array:
 	return res
 
 func _physics_process(delta: float) -> void: 
+	if !GameStarted:
+		return
 	get_tree().paused = paused
 	if Input.get_axis("move_left", "move_right") == 0:
 		delta_rot *= 0.9
@@ -49,7 +55,7 @@ func _physics_process(delta: float) -> void:
 		if t[0] == Vector2i(0, 14):
 			coins += 1
 			$"../../TileMap".remove_coin(t[2])
-	$"../../Camera/UI/Coins".text = str(coins)
+			UpdateCoinCount()
 	move_and_slide()
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
@@ -69,4 +75,9 @@ func _on_shop_detection_body_entered(body: Node2D) -> void:
 	get_tree().paused = true
 	$"../../Camera/UI/Shop".show()
 	
-	
+func UpdateCoinCount():
+	$"../../Camera/UI/Coins".text = str(coins)
+
+
+func _on_ui_start_game() -> void:
+	GameStarted = true
