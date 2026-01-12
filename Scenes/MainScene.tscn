@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=4 uid="uid://cgo37mq02tko0"]
+[gd_scene load_steps=9 format=4 uid="uid://cgo37mq02tko0"]
 
 [ext_resource type="PackedScene" uid="uid://cxv7wb44ynnkf" path="res://Scenes/Player.tscn" id="1_nhkr4"]
+[ext_resource type="Script" uid="uid://w4o2pxvhcvui" path="res://Scripts/main_scene.gd" id="1_y4jh7"]
 [ext_resource type="Texture2D" uid="uid://bhd74a0trijaw" path="res://Assets/Art/tiles.png" id="2_7rqgy"]
 [ext_resource type="Script" uid="uid://drumpygcni0ew" path="res://Scripts/camera.gd" id="2_nhkr4"]
 [ext_resource type="Script" uid="uid://dgey6cd167314" path="res://Scripts/tilegen.gd" id="2_q68mp"]
@@ -280,6 +281,7 @@ physics_layer_2/collision_mask = 4
 sources/0 = SubResource("TileSetAtlasSource_0hol4")
 
 [node name="MainScene" type="Node2D"]
+script = ExtResource("1_y4jh7")
 
 [node name="TileMap" type="TileMapLayer" parent="."]
 z_index = -1
@@ -299,4 +301,5 @@ script = ExtResource("2_nhkr4")
 [node name="Player" parent="Players" instance=ExtResource("1_nhkr4")]
 position = Vector2(-144, 96)
 
+[connection signal="RestartGame" from="Camera/UI" to="." method="_on_ui_restart_game"]
 [connection signal="StartGame" from="Camera/UI" to="Players/Player" method="_on_ui_start_game"]

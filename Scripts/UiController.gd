@@ -1,7 +1,7 @@
 extends Control
 
 signal StartGame
-
+signal RestartGame
 var shop_current_id = 0
 
 var paused = false
@@ -19,7 +19,7 @@ func gameover():
 
 func _on_restart_pressed() -> void:
 	get_tree().paused = false
-	get_tree().reload_current_scene()
+	RestartGame.emit()
 
 func _ready() -> void:
 	UpdateShopLocations()

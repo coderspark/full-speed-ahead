@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://v2hjcofj8iip"]
+[gd_scene load_steps=16 format=3 uid="uid://v2hjcofj8iip"]
 
 [ext_resource type="Script" uid="uid://c4d486soskj4u" path="res://Scripts/mainmenu.gd" id="1_3pujl"]
 [ext_resource type="Texture2D" uid="uid://bikvt55in0esa" path="res://Assets/Art/Menu screen.png" id="1_cmhrf"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://b6a7pab0tyxve" path="res://Assets/Art/Boats/button.png" id="4_3pujl"]
 [ext_resource type="AudioStream" uid="uid://dl8d6cchew8pf" path="res://Assets/Audio/title theme.wav" id="6_5326e"]
 [ext_resource type="Script" uid="uid://1e50qlieqvq2" path="res://Scripts/LoopPointMusic.gd" id="7_l2o7r"]
+[ext_resource type="PackedScene" uid="uid://cgo37mq02tko0" path="res://Scenes/MainScene.tscn" id="8_juwjy"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_loy4s"]
 texture = ExtResource("1_cmhrf")
@@ -188,12 +189,6 @@ offset_right = 976.0
 offset_bottom = 544.0
 texture = ExtResource("1_cmhrf")
 
-[node name="Button" type="Button" parent="LevelSelect"]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
-text = "dahwudwa"
-
 [node name="Fade" type="ColorRect" parent="."]
 z_index = 100
 offset_left = -1248.0
@@ -211,7 +206,8 @@ libraries = {
 [node name="Camera" type="Camera2D" parent="."]
 position = Vector2(491.13043, 272)
 
+[node name="MainScene" parent="." instance=ExtResource("8_juwjy")]
+
 [connection signal="pressed" from="MainMenu/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MainMenu/Quit" to="." method="_on_quit_pressed"]
 [connection signal="finished" from="MainMenu/AudioStreamPlayer2D" to="MainMenu/AudioStreamPlayer2D" method="_on_finished"]
-[connection signal="pressed" from="LevelSelect/Button" to="." method="StartGame" binds= ["England"]]
