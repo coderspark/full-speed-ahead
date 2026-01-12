@@ -33,9 +33,13 @@ func paste_template(id: int, pos: int) -> void:
 func remove_coin(pos: Vector2i) -> void:
 	set_cell(pos, 0, Vector2i(0, 0), 0)
 func _ready() -> void:
+	var number_of_templates = 35
+	var probabilities = []
+	for i in range(number_of_templates):
+		probabilities.append((Vector2(TOP_LEFT.x+(6+10*i), TOP_LEFT.y-1)).x)
 	var map = []
 	for _n in range(50):
-		map.append(randi_range(0, 35))
+		map.append(randi_range(0, number_of_templates))
 	map[10] = -1
 	for t in range(len(map)):
 		paste_template(map[t], 6+(10*t))
