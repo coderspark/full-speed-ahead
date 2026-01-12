@@ -60,3 +60,7 @@ func _on_button_pressed() -> void:
 	Je kan shop_current_id gebruiken voor welke button is geklikt
 	'''
 	print("klik")
+
+
+func _on_lag_pressed() -> void:
+	Engine.max_fps = 4
