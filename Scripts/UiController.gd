@@ -64,3 +64,7 @@ func _on_button_pressed() -> void:
 
 func _on_lag_pressed() -> void:
 	Engine.max_fps = 4
+
+
+func _on_quit_pressed() -> void:
+	get_tree().quit()
