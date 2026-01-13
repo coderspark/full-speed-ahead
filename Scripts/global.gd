@@ -18,3 +18,5 @@ const BOAT_STATS = {
 		"coin_multiplier":1.5
 	},
 }
+
+var LevelName = ""

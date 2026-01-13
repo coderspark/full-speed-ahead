@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://v2hjcofj8iip"]
+[gd_scene load_steps=16 format=3 uid="uid://v2hjcofj8iip"]
 
 [ext_resource type="Script" uid="uid://c4d486soskj4u" path="res://Scripts/mainmenu.gd" id="1_3pujl"]
 [ext_resource type="Texture2D" uid="uid://bikvt55in0esa" path="res://Assets/Art/Menu screen.png" id="1_cmhrf"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://b6a7pab0tyxve" path="res://Assets/Art/Boats/button.png" id="4_3pujl"]
 [ext_resource type="AudioStream" uid="uid://dl8d6cchew8pf" path="res://Assets/Audio/title theme.wav" id="6_5326e"]
 [ext_resource type="Script" uid="uid://1e50qlieqvq2" path="res://Scripts/LoopPointMusic.gd" id="7_l2o7r"]
+[ext_resource type="Texture2D" uid="uid://d2qr2wp5kmb22" path="res://Assets/Art/worldmap.png" id="8_juwjy"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_loy4s"]
 texture = ExtResource("1_cmhrf")
@@ -186,13 +187,66 @@ offset_bottom = 544.0
 layout_mode = 0
 offset_right = 976.0
 offset_bottom = 544.0
-texture = ExtResource("1_cmhrf")
+texture = ExtResource("8_juwjy")
 
-[node name="Button" type="Button" parent="LevelSelect"]
+[node name="Paaseiland" type="Button" parent="LevelSelect"]
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
-text = "dahwudwa"
+offset_left = 154.19934
+offset_top = 352.13644
+offset_right = 202.19934
+offset_bottom = 400.13644
+pivot_offset = Vector2(24, 24)
+flat = true
+
+[node name="Jakarta" type="Button" parent="LevelSelect"]
+layout_mode = 0
+offset_left = 739.70386
+offset_top = 284.32654
+offset_right = 787.70386
+offset_bottom = 332.32654
+pivot_offset = Vector2(24, 24)
+flat = true
+
+[node name="KaapDeGoedeHoop" type="Button" parent="LevelSelect"]
+layout_mode = 0
+offset_left = 515.13257
+offset_top = 356.19745
+offset_right = 563.13257
+offset_bottom = 404.19745
+pivot_offset = Vector2(24, 24)
+flat = true
+
+[node name="Portugal" type="Button" parent="LevelSelect"]
+layout_mode = 0
+offset_left = 442.01553
+offset_top = 180.33208
+offset_right = 490.01553
+offset_bottom = 221.68365
+pivot_offset = Vector2(24, 24)
+flat = true
+
+[node name="Engeland" type="Button" parent="LevelSelect"]
+layout_mode = 0
+offset_left = 466.52258
+offset_top = 139.66058
+offset_right = 514.5226
+offset_bottom = 180.33208
+pivot_offset = Vector2(24, 24)
+flat = true
+
+[node name="Info" type="RichTextLabel" parent="LevelSelect"]
+layout_mode = 0
+offset_left = 20.21167
+offset_top = 433.50195
+offset_right = 254.21167
+offset_bottom = 544.0
+theme_override_fonts/normal_font = ExtResource("3_igs2m")
+theme_override_fonts/bold_font = ExtResource("3_igs2m")
+theme_override_fonts/bold_italics_font = ExtResource("3_igs2m")
+theme_override_fonts/italics_font = ExtResource("3_igs2m")
+theme_override_fonts/mono_font = ExtResource("3_igs2m")
+bbcode_enabled = true
+scroll_active = false
 
 [node name="Fade" type="ColorRect" parent="."]
 z_index = 100
@@ -214,4 +268,18 @@ position = Vector2(491.13043, 272)
 [connection signal="pressed" from="MainMenu/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MainMenu/Quit" to="." method="_on_quit_pressed"]
 [connection signal="finished" from="MainMenu/AudioStreamPlayer2D" to="MainMenu/AudioStreamPlayer2D" method="_on_finished"]
-[connection signal="pressed" from="LevelSelect/Button" to="." method="StartGame" binds= ["England"]]
+[connection signal="mouse_entered" from="LevelSelect/Paaseiland" to="." method="_on_paaseiland_mouse_entered"]
+[connection signal="mouse_exited" from="LevelSelect/Paaseiland" to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="LevelSelect/Paaseiland" to="." method="StartGame" binds= ["Paaseiland"]]
+[connection signal="mouse_entered" from="LevelSelect/Jakarta" to="." method="_on_jakarta_mouse_entered"]
+[connection signal="mouse_exited" from="LevelSelect/Jakarta" to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="LevelSelect/Jakarta" to="." method="StartGame" binds= ["Jakarta"]]
+[connection signal="mouse_entered" from="LevelSelect/KaapDeGoedeHoop" to="." method="_on_kaap_de_goede_hoop_mouse_entered"]
+[connection signal="mouse_exited" from="LevelSelect/KaapDeGoedeHoop" to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="LevelSelect/KaapDeGoedeHoop" to="." method="StartGame" binds= ["KaapdegoedeHoop"]]
+[connection signal="mouse_entered" from="LevelSelect/Portugal" to="." method="_on_portugal_mouse_entered"]
+[connection signal="mouse_exited" from="LevelSelect/Portugal" to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="LevelSelect/Portugal" to="." method="StartGame" binds= ["Portugal"]]
+[connection signal="mouse_entered" from="LevelSelect/Engeland" to="." method="_on_engeland_mouse_entered"]
+[connection signal="mouse_exited" from="LevelSelect/Engeland" to="." method="_on_mouse_exited"]
+[connection signal="pressed" from="LevelSelect/Engeland" to="." method="StartGame" binds= ["Engeland"]]
