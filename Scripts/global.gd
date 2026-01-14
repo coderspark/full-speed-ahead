@@ -1,6 +1,6 @@
 extends Node
 
-const STARTER_BOAT = "reinforced_motorboat"
+const STARTER_BOAT = "basic_raft"
 
 const BOAT_SCALE_MODIFIERS : Dictionary = {
 	"basic_raft": 0.5,
