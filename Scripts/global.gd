@@ -9,12 +9,12 @@ const BOAT_SCALE_MODIFIERS : Dictionary = {
 
 const BOAT_STATS = {
 	"basic_raft":{
-		"speed":2,
+		"speed":3,
 		"turn_speed":5,
-		"hp":3,
+		"hp":1,
 		"coin_multiplier":1.0
 	},"reinforced_raft":{
-		"speed":2,
+		"speed":3,
 		"turn_speed":3,
 		"hp":5,
 		"coin_multiplier":1.1 
