@@ -12,7 +12,7 @@ var max_health = 5
 var paused = false
 var coins = 0
 
-var MyBoat = "basic_raft"
+var MyBoat = "../Temp/the bergentruck"
 
 var GameStarted = false
 func _ready() -> void:
@@ -63,6 +63,7 @@ func _physics_process(delta: float) -> void:
 			coins += 1
 			$"../../TileMap".remove_coin(t[2])
 			UpdateCoinCount()
+	pushingdirs = []
 	move_and_slide()
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
