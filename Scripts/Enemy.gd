@@ -10,13 +10,13 @@ func init(points: Array, numberpos: float) -> void:
 	n = numberpos
 # i like math :3
 func _physics_process(delta: float) -> void:
-	n += (dir-0.5)*2 * 0.005
+	n += dir * 0.5/DIST
 	if 1 - n <= 0.01 and dir == 1:
-		dir = 0
-	if n <= 0.01 and dir == 0:
+		dir = -1
+	if n <= 0.01 and dir == -1:
 		dir = 1
 	position = lerp(PATH_POINTS[0], PATH_POINTS[1], n)
-	if dir == 0:
+	if dir == -1:
 		look_at(PATH_POINTS[0])
 	else:
 		look_at(PATH_POINTS[1])
