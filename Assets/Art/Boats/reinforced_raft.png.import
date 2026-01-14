@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c101sa4y877b4"
-path="res://.godot/imported/better sailboatt.png-8d0387e93b407f1f1f2770a59edea08a.ctex"
+uid="uid://bu18xywouviyc"
+path="res://.godot/imported/reinforced_raft.png-4bbf4406b963c436bf9e88e37eeae37c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/Boats/better sailboatt.png"
-dest_files=["res://.godot/imported/better sailboatt.png-8d0387e93b407f1f1f2770a59edea08a.ctex"]
+source_file="res://Assets/Art/Boats/reinforced_raft.png"
+dest_files=["res://.godot/imported/reinforced_raft.png-4bbf4406b963c436bf9e88e37eeae37c.ctex"]
 
 [params]
 

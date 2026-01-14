@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdysiolrfddb4"
-path="res://.godot/imported/cod.png-36ea77966742f6945c82cc49b5cfcf0d.ctex"
+uid="uid://de8p5lqna7b1s"
+path="res://.godot/imported/haven pixel art.png-3d1437f4dee22918d1a496466e15b901.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/cod.png"
-dest_files=["res://.godot/imported/cod.png-36ea77966742f6945c82cc49b5cfcf0d.ctex"]
+source_file="res://haven pixel art.png"
+dest_files=["res://.godot/imported/haven pixel art.png-3d1437f4dee22918d1a496466e15b901.ctex"]
 
 [params]
 

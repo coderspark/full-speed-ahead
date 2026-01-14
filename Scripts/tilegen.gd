@@ -33,13 +33,25 @@ func paste_template(id: int, pos: int) -> void:
 func remove_coin(pos: Vector2i) -> void:
 	set_cell(pos, 0, Vector2i(0, 0), 0)
 func _ready() -> void:
-	var number_of_templates = 41
-	var probabilities = []
+	var number_of_templates = 35
+	var difficulties = []
 	for i in range(number_of_templates):
-		probabilities.append((Vector2(TOP_LEFT.x+(6+10*i), TOP_LEFT.y-1)).x)
+		difficulties.append((get_cell_atlas_coords(Vector2i(TEMPLATE_START.x+(8*i), TEMPLATE_START.y-1))).x)
 	var map = []
-	for _n in range(50):
-		map.append(randi_range(0, number_of_templates))
+	for n in range(50):
+		var weights = [0.0, 0.0, 0.0, 0.0, 0.0]
+		for i in range(5):
+			const E = 2.718281828
+			var a = clampf(float(n) / 15.0, 0, 4)
+			weights[i] = pow(E, 0 - (pow(float(i)-a,2.0)/0.72)) # strange math 
+		var rng = RandomNumberGenerator.new()
+		var difficulty = rng.rand_weighted(PackedFloat32Array(weights))
+		var tplate = 0
+		while true:
+			tplate = randi_range(0, number_of_templates-1)
+			if difficulties[tplate] == difficulty:
+				break
+		map.append(tplate)
 	map[10] = -1
 	for t in range(len(map)):
 		paste_template(map[t], 6+(10*t))
