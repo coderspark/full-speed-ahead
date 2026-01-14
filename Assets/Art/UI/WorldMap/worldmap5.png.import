@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cit6la2domptf"
-path="res://.godot/imported/shit sailboat.png-6004cdb2882492badb3b9bd72ad30ff8.ctex"
+uid="uid://bmke57lq7f7lc"
+path="res://.godot/imported/worldmap5.png-90d8fa413ef9e8107e394f726134744e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/Boats/shit sailboat.png"
-dest_files=["res://.godot/imported/shit sailboat.png-6004cdb2882492badb3b9bd72ad30ff8.ctex"]
+source_file="res://Assets/Art/UI/WorldMap/worldmap5.png"
+dest_files=["res://.godot/imported/worldmap5.png-90d8fa413ef9e8107e394f726134744e.ctex"]
 
 [params]
 

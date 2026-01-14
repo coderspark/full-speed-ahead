@@ -1,7 +1,7 @@
 extends Node2D
 var game = preload("res://Scenes/MainScene.tscn")
 
-@onready var LevelBG = preload("res://Assets/Art/worldmap.png")
+@onready var LevelBG = preload("res://Assets/Art/UI/WorldMap/worldmap.png")
 
 func _ready() -> void:
 	$Fade/Animations.play("fade_out")
@@ -47,33 +47,33 @@ func _on_quit_pressed() -> void:
 
 
 func _on_paaseiland_mouse_entered() -> void:
-	$LevelSelect/BG.texture = preload("res://Assets/Art/worldmap5.png")
+	$LevelSelect/BG.texture = preload("res://Assets/Art/UI/WorldMap/worldmap5.png")
 	$LevelSelect/Info.text = "[font_size=30]Paaseiland
 Difficulty: [color=D30000]Hard[/color]
 Length: [color=D30000]Long[/color]
 "
 
 func _on_jakarta_mouse_entered() -> void:
-	$LevelSelect/BG.texture = preload("res://Assets/Art/worldmap4.png")
+	$LevelSelect/BG.texture = preload("res://Assets/Art/UI/WorldMap/worldmap4.png")
 	$LevelSelect/Info.text = "[font_size=30]Jakarta
 Difficulty: [color=D30000]Hard[/color]
 Length: [color=D30000]Long[/color]
 "
 
 func _on_kaap_de_goede_hoop_mouse_entered() -> void:
-	$LevelSelect/BG.texture = preload("res://Assets/Art/worldmap3.png")
+	$LevelSelect/BG.texture = preload("res://Assets/Art/UI/WorldMap/worldmap3.png")
 	$LevelSelect/Info.text = "[font_size=30]Kaap de goede hoop
 Difficulty: [color=FFA500]Medium[/color]
 Length: [color=FFA500]Medium[/color]
 "
 func _on_portugal_mouse_entered() -> void:
-	$LevelSelect/BG.texture = preload("res://Assets/Art/worldmap2.png")
+	$LevelSelect/BG.texture = preload("res://Assets/Art/UI/WorldMap/worldmap2.png")
 	$LevelSelect/Info.text = "[font_size=30]Portugal
 Difficulty: [color=00BF00]Easy[/color]
 Length: [color=00BF00]Short[/color]
 "
 func _on_engeland_mouse_entered() -> void:
-	$LevelSelect/BG.texture = preload("res://Assets/Art/worldmap1.png")
+	$LevelSelect/BG.texture = preload("res://Assets/Art/UI/WorldMap/worldmap1.png")
 	$LevelSelect/Info.text = "[font_size=30]Engeland
 Difficulty: [color=00BF00]Easy[/color]
 Length: [color=00BF00]Short[/color]

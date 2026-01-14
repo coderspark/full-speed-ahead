@@ -1,13 +1,13 @@
 [gd_scene load_steps=16 format=3 uid="uid://v2hjcofj8iip"]
 
 [ext_resource type="Script" uid="uid://c4d486soskj4u" path="res://Scripts/mainmenu.gd" id="1_3pujl"]
-[ext_resource type="Texture2D" uid="uid://bikvt55in0esa" path="res://Assets/Art/Menu screen.png" id="1_cmhrf"]
-[ext_resource type="Texture2D" uid="uid://t072jksobllx" path="res://Assets/Art/logo.png" id="2_d2nv2"]
+[ext_resource type="Texture2D" uid="uid://bikvt55in0esa" path="res://Assets/Art/UI/Menu screen.png" id="1_cmhrf"]
+[ext_resource type="Texture2D" uid="uid://t072jksobllx" path="res://Assets/Art/UI/logo.png" id="2_d2nv2"]
 [ext_resource type="FontFile" uid="uid://dqqnsnb5xkqx7" path="res://Assets/Fonts/8bitoperator_jve.ttf" id="3_igs2m"]
-[ext_resource type="Texture2D" uid="uid://b6a7pab0tyxve" path="res://Assets/Art/Boats/button.png" id="4_3pujl"]
+[ext_resource type="Texture2D" uid="uid://b6a7pab0tyxve" path="res://Assets/Art/UI/button.png" id="4_3pujl"]
 [ext_resource type="AudioStream" uid="uid://dl8d6cchew8pf" path="res://Assets/Audio/title theme.wav" id="6_5326e"]
 [ext_resource type="Script" uid="uid://1e50qlieqvq2" path="res://Scripts/LoopPointMusic.gd" id="7_l2o7r"]
-[ext_resource type="Texture2D" uid="uid://d2qr2wp5kmb22" path="res://Assets/Art/worldmap.png" id="8_juwjy"]
+[ext_resource type="Texture2D" uid="uid://d2qr2wp5kmb22" path="res://Assets/Art/UI/WorldMap/worldmap.png" id="8_juwjy"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_loy4s"]
 texture = ExtResource("1_cmhrf")
@@ -196,6 +196,7 @@ offset_top = 352.13644
 offset_right = 202.19934
 offset_bottom = 400.13644
 pivot_offset = Vector2(24, 24)
+focus_mode = 0
 flat = true
 
 [node name="Jakarta" type="Button" parent="LevelSelect"]
@@ -205,6 +206,7 @@ offset_top = 284.32654
 offset_right = 787.70386
 offset_bottom = 332.32654
 pivot_offset = Vector2(24, 24)
+focus_mode = 0
 flat = true
 
 [node name="KaapDeGoedeHoop" type="Button" parent="LevelSelect"]
@@ -214,6 +216,7 @@ offset_top = 356.19745
 offset_right = 563.13257
 offset_bottom = 404.19745
 pivot_offset = Vector2(24, 24)
+focus_mode = 0
 flat = true
 
 [node name="Portugal" type="Button" parent="LevelSelect"]
@@ -223,6 +226,7 @@ offset_top = 180.33208
 offset_right = 490.01553
 offset_bottom = 221.68365
 pivot_offset = Vector2(24, 24)
+focus_mode = 0
 flat = true
 
 [node name="Engeland" type="Button" parent="LevelSelect"]
@@ -232,6 +236,7 @@ offset_top = 139.66058
 offset_right = 514.5226
 offset_bottom = 180.33208
 pivot_offset = Vector2(24, 24)
+focus_mode = 0
 flat = true
 
 [node name="Info" type="RichTextLabel" parent="LevelSelect"]

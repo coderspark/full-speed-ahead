@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6a7pab0tyxve"
-path="res://.godot/imported/button.png-b19faf25dbff0e57aec8d67bf5c11db6.ctex"
+uid="uid://brs7yi5fqnh35"
+path="res://.godot/imported/worldmap1.png-c87cf5e3b5888f8f3f85a1c26bc25a1c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/Boats/button.png"
-dest_files=["res://.godot/imported/button.png-b19faf25dbff0e57aec8d67bf5c11db6.ctex"]
+source_file="res://Assets/Art/UI/WorldMap/worldmap1.png"
+dest_files=["res://.godot/imported/worldmap1.png-c87cf5e3b5888f8f3f85a1c26bc25a1c.ctex"]
 
 [params]
 

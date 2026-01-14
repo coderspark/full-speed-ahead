@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2xdqvfmfqoh"
-path="res://.godot/imported/reservesicon.png-ae1f48044054cc73571213f070a6a423.ctex"
+uid="uid://b6a7pab0tyxve"
+path="res://.godot/imported/button.png-7bf39ec41f5470cd3f2a19a483cb226a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/reservesicon.png"
-dest_files=["res://.godot/imported/reservesicon.png-ae1f48044054cc73571213f070a6a423.ctex"]
+source_file="res://Assets/Art/UI/button.png"
+dest_files=["res://.godot/imported/button.png-7bf39ec41f5470cd3f2a19a483cb226a.ctex"]
 
 [params]
 

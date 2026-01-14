@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://g0gxilaqf6lr"
-path="res://.godot/imported/grapes.png-080b09b9a5422c9302099211efc0913e.ctex"
+uid="uid://cu7hqhk655a7l"
+path="res://.godot/imported/reinforced_motorboat.png-ffe243e28a70270275b2036c92a31a07.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/grapes.png"
-dest_files=["res://.godot/imported/grapes.png-080b09b9a5422c9302099211efc0913e.ctex"]
+source_file="res://Assets/Art/Boats/reinforced_motorboat.png"
+dest_files=["res://.godot/imported/reinforced_motorboat.png-ffe243e28a70270275b2036c92a31a07.ctex"]
 
 [params]
 

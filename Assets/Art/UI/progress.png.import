@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7pdsokg3gp1f"
-path="res://.godot/imported/worldmap2.png-148547c404111acd70e51f6be32c75ae.ctex"
+uid="uid://ykh1qxd24nqw"
+path="res://.godot/imported/progress.png-8e182c0298f6ea65edd580e13b307516.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/worldmap2.png"
-dest_files=["res://.godot/imported/worldmap2.png-148547c404111acd70e51f6be32c75ae.ctex"]
+source_file="res://Assets/Art/UI/progress.png"
+dest_files=["res://.godot/imported/progress.png-8e182c0298f6ea65edd580e13b307516.ctex"]
 
 [params]
 

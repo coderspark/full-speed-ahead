@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bw2gvkaylchw8"
-path="res://.godot/imported/coinicon.png-7726b83aa6018bee4c925c906d913dbe.ctex"
+uid="uid://c101sa4y877b4"
+path="res://.godot/imported/improved_sailboat.png-83edd002b323594afc356c2eefb56cd8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/coinicon.png"
-dest_files=["res://.godot/imported/coinicon.png-7726b83aa6018bee4c925c906d913dbe.ctex"]
+source_file="res://Assets/Art/Boats/improved_sailboat.png"
+dest_files=["res://.godot/imported/improved_sailboat.png-83edd002b323594afc356c2eefb56cd8.ctex"]
 
 [params]
 

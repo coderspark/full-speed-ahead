@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpk154ckaycpr"
-path="res://.godot/imported/motorboat_1.png-5b7ef0a2d2a22e2fc5ca0bbd02aad2f0.ctex"
+uid="uid://qaf1emurfpbb"
+path="res://.godot/imported/salmon.png-5de778c108922920e41bccb81d3cd0a5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/Boats/motorboat_1.png"
-dest_files=["res://.godot/imported/motorboat_1.png-5b7ef0a2d2a22e2fc5ca0bbd02aad2f0.ctex"]
+source_file="res://Assets/Art/Temp/salmon.png"
+dest_files=["res://.godot/imported/salmon.png-5de778c108922920e41bccb81d3cd0a5.ctex"]
 
 [params]
 

@@ -1,5 +1,7 @@
 extends Node
 
+const STARTER_BOAT = "basic_raft"
+
 const BOAT_STATS = {
 	"basic_raft":{
 		"speed":2,

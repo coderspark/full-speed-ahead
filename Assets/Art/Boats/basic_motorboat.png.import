@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ykh1qxd24nqw"
-path="res://.godot/imported/progress.png-5c119dd9d3150032d156762df4b89da6.ctex"
+uid="uid://dpk154ckaycpr"
+path="res://.godot/imported/basic_motorboat.png-6f085fa110ece5c2729f475862b331e8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/progress.png"
-dest_files=["res://.godot/imported/progress.png-5c119dd9d3150032d156762df4b89da6.ctex"]
+source_file="res://Assets/Art/Boats/basic_motorboat.png"
+dest_files=["res://.godot/imported/basic_motorboat.png-6f085fa110ece5c2729f475862b331e8.ctex"]
 
 [params]
 

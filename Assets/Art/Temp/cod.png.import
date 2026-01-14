@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qaf1emurfpbb"
-path="res://.godot/imported/salmon.png-3a623ce0328c2045a072edafc0426a0e.ctex"
+uid="uid://bdysiolrfddb4"
+path="res://.godot/imported/cod.png-c002f343e0cb415e5a04d5357a4a91c7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/salmon.png"
-dest_files=["res://.godot/imported/salmon.png-3a623ce0328c2045a072edafc0426a0e.ctex"]
+source_file="res://Assets/Art/Temp/cod.png"
+dest_files=["res://.godot/imported/cod.png-c002f343e0cb415e5a04d5357a4a91c7.ctex"]
 
 [params]
 

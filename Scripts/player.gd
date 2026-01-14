@@ -5,15 +5,20 @@ var delta_rot = 0
 var IsOwner = true
 var boatvel = 0
 var isbounce = false
+
 var health = 5
+var max_health = 5
+
 var paused = false
-var starve = 0
-var foodtime = 60
 var coins = 0
+
+var MyBoat = "basic_raft"
 
 var GameStarted = false
 func _ready() -> void:
 	UpdateCoinCount()
+	UpdateBoat(Global.STARTER_BOAT)
+	
 
 func getoverlappingtiles() -> Array:
 	var res = []
@@ -78,6 +83,14 @@ func _on_shop_detection_body_entered(body: Node2D) -> void:
 func UpdateCoinCount():
 	$"../../Camera/UI/Coins".text = str(coins)
 
+func UpdateBoat(name : String):
+	MyBoat = name
+	max_health = Global.BOAT_STATS[name]["hp"]
+	health = max_health
+	$"../../Camera/UI/HP".MAX_HP = max_health
+	$"../../Camera/UI/HP".HP = health
+	$"../../Camera/UI/HP".Update()
+	$Sprite.texture = load("res://Assets/Art/Boats/" + MyBoat + ".png")
 
 func _on_ui_start_game() -> void:
 	GameStarted = true

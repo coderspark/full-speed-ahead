@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ct8jpo3l1w4n1"
-path="res://.godot/imported/raft.png-24b8da05ae5ad185fcda0c62fcc06d0c.ctex"
+uid="uid://bw2gvkaylchw8"
+path="res://.godot/imported/coinicon.png-cab7064ea84426c45a68d30bbac95677.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/Boats/raft.png"
-dest_files=["res://.godot/imported/raft.png-24b8da05ae5ad185fcda0c62fcc06d0c.ctex"]
+source_file="res://Assets/Art/UI/coinicon.png"
+dest_files=["res://.godot/imported/coinicon.png-cab7064ea84426c45a68d30bbac95677.ctex"]
 
 [params]
 

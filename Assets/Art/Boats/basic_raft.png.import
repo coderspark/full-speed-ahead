@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2qr2wp5kmb22"
-path="res://.godot/imported/worldmap.png-e4006333601bbe67e490ca16d66f358d.ctex"
+uid="uid://ct8jpo3l1w4n1"
+path="res://.godot/imported/basic_raft.png-56c16790d7b75de077d1ec3857e3df11.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/worldmap.png"
-dest_files=["res://.godot/imported/worldmap.png-e4006333601bbe67e490ca16d66f358d.ctex"]
+source_file="res://Assets/Art/Boats/basic_raft.png"
+dest_files=["res://.godot/imported/basic_raft.png-56c16790d7b75de077d1ec3857e3df11.ctex"]
 
 [params]
 
