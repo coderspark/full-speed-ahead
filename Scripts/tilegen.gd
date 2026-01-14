@@ -33,7 +33,7 @@ func paste_template(id: int, pos: int) -> void:
 func remove_coin(pos: Vector2i) -> void:
 	set_cell(pos, 0, Vector2i(0, 0), 0)
 func _ready() -> void:
-	var number_of_templates = 35
+	var number_of_templates = 41
 	var probabilities = []
 	for i in range(number_of_templates):
 		probabilities.append((Vector2(TOP_LEFT.x+(6+10*i), TOP_LEFT.y-1)).x)
