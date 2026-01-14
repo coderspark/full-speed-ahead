@@ -37,7 +37,6 @@ func _ready() -> void:
 	var difficulties = []
 	for i in range(number_of_templates):
 		difficulties.append((get_cell_atlas_coords(Vector2i(TEMPLATE_START.x+(8*i), TEMPLATE_START.y-1))).x)
-	print(difficulties)
 	var map = []
 	for n in range(50):
 		var weights = [0.0, 0.0, 0.0, 0.0, 0.0]
@@ -47,7 +46,6 @@ func _ready() -> void:
 			weights[i] = pow(E, 0 - (pow(float(i)-a,2.0)/0.72)) # strange math 
 		var rng = RandomNumberGenerator.new()
 		var difficulty = rng.rand_weighted(PackedFloat32Array(weights))
-		print("difficulty: ", difficulty)
 		var tplate = 0
 		while true:
 			tplate = randi_range(0, number_of_templates-1)
