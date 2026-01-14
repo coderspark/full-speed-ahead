@@ -1,7 +1,11 @@
 extends CharacterBody2D
 
 var delta_rot = 0
-@export var max_turn_speed = 5
+
+var max_turn_speed = 5
+var turn_velocity = 0.1
+var max_speed = 50
+
 var IsOwner = true
 var boatvel = 0
 var isbounce = false
@@ -12,7 +16,7 @@ var max_health = 5
 var paused = false
 var coins = 0
 
-var MyBoat = "../Temp/the bergentruck"
+var MyBoat = ""
 
 var GameStarted = false
 func _ready() -> void:
@@ -50,8 +54,7 @@ func _physics_process(delta: float) -> void:
 		boatvel = -30
 	rotation += delta_rot * 0.01
 	velocity = transform.x * boatvel
-	
-	if boatvel < 50:
+	if boatvel < max_speed:
 		boatvel += 1
 	var overlap = getoverlappingtiles()
 	var pushingdirs = []
@@ -90,6 +93,9 @@ func UpdateBoat(name : String):
 	MyBoat = name
 	max_health = Global.BOAT_STATS[name]["hp"]
 	health = max_health
+	max_speed = Global.BOAT_STATS[name]["speed"] * 10
+	max_turn_speed = Global.BOAT_STATS[name]["turn_speed"]
+	turn_velocity = Global.BOAT_STATS[name]["turn_speed"] / 50
 	$"../../Camera/UI/HP".MAX_HP = max_health
 	$"../../Camera/UI/HP".HP = health
 	$"../../Camera/UI/HP".Update()

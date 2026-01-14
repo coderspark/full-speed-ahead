@@ -1,6 +1,6 @@
 extends Node
 
-const STARTER_BOAT = "basic_raft"
+const STARTER_BOAT = "reinforced_motorboat"
 
 const BOAT_STATS = {
 	"basic_raft":{
@@ -34,10 +34,15 @@ const BOAT_STATS = {
 		"hp":10,
 		"coin_multiplier":3.0
 	}, "reinforced_motorboat":{
-		"speed":9,
+		"speed":300,
 		"turn_speed":3,
 		"hp":15,
 		"coin_multiplier":3.5
+	}, "aircraft_carrier":{
+		"speed":4,
+		"turn_speed":3,
+		"hp":30,
+		"coin_multiplier":5
 	}
 }
 
