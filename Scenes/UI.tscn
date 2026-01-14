@@ -337,7 +337,7 @@ theme_override_font_sizes/font_size = 32
 text = "SHOP"
 horizontal_alignment = 1
 
-[node name="Item" type="Panel" parent="Shop"]
+[node name="Boat" type="Panel" parent="Shop"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 0
 offset_left = 16.0
@@ -346,7 +346,7 @@ offset_right = 48.0
 offset_bottom = 74.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_mg6lk")
 
-[node name="TextureRect" type="TextureRect" parent="Shop/Item"]
+[node name="TextureRect" type="TextureRect" parent="Shop/Boat"]
 layout_mode = 0
 offset_right = 32.0
 offset_bottom = 23.357857
@@ -354,7 +354,7 @@ texture = ExtResource("5_13dyv")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="Shop/Item"]
+[node name="Label" type="Label" parent="Shop/Boat"]
 layout_mode = 0
 offset_top = 16.0
 offset_right = 107.89868
@@ -368,7 +368,7 @@ vertical_alignment = 1
 clip_text = true
 script = ExtResource("5_wunin")
 
-[node name="Item2" type="Panel" parent="Shop"]
+[node name="Boat2" type="Panel" parent="Shop"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 0
 offset_left = 64.0
@@ -377,7 +377,7 @@ offset_right = 96.0
 offset_bottom = 74.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_mg6lk")
 
-[node name="TextureRect" type="TextureRect" parent="Shop/Item2"]
+[node name="TextureRect" type="TextureRect" parent="Shop/Boat2"]
 layout_mode = 0
 offset_right = 32.0
 offset_bottom = 23.357857
@@ -385,7 +385,7 @@ texture = ExtResource("5_13dyv")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="Shop/Item2"]
+[node name="Label" type="Label" parent="Shop/Boat2"]
 layout_mode = 0
 offset_top = 16.0
 offset_right = 107.89868
@@ -399,7 +399,7 @@ vertical_alignment = 1
 clip_text = true
 script = ExtResource("5_wunin")
 
-[node name="Item3" type="Panel" parent="Shop"]
+[node name="Boat3" type="Panel" parent="Shop"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 0
 offset_left = 112.0
@@ -408,7 +408,7 @@ offset_right = 144.0
 offset_bottom = 74.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_mg6lk")
 
-[node name="TextureRect" type="TextureRect" parent="Shop/Item3"]
+[node name="TextureRect" type="TextureRect" parent="Shop/Boat3"]
 layout_mode = 0
 offset_right = 32.0
 offset_bottom = 23.357857
@@ -416,7 +416,7 @@ texture = ExtResource("5_13dyv")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="Shop/Item3"]
+[node name="Label" type="Label" parent="Shop/Boat3"]
 layout_mode = 0
 offset_top = 16.0
 offset_right = 107.89868

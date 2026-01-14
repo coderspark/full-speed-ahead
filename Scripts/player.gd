@@ -100,6 +100,7 @@ func UpdateBoat(name : String):
 	$"../../Camera/UI/HP".HP = health
 	$"../../Camera/UI/HP".Update()
 	$Sprite.texture = load("res://Assets/Art/Boats/" + MyBoat + ".png")
+	$Sprite.scale = Vector2(Global.BOAT_SCALE_MODIFIERS.get(name,1.0),Global.BOAT_SCALE_MODIFIERS.get(name,1.0))
 
 func _on_ui_start_game() -> void:
 	GameStarted = true

@@ -2,13 +2,18 @@ extends Node
 
 const STARTER_BOAT = "reinforced_motorboat"
 
+const BOAT_SCALE_MODIFIERS : Dictionary = {
+	"basic_raft": 0.5,
+	"reinforced_raft": 0.5
+}
+
 const BOAT_STATS = {
 	"basic_raft":{
 		"speed":2,
 		"turn_speed":5,
 		"hp":3,
 		"coin_multiplier":1.0
-	},"steel_raft":{
+	},"reinforced_raft":{
 		"speed":2,
 		"turn_speed":3,
 		"hp":5,
@@ -34,7 +39,7 @@ const BOAT_STATS = {
 		"hp":10,
 		"coin_multiplier":3.0
 	}, "reinforced_motorboat":{
-		"speed":300,
+		"speed":9,
 		"turn_speed":3,
 		"hp":15,
 		"coin_multiplier":3.5
