@@ -62,6 +62,9 @@ func _physics_process(delta: float) -> void:
 		if t[0] == Vector2i(0, 3) && !isbounce && !t[1] in pushingdirs:
 			velocity += Vector2(sin(t[1]), cos(t[1])) * 10
 			pushingdirs.append(t[1])
+		if t[0] == Vector2i(0, 13) && !isbounce && !t[1] in pushingdirs:
+			velocity += Vector2(sin(t[1]), cos(t[1])) * 25
+			pushingdirs.append(t[1])
 		if t[0] == Vector2i(0, 14):
 			coins += 1
 			$"../../TileMap".remove_coin(t[2])
