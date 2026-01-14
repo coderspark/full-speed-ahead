@@ -19,6 +19,12 @@ func _on_play_pressed() -> void:
 
 
 func StartGame(lvl:String):
+	$LevelSelect/Paaseiland.disabled = true
+	$LevelSelect/Jakarta.disabled = true
+	$LevelSelect/KaapDeGoedeHoop.disabled = true
+	$LevelSelect/Portugal.disabled = true
+	$LevelSelect/Engeland.disabled = true
+	
 	$Fade/Animations.play("fade_in")
 	await $Fade/Animations.animation_finished
 	$LevelSelect.queue_free()
@@ -31,6 +37,7 @@ func StartGame(lvl:String):
 	await $Fade/Animations.animation_finished
 
 func RestartGame():
+	
 	$Fade/Animations.play("fade_in")
 	await $Fade/Animations.animation_finished
 	print(get_children())

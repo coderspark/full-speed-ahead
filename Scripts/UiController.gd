@@ -19,6 +19,7 @@ func gameover():
 
 func _on_restart_pressed() -> void:
 	get_tree().paused = false
+	$GameOver/restart.disabled = true
 	RestartGame.emit()
 
 func _on_button_pressed() -> void:
