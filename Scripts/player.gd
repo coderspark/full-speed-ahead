@@ -12,6 +12,7 @@ var isbounce = false
 
 var health = 5
 var max_health = 5
+var coin_mult = 1.0
 
 var paused = false
 var coins = 0
@@ -66,7 +67,7 @@ func _physics_process(delta: float) -> void:
 			velocity += Vector2(sin(t[1]), cos(t[1])) * 25
 			pushingdirs.append(t[1])
 		if t[0] == Vector2i(0, 14):
-			coins += 1
+			coins += 1 * coin_mult
 			$"../../TileMap".remove_coin(t[2])
 			UpdateCoinCount()
 	pushingdirs = []
@@ -86,8 +87,9 @@ func _on_collision_detector_body_exited(body: Node2D) -> void:
 
 
 func _on_shop_detection_body_entered(body: Node2D) -> void:
-	get_tree().paused = true
+
 	$"../../Camera/UI/Shop".show()
+	get_tree().paused = true
 	
 func UpdateCoinCount():
 	$"../../Camera/UI/Coins".text = str(coins)
@@ -99,6 +101,7 @@ func UpdateBoat(name : String):
 	max_speed = Global.BOAT_STATS[name]["speed"] * 10
 	max_turn_speed = Global.BOAT_STATS[name]["turn_speed"]
 	turn_velocity = Global.BOAT_STATS[name]["turn_speed"] / 50
+	coin_mult = Global.BOAT_STATS[name]["coin_multiplier"]
 	$"../../Camera/UI/HP".MAX_HP = max_health
 	$"../../Camera/UI/HP".HP = health
 	$"../../Camera/UI/HP".Update()

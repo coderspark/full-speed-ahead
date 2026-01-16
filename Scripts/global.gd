@@ -1,49 +1,57 @@
 extends Node
 
-const STARTER_BOAT = "reinforced_motorboat"
+const STARTER_BOAT = "Reinforced_motorboat"
 
 const BOAT_SCALE_MODIFIERS : Dictionary = {
-	"basic_raft": 0.5,
-	"reinforced_raft": 0.5
+	"Basic_raft": 0.5,
+	"Reinforced_raft": 0.5
 }
 
 const BOAT_STATS = {
-	"basic_raft":{
+	"Basic_raft":{
+		"cost":0,
 		"speed":3,
 		"turn_speed":5,
 		"hp":1,
 		"coin_multiplier":1.0
-	},"reinforced_raft":{
+	},"Reinforced_raft":{
+		"cost":5,
 		"speed":3,
 		"turn_speed":3,
-		"hp":5,
+		"hp":3,
 		"coin_multiplier":1.1 
-	},"canoe":{
+	},"Canoe":{
+		"cost":10,
 		"speed":4,
 		"turn_speed":5,
 		"hp":5,
 		"coin_multiplier":1.5
-	}, "basic_sailboat":{
+	}, "Basic_sailboat":{
+		"cost":25,
 		"speed":6,
 		"turn_speed":3,
 		"hp":7,
 		"coin_multiplier":2.0
-	}, "improved_sailboat":{
+	}, "Improved_sailboat":{
+		"cost":40,
 		"speed":7,
 		"turn_speed":4,
 		"hp":8,
 		"coin_multiplier":2.5
-	}, "basic_motorboat":{
+	}, "Basic_motorboat":{
+		"cost":90,
 		"speed":9,
 		"turn_speed":4,
 		"hp":10,
 		"coin_multiplier":3.0
-	}, "reinforced_motorboat":{
+	}, "Reinforced_motorboat":{
+		"cost":130,
 		"speed":9,
 		"turn_speed":3,
 		"hp":15,
 		"coin_multiplier":3.5
-	}, "aircraft_carrier":{
+	}, "Aircraft_carrier":{
+		"cost":300,
 		"speed":4,
 		"turn_speed":3,
 		"hp":30,
@@ -51,4 +59,19 @@ const BOAT_STATS = {
 	}
 }
 
+var FoodItems = {
+	"Beer":[0.2],
+	"Gin":[0.3],
+	"Wine":[0.5],
+	"Gray_peas":[1],
+	"Green_peas":[1],
+	"Meat":[1],
+	"Stockfish":[1],
+	"Pickles":[1],
+	"White_beans":[1],
+	"Rice":[1],
+	"Plums":[1],
+	"Sauerkraut":[1],
+	"Bacon":[1]
+}
 var LevelName = ""

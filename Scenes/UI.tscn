@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://klae0u71y1go" path="res://Scripts/UiController.gd" id="1_wi7yl"]
 [ext_resource type="FontFile" uid="uid://dqqnsnb5xkqx7" path="res://Assets/Fonts/8bitoperator_jve.ttf" id="2_5q4fb"]
 [ext_resource type="Texture2D" uid="uid://b6a7pab0tyxve" path="res://Assets/Art/UI/button.png" id="3_mqm5i"]
-[ext_resource type="Texture2D" uid="uid://ct8jpo3l1w4n1" path="res://Assets/Art/Boats/basic_raft.png" id="5_13dyv"]
+[ext_resource type="Texture2D" uid="uid://ct8jpo3l1w4n1" path="res://Assets/Art/Boats/Basic_raft.png" id="5_13dyv"]
 [ext_resource type="Theme" uid="uid://bj15hri4ia073" path="res://Assets/Other/UI.tres" id="5_j04uc"]
 [ext_resource type="Script" uid="uid://b5ae5sgnlj8u3" path="res://Scripts/AutoSizeText.gd" id="5_wunin"]
 [ext_resource type="Texture2D" uid="uid://drj77blyscrtv" path="res://Assets/Art/UI/under.png" id="12_612k1"]
@@ -312,7 +312,7 @@ theme_override_font_sizes/font_size = 48
 text = "GAME OVER"
 
 [node name="Shop" type="Panel" parent="."]
-process_mode = 2
+process_mode = 3
 z_index = 2
 layout_mode = 1
 anchors_preset = 15
@@ -337,7 +337,7 @@ theme_override_font_sizes/font_size = 32
 text = "SHOP"
 horizontal_alignment = 1
 
-[node name="Boat" type="Panel" parent="Shop"]
+[node name="Boat1" type="Panel" parent="Shop"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 0
 offset_left = 16.0
@@ -346,7 +346,7 @@ offset_right = 48.0
 offset_bottom = 74.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_mg6lk")
 
-[node name="TextureRect" type="TextureRect" parent="Shop/Boat"]
+[node name="Texture" type="TextureRect" parent="Shop/Boat1"]
 layout_mode = 0
 offset_right = 32.0
 offset_bottom = 23.357857
@@ -354,7 +354,7 @@ texture = ExtResource("5_13dyv")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="Shop/Boat"]
+[node name="Label" type="Label" parent="Shop/Boat1"]
 layout_mode = 0
 offset_top = 16.0
 offset_right = 107.89868
@@ -377,7 +377,7 @@ offset_right = 96.0
 offset_bottom = 74.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_mg6lk")
 
-[node name="TextureRect" type="TextureRect" parent="Shop/Boat2"]
+[node name="Texture" type="TextureRect" parent="Shop/Boat2"]
 layout_mode = 0
 offset_right = 32.0
 offset_bottom = 23.357857
@@ -408,7 +408,7 @@ offset_right = 144.0
 offset_bottom = 74.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_mg6lk")
 
-[node name="TextureRect" type="TextureRect" parent="Shop/Boat3"]
+[node name="Texture" type="TextureRect" parent="Shop/Boat3"]
 layout_mode = 0
 offset_right = 32.0
 offset_bottom = 23.357857
@@ -417,6 +417,192 @@ expand_mode = 2
 stretch_mode = 5
 
 [node name="Label" type="Label" parent="Shop/Boat3"]
+layout_mode = 0
+offset_top = 16.0
+offset_right = 107.89868
+offset_bottom = 69.94934
+scale = Vector2(0.2965745, 0.2965745)
+theme = ExtResource("5_j04uc")
+theme_override_font_sizes/font_size = 16
+text = "Basic raft"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+script = ExtResource("5_wunin")
+
+[node name="Food1" type="Panel" parent="Shop"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_left = 176.0
+offset_top = 42.0
+offset_right = 208.0
+offset_bottom = 74.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_mg6lk")
+
+[node name="Texture" type="TextureRect" parent="Shop/Food1"]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 23.357857
+texture = ExtResource("5_13dyv")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Shop/Food1"]
+layout_mode = 0
+offset_top = 16.0
+offset_right = 107.89868
+offset_bottom = 69.94934
+scale = Vector2(0.2965745, 0.2965745)
+theme = ExtResource("5_j04uc")
+theme_override_font_sizes/font_size = 16
+text = "Basic raft"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+script = ExtResource("5_wunin")
+
+[node name="Food2" type="Panel" parent="Shop"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_left = 224.0
+offset_top = 42.0
+offset_right = 256.0
+offset_bottom = 74.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_mg6lk")
+
+[node name="Texture" type="TextureRect" parent="Shop/Food2"]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 23.357857
+texture = ExtResource("5_13dyv")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Shop/Food2"]
+layout_mode = 0
+offset_top = 16.0
+offset_right = 107.89868
+offset_bottom = 69.94934
+scale = Vector2(0.2965745, 0.2965745)
+theme = ExtResource("5_j04uc")
+theme_override_font_sizes/font_size = 16
+text = "Basic raft"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+script = ExtResource("5_wunin")
+
+[node name="Food3" type="Panel" parent="Shop"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_left = 272.0
+offset_top = 42.0
+offset_right = 304.0
+offset_bottom = 74.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_mg6lk")
+
+[node name="Texture" type="TextureRect" parent="Shop/Food3"]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 23.357857
+texture = ExtResource("5_13dyv")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Shop/Food3"]
+layout_mode = 0
+offset_top = 16.0
+offset_right = 107.89868
+offset_bottom = 69.94934
+scale = Vector2(0.2965745, 0.2965745)
+theme = ExtResource("5_j04uc")
+theme_override_font_sizes/font_size = 16
+text = "Basic raft"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+script = ExtResource("5_wunin")
+
+[node name="Food4" type="Panel" parent="Shop"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_left = 176.0
+offset_top = 90.0
+offset_right = 208.0
+offset_bottom = 122.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_mg6lk")
+
+[node name="Texture" type="TextureRect" parent="Shop/Food4"]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 23.357857
+texture = ExtResource("5_13dyv")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Shop/Food4"]
+layout_mode = 0
+offset_top = 16.0
+offset_right = 107.89868
+offset_bottom = 69.94934
+scale = Vector2(0.2965745, 0.2965745)
+theme = ExtResource("5_j04uc")
+theme_override_font_sizes/font_size = 16
+text = "Basic raft"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+script = ExtResource("5_wunin")
+
+[node name="Food5" type="Panel" parent="Shop"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_left = 224.0
+offset_top = 90.0
+offset_right = 256.0
+offset_bottom = 122.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_mg6lk")
+
+[node name="Texture" type="TextureRect" parent="Shop/Food5"]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 23.357857
+texture = ExtResource("5_13dyv")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Shop/Food5"]
+layout_mode = 0
+offset_top = 16.0
+offset_right = 107.89868
+offset_bottom = 69.94934
+scale = Vector2(0.2965745, 0.2965745)
+theme = ExtResource("5_j04uc")
+theme_override_font_sizes/font_size = 16
+text = "Basic raft"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+script = ExtResource("5_wunin")
+
+[node name="Food6" type="Panel" parent="Shop"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_left = 272.0
+offset_top = 90.0
+offset_right = 304.0
+offset_bottom = 122.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_mg6lk")
+
+[node name="Texture" type="TextureRect" parent="Shop/Food6"]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 23.357857
+texture = ExtResource("5_13dyv")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Shop/Food6"]
 layout_mode = 0
 offset_top = 16.0
 offset_right = 107.89868

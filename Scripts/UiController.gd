@@ -6,8 +6,12 @@ var shop_current_id = 0
 
 var paused = false
 
+func _ready() -> void:
+	RandomizeShopContents()
+
 func CallStartGame():
 	StartGame.emit()
+
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("pause"):
 		paused = !paused
@@ -39,4 +43,16 @@ func _on_quit_pressed() -> void:
 	get_tree().quit()
 
 func RandomizeShopContents():
-	pass
+	var Boats = []
+	for i in range(3):
+		var n = Global.BOAT_STATS.keys().pick_random()
+		while n in Boats:
+			n = Global.BOAT_STATS.keys().pick_random()
+		Boats.append(n)
+		get_node("Shop/Boat" + str(i+1) + "/Label").text = n
+		get_node("Shop/Boat" + str(i+1) + "/Texture").texture = load("res://Assets/Art/Boats/" + n)
+	var Food = []
+	for i in range(6):
+		var n = Global.FoodItems.keys().pick_random()
+		Boats.append(n)
+	

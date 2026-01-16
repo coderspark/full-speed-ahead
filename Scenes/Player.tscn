@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cxv7wb44ynnkf"]
 
 [ext_resource type="Script" uid="uid://cqmx4lw13bmqq" path="res://Scripts/player.gd" id="1_kyqiw"]
-[ext_resource type="Texture2D" uid="uid://c101sa4y877b4" path="res://Assets/Art/Boats/improved_sailboat.png" id="2_kyqiw"]
+[ext_resource type="Texture2D" uid="uid://c101sa4y877b4" path="res://Assets/Art/Boats/Improved_sailboat.png" id="2_kyqiw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gntrk"]
 size = Vector2(8.563637, 4)
