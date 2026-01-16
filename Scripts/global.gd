@@ -40,7 +40,7 @@ const BOAT_STATS = {
 		"coin_multiplier":3.0
 	}, "reinforced_motorboat":{
 		"speed":9,
-		"turn_speed":3,
+		"turn_speed":5,
 		"hp":15,
 		"coin_multiplier":3.5
 	}, "aircraft_carrier":{
