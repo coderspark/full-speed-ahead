@@ -47,7 +47,7 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.get_axis("move_left", "move_right") == 0:
 		delta_rot *= 0.9
-	delta_rot += Input.get_axis("move_left","move_right") * 0.1
+	delta_rot += Input.get_axis("move_left","move_right") * turn_velocity
 	if abs(delta_rot) >= max_turn_speed:
 		delta_rot = max_turn_speed * delta_rot/abs(delta_rot)
 	if isbounce:
@@ -98,7 +98,7 @@ func UpdateBoat(name : String):
 	health = max_health
 	max_speed = Global.BOAT_STATS[name]["speed"] * 10
 	max_turn_speed = Global.BOAT_STATS[name]["turn_speed"]
-	turn_velocity = Global.BOAT_STATS[name]["turn_speed"] / 50
+	turn_velocity = Global.BOAT_STATS[name]["turn_speed"] / 30.0
 	$"../../Camera/UI/HP".MAX_HP = max_health
 	$"../../Camera/UI/HP".HP = health
 	$"../../Camera/UI/HP".Update()
