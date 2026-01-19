@@ -4,7 +4,8 @@ const STARTER_BOAT = "Reinforced_motorboat"
 
 const BOAT_SCALE_MODIFIERS : Dictionary = {
 	"Basic_raft": 0.5,
-	"Reinforced_raft": 0.5
+	"Reinforced_raft": 0.5,
+	"Aircraft_carrier": 0.5
 }
 
 const BOAT_STATS = {

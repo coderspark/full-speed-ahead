@@ -15,9 +15,11 @@ var max_health = 5
 var coin_mult = 1.0
 
 var paused = false
-var coins = 0
+var coins = 9999999999999
 
 var MyBoat = ""
+var Inventory = []
+
 
 var GameStarted = false
 func _ready() -> void:
@@ -57,6 +59,7 @@ func _physics_process(delta: float) -> void:
 	velocity = transform.x * boatvel
 	if boatvel < max_speed:
 		boatvel += 1
+	print(str(boatvel) + " - " + str(max_speed))
 	var overlap = getoverlappingtiles()
 	var pushingdirs = []
 	for t in overlap:
@@ -110,3 +113,6 @@ func UpdateBoat(name : String):
 
 func _on_ui_start_game() -> void:
 	GameStarted = true
+
+func AddFoodItemToInventory(nam:String):
+	Inventory.append(nam)

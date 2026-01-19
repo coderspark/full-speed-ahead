@@ -489,7 +489,6 @@ offset_top = 97.0
 offset_right = 708.0
 offset_bottom = 192.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_vqx31")
-disabled = true
 
 [node name="Texture" type="TextureRect" parent="Canvas/Shop/Food1"]
 layout_mode = 0
@@ -503,17 +502,26 @@ stretch_mode = 5
 
 [node name="Label" type="Label" parent="Canvas/Shop/Food1"]
 layout_mode = 0
-offset_left = 96.00001
-offset_top = 11.000002
-offset_right = 419.69604
+offset_left = 96.0
+offset_top = 11.0
+offset_right = 460.15808
 offset_bottom = 253.77203
 scale = Vector2(0.2965745, 0.2965745)
 theme = ExtResource("5_j04uc")
-theme_override_font_sizes/font_size = 64
-text = "Groen Erwten"
+theme_override_font_sizes/font_size = 80
+text = "Green peas"
 clip_text = true
 script = ExtResource("5_wunin")
-max_font_size = 64
+max_font_size = 80
+
+[node name="Coin" type="TextureRect" parent="Canvas/Shop/Food1"]
+layout_mode = 0
+offset_left = 95.99997
+offset_top = 35.0
+offset_right = 119.99997
+offset_bottom = 59.0
+texture = ExtResource("15_5q4fb")
+stretch_mode = 5
 
 [node name="Food2" type="Button" parent="Canvas/Shop"]
 custom_minimum_size = Vector2(32, 32)
@@ -523,7 +531,6 @@ offset_top = 96.0
 offset_right = 924.0
 offset_bottom = 191.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_vqx31")
-disabled = true
 
 [node name="Texture" type="TextureRect" parent="Canvas/Shop/Food2"]
 layout_mode = 0
@@ -543,11 +550,20 @@ offset_right = 419.69604
 offset_bottom = 253.77203
 scale = Vector2(0.2965745, 0.2965745)
 theme = ExtResource("5_j04uc")
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 80
 text = "Groen Erwten"
 clip_text = true
 script = ExtResource("5_wunin")
-max_font_size = 64
+max_font_size = 80
+
+[node name="Coin" type="TextureRect" parent="Canvas/Shop/Food2"]
+layout_mode = 0
+offset_left = 95.99997
+offset_top = 35.0
+offset_right = 119.99997
+offset_bottom = 59.0
+texture = ExtResource("15_5q4fb")
+stretch_mode = 5
 
 [node name="Food3" type="Button" parent="Canvas/Shop"]
 custom_minimum_size = Vector2(32, 32)
@@ -557,7 +573,6 @@ offset_top = 241.0
 offset_right = 708.0
 offset_bottom = 336.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_vqx31")
-disabled = true
 
 [node name="Texture" type="TextureRect" parent="Canvas/Shop/Food3"]
 layout_mode = 0
@@ -577,11 +592,20 @@ offset_right = 419.69604
 offset_bottom = 253.77203
 scale = Vector2(0.2965745, 0.2965745)
 theme = ExtResource("5_j04uc")
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 80
 text = "Groen Erwten"
 clip_text = true
 script = ExtResource("5_wunin")
-max_font_size = 64
+max_font_size = 80
+
+[node name="Coin" type="TextureRect" parent="Canvas/Shop/Food3"]
+layout_mode = 0
+offset_left = 95.99997
+offset_top = 35.0
+offset_right = 119.99997
+offset_bottom = 59.0
+texture = ExtResource("15_5q4fb")
+stretch_mode = 5
 
 [node name="Food4" type="Button" parent="Canvas/Shop"]
 custom_minimum_size = Vector2(32, 32)
@@ -591,7 +615,6 @@ offset_top = 240.0
 offset_right = 924.0
 offset_bottom = 335.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_vqx31")
-disabled = true
 
 [node name="Texture" type="TextureRect" parent="Canvas/Shop/Food4"]
 layout_mode = 0
@@ -611,11 +634,20 @@ offset_right = 419.69604
 offset_bottom = 253.77203
 scale = Vector2(0.2965745, 0.2965745)
 theme = ExtResource("5_j04uc")
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 80
 text = "Groen Erwten"
 clip_text = true
 script = ExtResource("5_wunin")
-max_font_size = 64
+max_font_size = 80
+
+[node name="Coin" type="TextureRect" parent="Canvas/Shop/Food4"]
+layout_mode = 0
+offset_left = 95.99997
+offset_top = 35.0
+offset_right = 119.99997
+offset_bottom = 59.0
+texture = ExtResource("15_5q4fb")
+stretch_mode = 5
 
 [node name="Food5" type="Button" parent="Canvas/Shop"]
 custom_minimum_size = Vector2(32, 32)
@@ -625,7 +657,6 @@ offset_top = 385.0
 offset_right = 708.0
 offset_bottom = 480.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_vqx31")
-disabled = true
 
 [node name="Texture" type="TextureRect" parent="Canvas/Shop/Food5"]
 layout_mode = 0
@@ -645,11 +676,20 @@ offset_right = 419.69604
 offset_bottom = 253.77203
 scale = Vector2(0.2965745, 0.2965745)
 theme = ExtResource("5_j04uc")
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 80
 text = "Groen Erwten"
 clip_text = true
 script = ExtResource("5_wunin")
-max_font_size = 64
+max_font_size = 80
+
+[node name="Coin" type="TextureRect" parent="Canvas/Shop/Food5"]
+layout_mode = 0
+offset_left = 95.99997
+offset_top = 35.0
+offset_right = 119.99997
+offset_bottom = 59.0
+texture = ExtResource("15_5q4fb")
+stretch_mode = 5
 
 [node name="Food6" type="Button" parent="Canvas/Shop"]
 custom_minimum_size = Vector2(32, 32)
@@ -659,7 +699,6 @@ offset_top = 384.0
 offset_right = 924.0
 offset_bottom = 479.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_vqx31")
-disabled = true
 
 [node name="Texture" type="TextureRect" parent="Canvas/Shop/Food6"]
 layout_mode = 0
@@ -679,11 +718,20 @@ offset_right = 419.69604
 offset_bottom = 253.77203
 scale = Vector2(0.2965745, 0.2965745)
 theme = ExtResource("5_j04uc")
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 80
 text = "Groen Erwten"
 clip_text = true
 script = ExtResource("5_wunin")
-max_font_size = 64
+max_font_size = 80
+
+[node name="Coin" type="TextureRect" parent="Canvas/Shop/Food6"]
+layout_mode = 0
+offset_left = 95.99997
+offset_top = 35.0
+offset_right = 119.99997
+offset_bottom = 59.0
+texture = ExtResource("15_5q4fb")
+stretch_mode = 5
 
 [node name="HP" type="TextureProgressBar" parent="Canvas"]
 anchors_preset = 5
@@ -791,4 +839,13 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_mqm5i")
 
 [connection signal="pressed" from="Canvas/GameOver/restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="Canvas/GameOver/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Canvas/Shop/Boat1" to="." method="ShopButtonPressed" binds= [0]]
+[connection signal="pressed" from="Canvas/Shop/Boat2" to="." method="ShopButtonPressed" binds= [1]]
+[connection signal="pressed" from="Canvas/Shop/Boat3" to="." method="ShopButtonPressed" binds= [2]]
+[connection signal="pressed" from="Canvas/Shop/Food1" to="." method="ShopButtonPressed" binds= [3]]
+[connection signal="pressed" from="Canvas/Shop/Food2" to="." method="ShopButtonPressed" binds= [4]]
+[connection signal="pressed" from="Canvas/Shop/Food3" to="." method="ShopButtonPressed" binds= [5]]
+[connection signal="pressed" from="Canvas/Shop/Food4" to="." method="ShopButtonPressed" binds= [6]]
+[connection signal="pressed" from="Canvas/Shop/Food5" to="." method="ShopButtonPressed" binds= [7]]
+[connection signal="pressed" from="Canvas/Shop/Food6" to="." method="ShopButtonPressed" binds= [8]]
 [connection signal="pressed" from="Canvas/Paused/Lag" to="." method="_on_lag_pressed"]
