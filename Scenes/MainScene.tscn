@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=4 uid="uid://cgo37mq02tko0"]
+[gd_scene load_steps=9 format=4 uid="uid://cgo37mq02tko0"]
 
 [ext_resource type="PackedScene" uid="uid://cxv7wb44ynnkf" path="res://Scenes/Player.tscn" id="1_nhkr4"]
 [ext_resource type="Script" uid="uid://w4o2pxvhcvui" path="res://Scripts/main_scene.gd" id="1_y4jh7"]
 [ext_resource type="Texture2D" uid="uid://bhd74a0trijaw" path="res://Assets/Art/tiles.png" id="2_7rqgy"]
 [ext_resource type="Script" uid="uid://dgey6cd167314" path="res://Scripts/tilegen.gd" id="2_q68mp"]
 [ext_resource type="PackedScene" uid="uid://dbq85xa0fcnii" path="res://Scenes/UI.tscn" id="4_qxria"]
+[ext_resource type="AudioStream" uid="uid://b5jx04d0sw7bw" path="res://Assets/Audio/Ocean_calm.mp3" id="6_y4jh7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0hol4"]
 texture = ExtResource("2_7rqgy")
@@ -303,6 +304,9 @@ offset_bottom = 96.0
 
 [node name="Player" parent="Players" instance=ExtResource("1_nhkr4")]
 position = Vector2(-96, 91.065796)
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_y4jh7")
 
 [connection signal="RestartGame" from="UI" to="." method="_on_ui_restart_game"]
 [connection signal="StartGame" from="UI" to="Players/Player" method="_on_ui_start_game"]
