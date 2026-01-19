@@ -49,8 +49,11 @@ func RandomizeShopContents():
 		while n in Boats:
 			n = Global.BOAT_STATS.keys().pick_random()
 		Boats.append(n)
-		get_node("Canvas/Shop/Boat" + str(i+1) + "/Label").text = n.replace_char(95,32) # "_" -> " "
+		var text = n.replace_char(95,32) # "_" -> " "
+		text = text + "\n" + "©" + str(Global.BOAT_STATS[n]["cost"])
+		get_node("Canvas/Shop/Boat" + str(i+1) + "/Label").text = text
 		get_node("Canvas/Shop/Boat" + str(i+1) + "/Texture").texture = load("res://Assets/Art/Boats/" + n + ".png")
+		
 	var Food = []
 	for i in range(6):
 		var n = Global.FoodItems.keys().pick_random()

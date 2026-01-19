@@ -333,131 +333,137 @@ text = "GAME OVER"
 
 [node name="Shop" type="Panel" parent="Canvas"]
 process_mode = 3
+visible = false
 z_index = 2
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -640.0
-offset_bottom = -360.0
+offset_right = -0.13293457
+offset_bottom = -0.0748291
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(2.9995842, 2.9995842)
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_qxria")
 
 [node name="TopText" type="Label" parent="Canvas/Shop"]
 layout_mode = 0
 offset_top = 1.0
-offset_right = 320.0
-offset_bottom = 30.0
+offset_right = 959.86707
+offset_bottom = 48.0
 theme_override_fonts/font = ExtResource("2_5q4fb")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 96
 text = "SHOP"
 horizontal_alignment = 1
 
 [node name="Boat1" type="Button" parent="Canvas/Shop"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 0
-offset_left = 16.0
-offset_top = 42.0
-offset_right = 48.0
-offset_bottom = 74.0
+offset_left = 48.0
+offset_top = 96.0
+offset_right = 432.0
+offset_bottom = 192.0
 focus_mode = 0
 theme_override_styles/normal = SubResource("StyleBoxFlat_j04uc")
 
 [node name="Texture" type="TextureRect" parent="Canvas/Shop/Boat1"]
 layout_mode = 0
-offset_right = 32.0
-offset_bottom = 23.357857
+offset_left = 24.03946
+offset_top = 1.0000004
+offset_right = 120.03946
+offset_bottom = 97.0
 texture = ExtResource("5_13dyv")
 expand_mode = 2
 stretch_mode = 5
 
 [node name="Label" type="Label" parent="Canvas/Shop/Boat1"]
 layout_mode = 0
-offset_top = 16.0
-offset_right = 107.89868
-offset_bottom = 69.94934
+offset_left = 144.0
+offset_top = 1.0000067
+offset_right = 953.2402
+offset_bottom = 321.32422
 scale = Vector2(0.2965745, 0.2965745)
 theme = ExtResource("5_j04uc")
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 64
 text = "Basic raft"
-horizontal_alignment = 1
-vertical_alignment = 1
 clip_text = true
 script = ExtResource("5_wunin")
+max_font_size = 64
 
 [node name="Boat2" type="Button" parent="Canvas/Shop"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 0
-offset_left = 64.0
-offset_top = 42.0
-offset_right = 96.0
-offset_bottom = 74.0
+offset_left = 48.0
+offset_top = 240.0
+offset_right = 432.0
+offset_bottom = 336.0
 focus_mode = 0
 theme_override_styles/normal = SubResource("StyleBoxFlat_j04uc")
 
 [node name="Texture" type="TextureRect" parent="Canvas/Shop/Boat2"]
 layout_mode = 0
-offset_right = 32.0
-offset_bottom = 23.357857
+offset_left = 24.03946
+offset_right = 120.03946
+offset_bottom = 96.0
 texture = ExtResource("5_13dyv")
 expand_mode = 2
 stretch_mode = 5
 
 [node name="Label" type="Label" parent="Canvas/Shop/Boat2"]
 layout_mode = 0
-offset_top = 16.0
-offset_right = 107.89868
-offset_bottom = 69.94934
+offset_left = 144.0
+offset_right = 953.2402
+offset_bottom = 323.6961
 scale = Vector2(0.2965745, 0.2965745)
 theme = ExtResource("5_j04uc")
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 64
 text = "Basic raft"
 horizontal_alignment = 1
 vertical_alignment = 1
 clip_text = true
 script = ExtResource("5_wunin")
+max_font_size = 64
 
 [node name="Boat3" type="Button" parent="Canvas/Shop"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 0
-offset_left = 112.0
-offset_top = 42.0
-offset_right = 144.0
-offset_bottom = 74.0
+offset_left = 48.00222
+offset_top = 384.0
+offset_right = 432.0
+offset_bottom = 480.0
 focus_mode = 0
 theme_override_styles/normal = SubResource("StyleBoxFlat_j04uc")
 
 [node name="Texture" type="TextureRect" parent="Canvas/Shop/Boat3"]
 layout_mode = 0
-offset_right = 32.0
-offset_bottom = 23.357857
+offset_left = 24.03724
+offset_right = 120.03724
+offset_bottom = 96.0
 texture = ExtResource("5_13dyv")
 expand_mode = 2
 stretch_mode = 5
 
 [node name="Label" type="Label" parent="Canvas/Shop/Boat3"]
 layout_mode = 0
-offset_top = 16.0
-offset_right = 107.89868
-offset_bottom = 69.94934
+offset_left = 143.99777
+offset_right = 953.2379
+offset_bottom = 323.69604
 scale = Vector2(0.2965745, 0.2965745)
 theme = ExtResource("5_j04uc")
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 64
 text = "Basic raft"
 horizontal_alignment = 1
 vertical_alignment = 1
 clip_text = true
 script = ExtResource("5_wunin")
+max_font_size = 64
 
 [node name="Food1" type="Button" parent="Canvas/Shop"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 0
-offset_left = 176.0
-offset_top = 42.0
-offset_right = 208.0
-offset_bottom = 74.0
+offset_left = 528.0
+offset_top = 96.0
+offset_right = 560.0
+offset_bottom = 128.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_vqx31")
 disabled = true
 
@@ -486,10 +492,10 @@ script = ExtResource("5_wunin")
 [node name="Food2" type="Button" parent="Canvas/Shop"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 0
-offset_left = 224.0
-offset_top = 42.0
-offset_right = 256.0
-offset_bottom = 74.0
+offset_left = 576.0
+offset_top = 96.0
+offset_right = 608.0
+offset_bottom = 128.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_vqx31")
 disabled = true
 
@@ -518,10 +524,10 @@ script = ExtResource("5_wunin")
 [node name="Food3" type="Button" parent="Canvas/Shop"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 0
-offset_left = 272.0
-offset_top = 42.0
-offset_right = 304.0
-offset_bottom = 74.0
+offset_left = 624.0
+offset_top = 96.0
+offset_right = 656.0
+offset_bottom = 128.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_vqx31")
 disabled = true
 
@@ -550,10 +556,10 @@ script = ExtResource("5_wunin")
 [node name="Food4" type="Button" parent="Canvas/Shop"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 0
-offset_left = 176.0
-offset_top = 90.0
-offset_right = 208.0
-offset_bottom = 122.0
+offset_left = 528.0
+offset_top = 144.0
+offset_right = 560.0
+offset_bottom = 176.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_vqx31")
 disabled = true
 
@@ -582,10 +588,10 @@ script = ExtResource("5_wunin")
 [node name="Food5" type="Button" parent="Canvas/Shop"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 0
-offset_left = 224.0
-offset_top = 90.0
-offset_right = 256.0
-offset_bottom = 122.0
+offset_left = 576.0
+offset_top = 144.0
+offset_right = 608.0
+offset_bottom = 176.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_vqx31")
 disabled = true
 
@@ -614,10 +620,10 @@ script = ExtResource("5_wunin")
 [node name="Food6" type="Button" parent="Canvas/Shop"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 0
-offset_left = 272.0
-offset_top = 90.0
-offset_right = 304.0
-offset_bottom = 122.0
+offset_left = 624.0
+offset_top = 144.0
+offset_right = 656.0
+offset_bottom = 176.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_vqx31")
 disabled = true
 
