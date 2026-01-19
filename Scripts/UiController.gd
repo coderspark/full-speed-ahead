@@ -64,6 +64,7 @@ func RandomizeShopContents():
 		var text = n.replace_char(95,32) # "_" -> " "
 		text = text + "\n" + "      " + str(Global.BOAT_STATS[n]["cost"])
 		get_node("Canvas/Shop/Boat" + str(i+1) + "/Label").text = text
+		get_node("Canvas/Shop/Boat" + str(i+1) + "/Coin").show()
 		get_node("Canvas/Shop/Boat" + str(i+1) + "/Texture").texture = load("res://Assets/Art/Boats/" + n + ".png")
 	current_shop_contents = Boats
 	var Food : Array = []
@@ -76,6 +77,8 @@ func RandomizeShopContents():
 		var text = n.replace_char(95,32) # "_" -> " "
 		text = text + "\n" + "      " + str(Global.FoodItems[n][0])
 		get_node("Canvas/Shop/Food" + str(i+1) + "/Label").text = text
+		get_node("Canvas/Shop/Food" + str(i+1) + "/Coin").show()
+		
 		get_node("Canvas/Shop/Food" + str(i+1) + "/Texture").texture = load("res://Assets/Art/Food/" + n + ".png")
 	current_shop_contents.append_array(Food)
 	
@@ -90,11 +93,18 @@ func ShopButtonPressed(id:int):
 			$"../Players/Player".coins -= Global.BOAT_STATS[current_shop_contents[id]]["cost"]
 			$"../Players/Player".UpdateCoinCount()
 			$Canvas/Shop.get_node("Boat" + str(id + 1)).disabled = true
+			$Canvas/Shop.get_node("Boat" + str(id + 1) + "/Texture").texture = preload("res://Assets/Art/Temp/sold_out.png")
+			$Canvas/Shop.get_node("Boat" + str(id + 1) + "/Label").text = "SOLD OUT"
+			$Canvas/Shop.get_node("Boat" + str(id + 1) + "/Coin").hide()
 			$"../Players/Player".UpdateBoat(current_shop_contents[id])
 	else:
 		if Global.FoodItems[current_shop_contents[id]][0] < $"../Players/Player".coins:
 			$"../Players/Player".coins -= Global.FoodItems[current_shop_contents[id]][0]
 			$"../Players/Player".UpdateCoinCount()
 			$Canvas/Shop.get_node("Food" + str(id -2)).disabled = true
+			$Canvas/Shop.get_node("Food" + str(id -2) + "/Texture").texture = preload("res://Assets/Art/Temp/sold_out.png")
+			$Canvas/Shop.get_node("Food" + str(id -2) + "/Label").text = "SOLD OUT"
+			$Canvas/Shop.get_node("Food" + str(id -2) + "/Coin").hide()
+			
 			$"../Players/Player".AddFoodItemToInventory(current_shop_contents[id])
 			

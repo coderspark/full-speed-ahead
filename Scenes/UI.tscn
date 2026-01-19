@@ -253,7 +253,59 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 540), Vector2(0, 464.99957)]
+"values": [Vector2(0, 540), Vector2(0, 460)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Canvas/Cinematic:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_b1goy"]
+resource_name = "Cinematic_fadeout"
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Canvas/Cinematic/Top:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -80)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Canvas/Cinematic/Bottom:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 459.8178), Vector2(0, 540)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Canvas/Cinematic:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 
 [sub_resource type="Animation" id="Animation_vqx31"]
@@ -282,33 +334,17 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(0, 540)]
 }
-
-[sub_resource type="Animation" id="Animation_b1goy"]
-resource_name = "Cinematic_fadeout"
-step = 0.0333333
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Canvas/Cinematic/Top:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 8.481949), Vector2(0, -80)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Canvas/Cinematic/Bottom:position")
-tracks/1/interp = 2
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 459.8178), Vector2(0, 540)]
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Canvas/Cinematic:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_b1goy"]
@@ -423,7 +459,6 @@ text = "GAME OVER"
 
 [node name="Shop" type="Panel" parent="Canvas"]
 process_mode = 3
-visible = false
 z_index = 2
 anchors_preset = 15
 anchor_right = 1.0
@@ -579,6 +614,7 @@ offset_left = 504.0
 offset_top = 97.0
 offset_right = 708.0
 offset_bottom = 192.0
+focus_mode = 0
 theme_override_styles/normal = SubResource("StyleBoxFlat_vqx31")
 
 [node name="Texture" type="TextureRect" parent="Canvas/Shop/Food1"]
@@ -600,10 +636,8 @@ offset_bottom = 253.77203
 scale = Vector2(0.2965745, 0.2965745)
 theme = ExtResource("5_j04uc")
 theme_override_font_sizes/font_size = 80
-text = "Green peas"
+text = "Sauerkraut"
 clip_text = true
-script = ExtResource("5_wunin")
-max_font_size = 80
 
 [node name="Coin" type="TextureRect" parent="Canvas/Shop/Food1"]
 layout_mode = 0
@@ -621,6 +655,7 @@ offset_left = 720.0
 offset_top = 96.0
 offset_right = 924.0
 offset_bottom = 191.0
+focus_mode = 0
 theme_override_styles/normal = SubResource("StyleBoxFlat_vqx31")
 
 [node name="Texture" type="TextureRect" parent="Canvas/Shop/Food2"]
@@ -637,15 +672,13 @@ stretch_mode = 5
 layout_mode = 0
 offset_left = 96.00001
 offset_top = 11.000002
-offset_right = 419.69604
+offset_right = 460.1582
 offset_bottom = 253.77203
 scale = Vector2(0.2965745, 0.2965745)
 theme = ExtResource("5_j04uc")
 theme_override_font_sizes/font_size = 80
-text = "Groen Erwten"
+text = "Sauerkraut"
 clip_text = true
-script = ExtResource("5_wunin")
-max_font_size = 80
 
 [node name="Coin" type="TextureRect" parent="Canvas/Shop/Food2"]
 layout_mode = 0
@@ -663,6 +696,7 @@ offset_left = 504.0
 offset_top = 241.0
 offset_right = 708.0
 offset_bottom = 336.0
+focus_mode = 0
 theme_override_styles/normal = SubResource("StyleBoxFlat_vqx31")
 
 [node name="Texture" type="TextureRect" parent="Canvas/Shop/Food3"]
@@ -679,15 +713,13 @@ stretch_mode = 5
 layout_mode = 0
 offset_left = 96.00001
 offset_top = 11.000002
-offset_right = 419.69604
+offset_right = 460.15808
 offset_bottom = 253.77203
 scale = Vector2(0.2965745, 0.2965745)
 theme = ExtResource("5_j04uc")
 theme_override_font_sizes/font_size = 80
 text = "Groen Erwten"
 clip_text = true
-script = ExtResource("5_wunin")
-max_font_size = 80
 
 [node name="Coin" type="TextureRect" parent="Canvas/Shop/Food3"]
 layout_mode = 0
@@ -705,6 +737,7 @@ offset_left = 720.0
 offset_top = 240.0
 offset_right = 924.0
 offset_bottom = 335.0
+focus_mode = 0
 theme_override_styles/normal = SubResource("StyleBoxFlat_vqx31")
 
 [node name="Texture" type="TextureRect" parent="Canvas/Shop/Food4"]
@@ -721,15 +754,13 @@ stretch_mode = 5
 layout_mode = 0
 offset_left = 96.00001
 offset_top = 11.000002
-offset_right = 419.69604
+offset_right = 460.1582
 offset_bottom = 253.77203
 scale = Vector2(0.2965745, 0.2965745)
 theme = ExtResource("5_j04uc")
 theme_override_font_sizes/font_size = 80
 text = "Groen Erwten"
 clip_text = true
-script = ExtResource("5_wunin")
-max_font_size = 80
 
 [node name="Coin" type="TextureRect" parent="Canvas/Shop/Food4"]
 layout_mode = 0
@@ -747,6 +778,7 @@ offset_left = 504.0
 offset_top = 385.0
 offset_right = 708.0
 offset_bottom = 480.0
+focus_mode = 0
 theme_override_styles/normal = SubResource("StyleBoxFlat_vqx31")
 
 [node name="Texture" type="TextureRect" parent="Canvas/Shop/Food5"]
@@ -763,15 +795,13 @@ stretch_mode = 5
 layout_mode = 0
 offset_left = 96.00001
 offset_top = 11.000002
-offset_right = 419.69604
+offset_right = 460.15808
 offset_bottom = 253.77203
 scale = Vector2(0.2965745, 0.2965745)
 theme = ExtResource("5_j04uc")
 theme_override_font_sizes/font_size = 80
 text = "Groen Erwten"
 clip_text = true
-script = ExtResource("5_wunin")
-max_font_size = 80
 
 [node name="Coin" type="TextureRect" parent="Canvas/Shop/Food5"]
 layout_mode = 0
@@ -789,6 +819,7 @@ offset_left = 720.0
 offset_top = 384.0
 offset_right = 924.0
 offset_bottom = 479.0
+focus_mode = 0
 theme_override_styles/normal = SubResource("StyleBoxFlat_vqx31")
 
 [node name="Texture" type="TextureRect" parent="Canvas/Shop/Food6"]
@@ -805,15 +836,13 @@ stretch_mode = 5
 layout_mode = 0
 offset_left = 96.00001
 offset_top = 11.000002
-offset_right = 419.69604
+offset_right = 460.15845
 offset_bottom = 253.77203
 scale = Vector2(0.2965745, 0.2965745)
 theme = ExtResource("5_j04uc")
 theme_override_font_sizes/font_size = 80
 text = "Groen Erwten"
 clip_text = true
-script = ExtResource("5_wunin")
-max_font_size = 80
 
 [node name="Coin" type="TextureRect" parent="Canvas/Shop/Food6"]
 layout_mode = 0
@@ -929,6 +958,7 @@ scale = Vector2(0.5, 0.5)
 theme_override_styles/panel = SubResource("StyleBoxTexture_mqm5i")
 
 [node name="Cinematic" type="Control" parent="Canvas"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -946,7 +976,7 @@ z_index = 10
 layout_mode = 0
 offset_top = 540.0
 offset_right = 1000.0
-offset_bottom = 619.9998
+offset_bottom = 619.9995
 color = Color(0, 0, 0, 1)
 
 [node name="Animations" type="AnimationPlayer" parent="."]

@@ -59,7 +59,6 @@ func _physics_process(delta: float) -> void:
 	velocity = transform.x * boatvel
 	if boatvel < max_speed:
 		boatvel += 1
-	print(str(boatvel) + " - " + str(max_speed))
 	var overlap = getoverlappingtiles()
 	var pushingdirs = []
 	for t in overlap:
