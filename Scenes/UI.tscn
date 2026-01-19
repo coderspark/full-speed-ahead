@@ -245,7 +245,7 @@ script = ExtResource("1_wi7yl")
 [node name="GameOver" type="Panel" parent="Canvas"]
 process_mode = 2
 visible = false
-z_index = 2
+z_index = 4
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -333,7 +333,6 @@ text = "GAME OVER"
 
 [node name="Shop" type="Panel" parent="Canvas"]
 process_mode = 3
-visible = false
 z_index = 2
 anchors_preset = 15
 anchor_right = 1.0
@@ -363,6 +362,7 @@ offset_left = 16.0
 offset_top = 42.0
 offset_right = 48.0
 offset_bottom = 74.0
+focus_mode = 0
 theme_override_styles/normal = SubResource("StyleBoxFlat_j04uc")
 
 [node name="Texture" type="TextureRect" parent="Canvas/Shop/Boat1"]
@@ -394,6 +394,7 @@ offset_left = 64.0
 offset_top = 42.0
 offset_right = 96.0
 offset_bottom = 74.0
+focus_mode = 0
 theme_override_styles/normal = SubResource("StyleBoxFlat_j04uc")
 
 [node name="Texture" type="TextureRect" parent="Canvas/Shop/Boat2"]
@@ -425,6 +426,7 @@ offset_left = 112.0
 offset_top = 42.0
 offset_right = 144.0
 offset_bottom = 74.0
+focus_mode = 0
 theme_override_styles/normal = SubResource("StyleBoxFlat_j04uc")
 
 [node name="Texture" type="TextureRect" parent="Canvas/Shop/Boat3"]
@@ -661,7 +663,7 @@ script = SubResource("GDScript_hx8n4")
 
 [node name="Countdown" type="ColorRect" parent="Canvas"]
 visible = false
-z_index = 100
+z_index = 4
 offset_right = 320.0
 offset_bottom = 180.0
 scale = Vector2(3, 3)
@@ -689,7 +691,7 @@ autoplay = "Countdown"
 
 [node name="Paused" type="ColorRect" parent="Canvas"]
 visible = false
-z_index = 100
+z_index = 4
 offset_top = 2.999588
 offset_right = 320.0
 offset_bottom = 182.99959
@@ -722,6 +724,7 @@ text = "Lag
 "
 
 [node name="Coins" type="Label" parent="Canvas"]
+z_index = 3
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
