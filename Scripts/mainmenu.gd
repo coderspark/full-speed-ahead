@@ -24,7 +24,7 @@ func StartGame(lvl:String):
 	$LevelSelect/KaapDeGoedeHoop.disabled = true
 	$LevelSelect/Portugal.disabled = true
 	$LevelSelect/Engeland.disabled = true
-	
+	$MainMenu/MainMenuMusic.queue_free()
 	$Fade/Animations.play("fade_in")
 	await $Fade/Animations.animation_finished
 	$LevelSelect.queue_free()
