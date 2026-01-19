@@ -333,7 +333,6 @@ text = "GAME OVER"
 
 [node name="Shop" type="Panel" parent="Canvas"]
 process_mode = 3
-visible = false
 z_index = 2
 anchors_preset = 15
 anchor_right = 1.0
@@ -377,10 +376,10 @@ stretch_mode = 5
 
 [node name="Label" type="Label" parent="Canvas/Shop/Boat1"]
 layout_mode = 0
-offset_left = 144.0
-offset_top = 1.0000067
-offset_right = 953.2402
-offset_bottom = 321.32422
+offset_left = 155.99998
+offset_top = 11.999999
+offset_right = 884.3162
+offset_bottom = 254.77203
 scale = Vector2(0.2965745, 0.2965745)
 theme = ExtResource("5_j04uc")
 theme_override_font_sizes/font_size = 64
@@ -410,15 +409,14 @@ stretch_mode = 5
 
 [node name="Label" type="Label" parent="Canvas/Shop/Boat2"]
 layout_mode = 0
-offset_left = 144.0
-offset_right = 953.2402
-offset_bottom = 323.6961
+offset_left = 155.99997
+offset_top = 11.99999
+offset_right = 884.31616
+offset_bottom = 254.77208
 scale = Vector2(0.2965745, 0.2965745)
 theme = ExtResource("5_j04uc")
 theme_override_font_sizes/font_size = 64
 text = "Basic raft"
-horizontal_alignment = 1
-vertical_alignment = 1
 clip_text = true
 script = ExtResource("5_wunin")
 max_font_size = 64
