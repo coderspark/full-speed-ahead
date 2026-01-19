@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=4 uid="uid://cgo37mq02tko0"]
+[gd_scene load_steps=8 format=4 uid="uid://cgo37mq02tko0"]
 
 [ext_resource type="PackedScene" uid="uid://cxv7wb44ynnkf" path="res://Scenes/Player.tscn" id="1_nhkr4"]
 [ext_resource type="Script" uid="uid://w4o2pxvhcvui" path="res://Scripts/main_scene.gd" id="1_y4jh7"]
 [ext_resource type="Texture2D" uid="uid://bhd74a0trijaw" path="res://Assets/Art/tiles.png" id="2_7rqgy"]
-[ext_resource type="Script" uid="uid://drumpygcni0ew" path="res://Scripts/camera.gd" id="2_nhkr4"]
 [ext_resource type="Script" uid="uid://dgey6cd167314" path="res://Scripts/tilegen.gd" id="2_q68mp"]
 [ext_resource type="PackedScene" uid="uid://dbq85xa0fcnii" path="res://Scenes/UI.tscn" id="4_qxria"]
 
@@ -294,17 +293,16 @@ tile_map_data = PackedByteArray("AABHAv//AAABAAEAAABHAgAAAAACAAAAADBHAgEAAAAAAAA
 tile_set = SubResource("TileSet_q6r6c")
 script = ExtResource("2_q68mp")
 
-[node name="Camera" type="Camera2D" parent="."]
-position = Vector2(-144, 96)
-zoom = Vector2(3, 3)
-script = ExtResource("2_nhkr4")
-
-[node name="UI" parent="Camera" instance=ExtResource("4_qxria")]
+[node name="UI" parent="." instance=ExtResource("4_qxria")]
+offset_left = -144.0
+offset_top = 96.0
+offset_right = -144.0
+offset_bottom = 96.0
 
 [node name="Players" type="Node2D" parent="."]
 
 [node name="Player" parent="Players" instance=ExtResource("1_nhkr4")]
-position = Vector2(-144, 96)
+position = Vector2(-96, 91.065796)
 
-[connection signal="RestartGame" from="Camera/UI" to="." method="_on_ui_restart_game"]
-[connection signal="StartGame" from="Camera/UI" to="Players/Player" method="_on_ui_start_game"]
+[connection signal="RestartGame" from="UI" to="." method="_on_ui_restart_game"]
+[connection signal="StartGame" from="UI" to="Players/Player" method="_on_ui_start_game"]

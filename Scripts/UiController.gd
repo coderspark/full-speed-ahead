@@ -16,14 +16,14 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("pause"):
 		paused = !paused
 		get_tree().paused = paused
-		$Paused.visible = paused
+		$Canvas/Paused.visible = paused
 func gameover():
 	get_tree().paused = true
-	$GameOver.visible = true
+	$Canvas/GameOver.visible = true
 
 func _on_restart_pressed() -> void:
 	get_tree().paused = false
-	$GameOver/restart.disabled = true
+	$Canvas/GameOver/restart.disabled = true
 	RestartGame.emit()
 
 func _on_button_pressed() -> void:
@@ -45,14 +45,17 @@ func _on_quit_pressed() -> void:
 func RandomizeShopContents():
 	var Boats = []
 	for i in range(3):
-		var n = Global.BOAT_STATS.keys().pick_random()
+		var n : String = Global.BOAT_STATS.keys().pick_random()
 		while n in Boats:
 			n = Global.BOAT_STATS.keys().pick_random()
 		Boats.append(n)
-		get_node("Shop/Boat" + str(i+1) + "/Label").text = n
-		get_node("Shop/Boat" + str(i+1) + "/Texture").texture = load("res://Assets/Art/Boats/" + n)
+		get_node("Canvas/Shop/Boat" + str(i+1) + "/Label").text = n.replace_char(95,32) # "_" -> " "
+		get_node("Canvas/Shop/Boat" + str(i+1) + "/Texture").texture = load("res://Assets/Art/Boats/" + n + ".png")
 	var Food = []
 	for i in range(6):
 		var n = Global.FoodItems.keys().pick_random()
 		Boats.append(n)
 	
+func ShowShop():
+	get_tree().paused = true
+	$Canvas/Shop.show()

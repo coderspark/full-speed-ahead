@@ -172,6 +172,7 @@ mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxTexture_igs2m")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="MainMenu"]
+process_mode = 3
 stream = ExtResource("6_5326e")
 script = ExtResource("7_l2o7r")
 looppoint = 16

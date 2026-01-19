@@ -28,8 +28,8 @@ func _ready() -> void:
 func getoverlappingtiles() -> Array:
 	var res = []
 	var rect = $"Collision Detector/CollisionShape2D2".shape.get_rect()
-	var top_left = $"../../TileMap".local_to_map(rect.position + position)
-	var bottom_right = $"../../TileMap".local_to_map(position + rect.position + rect.size)
+	var top_left = $"../../TileMap".local_to_map(rect.position + position )
+	var bottom_right = $"../../TileMap".local_to_map(position + rect.position + rect.size )
 	for x in range(top_left.x, bottom_right.x + 1):
 		for y in range(top_left.y, bottom_right.y+1):
 			var coords = Vector2i(x, y)
@@ -76,10 +76,10 @@ func _physics_process(delta: float) -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	delta_rot = 0
 	health -= 1
-	$"../../Camera/UI/HP".HP = health
-	$"../../Camera/UI/HP".Update()
+	$"../../UI/Canvas/HP".HP = health
+	$"../../UI/Canvas/HP".Update()
 	if health <= 0:
-		$"../../Camera/UI".gameover()
+		$"../../UI".gameover()
 		paused = true
 	isbounce = true
 func _on_collision_detector_body_exited(body: Node2D) -> void:
@@ -87,12 +87,12 @@ func _on_collision_detector_body_exited(body: Node2D) -> void:
 
 
 func _on_shop_detection_body_entered(body: Node2D) -> void:
-
-	$"../../Camera/UI/Shop".show()
+	
+	$"../../UI".ShowShop()
 	get_tree().paused = true
 	
 func UpdateCoinCount():
-	$"../../Camera/UI/Coins".text = str(coins)
+	$"../../UI/Canvas/Coins".text = str(coins)
 
 func UpdateBoat(name : String):
 	MyBoat = name
@@ -102,9 +102,9 @@ func UpdateBoat(name : String):
 	max_turn_speed = Global.BOAT_STATS[name]["turn_speed"]
 	turn_velocity = Global.BOAT_STATS[name]["turn_speed"] / 30.0
 	coin_mult = Global.BOAT_STATS[name]["coin_multiplier"]
-	$"../../Camera/UI/HP".MAX_HP = max_health
-	$"../../Camera/UI/HP".HP = health
-	$"../../Camera/UI/HP".Update()
+	$"../../UI/Canvas/HP".MAX_HP = max_health
+	$"../../UI/Canvas/HP".HP = health
+	$"../../UI/Canvas/HP".Update()
 	$Sprite.texture = load("res://Assets/Art/Boats/" + MyBoat + ".png")
 	$Sprite.scale = Vector2(Global.BOAT_SCALE_MODIFIERS.get(name,1.0),Global.BOAT_SCALE_MODIFIERS.get(name,1.0))
 

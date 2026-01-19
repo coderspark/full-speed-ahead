@@ -52,6 +52,6 @@ func _ready() -> void:
 			if difficulties[tplate] == difficulty:
 				break
 		map.append(tplate)
-	map[10] = -1
+	map[1] = -1
 	for t in range(len(map)):
 		paste_template(map[t], 6+(10*t))

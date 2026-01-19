@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dbq85xa0fcnii"]
+[gd_scene load_steps=20 format=3 uid="uid://dbq85xa0fcnii"]
 
 [ext_resource type="Script" uid="uid://klae0u71y1go" path="res://Scripts/UiController.gd" id="1_wi7yl"]
 [ext_resource type="FontFile" uid="uid://dqqnsnb5xkqx7" path="res://Assets/Fonts/8bitoperator_jve.ttf" id="2_5q4fb"]
@@ -17,11 +17,17 @@ bg_color = Color(0.19215687, 0.19215687, 0.19215687, 0.49411765)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f140w"]
 texture = ExtResource("3_mqm5i")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mg6lk"]
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j04uc"]
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vqx31"]
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
 
 [sub_resource type="GDScript" id="GDScript_hx8n4"]
 script/source = "extends TextureProgressBar
@@ -114,7 +120,7 @@ tracks/4/keys = {
 tracks/5/type = "method"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("..")
+tracks/5/path = NodePath("../..")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -234,55 +240,34 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("1_wi7yl")
 
-[node name="GameOver" type="Panel" parent="."]
+[node name="Canvas" type="CanvasLayer" parent="."]
+
+[node name="GameOver" type="Panel" parent="Canvas"]
 process_mode = 2
 visible = false
 z_index = 2
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -160.0
-offset_top = -90.0
-offset_right = 160.0
-offset_bottom = 90.0
+offset_right = -640.0443
+offset_bottom = -360.02493
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(3, 3)
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_qxria")
 
-[node name="quit" type="Button" parent="GameOver"]
+[node name="restart" type="Button" parent="Canvas/GameOver"]
 z_index = 6
-layout_mode = 0
-offset_left = 85.0
-offset_top = 105.0
-offset_right = 213.0
-offset_bottom = 145.0
-theme_override_fonts/font = ExtResource("2_5q4fb")
-theme_override_font_sizes/font_size = 32
-action_mode = 0
-text = "QUIT
-"
-flat = true
-
-[node name="Bg" type="Panel" parent="GameOver/quit"]
-z_index = -2
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -64.0
+offset_top = 57.991966
+offset_right = 64.0
+offset_bottom = 97.99197
 grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 1
-theme_override_styles/panel = SubResource("StyleBoxTexture_f140w")
-
-[node name="restart" type="Button" parent="GameOver"]
-z_index = 6
-layout_mode = 0
-offset_left = 85.0
-offset_top = 58.0
-offset_right = 213.0
-offset_bottom = 98.0
 theme_override_fonts/font = ExtResource("2_5q4fb")
 theme_override_font_sizes/font_size = 32
 action_mode = 0
@@ -290,7 +275,7 @@ text = "RESET
 "
 flat = true
 
-[node name="Bg" type="Panel" parent="GameOver/restart"]
+[node name="Bg" type="Panel" parent="Canvas/GameOver/restart"]
 z_index = -2
 layout_mode = 1
 anchors_preset = 15
@@ -301,33 +286,67 @@ grow_vertical = 2
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxTexture_f140w")
 
-[node name="TopText" type="Label" parent="GameOver"]
-layout_mode = 0
-offset_left = 60.0
-offset_top = 1.0
-offset_right = 240.0
-offset_bottom = 49.0
+[node name="quit" type="Button" parent="Canvas/GameOver"]
+z_index = 6
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = 12.012466
+offset_right = 64.0
+offset_bottom = 52.012466
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_5q4fb")
-theme_override_font_sizes/font_size = 48
-text = "GAME OVER"
+theme_override_font_sizes/font_size = 32
+action_mode = 0
+text = "QUIT
+"
+flat = true
 
-[node name="Shop" type="Panel" parent="."]
-process_mode = 3
-z_index = 2
+[node name="Bg" type="Panel" parent="Canvas/GameOver/quit"]
+z_index = -2
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -160.0
-offset_top = -90.0
-offset_right = -800.0
-offset_bottom = -450.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxTexture_f140w")
+
+[node name="TopText" type="Label" parent="Canvas/GameOver"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -90.0
+offset_right = 90.0
+offset_bottom = 48.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 48
+text = "GAME OVER"
+
+[node name="Shop" type="Panel" parent="Canvas"]
+process_mode = 3
+visible = false
+z_index = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -640.0
+offset_bottom = -360.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2.9995842, 2.9995842)
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_qxria")
 
-[node name="TopText" type="Label" parent="Shop"]
+[node name="TopText" type="Label" parent="Canvas/Shop"]
 layout_mode = 0
 offset_top = 1.0
 offset_right = 320.0
@@ -337,16 +356,16 @@ theme_override_font_sizes/font_size = 32
 text = "SHOP"
 horizontal_alignment = 1
 
-[node name="Boat1" type="Panel" parent="Shop"]
+[node name="Boat1" type="Button" parent="Canvas/Shop"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 0
 offset_left = 16.0
 offset_top = 42.0
 offset_right = 48.0
 offset_bottom = 74.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_mg6lk")
+theme_override_styles/normal = SubResource("StyleBoxFlat_j04uc")
 
-[node name="Texture" type="TextureRect" parent="Shop/Boat1"]
+[node name="Texture" type="TextureRect" parent="Canvas/Shop/Boat1"]
 layout_mode = 0
 offset_right = 32.0
 offset_bottom = 23.357857
@@ -354,7 +373,7 @@ texture = ExtResource("5_13dyv")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="Shop/Boat1"]
+[node name="Label" type="Label" parent="Canvas/Shop/Boat1"]
 layout_mode = 0
 offset_top = 16.0
 offset_right = 107.89868
@@ -368,16 +387,16 @@ vertical_alignment = 1
 clip_text = true
 script = ExtResource("5_wunin")
 
-[node name="Boat2" type="Panel" parent="Shop"]
+[node name="Boat2" type="Button" parent="Canvas/Shop"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 0
 offset_left = 64.0
 offset_top = 42.0
 offset_right = 96.0
 offset_bottom = 74.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_mg6lk")
+theme_override_styles/normal = SubResource("StyleBoxFlat_j04uc")
 
-[node name="Texture" type="TextureRect" parent="Shop/Boat2"]
+[node name="Texture" type="TextureRect" parent="Canvas/Shop/Boat2"]
 layout_mode = 0
 offset_right = 32.0
 offset_bottom = 23.357857
@@ -385,7 +404,7 @@ texture = ExtResource("5_13dyv")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="Shop/Boat2"]
+[node name="Label" type="Label" parent="Canvas/Shop/Boat2"]
 layout_mode = 0
 offset_top = 16.0
 offset_right = 107.89868
@@ -399,16 +418,16 @@ vertical_alignment = 1
 clip_text = true
 script = ExtResource("5_wunin")
 
-[node name="Boat3" type="Panel" parent="Shop"]
+[node name="Boat3" type="Button" parent="Canvas/Shop"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 0
 offset_left = 112.0
 offset_top = 42.0
 offset_right = 144.0
 offset_bottom = 74.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_mg6lk")
+theme_override_styles/normal = SubResource("StyleBoxFlat_j04uc")
 
-[node name="Texture" type="TextureRect" parent="Shop/Boat3"]
+[node name="Texture" type="TextureRect" parent="Canvas/Shop/Boat3"]
 layout_mode = 0
 offset_right = 32.0
 offset_bottom = 23.357857
@@ -416,7 +435,7 @@ texture = ExtResource("5_13dyv")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="Shop/Boat3"]
+[node name="Label" type="Label" parent="Canvas/Shop/Boat3"]
 layout_mode = 0
 offset_top = 16.0
 offset_right = 107.89868
@@ -430,16 +449,17 @@ vertical_alignment = 1
 clip_text = true
 script = ExtResource("5_wunin")
 
-[node name="Food1" type="Panel" parent="Shop"]
+[node name="Food1" type="Button" parent="Canvas/Shop"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 0
 offset_left = 176.0
 offset_top = 42.0
 offset_right = 208.0
 offset_bottom = 74.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_mg6lk")
+theme_override_styles/normal = SubResource("StyleBoxFlat_vqx31")
+disabled = true
 
-[node name="Texture" type="TextureRect" parent="Shop/Food1"]
+[node name="Texture" type="TextureRect" parent="Canvas/Shop/Food1"]
 layout_mode = 0
 offset_right = 32.0
 offset_bottom = 23.357857
@@ -447,7 +467,7 @@ texture = ExtResource("5_13dyv")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="Shop/Food1"]
+[node name="Label" type="Label" parent="Canvas/Shop/Food1"]
 layout_mode = 0
 offset_top = 16.0
 offset_right = 107.89868
@@ -461,16 +481,17 @@ vertical_alignment = 1
 clip_text = true
 script = ExtResource("5_wunin")
 
-[node name="Food2" type="Panel" parent="Shop"]
+[node name="Food2" type="Button" parent="Canvas/Shop"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 0
 offset_left = 224.0
 offset_top = 42.0
 offset_right = 256.0
 offset_bottom = 74.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_mg6lk")
+theme_override_styles/normal = SubResource("StyleBoxFlat_vqx31")
+disabled = true
 
-[node name="Texture" type="TextureRect" parent="Shop/Food2"]
+[node name="Texture" type="TextureRect" parent="Canvas/Shop/Food2"]
 layout_mode = 0
 offset_right = 32.0
 offset_bottom = 23.357857
@@ -478,7 +499,7 @@ texture = ExtResource("5_13dyv")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="Shop/Food2"]
+[node name="Label" type="Label" parent="Canvas/Shop/Food2"]
 layout_mode = 0
 offset_top = 16.0
 offset_right = 107.89868
@@ -492,16 +513,17 @@ vertical_alignment = 1
 clip_text = true
 script = ExtResource("5_wunin")
 
-[node name="Food3" type="Panel" parent="Shop"]
+[node name="Food3" type="Button" parent="Canvas/Shop"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 0
 offset_left = 272.0
 offset_top = 42.0
 offset_right = 304.0
 offset_bottom = 74.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_mg6lk")
+theme_override_styles/normal = SubResource("StyleBoxFlat_vqx31")
+disabled = true
 
-[node name="Texture" type="TextureRect" parent="Shop/Food3"]
+[node name="Texture" type="TextureRect" parent="Canvas/Shop/Food3"]
 layout_mode = 0
 offset_right = 32.0
 offset_bottom = 23.357857
@@ -509,7 +531,7 @@ texture = ExtResource("5_13dyv")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="Shop/Food3"]
+[node name="Label" type="Label" parent="Canvas/Shop/Food3"]
 layout_mode = 0
 offset_top = 16.0
 offset_right = 107.89868
@@ -523,16 +545,17 @@ vertical_alignment = 1
 clip_text = true
 script = ExtResource("5_wunin")
 
-[node name="Food4" type="Panel" parent="Shop"]
+[node name="Food4" type="Button" parent="Canvas/Shop"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 0
 offset_left = 176.0
 offset_top = 90.0
 offset_right = 208.0
 offset_bottom = 122.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_mg6lk")
+theme_override_styles/normal = SubResource("StyleBoxFlat_vqx31")
+disabled = true
 
-[node name="Texture" type="TextureRect" parent="Shop/Food4"]
+[node name="Texture" type="TextureRect" parent="Canvas/Shop/Food4"]
 layout_mode = 0
 offset_right = 32.0
 offset_bottom = 23.357857
@@ -540,7 +563,7 @@ texture = ExtResource("5_13dyv")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="Shop/Food4"]
+[node name="Label" type="Label" parent="Canvas/Shop/Food4"]
 layout_mode = 0
 offset_top = 16.0
 offset_right = 107.89868
@@ -554,16 +577,17 @@ vertical_alignment = 1
 clip_text = true
 script = ExtResource("5_wunin")
 
-[node name="Food5" type="Panel" parent="Shop"]
+[node name="Food5" type="Button" parent="Canvas/Shop"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 0
 offset_left = 224.0
 offset_top = 90.0
 offset_right = 256.0
 offset_bottom = 122.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_mg6lk")
+theme_override_styles/normal = SubResource("StyleBoxFlat_vqx31")
+disabled = true
 
-[node name="Texture" type="TextureRect" parent="Shop/Food5"]
+[node name="Texture" type="TextureRect" parent="Canvas/Shop/Food5"]
 layout_mode = 0
 offset_right = 32.0
 offset_bottom = 23.357857
@@ -571,7 +595,7 @@ texture = ExtResource("5_13dyv")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="Shop/Food5"]
+[node name="Label" type="Label" parent="Canvas/Shop/Food5"]
 layout_mode = 0
 offset_top = 16.0
 offset_right = 107.89868
@@ -585,16 +609,17 @@ vertical_alignment = 1
 clip_text = true
 script = ExtResource("5_wunin")
 
-[node name="Food6" type="Panel" parent="Shop"]
+[node name="Food6" type="Button" parent="Canvas/Shop"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 0
 offset_left = 272.0
 offset_top = 90.0
 offset_right = 304.0
 offset_bottom = 122.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_mg6lk")
+theme_override_styles/normal = SubResource("StyleBoxFlat_vqx31")
+disabled = true
 
-[node name="Texture" type="TextureRect" parent="Shop/Food6"]
+[node name="Texture" type="TextureRect" parent="Canvas/Shop/Food6"]
 layout_mode = 0
 offset_right = 32.0
 offset_bottom = 23.357857
@@ -602,7 +627,7 @@ texture = ExtResource("5_13dyv")
 expand_mode = 2
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="Shop/Food6"]
+[node name="Label" type="Label" parent="Canvas/Shop/Food6"]
 layout_mode = 0
 offset_top = 16.0
 offset_right = 107.89868
@@ -616,12 +641,17 @@ vertical_alignment = 1
 clip_text = true
 script = ExtResource("5_wunin")
 
-[node name="HP" type="TextureProgressBar" parent="."]
-layout_mode = 0
-offset_left = -50.0
-offset_top = -89.0
-offset_right = 50.0
-offset_bottom = -79.0
+[node name="HP" type="TextureProgressBar" parent="Canvas"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -48.059875
+offset_top = 8.481949
+offset_right = 51.940125
+offset_bottom = 18.481949
+grow_horizontal = 2
+scale = Vector2(3, 3)
+pivot_offset = Vector2(50, 0)
 value = 1.0
 texture_under = ExtResource("12_612k1")
 texture_over = ExtResource("13_us6mg")
@@ -629,18 +659,16 @@ texture_progress = ExtResource("14_8blbl")
 tint_progress = Color(1, 0, 0, 1)
 script = SubResource("GDScript_hx8n4")
 
-[node name="Countdown" type="ColorRect" parent="."]
+[node name="Countdown" type="ColorRect" parent="Canvas"]
 visible = false
 z_index = 100
-layout_mode = 0
-offset_left = -160.0
-offset_top = -90.0
-offset_right = 160.0
-offset_bottom = 90.0
+offset_right = 320.0
+offset_bottom = 180.0
+scale = Vector2(3, 3)
 mouse_filter = 2
 color = Color(0.0885599, 0.0885599, 0.0885599, 0.4117647)
 
-[node name="Label" type="Label" parent="Countdown"]
+[node name="Label" type="Label" parent="Canvas/Countdown"]
 visible = false
 layout_mode = 0
 offset_left = 512.0
@@ -653,24 +681,23 @@ theme_override_font_sizes/font_size = 100
 text = "5"
 horizontal_alignment = 1
 
-[node name="Animations" type="AnimationPlayer" parent="Countdown"]
+[node name="Animations" type="AnimationPlayer" parent="Canvas/Countdown"]
 libraries = {
 &"": SubResource("AnimationLibrary_mqm5i")
 }
 autoplay = "Countdown"
 
-[node name="Paused" type="ColorRect" parent="."]
+[node name="Paused" type="ColorRect" parent="Canvas"]
 visible = false
 z_index = 100
-layout_mode = 0
-offset_left = -160.0
-offset_top = -90.0
-offset_right = 160.0
-offset_bottom = 90.0
+offset_top = 2.999588
+offset_right = 320.0
+offset_bottom = 182.99959
+scale = Vector2(3, 3)
 mouse_filter = 2
 color = Color(0.0885599, 0.0885599, 0.0885599, 0.4117647)
 
-[node name="Label" type="Label" parent="Paused"]
+[node name="Label" type="Label" parent="Canvas/Paused"]
 layout_mode = 0
 offset_left = 128.00002
 offset_top = 11.0
@@ -682,7 +709,7 @@ theme_override_font_sizes/font_size = 145
 text = "Paused"
 horizontal_alignment = 1
 
-[node name="Lag" type="Button" parent="Paused"]
+[node name="Lag" type="Button" parent="Canvas/Paused"]
 layout_mode = 0
 offset_left = 16.0
 offset_top = 154.0
@@ -694,17 +721,21 @@ theme_override_font_sizes/font_size = 21
 text = "Lag
 "
 
-[node name="Coins" type="Label" parent="."]
-layout_mode = 0
-offset_left = -140.0
-offset_top = -90.0
-offset_right = -88.0
-offset_bottom = -67.0
+[node name="Coins" type="Label" parent="Canvas"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 72.03946
+offset_top = -517.9342
+offset_right = 124.03946
+offset_bottom = -494.9342
+grow_vertical = 0
+scale = Vector2(3, 3)
 theme_override_fonts/font = ExtResource("2_5q4fb")
 theme_override_font_sizes/font_size = 16
 text = "0"
 
-[node name="Panel" type="Panel" parent="Coins"]
+[node name="Panel" type="Panel" parent="Canvas/Coins"]
 layout_mode = 0
 offset_left = -20.0
 offset_top = -1.0
@@ -713,6 +744,6 @@ offset_bottom = 39.0
 scale = Vector2(0.5, 0.5)
 theme_override_styles/panel = SubResource("StyleBoxTexture_mqm5i")
 
-[connection signal="pressed" from="GameOver/quit" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="GameOver/restart" to="." method="_on_restart_pressed"]
-[connection signal="pressed" from="Paused/Lag" to="." method="_on_lag_pressed"]
+[connection signal="pressed" from="Canvas/GameOver/restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Canvas/GameOver/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Canvas/Paused/Lag" to="." method="_on_lag_pressed"]
