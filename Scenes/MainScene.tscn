@@ -307,6 +307,7 @@ position = Vector2(-96, 91.065796)
 
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_y4jh7")
+autoplay = true
 
 [connection signal="RestartGame" from="UI" to="." method="_on_ui_restart_game"]
 [connection signal="StartGame" from="UI" to="Players/Player" method="_on_ui_start_game"]
