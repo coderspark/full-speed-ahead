@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dbq85xa0fcnii"]
+[gd_scene load_steps=24 format=3 uid="uid://dbq85xa0fcnii"]
 
 [ext_resource type="Script" uid="uid://klae0u71y1go" path="res://Scripts/UiController.gd" id="1_wi7yl"]
 [ext_resource type="FontFile" uid="uid://dqqnsnb5xkqx7" path="res://Assets/Fonts/8bitoperator_jve.ttf" id="2_5q4fb"]
@@ -228,6 +228,96 @@ _data = {
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mqm5i"]
 texture = ExtResource("15_5q4fb")
 
+[sub_resource type="Animation" id="Animation_j04uc"]
+resource_name = "Cinematic_fadein"
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Canvas/Cinematic/Top:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -80), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Canvas/Cinematic/Bottom:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 540), Vector2(0, 464.99957)]
+}
+
+[sub_resource type="Animation" id="Animation_vqx31"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Canvas/Cinematic/Top:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -80)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Canvas/Cinematic/Bottom:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 540)]
+}
+
+[sub_resource type="Animation" id="Animation_b1goy"]
+resource_name = "Cinematic_fadeout"
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Canvas/Cinematic/Top:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 8.481949), Vector2(0, -80)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Canvas/Cinematic/Bottom:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 459.8178), Vector2(0, 540)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b1goy"]
+_data = {
+&"Cinematic_fadein": SubResource("Animation_j04uc"),
+&"Cinematic_fadeout": SubResource("Animation_b1goy"),
+&"RESET": SubResource("Animation_vqx31")
+}
+
 [node name="UI" type="Control"]
 process_mode = 3
 layout_mode = 3
@@ -333,6 +423,7 @@ text = "GAME OVER"
 
 [node name="Shop" type="Panel" parent="Canvas"]
 process_mode = 3
+visible = false
 z_index = 2
 anchors_preset = 15
 anchor_right = 1.0
@@ -836,6 +927,32 @@ offset_right = 20.0
 offset_bottom = 39.0
 scale = Vector2(0.5, 0.5)
 theme_override_styles/panel = SubResource("StyleBoxTexture_mqm5i")
+
+[node name="Cinematic" type="Control" parent="Canvas"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Top" type="ColorRect" parent="Canvas/Cinematic"]
+z_index = 10
+layout_mode = 0
+offset_top = -80.0
+offset_right = 1000.0
+color = Color(0, 0, 0, 1)
+
+[node name="Bottom" type="ColorRect" parent="Canvas/Cinematic"]
+z_index = 10
+layout_mode = 0
+offset_top = 540.0
+offset_right = 1000.0
+offset_bottom = 619.9998
+color = Color(0, 0, 0, 1)
+
+[node name="Animations" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_b1goy")
+}
 
 [connection signal="pressed" from="Canvas/GameOver/restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="Canvas/GameOver/quit" to="." method="_on_quit_pressed"]
