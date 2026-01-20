@@ -15,9 +15,11 @@ var max_health = 5
 var coin_mult = 1.0
 
 var paused = false
-var coins = 0
+var coins = 9999999999999
 
 var MyBoat = ""
+var Inventory = []
+
 
 var GameStarted = false
 func _ready() -> void:
@@ -110,3 +112,6 @@ func UpdateBoat(name : String):
 
 func _on_ui_start_game() -> void:
 	GameStarted = true
+
+func AddFoodItemToInventory(nam:String):
+	Inventory.append(nam)
