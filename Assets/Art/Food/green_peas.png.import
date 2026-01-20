@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bu18xywouviyc"
-path="res://.godot/imported/reinforced_raft.png-4bbf4406b963c436bf9e88e37eeae37c.ctex"
+uid="uid://bqf2m2w0blk8d"
+path="res://.godot/imported/green_peas.png-3862d58849a315b3e288b4cd3c5073e6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/Boats/reinforced_raft.png"
-dest_files=["res://.godot/imported/reinforced_raft.png-4bbf4406b963c436bf9e88e37eeae37c.ctex"]
+source_file="res://Assets/Art/Food/green_peas.png"
+dest_files=["res://.godot/imported/green_peas.png-3862d58849a315b3e288b4cd3c5073e6.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bu18xywouviyc"
-path="res://.godot/imported/reinforced_raft.png-4bbf4406b963c436bf9e88e37eeae37c.ctex"
+uid="uid://07u5xc0x4mup"
+path="res://.godot/imported/beer.png-c8fdd9fd46bfef5ffc00de251defaf12.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/Boats/reinforced_raft.png"
-dest_files=["res://.godot/imported/reinforced_raft.png-4bbf4406b963c436bf9e88e37eeae37c.ctex"]
+source_file="res://Assets/Art/Food/beer.png"
+dest_files=["res://.godot/imported/beer.png-c8fdd9fd46bfef5ffc00de251defaf12.ctex"]
 
 [params]
 

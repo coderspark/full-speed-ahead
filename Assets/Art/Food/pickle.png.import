@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bu18xywouviyc"
-path="res://.godot/imported/reinforced_raft.png-4bbf4406b963c436bf9e88e37eeae37c.ctex"
+uid="uid://2t23o36u7hcp"
+path="res://.godot/imported/pickle.png-701c5f337225a6d2fa8144b4876ed691.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/Boats/reinforced_raft.png"
-dest_files=["res://.godot/imported/reinforced_raft.png-4bbf4406b963c436bf9e88e37eeae37c.ctex"]
+source_file="res://Assets/Art/Food/pickle.png"
+dest_files=["res://.godot/imported/pickle.png-701c5f337225a6d2fa8144b4876ed691.ctex"]
 
 [params]
 
