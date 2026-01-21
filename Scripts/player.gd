@@ -18,7 +18,7 @@ var paused = false
 var coins = 9999999999999
 
 var MyBoat = ""
-var Inventory = []
+var Inventory = {}
 
 
 var GameStarted = false
@@ -114,4 +114,8 @@ func _on_ui_start_game() -> void:
 	GameStarted = true
 
 func AddFoodItemToInventory(nam:String):
-	Inventory.append(nam)
+	if Inventory.has(nam):
+		Inventory[nam] += 1
+	else:
+		Inventory[nam] = 1
+	print(Inventory)

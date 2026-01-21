@@ -21,11 +21,17 @@ const BOAT_STATS = {
 		"turn_speed":3,
 		"hp":3,
 		"coin_multiplier":1.1 
-	},"Canoe":{
+	},"Basic_canoe":{
 		"cost":10,
 		"speed":4,
 		"turn_speed":5,
 		"hp":5,
+		"coin_multiplier":1.5
+	},"Reinforced_canoe":{
+		"cost":15,
+		"speed":4,
+		"turn_speed":4,
+		"hp":8,
 		"coin_multiplier":1.5
 	}, "Basic_sailboat":{
 		"cost":25,
@@ -75,4 +81,15 @@ var FoodItems = {
 	"Sauerkraut":[1],
 	"Bacon":[1]
 }
+
+var Recipies = [
+	["Beer","Green_peas","Stockfish"],
+	["Wine","White_beans","Bacon","Pickles"],
+	["Gin","Rice","Plums"],
+	["Wine","Sauerkraut","Meat"],
+	["Gin","Green_peas","Bacon"],
+	["Beer","Plums","Rice"],
+	["Gin","Meat","Gray_peas","Pickles"],
+]
+
 var LevelName = ""

@@ -108,3 +108,17 @@ func ShopButtonPressed(id:int):
 			
 			$"../Players/Player".AddFoodItemToInventory(current_shop_contents[id])
 			
+
+
+func _on_continue_pressed() -> void:
+	FormatInventory($"../Players/Player".Inventory)
+	$Canvas/Shop.hide()
+	$Canvas/Cooking.show()
+
+func FormatInventory(Inv : Dictionary):
+	var Output : String
+	var Before = "[font=res://Assets/Fonts/8bitoperator_jve.ttf][font_size=24]"
+	Output += Before
+	for n : String in Inv.keys():
+		Output += "[img=32]res://Assets/Art/Food/" + n + ".png[/img]" + n.replace("_"," ") + ": " + str(Inv[n]) + "\n"
+	$Canvas/Cooking/Label.text = Output

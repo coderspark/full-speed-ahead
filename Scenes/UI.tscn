@@ -1,11 +1,13 @@
-[gd_scene load_steps=24 format=3 uid="uid://dbq85xa0fcnii"]
+[gd_scene load_steps=27 format=3 uid="uid://dbq85xa0fcnii"]
 
 [ext_resource type="Script" uid="uid://klae0u71y1go" path="res://Scripts/UiController.gd" id="1_wi7yl"]
 [ext_resource type="FontFile" uid="uid://dqqnsnb5xkqx7" path="res://Assets/Fonts/8bitoperator_jve.ttf" id="2_5q4fb"]
 [ext_resource type="Texture2D" uid="uid://b6a7pab0tyxve" path="res://Assets/Art/UI/button.png" id="3_mqm5i"]
+[ext_resource type="Material" uid="uid://bc4ysxhwy2g0s" path="res://Assets/Other/Outline.tres" id="4_vqx31"]
 [ext_resource type="Texture2D" uid="uid://ct8jpo3l1w4n1" path="res://Assets/Art/Boats/Basic_raft.png" id="5_13dyv"]
 [ext_resource type="Theme" uid="uid://bj15hri4ia073" path="res://Assets/Other/UI.tres" id="5_j04uc"]
 [ext_resource type="Script" uid="uid://b5ae5sgnlj8u3" path="res://Scripts/AutoSizeText.gd" id="5_wunin"]
+[ext_resource type="Shader" uid="uid://bp6mwoabhhic" path="res://Assets/Other/outline.gdshader" id="9_b1goy"]
 [ext_resource type="Texture2D" uid="uid://drj77blyscrtv" path="res://Assets/Art/UI/under.png" id="12_612k1"]
 [ext_resource type="Texture2D" uid="uid://cxq572smso73i" path="res://Assets/Art/UI/over.png" id="13_us6mg"]
 [ext_resource type="Texture2D" uid="uid://ykh1qxd24nqw" path="res://Assets/Art/UI/progress.png" id="14_8blbl"]
@@ -17,17 +19,20 @@ bg_color = Color(0.19215687, 0.19215687, 0.19215687, 0.49411765)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f140w"]
 texture = ExtResource("3_mqm5i")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j04uc"]
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b1goy"]
+texture = ExtResource("3_mqm5i")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vqx31"]
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vqx31"]
+texture = ExtResource("3_mqm5i")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n04ve"]
+shader = ExtResource("9_b1goy")
+shader_parameter/color = Color(0, 0, 0, 1)
+shader_parameter/width = 1.0
+shader_parameter/pattern = 0
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/number_of_images = Vector2(1, 1)
 
 [sub_resource type="GDScript" id="GDScript_hx8n4"]
 script/source = "extends TextureProgressBar
@@ -459,6 +464,7 @@ text = "GAME OVER"
 
 [node name="Shop" type="Panel" parent="Canvas"]
 process_mode = 3
+visible = false
 z_index = 2
 anchors_preset = 15
 anchor_right = 1.0
@@ -488,9 +494,11 @@ offset_top = 96.0
 offset_right = 432.0
 offset_bottom = 192.0
 focus_mode = 0
-theme_override_styles/normal = SubResource("StyleBoxFlat_j04uc")
+theme_override_styles/normal = SubResource("StyleBoxTexture_b1goy")
 
 [node name="Texture" type="TextureRect" parent="Canvas/Shop/Boat1"]
+z_index = 1
+material = ExtResource("4_vqx31")
 layout_mode = 0
 offset_left = 24.03946
 offset_top = 1.0000004
@@ -531,9 +539,10 @@ offset_top = 240.0
 offset_right = 432.0
 offset_bottom = 336.0
 focus_mode = 0
-theme_override_styles/normal = SubResource("StyleBoxFlat_j04uc")
+theme_override_styles/normal = SubResource("StyleBoxTexture_b1goy")
 
 [node name="Texture" type="TextureRect" parent="Canvas/Shop/Boat2"]
+material = ExtResource("4_vqx31")
 layout_mode = 0
 offset_left = 24.03946
 offset_right = 120.03946
@@ -573,9 +582,10 @@ offset_top = 384.0
 offset_right = 432.0
 offset_bottom = 480.0
 focus_mode = 0
-theme_override_styles/normal = SubResource("StyleBoxFlat_j04uc")
+theme_override_styles/normal = SubResource("StyleBoxTexture_b1goy")
 
 [node name="Texture" type="TextureRect" parent="Canvas/Shop/Boat3"]
+material = ExtResource("4_vqx31")
 layout_mode = 0
 offset_left = 24.03724
 offset_right = 120.03724
@@ -615,9 +625,10 @@ offset_top = 97.0
 offset_right = 708.0
 offset_bottom = 192.0
 focus_mode = 0
-theme_override_styles/normal = SubResource("StyleBoxFlat_vqx31")
+theme_override_styles/normal = SubResource("StyleBoxTexture_vqx31")
 
 [node name="Texture" type="TextureRect" parent="Canvas/Shop/Food1"]
+material = SubResource("ShaderMaterial_n04ve")
 layout_mode = 0
 offset_left = 12.0
 offset_top = 11.0
@@ -656,9 +667,10 @@ offset_top = 96.0
 offset_right = 924.0
 offset_bottom = 191.0
 focus_mode = 0
-theme_override_styles/normal = SubResource("StyleBoxFlat_vqx31")
+theme_override_styles/normal = SubResource("StyleBoxTexture_vqx31")
 
 [node name="Texture" type="TextureRect" parent="Canvas/Shop/Food2"]
+material = SubResource("ShaderMaterial_n04ve")
 layout_mode = 0
 offset_left = 12.0
 offset_top = 11.0
@@ -697,9 +709,10 @@ offset_top = 241.0
 offset_right = 708.0
 offset_bottom = 336.0
 focus_mode = 0
-theme_override_styles/normal = SubResource("StyleBoxFlat_vqx31")
+theme_override_styles/normal = SubResource("StyleBoxTexture_vqx31")
 
 [node name="Texture" type="TextureRect" parent="Canvas/Shop/Food3"]
+material = SubResource("ShaderMaterial_n04ve")
 layout_mode = 0
 offset_left = 12.0
 offset_top = 11.0
@@ -738,9 +751,10 @@ offset_top = 240.0
 offset_right = 924.0
 offset_bottom = 335.0
 focus_mode = 0
-theme_override_styles/normal = SubResource("StyleBoxFlat_vqx31")
+theme_override_styles/normal = SubResource("StyleBoxTexture_vqx31")
 
 [node name="Texture" type="TextureRect" parent="Canvas/Shop/Food4"]
+material = SubResource("ShaderMaterial_n04ve")
 layout_mode = 0
 offset_left = 12.0
 offset_top = 11.0
@@ -779,9 +793,10 @@ offset_top = 385.0
 offset_right = 708.0
 offset_bottom = 480.0
 focus_mode = 0
-theme_override_styles/normal = SubResource("StyleBoxFlat_vqx31")
+theme_override_styles/normal = SubResource("StyleBoxTexture_vqx31")
 
 [node name="Texture" type="TextureRect" parent="Canvas/Shop/Food5"]
+material = SubResource("ShaderMaterial_n04ve")
 layout_mode = 0
 offset_left = 12.0
 offset_top = 11.0
@@ -820,9 +835,10 @@ offset_top = 384.0
 offset_right = 924.0
 offset_bottom = 479.0
 focus_mode = 0
-theme_override_styles/normal = SubResource("StyleBoxFlat_vqx31")
+theme_override_styles/normal = SubResource("StyleBoxTexture_vqx31")
 
 [node name="Texture" type="TextureRect" parent="Canvas/Shop/Food6"]
+material = SubResource("ShaderMaterial_n04ve")
 layout_mode = 0
 offset_left = 12.0
 offset_top = 11.0
@@ -852,6 +868,65 @@ offset_right = 119.99997
 offset_bottom = 59.0
 texture = ExtResource("15_5q4fb")
 stretch_mode = 5
+
+[node name="Back" type="Button" parent="Canvas/Shop"]
+layout_mode = 0
+offset_left = 784.0
+offset_top = 40.0
+offset_right = 928.0
+offset_bottom = 78.48195
+text = "Continue"
+flat = true
+
+[node name="Texture" type="TextureRect" parent="Canvas/Shop/Back"]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 39.065796
+texture = ExtResource("3_mqm5i")
+
+[node name="Label" type="Label" parent="Canvas/Shop/Back"]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 38.48195
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+text = "Continue"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Cooking" type="Panel" parent="Canvas"]
+process_mode = 3
+visible = false
+z_index = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -0.13293457
+offset_bottom = -0.0748291
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qxria")
+
+[node name="TopText" type="Label" parent="Canvas/Cooking"]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 959.86707
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 96
+text = "COOKING"
+horizontal_alignment = 1
+
+[node name="Label" type="RichTextLabel" parent="Canvas/Cooking"]
+layout_mode = 0
+offset_left = 26.400024
+offset_top = 91.065796
+offset_right = 249.00223
+offset_bottom = 499.5255
+bbcode_enabled = true
+text = "[font=res://Assets/Fonts/8bitoperator_jve.ttf][font_size=24]
+[img=32]res://Assets/Art/Food/Stockfish.png[/img] Stockfish: 1"
 
 [node name="HP" type="TextureProgressBar" parent="Canvas"]
 anchors_preset = 5
@@ -995,4 +1070,5 @@ libraries = {
 [connection signal="pressed" from="Canvas/Shop/Food4" to="." method="ShopButtonPressed" binds= [6]]
 [connection signal="pressed" from="Canvas/Shop/Food5" to="." method="ShopButtonPressed" binds= [7]]
 [connection signal="pressed" from="Canvas/Shop/Food6" to="." method="ShopButtonPressed" binds= [8]]
+[connection signal="pressed" from="Canvas/Shop/Back" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="Canvas/Paused/Lag" to="." method="_on_lag_pressed"]
