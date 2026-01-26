@@ -164,3 +164,7 @@ func CookRecipe(id:int):
 		FormatInventory(Inventory)
 		UpdateCookableRecipies()
 		print("cookieng")
+
+func IntitializeCutscene():
+	$Animations.play("Cinematic_fadein")
+	
