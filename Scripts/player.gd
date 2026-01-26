@@ -44,7 +44,7 @@ func getoverlappingtiles() -> Array:
 	return res
 
 func _physics_process(delta: float) -> void: 
-	if !GameStarted:
+	if !GameStarted or Global.DayEnded:
 		return
 	
 	if Input.get_axis("move_left", "move_right") == 0:
@@ -94,20 +94,27 @@ func _on_shop_detection_body_entered(body: Node2D) -> void:
 func UpdateCoinCount():
 	$"../../UI/Canvas/Coins".text = str(coins)
 
-func UpdateBoat(name : String):
-	MyBoat = name
-	max_health = Global.BOAT_STATS[name]["hp"]
+func UpdateBoat(nam : String):
+	MyBoat = nam
+	max_health = Global.BOAT_STATS[nam]["hp"]
 	health = max_health
-	max_speed = Global.BOAT_STATS[name]["speed"] * 10
-	max_turn_speed = Global.BOAT_STATS[name]["turn_speed"]
-	turn_velocity = Global.BOAT_STATS[name]["turn_speed"] / 30.0
-	coin_mult = Global.BOAT_STATS[name]["coin_multiplier"]
+	max_speed = Global.BOAT_STATS[nam]["speed"] * 10
+	max_turn_speed = Global.BOAT_STATS[nam]["turn_speed"]
+	turn_velocity = Global.BOAT_STATS[nam]["turn_speed"] / 30.0
+	coin_mult = Global.BOAT_STATS[nam]["coin_multiplier"]
 	velocity = Vector2.ZERO
 	$"../../UI/Canvas/HP".MAX_HP = max_health
 	$"../../UI/Canvas/HP".HP = health
 	$"../../UI/Canvas/HP".Update()
 	$Sprite.texture = load("res://Assets/Art/Boats/" + MyBoat + ".png")
-	$Sprite.scale = Vector2(Global.BOAT_SCALE_MODIFIERS.get(name,1.0),Global.BOAT_SCALE_MODIFIERS.get(name,1.0))
+	$Sprite.scale = Vector2(Global.BOAT_SCALE_MODIFIERS.get(nam,1.0),Global.BOAT_SCALE_MODIFIERS.get(nam,1.0))
 
 func _on_ui_start_game() -> void:
 	GameStarted = true
+
+func EndDay():
+	GameStarted = false
+	while velocity != Vector2.ZERO:
+		velocity *= 0.9
+		await get_tree().create_timer(0.01,true,true,true).timeout
+		
