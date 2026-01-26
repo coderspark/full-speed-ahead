@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjdrf52sn3877"
-path="res://.godot/imported/Reinforced_canoe.png-c0f4e0f2cd22c93f1da1a5f30ecafbb5.ctex"
+uid="uid://djigu2aubplr8"
+path="res://.godot/imported/coinmultiplier.png-837d5d096261bbdafe2f10f2d2555a74.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/Boats/Reinforced_canoe.png"
-dest_files=["res://.godot/imported/Reinforced_canoe.png-c0f4e0f2cd22c93f1da1a5f30ecafbb5.ctex"]
+source_file="res://Assets/Art/UI/coinmultiplier.png"
+dest_files=["res://.godot/imported/coinmultiplier.png-837d5d096261bbdafe2f10f2d2555a74.ctex"]
 
 [params]
 

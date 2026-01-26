@@ -102,6 +102,7 @@ func UpdateBoat(name : String):
 	max_turn_speed = Global.BOAT_STATS[name]["turn_speed"]
 	turn_velocity = Global.BOAT_STATS[name]["turn_speed"] / 30.0
 	coin_mult = Global.BOAT_STATS[name]["coin_multiplier"]
+	velocity = Vector2.ZERO
 	$"../../UI/Canvas/HP".MAX_HP = max_health
 	$"../../UI/Canvas/HP".HP = health
 	$"../../UI/Canvas/HP".Update()
