@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bu18xywouviyc"
-path="res://.godot/imported/Reinforced_raft.png-1a76e127b5584f3ebb78d11d8a894409.ctex"
+path="res://.godot/imported/reinforced_raft.png-4bbf4406b963c436bf9e88e37eeae37c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/Boats/Reinforced_raft.png"
-dest_files=["res://.godot/imported/Reinforced_raft.png-1a76e127b5584f3ebb78d11d8a894409.ctex"]
+source_file="res://Assets/Art/Boats/reinforced_raft.png"
+dest_files=["res://.godot/imported/reinforced_raft.png-4bbf4406b963c436bf9e88e37eeae37c.ctex"]
 
 [params]
 
