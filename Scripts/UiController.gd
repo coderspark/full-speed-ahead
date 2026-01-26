@@ -6,6 +6,7 @@ signal RestartGame
 var ShopOpen = false
 
 var current_shop_contents = []
+var Inventory = {}
 
 var paused = false
 
@@ -106,12 +107,13 @@ func ShopButtonPressed(id:int):
 			$Canvas/Shop.get_node("Food" + str(id -2) + "/Label").text = "SOLD OUT"
 			$Canvas/Shop.get_node("Food" + str(id -2) + "/Coin").hide()
 			
-			$"../Players/Player".AddFoodItemToInventory(current_shop_contents[id])
+			AddFoodItemToInventory(current_shop_contents[id])
 			
 
 
 func _on_continue_pressed() -> void:
-	FormatInventory($"../Players/Player".Inventory)
+	FormatInventory(Inventory)
+	UpdateCookableRecipies()
 	$Canvas/Shop.hide()
 	$Canvas/Cooking.show()
 
@@ -122,3 +124,43 @@ func FormatInventory(Inv : Dictionary):
 	for n : String in Inv.keys():
 		Output += "[img=32]res://Assets/Art/Food/" + n + ".png[/img]" + n.replace("_"," ") + ": " + str(Inv[n]) + "\n"
 	$Canvas/Cooking/Label.text = Output
+
+
+func UpdateCookableRecipies():
+	for ID in range(7):
+		$"Canvas/Cooking".get_node("Menu" + str(ID + 1)).disabled = !CheckRecipeCraftable(ID)
+		print(ID)
+
+func AddFoodItemToInventory(nam:String):
+	if Inventory.has(nam):
+		Inventory[nam] += 1
+	else:
+		Inventory[nam] = 1
+
+func RemoveFoodItemFromInventory(nam:String):
+	if Inventory.has(nam):
+		if Inventory[nam] <= 1:
+			Inventory.erase(nam)
+		else:
+			Inventory[nam] -= 1
+	else:
+		printerr("Inventory did not contain the following: " + nam)
+
+func CheckRecipeCraftable(id:int):
+	var Recipe = Global.Recipies[id]
+	for Item in Recipe:
+		if not Item in Inventory:
+			return false
+	return true
+
+func CookRecipe(id:int):
+	
+	var Recipe = Global.Recipies[id]
+	for Item in Recipe:
+		if not Item in Inventory:
+			return false
+	for Item in Recipe:
+		RemoveFoodItemFromInventory(Item)
+		FormatInventory(Inventory)
+		UpdateCookableRecipies()
+		print("cookieng")

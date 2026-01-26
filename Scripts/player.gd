@@ -15,10 +15,9 @@ var max_health = 5
 var coin_mult = 1.0
 
 var paused = false
-var coins = 9999999999999
+var coins = 0
 
 var MyBoat = ""
-var Inventory = {}
 
 
 var GameStarted = false
@@ -89,7 +88,6 @@ func _on_collision_detector_body_exited(body: Node2D) -> void:
 
 
 func _on_shop_detection_body_entered(body: Node2D) -> void:
-	
 	$"../../UI".ShowShop()
 	get_tree().paused = true
 	
@@ -112,10 +110,3 @@ func UpdateBoat(name : String):
 
 func _on_ui_start_game() -> void:
 	GameStarted = true
-
-func AddFoodItemToInventory(nam:String):
-	if Inventory.has(nam):
-		Inventory[nam] += 1
-	else:
-		Inventory[nam] = 1
-	print(Inventory)
