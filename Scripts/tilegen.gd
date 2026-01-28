@@ -38,7 +38,7 @@ func _ready() -> void:
 	for i in range(number_of_templates):
 		difficulties.append((get_cell_atlas_coords(Vector2i(TEMPLATE_START.x+(8*i), TEMPLATE_START.y-1))).x)
 	var map = []
-	for n in range(Global.LevelData[Global.LevelName].LengthDays ):
+	for n in range(Global.LevelData[Global.LevelName].LengthDays * 8):
 		var weights = [0.0, 0.0, 0.0, 0.0, 0.0]
 		for i in range(5):
 			const E = 2.718281828

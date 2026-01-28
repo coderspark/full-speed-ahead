@@ -8,26 +8,26 @@
 [ext_resource type="Theme" uid="uid://bj15hri4ia073" path="res://Assets/Other/UI.tres" id="5_j04uc"]
 [ext_resource type="Script" path="res://Scripts/AutoSizeText.gd" id="5_wunin"]
 [ext_resource type="Shader" uid="uid://bp6mwoabhhic" path="res://Assets/Other/outline.gdshader" id="9_b1goy"]
-[ext_resource type="Texture2D" uid="uid://07u5xc0x4mup" path="res://Assets/Art/Food/beer.png" id="10_5q4fb"]
-[ext_resource type="Texture2D" uid="uid://bqf2m2w0blk8d" path="res://Assets/Art/Food/green_peas.png" id="11_mqm5i"]
+[ext_resource type="Texture2D" uid="uid://07u5xc0x4mup" path="res://Assets/Art/Food/Beer.png" id="10_5q4fb"]
+[ext_resource type="Texture2D" uid="uid://bqf2m2w0blk8d" path="res://Assets/Art/Food/Green_peas.png" id="11_mqm5i"]
 [ext_resource type="Texture2D" uid="uid://drj77blyscrtv" path="res://Assets/Art/UI/under.png" id="12_612k1"]
-[ext_resource type="Texture2D" uid="uid://b7t2b4ejb3pg0" path="res://Assets/Art/Food/stockfish.png" id="12_jnovg"]
-[ext_resource type="Texture2D" uid="uid://clot15xlfl0a8" path="res://Assets/Art/Food/wine.png" id="13_612k1"]
+[ext_resource type="Texture2D" uid="uid://b7t2b4ejb3pg0" path="res://Assets/Art/Food/Stockfish.png" id="12_jnovg"]
+[ext_resource type="Texture2D" uid="uid://clot15xlfl0a8" path="res://Assets/Art/Food/Wine.png" id="13_612k1"]
 [ext_resource type="Texture2D" uid="uid://cxq572smso73i" path="res://Assets/Art/UI/over.png" id="13_us6mg"]
 [ext_resource type="Texture2D" uid="uid://lq770elr4qd3" path="res://Assets/Art/UI/speed i need this.png" id="13_wijgc"]
 [ext_resource type="Texture2D" uid="uid://ykh1qxd24nqw" path="res://Assets/Art/UI/progress.png" id="14_8blbl"]
 [ext_resource type="Texture2D" uid="uid://cpcvis2epoaxr" path="res://Assets/Art/Food/White_beans.png" id="14_us6mg"]
 [ext_resource type="Texture2D" uid="uid://hr83bwn7weob" path="res://Assets/Art/UI/turnspeed.png" id="14_yhvps"]
 [ext_resource type="Texture2D" uid="uid://bw2gvkaylchw8" path="res://Assets/Art/UI/coinicon.png" id="15_5q4fb"]
-[ext_resource type="Texture2D" uid="uid://crkhng6s7b61" path="res://Assets/Art/Food/bacon.png" id="15_8blbl"]
+[ext_resource type="Texture2D" uid="uid://crkhng6s7b61" path="res://Assets/Art/Food/Bacon.png" id="15_8blbl"]
 [ext_resource type="Texture2D" uid="uid://2t23o36u7hcp" path="res://Assets/Art/Food/Pickles.png" id="16_bb0on"]
-[ext_resource type="Texture2D" uid="uid://b2vnd2ocyolbx" path="res://Assets/Art/Food/gin.png" id="17_wijgc"]
-[ext_resource type="Texture2D" uid="uid://byd2o743ljnlv" path="res://Assets/Art/Food/rice.png" id="18_yhvps"]
+[ext_resource type="Texture2D" uid="uid://b2vnd2ocyolbx" path="res://Assets/Art/Food/Gin.png" id="17_wijgc"]
+[ext_resource type="Texture2D" uid="uid://byd2o743ljnlv" path="res://Assets/Art/Food/Rice.png" id="18_yhvps"]
 [ext_resource type="Texture2D" uid="uid://djigu2aubplr8" path="res://Assets/Art/UI/coinmultiplier.png" id="19_qvwwb"]
 [ext_resource type="Texture2D" uid="uid://dhqcgiprxxlis" path="res://Assets/Art/Food/Plums.png" id="19_tb15e"]
 [ext_resource type="Texture2D" uid="uid://dhoa5msdxekql" path="res://Assets/Art/Food/Sauerkraut.png" id="20_qvwwb"]
-[ext_resource type="Texture2D" uid="uid://dippg4fsq63s6" path="res://Assets/Art/Food/meat.png" id="21_qqo6a"]
-[ext_resource type="Texture2D" uid="uid://h8nuqrr5dhea" path="res://Assets/Art/Food/gray_peas.png" id="22_8ekee"]
+[ext_resource type="Texture2D" uid="uid://dippg4fsq63s6" path="res://Assets/Art/Food/Meat.png" id="21_qqo6a"]
+[ext_resource type="Texture2D" uid="uid://h8nuqrr5dhea" path="res://Assets/Art/Food/Gray_peas.png" id="22_8ekee"]
 [ext_resource type="Texture2D" uid="uid://d4artjbbww8x1" path="res://Assets/Art/Temp/heart_half.png" id="25_qqo6a"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qxria"]
@@ -1879,6 +1879,7 @@ z_index = -1
 layout_mode = 0
 offset_right = 428.0
 offset_bottom = 72.0
+mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxTexture_wijgc")
 
 [node name="Animations" type="AnimationPlayer" parent="."]

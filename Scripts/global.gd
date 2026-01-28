@@ -51,13 +51,13 @@ const BOAT_STATS = {
 	}, "Basic_motorboat":{
 		"cost":90,
 		"speed":9,
-		"turn_speed":4,
+		"turn_speed":5,
 		"hp":10,
 		"coin_multiplier":3.0
 	}, "Reinforced_motorboat":{
 		"cost":130,
 		"speed":9,
-		"turn_speed":5,
+		"turn_speed":7,
 		"hp":15,
 		"coin_multiplier":3.5
 	}, "Aircraft_carrier":{
@@ -96,7 +96,7 @@ var LevelName = ""
 var LevelData = {
 	"Engeland":{"StartCoinCount":10, "LengthDays":3},
 	"Portugal":{"StartCoinCount":20, "LengthDays":10},
-	"KaapdegoedeHoop":{"StartCoinCount":40,"LengthDays":15},
+	"KaapdegoedeHoop":{"StartCoinCount":40000,"LengthDays":15},
 	"Jakarta":{"StartCoinCount":80,"LengthDays":25},
 	"Paaseiland":{"StartCoinCount":80,"LengthDays":30},
 }
