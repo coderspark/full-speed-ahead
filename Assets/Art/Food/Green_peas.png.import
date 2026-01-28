@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqf2m2w0blk8d"
-path="res://.godot/imported/green_peas.png-3862d58849a315b3e288b4cd3c5073e6.ctex"
+uid="uid://b4mdnh048kyv2"
+path="res://.godot/imported/Green_peas.png-00cb91664e50db1f1b66348e63385102.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/Food/green_peas.png"
-dest_files=["res://.godot/imported/green_peas.png-3862d58849a315b3e288b4cd3c5073e6.ctex"]
+source_file="res://Assets/Art/Food/Green_peas.png"
+dest_files=["res://.godot/imported/Green_peas.png-00cb91664e50db1f1b66348e63385102.ctex"]
 
 [params]
 

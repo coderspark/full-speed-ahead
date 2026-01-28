@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7t2b4ejb3pg0"
-path="res://.godot/imported/stockfish.png-e58194fdc2187f3cb06981ee8d1da75f.ctex"
+uid="uid://cyitfrdndn78v"
+path="res://.godot/imported/Stockfish.png-b0321cff91e1e2bd6b80ec87a0d61cdf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/Food/stockfish.png"
-dest_files=["res://.godot/imported/stockfish.png-e58194fdc2187f3cb06981ee8d1da75f.ctex"]
+source_file="res://Assets/Art/Food/Stockfish.png"
+dest_files=["res://.godot/imported/Stockfish.png-b0321cff91e1e2bd6b80ec87a0d61cdf.ctex"]
 
 [params]
 
