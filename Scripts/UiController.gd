@@ -71,7 +71,7 @@ func RandomizeShopContents():
 		get_node("Canvas/Shop/Boat" + str(i+1) + "/Texture").texture = load("res://Assets/Art/Boats/" + n + ".png")
 	current_shop_contents = Boats
 	var Food : Array = []
-	for i in range(8):
+	for i in range(6):
 		var n = Global.FoodItems.keys().pick_random()
 		$Canvas/Shop.get_node("Food" + str(i + 1)).disabled = false
 		while n in Food:
@@ -163,16 +163,13 @@ func CookRecipe(id:int):
 			return false
 	for Item in Recipe:
 		RemoveFoodItemFromInventory(Item)
-		FormatInventory(Inventory)
-		UpdateCookableRecipies()
+		
 		print("cookieng")
 
 func IntitializeCutscene():
 	$Animations.play("Cinematic_fadein")
 	await $Animations.animation_finished
 	AnimationFinished.emit()
-	
-
 
 func _on_continue_pressed() -> void:
 	$Animations.play("ShopFadeout")

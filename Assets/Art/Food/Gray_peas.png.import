@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://h8nuqrr5dhea"
-path="res://.godot/imported/gray_peas.png-a00618d320709ad71eae982869c3822d.ctex"
+path="res://.godot/imported/Gray_peas.png-baa4f8d71f5fd0c39a6d161e04294281.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/Food/gray_peas.png"
-dest_files=["res://.godot/imported/gray_peas.png-a00618d320709ad71eae982869c3822d.ctex"]
+source_file="res://Assets/Art/Food/Gray_peas.png"
+dest_files=["res://.godot/imported/Gray_peas.png-baa4f8d71f5fd0c39a6d161e04294281.ctex"]
 
 [params]
 
