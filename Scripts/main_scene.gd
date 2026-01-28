@@ -10,10 +10,7 @@ func _ready() -> void:
 func _on_ui_restart_game() -> void:
 	get_parent().RestartGame()
 
-
-
 func _process(delta: float) -> void:
-	
 	if Global.AdvanceTime and $Players/Player.GameStarted and !$Players/Player.paused:
 		TimeOfDAy += 2
 		modulate = TimeToColorModulate(TimeOfDAy)

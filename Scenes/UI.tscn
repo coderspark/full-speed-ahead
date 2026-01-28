@@ -693,9 +693,9 @@ horizontal_alignment = 1
 [node name="Boat1" type="Button" parent="Canvas/Shop"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 0
-offset_left = 48.0
+offset_left = 24.0
 offset_top = 96.0
-offset_right = 432.0
+offset_right = 408.0
 offset_bottom = 192.0
 focus_mode = 0
 theme_override_styles/normal = SubResource("StyleBoxTexture_b1goy")
@@ -738,9 +738,9 @@ stretch_mode = 5
 [node name="Boat2" type="Button" parent="Canvas/Shop"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 0
-offset_left = 48.0
+offset_left = 24.0
 offset_top = 240.0
-offset_right = 432.0
+offset_right = 408.0
 offset_bottom = 336.0
 focus_mode = 0
 theme_override_styles/normal = SubResource("StyleBoxTexture_b1goy")
@@ -781,9 +781,9 @@ stretch_mode = 5
 [node name="Boat3" type="Button" parent="Canvas/Shop"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 0
-offset_left = 48.00222
+offset_left = 24.00222
 offset_top = 384.0
-offset_right = 432.0
+offset_right = 408.0
 offset_bottom = 480.0
 focus_mode = 0
 theme_override_styles/normal = SubResource("StyleBoxTexture_b1goy")
@@ -1073,89 +1073,30 @@ offset_bottom = 59.0
 texture = ExtResource("15_5q4fb")
 stretch_mode = 5
 
-[node name="Food7" type="Button" parent="Canvas/Shop"]
+[node name="Reroll" type="Button" parent="Canvas/Shop"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 0
 offset_left = 504.0
-offset_top = 409.0
+offset_top = 420.0
 offset_right = 708.0
-offset_bottom = 504.0
+offset_bottom = 478.25623
 focus_mode = 0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxTexture_vqx31")
+alignment = 0
 
-[node name="Texture" type="TextureRect" parent="Canvas/Shop/Food7"]
-material = SubResource("ShaderMaterial_n04ve")
+[node name="Label" type="Label" parent="Canvas/Shop/Reroll"]
 layout_mode = 0
-offset_left = 12.0
-offset_top = 11.0
-offset_right = 84.0
-offset_bottom = 83.0
-texture = ExtResource("5_13dyv")
-expand_mode = 2
-stretch_mode = 5
-
-[node name="Label" type="Label" parent="Canvas/Shop/Food7"]
-layout_mode = 0
-offset_left = 96.00001
-offset_top = 11.000002
-offset_right = 460.15808
-offset_bottom = 253.77203
+offset_left = 24.000008
+offset_top = 12.000002
+offset_right = 469.08203
+offset_bottom = 107.8147
 scale = Vector2(0.2965745, 0.2965745)
 theme = ExtResource("5_j04uc")
 theme_override_font_sizes/font_size = 80
-text = "Groen Erwten"
+text = "Reroll"
 clip_text = true
-
-[node name="Coin" type="TextureRect" parent="Canvas/Shop/Food7"]
-layout_mode = 0
-offset_left = 95.99997
-offset_top = 35.0
-offset_right = 119.99997
-offset_bottom = 59.0
-texture = ExtResource("15_5q4fb")
-stretch_mode = 5
-
-[node name="Food8" type="Button" parent="Canvas/Shop"]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 0
-offset_left = 720.0
-offset_top = 408.0
-offset_right = 924.0
-offset_bottom = 503.0
-focus_mode = 0
-theme_override_styles/normal = SubResource("StyleBoxTexture_vqx31")
-
-[node name="Texture" type="TextureRect" parent="Canvas/Shop/Food8"]
-material = SubResource("ShaderMaterial_n04ve")
-layout_mode = 0
-offset_left = 12.0
-offset_top = 11.0
-offset_right = 84.0
-offset_bottom = 83.0
-texture = ExtResource("5_13dyv")
-expand_mode = 2
-stretch_mode = 5
-
-[node name="Label" type="Label" parent="Canvas/Shop/Food8"]
-layout_mode = 0
-offset_left = 96.00001
-offset_top = 11.000002
-offset_right = 460.15845
-offset_bottom = 253.77203
-scale = Vector2(0.2965745, 0.2965745)
-theme = ExtResource("5_j04uc")
-theme_override_font_sizes/font_size = 80
-text = "Groen Erwten"
-clip_text = true
-
-[node name="Coin" type="TextureRect" parent="Canvas/Shop/Food8"]
-layout_mode = 0
-offset_left = 95.99997
-offset_top = 35.0
-offset_right = 119.99997
-offset_bottom = 59.0
-texture = ExtResource("15_5q4fb")
-stretch_mode = 5
 
 [node name="Continue" type="Button" parent="Canvas/Shop"]
 layout_mode = 0
@@ -1880,6 +1821,7 @@ color = Color(0, 0, 0, 1)
 libraries = {
 &"": SubResource("AnimationLibrary_b1goy")
 }
+autoplay = "ShopFadein"
 
 [connection signal="pressed" from="Canvas/GameOver/restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="Canvas/GameOver/quit" to="." method="_on_quit_pressed"]
@@ -1892,8 +1834,7 @@ libraries = {
 [connection signal="pressed" from="Canvas/Shop/Food4" to="." method="ShopButtonPressed" binds= [6]]
 [connection signal="pressed" from="Canvas/Shop/Food5" to="." method="ShopButtonPressed" binds= [7]]
 [connection signal="pressed" from="Canvas/Shop/Food6" to="." method="ShopButtonPressed" binds= [8]]
-[connection signal="pressed" from="Canvas/Shop/Food7" to="." method="ShopButtonPressed" binds= [7]]
-[connection signal="pressed" from="Canvas/Shop/Food8" to="." method="ShopButtonPressed" binds= [8]]
+[connection signal="pressed" from="Canvas/Shop/Reroll" to="." method="ShopButtonPressed" binds= [8]]
 [connection signal="pressed" from="Canvas/Shop/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="Canvas/Cooking/Menu1" to="." method="CookRecipe" binds= [0]]
 [connection signal="pressed" from="Canvas/Cooking/Menu2" to="." method="CookRecipe" binds= [1]]
