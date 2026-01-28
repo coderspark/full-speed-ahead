@@ -4,6 +4,7 @@ var TimeOfDAy := 700.0
 
 func _ready() -> void:
 	$UI/Canvas/Shop.show()
+	modulate = TimeToColorModulate(TimeOfDAy)
 	
 
 func _on_ui_restart_game() -> void:
@@ -12,7 +13,8 @@ func _on_ui_restart_game() -> void:
 
 
 func _process(delta: float) -> void:
-	if Global.AdvanceTime:
+	
+	if Global.AdvanceTime and $Players/Player.GameStarted and !$Players/Player.paused:
 		TimeOfDAy += 2
 		modulate = TimeToColorModulate(TimeOfDAy)
 		if TimeOfDAy > 1950 and not Global.DayEnded:

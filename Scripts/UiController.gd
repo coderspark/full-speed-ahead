@@ -71,7 +71,7 @@ func RandomizeShopContents():
 		get_node("Canvas/Shop/Boat" + str(i+1) + "/Texture").texture = load("res://Assets/Art/Boats/" + n + ".png")
 	current_shop_contents = Boats
 	var Food : Array = []
-	for i in range(6):
+	for i in range(8):
 		var n = Global.FoodItems.keys().pick_random()
 		$Canvas/Shop.get_node("Food" + str(i + 1)).disabled = false
 		while n in Food:
