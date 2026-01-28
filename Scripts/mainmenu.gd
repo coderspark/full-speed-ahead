@@ -35,6 +35,7 @@ func StartGame(lvl:String):
 	$Camera.queue_free()
 	$Fade/Animations.play("fade_out")
 	await $Fade/Animations.animation_finished
+	$MainScene/UI/Animations.play("ShopFadein")
 
 func RestartGame():
 	

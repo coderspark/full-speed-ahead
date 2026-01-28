@@ -22,6 +22,7 @@ var MyBoat = ""
 
 var GameStarted = false
 func _ready() -> void:
+	coins = Global.LevelData[Global.LevelName]["StartCoinCount"]
 	UpdateCoinCount()
 	UpdateBoat(Global.STARTER_BOAT)
 	
@@ -43,7 +44,7 @@ func getoverlappingtiles() -> Array:
 			res.append([ttype, rot, coords])
 	return res
 
-func _physics_process(delta: float) -> void: 
+func _physics_process(_delta: float) -> void: 
 	if !GameStarted or Global.DayEnded:
 		return
 	
@@ -74,7 +75,7 @@ func _physics_process(delta: float) -> void:
 	pushingdirs = []
 	move_and_slide()
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
+func _on_area_2d_body_entered(_body: Node2D) -> void:
 	delta_rot = 0
 	health -= 1
 	$"../../UI/Canvas/HP".HP = health
@@ -83,11 +84,11 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		$"../../UI".gameover()
 		paused = true
 	isbounce = true
-func _on_collision_detector_body_exited(body: Node2D) -> void:
+func _on_collision_detector_body_exited(_body: Node2D) -> void:
 	isbounce = false
 
 
-func _on_shop_detection_body_entered(body: Node2D) -> void:
+func _on_shop_detection_body_entered(_body: Node2D) -> void:
 	$"../../UI".ShowShop()
 	get_tree().paused = true
 	

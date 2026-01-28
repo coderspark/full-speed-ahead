@@ -3,10 +3,13 @@ extends Node2D
 var TimeOfDAy := 700.0
 
 func _ready() -> void:
-	print("LOADED LEVEL: " + Global.LevelName)
+	$UI/Canvas/Shop.show()
+	
 
 func _on_ui_restart_game() -> void:
 	get_parent().RestartGame()
+
+
 
 func _process(delta: float) -> void:
 	if Global.AdvanceTime:

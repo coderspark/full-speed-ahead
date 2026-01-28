@@ -11,7 +11,6 @@ const BOAT_SCALE_MODIFIERS : Dictionary = {
 	"Reinforced_raft": 0.5,
 	"Aircraft_carrier": 0.5
 }
-
 const BOAT_STATS = {
 	"Basic_raft":{
 		"cost":0,
@@ -69,7 +68,6 @@ const BOAT_STATS = {
 		"coin_multiplier":5
 	}
 }
-
 var FoodItems = {
 	"Beer":[0.2],
 	"Gin":[0.3],
@@ -85,7 +83,6 @@ var FoodItems = {
 	"Sauerkraut":[1],
 	"Bacon":[1]
 }
-
 var Recipies = [
 	["Beer","Green_peas","Stockfish"],
 	["Wine","White_beans","Bacon","Pickles"],
@@ -95,5 +92,11 @@ var Recipies = [
 	["Beer","Plums","Rice"],
 	["Gin","Meat","Gray_peas","Pickles"],
 ]
-
 var LevelName = ""
+var LevelData = {
+	"Engeland":{"StartCoinCount":10},
+	"Portugal":{"StartCoinCount":20},
+	"KaapdegoedeHoop":{"StartCoinCount":40},
+	"Jakarta":{"StartCoinCount":80},
+	"Paaseiland":{"StartCoinCount":80},
+}

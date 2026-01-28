@@ -19,7 +19,7 @@ func _ready() -> void:
 func CallStartGame():
 	StartGame.emit()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("ADMIN"):
 		RandomizeShopContents()
 	if Input.is_action_just_pressed("pause"):
@@ -92,22 +92,22 @@ func ShowShop():
 
 func ShopButtonPressed(id:int):
 	if id <= 2:
-		if Global.BOAT_STATS[current_shop_contents[id]]["cost"] < $"../Players/Player".coins:
+		if Global.BOAT_STATS[current_shop_contents[id]]["cost"] <= $"../Players/Player".coins:
 			$"../Players/Player".coins -= Global.BOAT_STATS[current_shop_contents[id]]["cost"]
 			$"../Players/Player".UpdateCoinCount()
-			$Canvas/Shop.get_node("Boat" + str(id + 1)).disabled = true
-			$Canvas/Shop.get_node("Boat" + str(id + 1) + "/Texture").texture = preload("res://Assets/Art/Temp/sold_out.png")
-			$Canvas/Shop.get_node("Boat" + str(id + 1) + "/Label").text = "SOLD OUT"
-			$Canvas/Shop.get_node("Boat" + str(id + 1) + "/Coin").hide()
+			#$Canvas/Shop.get_node("Boat" + str(id + 1)).disabled = true
+			#$Canvas/Shop.get_node("Boat" + str(id + 1) + "/Texture").texture = preload("res://Assets/Art/Temp/sold_out.png")
+			#$Canvas/Shop.get_node("Boat" + str(id + 1) + "/Label").text = "SOLD OUT"
+			#$Canvas/Shop.get_node("Boat" + str(id + 1) + "/Coin").hide()
 			$"../Players/Player".UpdateBoat(current_shop_contents[id])
 	else:
-		if Global.FoodItems[current_shop_contents[id]][0] < $"../Players/Player".coins:
+		if Global.FoodItems[current_shop_contents[id]][0] <= $"../Players/Player".coins:
 			$"../Players/Player".coins -= Global.FoodItems[current_shop_contents[id]][0]
 			$"../Players/Player".UpdateCoinCount()
-			$Canvas/Shop.get_node("Food" + str(id -2)).disabled = true
-			$Canvas/Shop.get_node("Food" + str(id -2) + "/Texture").texture = preload("res://Assets/Art/Temp/sold_out.png")
-			$Canvas/Shop.get_node("Food" + str(id -2) + "/Label").text = "SOLD OUT"
-			$Canvas/Shop.get_node("Food" + str(id -2) + "/Coin").hide()
+			#$Canvas/Shop.get_node("Food" + str(id -2)).disabled = true
+			#$Canvas/Shop.get_node("Food" + str(id -2) + "/Texture").texture = preload("res://Assets/Art/Temp/sold_out.png")
+			#$Canvas/Shop.get_node("Food" + str(id -2) + "/Label").text = "SOLD OUT"
+			#$Canvas/Shop.get_node("Food" + str(id -2) + "/Coin").hide()
 			
 			AddFoodItemToInventory(current_shop_contents[id])
 			
@@ -172,3 +172,7 @@ func IntitializeCutscene():
 	await $Animations.animation_finished
 	AnimationFinished.emit()
 	
+
+
+func _on_continue_pressed() -> void:
+	$Animations.play("ShopFadeout")
