@@ -17,6 +17,12 @@ func _physics_process(delta: float) -> void:
 		dir = 1
 	position = lerp(PATH_POINTS[0], PATH_POINTS[1], n)
 	if dir == -1:
-		look_at(PATH_POINTS[0])
+		if PATH_POINTS[0].x == PATH_POINTS[1].x:
+			rotation = 1.5 * PI
+		else:
+			rotation = PI
 	else:
-		look_at(PATH_POINTS[1])
+		if PATH_POINTS[0].x == PATH_POINTS[1].x:
+			rotation = 0.5 * PI
+		else:
+			rotation = 0

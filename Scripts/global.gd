@@ -2,7 +2,7 @@ extends Node
 
 var DayEnded = false
 
-const AdvanceTime = true
+const AdvanceTime = false
 
 const STARTER_BOAT = "Reinforced_motorboat"
 
@@ -94,9 +94,9 @@ var Recipies = [
 ]
 var LevelName = ""
 var LevelData = {
-	"Engeland":{"StartCoinCount":10},
-	"Portugal":{"StartCoinCount":20},
-	"KaapdegoedeHoop":{"StartCoinCount":40},
-	"Jakarta":{"StartCoinCount":80},
-	"Paaseiland":{"StartCoinCount":80},
+	"Engeland":{"StartCoinCount":10, "LengthDays":3},
+	"Portugal":{"StartCoinCount":20, "LengthDays":10},
+	"KaapdegoedeHoop":{"StartCoinCount":40,"LengthDays":15},
+	"Jakarta":{"StartCoinCount":80,"LengthDays":25},
+	"Paaseiland":{"StartCoinCount":80,"LengthDays":30},
 }
