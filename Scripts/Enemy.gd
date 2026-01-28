@@ -16,6 +16,7 @@ func _physics_process(delta: float) -> void:
 	if n <= 0.01 and dir == -1:
 		dir = 1
 	position = lerp(PATH_POINTS[0], PATH_POINTS[1], n)
+	$CollisionShape2D.to_local(position)
 	if dir == -1:
 		if PATH_POINTS[0].x == PATH_POINTS[1].x:
 			rotation = 1.5 * PI
