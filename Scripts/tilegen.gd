@@ -33,7 +33,7 @@ func paste_template(id: int, pos: int) -> void:
 func remove_coin(pos: Vector2i) -> void:
 	set_cell(pos, 0, Vector2i(0, 0), 0)
 func _ready() -> void:
-	var number_of_templates = 64
+	var number_of_templates = 70
 	var difficulties = []
 	for i in range(number_of_templates):
 		difficulties.append((get_cell_atlas_coords(Vector2i(TEMPLATE_START.x+(8*i), TEMPLATE_START.y-1))).x)
