@@ -187,3 +187,6 @@ func _on_reroll_pressed() -> void:
 			ShopRerollCost *= 2
 		$Canvas/Shop/Reroll/Coin.show()
 		$Canvas/Shop/Reroll/Cost.text = str(ShopRerollCost)
+func _on_backtomenu_pressed() -> void:
+	get_tree().paused = false
+	get_tree().reload_current_scene()
