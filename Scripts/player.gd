@@ -72,6 +72,8 @@ func _physics_process(_delta: float) -> void:
 			coins += 1 * coin_mult
 			$"../../TileMap".remove_coin(t[2])
 			UpdateCoinCount()
+		if t[0] == Vector2i(6, 0):
+			$"../..".finish()
 	pushingdirs = []
 	move_and_slide()
 

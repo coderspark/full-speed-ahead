@@ -5,7 +5,10 @@ var TimeOfDAy := 700.0
 func _ready() -> void:
 	$UI/Canvas/Shop.show()
 	modulate = TimeToColorModulate(TimeOfDAy)
-	
+
+func finish() -> void:
+	$UI/Canvas/victory.show()
+	get_tree().paused = true
 
 func _on_ui_restart_game() -> void:
 	get_parent().RestartGame()

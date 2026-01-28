@@ -173,3 +173,8 @@ func IntitializeCutscene():
 
 func _on_continue_pressed() -> void:
 	$Animations.play("ShopFadeout")
+
+
+func _on_backtomenu_pressed() -> void:
+	get_tree().paused = false
+	get_tree().reload_current_scene()
