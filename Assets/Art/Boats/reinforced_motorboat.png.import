@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cu7hqhk655a7l"
-path="res://.godot/imported/reinforced_motorboat.png-ffe243e28a70270275b2036c92a31a07.ctex"
+uid="uid://xydaxl060ky1"
+path="res://.godot/imported/Reinforced_motorboat.png-66d1c90134ff1f430bde631b2f99c2d6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/Boats/reinforced_motorboat.png"
-dest_files=["res://.godot/imported/reinforced_motorboat.png-ffe243e28a70270275b2036c92a31a07.ctex"]
+source_file="res://Assets/Art/Boats/Reinforced_motorboat.png"
+dest_files=["res://.godot/imported/Reinforced_motorboat.png-66d1c90134ff1f430bde631b2f99c2d6.ctex"]
 
 [params]
 
