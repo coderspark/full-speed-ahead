@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjdrf52sn3877"
-path="res://.godot/imported/reinforced_canoe.png-4da38126f3f928ef5956036b1c3a48f8.ctex"
+uid="uid://cfh4dnm6sgsjv"
+path="res://.godot/imported/Reinforced_canoe.png-c0f4e0f2cd22c93f1da1a5f30ecafbb5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Art/Boats/reinforced_canoe.png"
-dest_files=["res://.godot/imported/reinforced_canoe.png-4da38126f3f928ef5956036b1c3a48f8.ctex"]
+source_file="res://Assets/Art/Boats/Reinforced_canoe.png"
+dest_files=["res://.godot/imported/Reinforced_canoe.png-c0f4e0f2cd22c93f1da1a5f30ecafbb5.ctex"]
 
 [params]
 

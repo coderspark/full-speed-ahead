@@ -2,6 +2,8 @@ extends Node
 
 var DayEnded = false
 
+const AdvanceTime = false
+
 const STARTER_BOAT = "Reinforced_motorboat"
 
 const BOAT_SCALE_MODIFIERS : Dictionary = {

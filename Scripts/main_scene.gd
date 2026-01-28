@@ -9,12 +9,16 @@ func _on_ui_restart_game() -> void:
 	get_parent().RestartGame()
 
 func _process(delta: float) -> void:
-	TimeOfDAy += 2
-	modulate = TimeToColorModulate(TimeOfDAy)
-	if TimeOfDAy > 1950 and not Global.DayEnded:
-		$UI.IntitializeCutscene()
-		$Players/Player.EndDay()
-		Global.DayEnded = true
+	if Global.AdvanceTime:
+		TimeOfDAy += 2
+		modulate = TimeToColorModulate(TimeOfDAy)
+		if TimeOfDAy > 1950 and not Global.DayEnded:
+			$UI.IntitializeCutscene()
+			$Players/Player.EndDay()
+			Global.DayEnded = true
+			await $UI.AnimationFinished
+			$UI.OpenCookingMenu()
+			await $UI.AnimationFinished
 		
 
 func TimeToColorModulate(time:float) -> Color:

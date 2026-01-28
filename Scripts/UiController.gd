@@ -2,6 +2,8 @@ extends Control
 
 signal StartGame
 signal RestartGame
+signal AnimationFinished
+
 
 var ShopOpen = false
 
@@ -111,11 +113,11 @@ func ShopButtonPressed(id:int):
 			
 
 
-func _on_continue_pressed() -> void:
+func OpenCookingMenu() -> void:
 	FormatInventory(Inventory)
 	UpdateCookableRecipies()
 	$Canvas/Shop.hide()
-	$Canvas/Cooking.show()
+	$Animations.play("CookingFadein")
 
 func FormatInventory(Inv : Dictionary):
 	var Output : String
@@ -167,4 +169,6 @@ func CookRecipe(id:int):
 
 func IntitializeCutscene():
 	$Animations.play("Cinematic_fadein")
+	await $Animations.animation_finished
+	AnimationFinished.emit()
 	

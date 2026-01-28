@@ -1,10 +1,10 @@
-[gd_scene load_steps=41 format=3 uid="uid://dbq85xa0fcnii"]
+[gd_scene load_steps=46 format=3 uid="uid://dbq85xa0fcnii"]
 
 [ext_resource type="Script" uid="uid://klae0u71y1go" path="res://Scripts/UiController.gd" id="1_wi7yl"]
 [ext_resource type="FontFile" uid="uid://dqqnsnb5xkqx7" path="res://Assets/Fonts/8bitoperator_jve.ttf" id="2_5q4fb"]
 [ext_resource type="Texture2D" uid="uid://b6a7pab0tyxve" path="res://Assets/Art/UI/button.png" id="3_mqm5i"]
 [ext_resource type="Material" uid="uid://bc4ysxhwy2g0s" path="res://Assets/Other/Outline.tres" id="4_vqx31"]
-[ext_resource type="Texture2D" uid="uid://ct8jpo3l1w4n1" path="res://Assets/Art/Boats/Basic_raft.png" id="5_13dyv"]
+[ext_resource type="Texture2D" uid="uid://castaq8a8h8py" path="res://Assets/Art/Boats/basic_raft.png" id="5_13dyv"]
 [ext_resource type="Theme" uid="uid://bj15hri4ia073" path="res://Assets/Other/UI.tres" id="5_j04uc"]
 [ext_resource type="Script" uid="uid://b5ae5sgnlj8u3" path="res://Scripts/AutoSizeText.gd" id="5_wunin"]
 [ext_resource type="Shader" uid="uid://bp6mwoabhhic" path="res://Assets/Other/outline.gdshader" id="9_b1goy"]
@@ -14,17 +14,21 @@
 [ext_resource type="Texture2D" uid="uid://b7t2b4ejb3pg0" path="res://Assets/Art/Food/Stockfish.png" id="12_jnovg"]
 [ext_resource type="Texture2D" uid="uid://clot15xlfl0a8" path="res://Assets/Art/Food/Wine.png" id="13_612k1"]
 [ext_resource type="Texture2D" uid="uid://cxq572smso73i" path="res://Assets/Art/UI/over.png" id="13_us6mg"]
+[ext_resource type="Texture2D" uid="uid://lq770elr4qd3" path="res://Assets/Art/UI/speed i need this.png" id="13_wijgc"]
 [ext_resource type="Texture2D" uid="uid://ykh1qxd24nqw" path="res://Assets/Art/UI/progress.png" id="14_8blbl"]
 [ext_resource type="Texture2D" uid="uid://cpcvis2epoaxr" path="res://Assets/Art/Food/White_beans.png" id="14_us6mg"]
+[ext_resource type="Texture2D" uid="uid://hr83bwn7weob" path="res://Assets/Art/UI/turnspeed.png" id="14_yhvps"]
 [ext_resource type="Texture2D" uid="uid://bw2gvkaylchw8" path="res://Assets/Art/UI/coinicon.png" id="15_5q4fb"]
 [ext_resource type="Texture2D" uid="uid://crkhng6s7b61" path="res://Assets/Art/Food/Bacon.png" id="15_8blbl"]
 [ext_resource type="Texture2D" uid="uid://2t23o36u7hcp" path="res://Assets/Art/Food/Pickles.png" id="16_bb0on"]
 [ext_resource type="Texture2D" uid="uid://b2vnd2ocyolbx" path="res://Assets/Art/Food/Gin.png" id="17_wijgc"]
 [ext_resource type="Texture2D" uid="uid://byd2o743ljnlv" path="res://Assets/Art/Food/Rice.png" id="18_yhvps"]
+[ext_resource type="Texture2D" uid="uid://djigu2aubplr8" path="res://Assets/Art/UI/coinmultiplier.png" id="19_qvwwb"]
 [ext_resource type="Texture2D" uid="uid://dhqcgiprxxlis" path="res://Assets/Art/Food/Plums.png" id="19_tb15e"]
 [ext_resource type="Texture2D" uid="uid://dhoa5msdxekql" path="res://Assets/Art/Food/Sauerkraut.png" id="20_qvwwb"]
 [ext_resource type="Texture2D" uid="uid://dippg4fsq63s6" path="res://Assets/Art/Food/Meat.png" id="21_qqo6a"]
 [ext_resource type="Texture2D" uid="uid://h8nuqrr5dhea" path="res://Assets/Art/Food/Gray_peas.png" id="22_8ekee"]
+[ext_resource type="Texture2D" uid="uid://d4artjbbww8x1" path="res://Assets/Art/Temp/heart_half.png" id="25_qqo6a"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qxria"]
 bg_color = Color(0.19215687, 0.19215687, 0.19215687, 0.49411765)
@@ -369,11 +373,65 @@ tracks/2/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Canvas/Cooking:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Canvas/Cooking:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_612k1"]
+resource_name = "CookingFadein"
+length = 0.5
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Canvas/Cooking:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Canvas/Cooking:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_b1goy"]
 _data = {
 &"Cinematic_fadein": SubResource("Animation_j04uc"),
 &"Cinematic_fadeout": SubResource("Animation_b1goy"),
+&"CookingFadein": SubResource("Animation_612k1"),
 &"RESET": SubResource("Animation_vqx31")
 }
 
@@ -915,6 +973,7 @@ vertical_alignment = 1
 [node name="Cooking" type="Panel" parent="Canvas"]
 process_mode = 3
 visible = false
+modulate = Color(1, 1, 1, 0)
 z_index = 2
 anchors_preset = 15
 anchor_right = 1.0
@@ -927,6 +986,7 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_qxria")
 
 [node name="TopText" type="Label" parent="Canvas/Cooking"]
+z_index = 11
 layout_mode = 0
 offset_top = 1.0
 offset_right = 959.86707
@@ -937,6 +997,7 @@ text = "COOKING"
 horizontal_alignment = 1
 
 [node name="Label" type="RichTextLabel" parent="Canvas/Cooking"]
+z_index = 11
 layout_mode = 0
 offset_left = 26.400024
 offset_top = 91.065796
@@ -946,6 +1007,7 @@ bbcode_enabled = true
 text = "[font=res://Assets/Fonts/8bitoperator_jve.ttf][font_size=24][img=32]res://Assets/Art/Food/Stockfish.png[/img] Stockfish: 1 portion"
 
 [node name="Menu1" type="Button" parent="Canvas/Cooking"]
+z_index = 11
 layout_mode = 0
 offset_left = 384.00006
 offset_top = 96.0
@@ -987,7 +1049,7 @@ offset_left = 434.0
 offset_top = 2.0
 offset_right = 454.0
 offset_bottom = 22.0
-texture = ExtResource("12_jnovg")
+texture = ExtResource("13_wijgc")
 
 [node name="Debuff" type="TextureRect" parent="Canvas/Cooking/Menu1"]
 layout_mode = 0
@@ -995,7 +1057,7 @@ offset_left = 434.0
 offset_top = 26.0
 offset_right = 454.0
 offset_bottom = 46.0
-texture = ExtResource("12_jnovg")
+texture = ExtResource("14_yhvps")
 
 [node name="Buffs" type="Label" parent="Canvas/Cooking/Menu1"]
 layout_mode = 0
@@ -1007,7 +1069,7 @@ scale = Vector2(1.5, 1.5)
 theme_override_constants/line_spacing = 0
 theme_override_fonts/font = ExtResource("2_5q4fb")
 theme_override_font_sizes/font_size = 16
-text = "+5
+text = "+10%
 -10%"
 
 [node name="Seperator" type="VSeparator" parent="Canvas/Cooking/Menu1"]
@@ -1019,6 +1081,7 @@ offset_bottom = 44.840027
 theme_override_styles/separator = SubResource("StyleBoxLine_13dyv")
 
 [node name="Menu2" type="Button" parent="Canvas/Cooking"]
+z_index = 11
 layout_mode = 0
 offset_left = 384.00006
 offset_top = 156.0
@@ -1068,7 +1131,7 @@ offset_left = 434.0
 offset_top = 2.0
 offset_right = 454.0
 offset_bottom = 22.0
-texture = ExtResource("12_jnovg")
+texture = ExtResource("14_yhvps")
 
 [node name="Debuff" type="TextureRect" parent="Canvas/Cooking/Menu2"]
 layout_mode = 0
@@ -1076,7 +1139,7 @@ offset_left = 434.0
 offset_top = 26.0
 offset_right = 454.0
 offset_bottom = 46.0
-texture = ExtResource("12_jnovg")
+texture = ExtResource("19_qvwwb")
 
 [node name="Buffs" type="Label" parent="Canvas/Cooking/Menu2"]
 layout_mode = 0
@@ -1088,7 +1151,7 @@ scale = Vector2(1.5, 1.5)
 theme_override_constants/line_spacing = 0
 theme_override_fonts/font = ExtResource("2_5q4fb")
 theme_override_font_sizes/font_size = 16
-text = "+5
+text = "+10%
 -10%"
 
 [node name="Seperator" type="VSeparator" parent="Canvas/Cooking/Menu2"]
@@ -1100,6 +1163,7 @@ offset_bottom = 44.840027
 theme_override_styles/separator = SubResource("StyleBoxLine_13dyv")
 
 [node name="Menu3" type="Button" parent="Canvas/Cooking"]
+z_index = 11
 layout_mode = 0
 offset_left = 384.00006
 offset_top = 216.0
@@ -1141,7 +1205,7 @@ offset_left = 434.0
 offset_top = 2.0
 offset_right = 454.0
 offset_bottom = 22.0
-texture = ExtResource("12_jnovg")
+texture = ExtResource("19_qvwwb")
 
 [node name="Debuff" type="TextureRect" parent="Canvas/Cooking/Menu3"]
 layout_mode = 0
@@ -1149,7 +1213,7 @@ offset_left = 434.0
 offset_top = 26.0
 offset_right = 454.0
 offset_bottom = 46.0
-texture = ExtResource("12_jnovg")
+texture = ExtResource("13_wijgc")
 
 [node name="Buffs" type="Label" parent="Canvas/Cooking/Menu3"]
 layout_mode = 0
@@ -1161,8 +1225,8 @@ scale = Vector2(1.5, 1.5)
 theme_override_constants/line_spacing = 0
 theme_override_fonts/font = ExtResource("2_5q4fb")
 theme_override_font_sizes/font_size = 16
-text = "+5
--10%"
+text = "+10%
+-5%"
 
 [node name="Seperator" type="VSeparator" parent="Canvas/Cooking/Menu3"]
 layout_mode = 0
@@ -1173,6 +1237,7 @@ offset_bottom = 44.840027
 theme_override_styles/separator = SubResource("StyleBoxLine_13dyv")
 
 [node name="Menu4" type="Button" parent="Canvas/Cooking"]
+z_index = 11
 layout_mode = 0
 offset_left = 384.00006
 offset_top = 276.0
@@ -1214,7 +1279,7 @@ offset_left = 434.0
 offset_top = 2.0
 offset_right = 454.0
 offset_bottom = 22.0
-texture = ExtResource("12_jnovg")
+texture = ExtResource("25_qqo6a")
 
 [node name="Debuff" type="TextureRect" parent="Canvas/Cooking/Menu4"]
 layout_mode = 0
@@ -1222,7 +1287,7 @@ offset_left = 434.0
 offset_top = 26.0
 offset_right = 454.0
 offset_bottom = 46.0
-texture = ExtResource("12_jnovg")
+texture = ExtResource("19_qvwwb")
 
 [node name="Buffs" type="Label" parent="Canvas/Cooking/Menu4"]
 layout_mode = 0
@@ -1234,7 +1299,7 @@ scale = Vector2(1.5, 1.5)
 theme_override_constants/line_spacing = 0
 theme_override_fonts/font = ExtResource("2_5q4fb")
 theme_override_font_sizes/font_size = 16
-text = "+5
+text = "+3 HP 
 -10%"
 
 [node name="Seperator" type="VSeparator" parent="Canvas/Cooking/Menu4"]
@@ -1246,6 +1311,7 @@ offset_bottom = 44.840027
 theme_override_styles/separator = SubResource("StyleBoxLine_13dyv")
 
 [node name="Menu5" type="Button" parent="Canvas/Cooking"]
+z_index = 11
 layout_mode = 0
 offset_left = 384.00006
 offset_top = 336.0
@@ -1287,7 +1353,7 @@ offset_left = 434.0
 offset_top = 2.0
 offset_right = 454.0
 offset_bottom = 22.0
-texture = ExtResource("12_jnovg")
+texture = ExtResource("14_yhvps")
 
 [node name="Debuff" type="TextureRect" parent="Canvas/Cooking/Menu5"]
 layout_mode = 0
@@ -1295,7 +1361,7 @@ offset_left = 434.0
 offset_top = 26.0
 offset_right = 454.0
 offset_bottom = 46.0
-texture = ExtResource("12_jnovg")
+texture = ExtResource("13_wijgc")
 
 [node name="Buffs" type="Label" parent="Canvas/Cooking/Menu5"]
 layout_mode = 0
@@ -1307,8 +1373,8 @@ scale = Vector2(1.5, 1.5)
 theme_override_constants/line_spacing = 0
 theme_override_fonts/font = ExtResource("2_5q4fb")
 theme_override_font_sizes/font_size = 16
-text = "+5
--10%"
+text = "+10%
+-5%"
 
 [node name="Seperator" type="VSeparator" parent="Canvas/Cooking/Menu5"]
 layout_mode = 0
@@ -1319,6 +1385,7 @@ offset_bottom = 44.840027
 theme_override_styles/separator = SubResource("StyleBoxLine_13dyv")
 
 [node name="Menu6" type="Button" parent="Canvas/Cooking"]
+z_index = 11
 layout_mode = 0
 offset_left = 384.00006
 offset_top = 396.0
@@ -1360,7 +1427,7 @@ offset_left = 434.0
 offset_top = 2.0
 offset_right = 454.0
 offset_bottom = 22.0
-texture = ExtResource("12_jnovg")
+texture = ExtResource("19_qvwwb")
 
 [node name="Debuff" type="TextureRect" parent="Canvas/Cooking/Menu6"]
 layout_mode = 0
@@ -1368,7 +1435,7 @@ offset_left = 434.0
 offset_top = 26.0
 offset_right = 454.0
 offset_bottom = 46.0
-texture = ExtResource("12_jnovg")
+texture = ExtResource("14_yhvps")
 
 [node name="Buffs" type="Label" parent="Canvas/Cooking/Menu6"]
 layout_mode = 0
@@ -1380,8 +1447,8 @@ scale = Vector2(1.5, 1.5)
 theme_override_constants/line_spacing = 0
 theme_override_fonts/font = ExtResource("2_5q4fb")
 theme_override_font_sizes/font_size = 16
-text = "+5
--10%"
+text = "+10%
+-5%"
 
 [node name="Seperator" type="VSeparator" parent="Canvas/Cooking/Menu6"]
 layout_mode = 0
@@ -1392,6 +1459,7 @@ offset_bottom = 44.840027
 theme_override_styles/separator = SubResource("StyleBoxLine_13dyv")
 
 [node name="Menu7" type="Button" parent="Canvas/Cooking"]
+z_index = 11
 layout_mode = 0
 offset_left = 384.00006
 offset_top = 456.25623
@@ -1441,7 +1509,7 @@ offset_left = 434.0
 offset_top = 2.0
 offset_right = 454.0
 offset_bottom = 22.0
-texture = ExtResource("12_jnovg")
+texture = ExtResource("25_qqo6a")
 
 [node name="Debuff" type="TextureRect" parent="Canvas/Cooking/Menu7"]
 layout_mode = 0
@@ -1449,7 +1517,7 @@ offset_left = 434.0
 offset_top = 26.0
 offset_right = 454.0
 offset_bottom = 46.0
-texture = ExtResource("12_jnovg")
+texture = ExtResource("13_wijgc")
 
 [node name="Buffs" type="Label" parent="Canvas/Cooking/Menu7"]
 layout_mode = 0
@@ -1461,8 +1529,8 @@ scale = Vector2(1.5, 1.5)
 theme_override_constants/line_spacing = 0
 theme_override_fonts/font = ExtResource("2_5q4fb")
 theme_override_font_sizes/font_size = 16
-text = "+5
--10%"
+text = "+3
+-5%"
 
 [node name="Seperator" type="VSeparator" parent="Canvas/Cooking/Menu7"]
 layout_mode = 0
@@ -1553,7 +1621,7 @@ text = "Lag
 "
 
 [node name="Coins" type="Label" parent="Canvas"]
-z_index = 3
+z_index = 13
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0

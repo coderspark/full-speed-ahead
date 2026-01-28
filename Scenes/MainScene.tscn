@@ -309,6 +309,7 @@ position = Vector2(-96, 91.065796)
 
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
 process_mode = 3
+visible = false
 stream = ExtResource("6_y4jh7")
 autoplay = true
 script = ExtResource("7_q68mp")
