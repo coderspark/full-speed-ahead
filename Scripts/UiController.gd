@@ -15,6 +15,7 @@ var paused = false
 
 func _ready() -> void:
 	RandomizeShopContents()
+	FormatInventory(Inventory)
 	$Canvas/Shop.hide()
 
 func CallStartGame():
@@ -111,7 +112,7 @@ func ShopButtonPressed(id:int):
 			#$Canvas/Shop.get_node("Food" + str(id -2) + "/Coin").hide()
 			
 			AddFoodItemToInventory(current_shop_contents[id])
-			
+	FormatInventory(Inventory)
 
 
 func OpenCookingMenu() -> void:
@@ -126,7 +127,10 @@ func FormatInventory(Inv : Dictionary):
 	Output += Before
 	for n : String in Inv.keys():
 		Output += "[img=32]res://Assets/Art/Food/" + n + ".png[/img]" + n.replace("_"," ") + ": " + str(Inv[n]) + "\n"
+	if Inv == {}:
+		Output += "Empty"
 	$Canvas/Cooking/Label.text = Output
+	$Canvas/RecipeBook/Label.text = Output
 
 
 func UpdateCookableRecipies():
@@ -164,8 +168,7 @@ func CookRecipe(id:int):
 			return false
 	for Item in Recipe:
 		RemoveFoodItemFromInventory(Item)
-		
-		print("cookieng")
+		$Animations.play("next_day")
 
 func IntitializeCutscene():
 	$Animations.play("Cinematic_fadein")
@@ -190,3 +193,14 @@ func _on_reroll_pressed() -> void:
 func _on_backtomenu_pressed() -> void:
 	get_tree().paused = false
 	get_tree().reload_current_scene()
+
+func _on_back_to_cooking_pressed() -> void:
+	$Canvas/RecipeBook.hide()
+	$Canvas/Shop.show()
+
+func _on_recipe_book_pressed() -> void:
+	$Canvas/Shop.hide()
+	$Canvas/RecipeBook.show()
+
+func SetCorrectDay():
+	$Canvas/Cinematic/NextDay/Text.text = "DAY " + str(Global.CurrentDay)

@@ -7,7 +7,7 @@ func _ready() -> void:
 	modulate = TimeToColorModulate(TimeOfDAy)
 
 func finish() -> void:
-	$UI/Canvas/victory.show()
+	$UI/Canvas/Victory.show()
 	get_tree().paused = true
 
 func _on_ui_restart_game() -> void:

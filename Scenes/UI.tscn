@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://dbq85xa0fcnii"]
+[gd_scene load_steps=52 format=3 uid="uid://dbq85xa0fcnii"]
 
 [ext_resource type="Script" uid="uid://klae0u71y1go" path="res://Scripts/UiController.gd" id="1_wi7yl"]
 [ext_resource type="FontFile" uid="uid://dqqnsnb5xkqx7" path="res://Assets/Fonts/8bitoperator_jve.ttf" id="2_5q4fb"]
@@ -6,28 +6,28 @@
 [ext_resource type="Material" uid="uid://bc4ysxhwy2g0s" path="res://Assets/Other/Outline.tres" id="4_vqx31"]
 [ext_resource type="Texture2D" uid="uid://crjnuw0sawjpr" path="res://Assets/Art/Boats/Basic_raft.png" id="5_13dyv"]
 [ext_resource type="Theme" uid="uid://bj15hri4ia073" path="res://Assets/Other/UI.tres" id="5_j04uc"]
-[ext_resource type="Script" path="res://Scripts/AutoSizeText.gd" id="5_wunin"]
+[ext_resource type="Script" uid="uid://b5ae5sgnlj8u3" path="res://Scripts/AutoSizeText.gd" id="5_wunin"]
 [ext_resource type="Shader" uid="uid://bp6mwoabhhic" path="res://Assets/Other/outline.gdshader" id="9_b1goy"]
-[ext_resource type="Texture2D" uid="uid://07u5xc0x4mup" path="res://Assets/Art/Food/beer.png" id="10_5q4fb"]
-[ext_resource type="Texture2D" uid="uid://bqf2m2w0blk8d" path="res://Assets/Art/Food/green_peas.png" id="11_mqm5i"]
+[ext_resource type="Texture2D" uid="uid://07u5xc0x4mup" path="res://Assets/Art/Food/Beer.png" id="10_5q4fb"]
+[ext_resource type="Texture2D" uid="uid://bqf2m2w0blk8d" path="res://Assets/Art/Food/Green_peas.png" id="11_mqm5i"]
 [ext_resource type="Texture2D" uid="uid://drj77blyscrtv" path="res://Assets/Art/UI/under.png" id="12_612k1"]
-[ext_resource type="Texture2D" uid="uid://b7t2b4ejb3pg0" path="res://Assets/Art/Food/stockfish.png" id="12_jnovg"]
-[ext_resource type="Texture2D" uid="uid://clot15xlfl0a8" path="res://Assets/Art/Food/wine.png" id="13_612k1"]
+[ext_resource type="Texture2D" uid="uid://b7t2b4ejb3pg0" path="res://Assets/Art/Food/Stockfish.png" id="12_jnovg"]
+[ext_resource type="Texture2D" uid="uid://clot15xlfl0a8" path="res://Assets/Art/Food/Wine.png" id="13_612k1"]
 [ext_resource type="Texture2D" uid="uid://cxq572smso73i" path="res://Assets/Art/UI/over.png" id="13_us6mg"]
 [ext_resource type="Texture2D" uid="uid://lq770elr4qd3" path="res://Assets/Art/UI/speed i need this.png" id="13_wijgc"]
 [ext_resource type="Texture2D" uid="uid://ykh1qxd24nqw" path="res://Assets/Art/UI/progress.png" id="14_8blbl"]
 [ext_resource type="Texture2D" uid="uid://cpcvis2epoaxr" path="res://Assets/Art/Food/White_beans.png" id="14_us6mg"]
 [ext_resource type="Texture2D" uid="uid://hr83bwn7weob" path="res://Assets/Art/UI/turnspeed.png" id="14_yhvps"]
 [ext_resource type="Texture2D" uid="uid://bw2gvkaylchw8" path="res://Assets/Art/UI/coinicon.png" id="15_5q4fb"]
-[ext_resource type="Texture2D" uid="uid://crkhng6s7b61" path="res://Assets/Art/Food/bacon.png" id="15_8blbl"]
+[ext_resource type="Texture2D" uid="uid://crkhng6s7b61" path="res://Assets/Art/Food/Bacon.png" id="15_8blbl"]
 [ext_resource type="Texture2D" uid="uid://2t23o36u7hcp" path="res://Assets/Art/Food/Pickles.png" id="16_bb0on"]
-[ext_resource type="Texture2D" uid="uid://b2vnd2ocyolbx" path="res://Assets/Art/Food/gin.png" id="17_wijgc"]
-[ext_resource type="Texture2D" uid="uid://byd2o743ljnlv" path="res://Assets/Art/Food/rice.png" id="18_yhvps"]
+[ext_resource type="Texture2D" uid="uid://b2vnd2ocyolbx" path="res://Assets/Art/Food/Gin.png" id="17_wijgc"]
+[ext_resource type="Texture2D" uid="uid://byd2o743ljnlv" path="res://Assets/Art/Food/Rice.png" id="18_yhvps"]
 [ext_resource type="Texture2D" uid="uid://djigu2aubplr8" path="res://Assets/Art/UI/coinmultiplier.png" id="19_qvwwb"]
 [ext_resource type="Texture2D" uid="uid://dhqcgiprxxlis" path="res://Assets/Art/Food/Plums.png" id="19_tb15e"]
 [ext_resource type="Texture2D" uid="uid://dhoa5msdxekql" path="res://Assets/Art/Food/Sauerkraut.png" id="20_qvwwb"]
-[ext_resource type="Texture2D" uid="uid://dippg4fsq63s6" path="res://Assets/Art/Food/meat.png" id="21_qqo6a"]
-[ext_resource type="Texture2D" uid="uid://h8nuqrr5dhea" path="res://Assets/Art/Food/gray_peas.png" id="22_8ekee"]
+[ext_resource type="Texture2D" uid="uid://dippg4fsq63s6" path="res://Assets/Art/Food/Meat.png" id="21_qqo6a"]
+[ext_resource type="Texture2D" uid="uid://h8nuqrr5dhea" path="res://Assets/Art/Food/Gray_peas.png" id="22_8ekee"]
 [ext_resource type="Texture2D" uid="uid://d4artjbbww8x1" path="res://Assets/Art/Temp/heart_half.png" id="25_qqo6a"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qxria"]
@@ -485,6 +485,42 @@ tracks/6/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Canvas/Cinematic/NextDay/BG:color")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Canvas/Cinematic/NextDay/Text:text")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Canvas/Cinematic:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_yhvps"]
 resource_name = "ShopFadein"
@@ -558,6 +594,73 @@ tracks/2/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_qvwwb"]
+resource_name = "next_day"
+length = 3.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Canvas/Cinematic/NextDay/BG:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Canvas/Cinematic/NextDay/Text:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 1.1, 1.2, 1.3000001),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": ["", "D", "DA", "DAY", "DAY "]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"SetCorrectDay"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Canvas/Cinematic:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Canvas/Cinematic:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_b1goy"]
 _data = {
 &"Cinematic_fadein": SubResource("Animation_j04uc"),
@@ -566,7 +669,8 @@ _data = {
 &"CookingFadein": SubResource("Animation_612k1"),
 &"RESET": SubResource("Animation_vqx31"),
 &"ShopFadein": SubResource("Animation_yhvps"),
-&"ShopFadeout": SubResource("Animation_tb15e")
+&"ShopFadeout": SubResource("Animation_tb15e"),
+&"next_day": SubResource("Animation_qvwwb")
 }
 
 [node name="UI" type="Control"]
@@ -1123,6 +1227,31 @@ scale = Vector2(0.2965745, 0.2965745)
 theme = ExtResource("5_j04uc")
 theme_override_font_sizes/font_size = 80
 text = "FREE"
+vertical_alignment = 1
+clip_text = true
+
+[node name="RecipeBook" type="Button" parent="Canvas/Shop"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_left = 720.0
+offset_top = 418.0
+offset_right = 924.0
+offset_bottom = 476.25623
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_vqx31")
+alignment = 0
+
+[node name="Label" type="Label" parent="Canvas/Shop/RecipeBook"]
+layout_mode = 0
+offset_right = 687.85425
+offset_bottom = 196.4303
+scale = Vector2(0.2965745, 0.2965745)
+theme = ExtResource("5_j04uc")
+theme_override_font_sizes/font_size = 80
+text = "Recipe book"
+horizontal_alignment = 1
 vertical_alignment = 1
 clip_text = true
 
@@ -1720,6 +1849,605 @@ offset_right = 105.0
 offset_bottom = 44.840027
 theme_override_styles/separator = SubResource("StyleBoxLine_13dyv")
 
+[node name="RecipeBook" type="Panel" parent="Canvas"]
+process_mode = 3
+visible = false
+z_index = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -0.13293457
+offset_bottom = -0.0748291
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TopText" type="Label" parent="Canvas/RecipeBook"]
+z_index = 11
+layout_mode = 0
+offset_top = 1.0
+offset_right = 959.86707
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 96
+text = "RECIPIES"
+horizontal_alignment = 1
+
+[node name="Label" type="RichTextLabel" parent="Canvas/RecipeBook"]
+z_index = 11
+layout_mode = 0
+offset_left = 26.400024
+offset_top = 91.065796
+offset_right = 331.94012
+offset_bottom = 499.5255
+bbcode_enabled = true
+text = "[font=res://Assets/Fonts/8bitoperator_jve.ttf][font_size=24][img=32]res://Assets/Art/Food/Stockfish.png[/img] Stockfish: 1 portion"
+
+[node name="Menu1" type="Button" parent="Canvas/RecipeBook"]
+z_index = 11
+layout_mode = 0
+offset_left = 384.00006
+offset_top = 96.0
+offset_right = 914.0
+offset_bottom = 144.0
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+disabled = true
+text = "Menu 1             +        +"
+alignment = 0
+
+[node name="Texture1" type="TextureRect" parent="Canvas/RecipeBook/Menu1"]
+layout_mode = 0
+offset_left = 111.67108
+offset_top = 1.0
+offset_right = 158.34216
+offset_bottom = 48.0
+texture = ExtResource("10_5q4fb")
+
+[node name="Texture2" type="TextureRect" parent="Canvas/RecipeBook/Menu1"]
+layout_mode = 0
+offset_left = 173.76324
+offset_top = 1.0
+offset_right = 220.43433
+offset_bottom = 48.0
+texture = ExtResource("11_mqm5i")
+
+[node name="Texture3" type="TextureRect" parent="Canvas/RecipeBook/Menu1"]
+layout_mode = 0
+offset_left = 239.99994
+offset_top = 1.0
+offset_right = 286.67102
+offset_bottom = 48.0
+texture = ExtResource("12_jnovg")
+
+[node name="Buff" type="TextureRect" parent="Canvas/RecipeBook/Menu1"]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 2.0
+offset_right = 454.0
+offset_bottom = 22.0
+texture = ExtResource("13_wijgc")
+
+[node name="Debuff" type="TextureRect" parent="Canvas/RecipeBook/Menu1"]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 26.0
+offset_right = 454.0
+offset_bottom = 46.0
+texture = ExtResource("14_yhvps")
+
+[node name="Buffs" type="Label" parent="Canvas/RecipeBook/Menu1"]
+layout_mode = 0
+offset_left = 459.417
+offset_top = 1.0
+offset_right = 515.99994
+offset_bottom = 33.0
+scale = Vector2(1.5, 1.5)
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 16
+text = "+10%
+-10%"
+
+[node name="Seperator" type="VSeparator" parent="Canvas/RecipeBook/Menu1"]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 4.159973
+offset_right = 105.0
+offset_bottom = 44.840027
+theme_override_styles/separator = SubResource("StyleBoxLine_13dyv")
+
+[node name="Menu2" type="Button" parent="Canvas/RecipeBook"]
+z_index = 11
+layout_mode = 0
+offset_left = 384.00006
+offset_top = 156.0
+offset_right = 914.0
+offset_bottom = 204.0
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+disabled = true
+text = "Menu 2             +        +        +"
+alignment = 0
+
+[node name="Texture1" type="TextureRect" parent="Canvas/RecipeBook/Menu2"]
+layout_mode = 0
+offset_left = 111.67108
+offset_top = 1.0
+offset_right = 158.34216
+offset_bottom = 48.0
+texture = ExtResource("13_612k1")
+
+[node name="Texture2" type="TextureRect" parent="Canvas/RecipeBook/Menu2"]
+layout_mode = 0
+offset_left = 173.76324
+offset_top = 1.0
+offset_right = 220.43433
+offset_bottom = 48.0
+texture = ExtResource("14_us6mg")
+
+[node name="Texture3" type="TextureRect" parent="Canvas/RecipeBook/Menu2"]
+layout_mode = 0
+offset_left = 239.99994
+offset_top = 1.0
+offset_right = 286.67102
+offset_bottom = 48.0
+texture = ExtResource("15_8blbl")
+
+[node name="Texture4" type="TextureRect" parent="Canvas/RecipeBook/Menu2"]
+layout_mode = 0
+offset_left = 299.99994
+offset_top = 1.0
+offset_right = 346.67102
+offset_bottom = 48.0
+texture = ExtResource("16_bb0on")
+
+[node name="Buff" type="TextureRect" parent="Canvas/RecipeBook/Menu2"]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 2.0
+offset_right = 454.0
+offset_bottom = 22.0
+texture = ExtResource("14_yhvps")
+
+[node name="Debuff" type="TextureRect" parent="Canvas/RecipeBook/Menu2"]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 26.0
+offset_right = 454.0
+offset_bottom = 46.0
+texture = ExtResource("19_qvwwb")
+
+[node name="Buffs" type="Label" parent="Canvas/RecipeBook/Menu2"]
+layout_mode = 0
+offset_left = 459.417
+offset_top = 1.0
+offset_right = 515.99994
+offset_bottom = 33.0
+scale = Vector2(1.5, 1.5)
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 16
+text = "+10%
+-10%"
+
+[node name="Seperator" type="VSeparator" parent="Canvas/RecipeBook/Menu2"]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 4.159973
+offset_right = 105.0
+offset_bottom = 44.840027
+theme_override_styles/separator = SubResource("StyleBoxLine_13dyv")
+
+[node name="Menu3" type="Button" parent="Canvas/RecipeBook"]
+z_index = 11
+layout_mode = 0
+offset_left = 384.00006
+offset_top = 216.0
+offset_right = 914.0
+offset_bottom = 264.0
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+disabled = true
+text = "Menu 3             +        +"
+alignment = 0
+
+[node name="Texture1" type="TextureRect" parent="Canvas/RecipeBook/Menu3"]
+layout_mode = 0
+offset_left = 111.67108
+offset_top = 1.0
+offset_right = 158.34216
+offset_bottom = 48.0
+texture = ExtResource("17_wijgc")
+
+[node name="Texture2" type="TextureRect" parent="Canvas/RecipeBook/Menu3"]
+layout_mode = 0
+offset_left = 173.76324
+offset_top = 1.0
+offset_right = 220.43433
+offset_bottom = 48.0
+texture = ExtResource("18_yhvps")
+
+[node name="Texture3" type="TextureRect" parent="Canvas/RecipeBook/Menu3"]
+layout_mode = 0
+offset_left = 239.99994
+offset_top = 1.0
+offset_right = 286.67102
+offset_bottom = 48.0
+texture = ExtResource("19_tb15e")
+
+[node name="Buff" type="TextureRect" parent="Canvas/RecipeBook/Menu3"]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 2.0
+offset_right = 454.0
+offset_bottom = 22.0
+texture = ExtResource("19_qvwwb")
+
+[node name="Debuff" type="TextureRect" parent="Canvas/RecipeBook/Menu3"]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 26.0
+offset_right = 454.0
+offset_bottom = 46.0
+texture = ExtResource("13_wijgc")
+
+[node name="Buffs" type="Label" parent="Canvas/RecipeBook/Menu3"]
+layout_mode = 0
+offset_left = 459.417
+offset_top = 1.0
+offset_right = 515.99994
+offset_bottom = 33.0
+scale = Vector2(1.5, 1.5)
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 16
+text = "+10%
+-5%"
+
+[node name="Seperator" type="VSeparator" parent="Canvas/RecipeBook/Menu3"]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 4.159973
+offset_right = 105.0
+offset_bottom = 44.840027
+theme_override_styles/separator = SubResource("StyleBoxLine_13dyv")
+
+[node name="Menu4" type="Button" parent="Canvas/RecipeBook"]
+z_index = 11
+layout_mode = 0
+offset_left = 384.00006
+offset_top = 276.0
+offset_right = 914.0
+offset_bottom = 324.0
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+disabled = true
+text = "Menu 4             +        +"
+alignment = 0
+
+[node name="Texture1" type="TextureRect" parent="Canvas/RecipeBook/Menu4"]
+layout_mode = 0
+offset_left = 111.67108
+offset_top = 1.0
+offset_right = 158.34216
+offset_bottom = 48.0
+texture = ExtResource("13_612k1")
+
+[node name="Texture2" type="TextureRect" parent="Canvas/RecipeBook/Menu4"]
+layout_mode = 0
+offset_left = 173.76324
+offset_top = 1.0
+offset_right = 220.43433
+offset_bottom = 48.0
+texture = ExtResource("20_qvwwb")
+
+[node name="Texture3" type="TextureRect" parent="Canvas/RecipeBook/Menu4"]
+layout_mode = 0
+offset_left = 239.99994
+offset_top = 1.0
+offset_right = 286.67102
+offset_bottom = 48.0
+texture = ExtResource("21_qqo6a")
+
+[node name="Buff" type="TextureRect" parent="Canvas/RecipeBook/Menu4"]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 2.0
+offset_right = 454.0
+offset_bottom = 22.0
+texture = ExtResource("25_qqo6a")
+
+[node name="Debuff" type="TextureRect" parent="Canvas/RecipeBook/Menu4"]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 26.0
+offset_right = 454.0
+offset_bottom = 46.0
+texture = ExtResource("19_qvwwb")
+
+[node name="Buffs" type="Label" parent="Canvas/RecipeBook/Menu4"]
+layout_mode = 0
+offset_left = 459.417
+offset_top = 1.0
+offset_right = 515.99994
+offset_bottom = 33.0
+scale = Vector2(1.5, 1.5)
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 16
+text = "+3 HP 
+-10%"
+
+[node name="Seperator" type="VSeparator" parent="Canvas/RecipeBook/Menu4"]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 4.159973
+offset_right = 105.0
+offset_bottom = 44.840027
+theme_override_styles/separator = SubResource("StyleBoxLine_13dyv")
+
+[node name="Menu5" type="Button" parent="Canvas/RecipeBook"]
+z_index = 11
+layout_mode = 0
+offset_left = 384.00006
+offset_top = 336.0
+offset_right = 914.0
+offset_bottom = 384.0
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+disabled = true
+text = "Menu 5             +        +"
+alignment = 0
+
+[node name="Texture1" type="TextureRect" parent="Canvas/RecipeBook/Menu5"]
+layout_mode = 0
+offset_left = 111.67108
+offset_top = 1.0
+offset_right = 158.34216
+offset_bottom = 48.0
+texture = ExtResource("17_wijgc")
+
+[node name="Texture2" type="TextureRect" parent="Canvas/RecipeBook/Menu5"]
+layout_mode = 0
+offset_left = 173.76324
+offset_top = 1.0
+offset_right = 220.43433
+offset_bottom = 48.0
+texture = ExtResource("11_mqm5i")
+
+[node name="Texture3" type="TextureRect" parent="Canvas/RecipeBook/Menu5"]
+layout_mode = 0
+offset_left = 239.99994
+offset_top = 1.0
+offset_right = 286.67102
+offset_bottom = 48.0
+texture = ExtResource("15_8blbl")
+
+[node name="Buff" type="TextureRect" parent="Canvas/RecipeBook/Menu5"]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 2.0
+offset_right = 454.0
+offset_bottom = 22.0
+texture = ExtResource("14_yhvps")
+
+[node name="Debuff" type="TextureRect" parent="Canvas/RecipeBook/Menu5"]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 26.0
+offset_right = 454.0
+offset_bottom = 46.0
+texture = ExtResource("13_wijgc")
+
+[node name="Buffs" type="Label" parent="Canvas/RecipeBook/Menu5"]
+layout_mode = 0
+offset_left = 459.417
+offset_top = 1.0
+offset_right = 515.99994
+offset_bottom = 33.0
+scale = Vector2(1.5, 1.5)
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 16
+text = "+10%
+-5%"
+
+[node name="Seperator" type="VSeparator" parent="Canvas/RecipeBook/Menu5"]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 4.159973
+offset_right = 105.0
+offset_bottom = 44.840027
+theme_override_styles/separator = SubResource("StyleBoxLine_13dyv")
+
+[node name="Menu6" type="Button" parent="Canvas/RecipeBook"]
+z_index = 11
+layout_mode = 0
+offset_left = 384.00006
+offset_top = 396.0
+offset_right = 914.0
+offset_bottom = 444.0
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+disabled = true
+text = "Menu 6             +        +"
+alignment = 0
+
+[node name="Texture1" type="TextureRect" parent="Canvas/RecipeBook/Menu6"]
+layout_mode = 0
+offset_left = 111.67108
+offset_top = 1.0
+offset_right = 158.34216
+offset_bottom = 48.0
+texture = ExtResource("10_5q4fb")
+
+[node name="Texture2" type="TextureRect" parent="Canvas/RecipeBook/Menu6"]
+layout_mode = 0
+offset_left = 173.76324
+offset_top = 1.0
+offset_right = 220.43433
+offset_bottom = 48.0
+texture = ExtResource("19_tb15e")
+
+[node name="Texture3" type="TextureRect" parent="Canvas/RecipeBook/Menu6"]
+layout_mode = 0
+offset_left = 239.99994
+offset_top = 1.0
+offset_right = 286.67102
+offset_bottom = 48.0
+texture = ExtResource("18_yhvps")
+
+[node name="Buff" type="TextureRect" parent="Canvas/RecipeBook/Menu6"]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 2.0
+offset_right = 454.0
+offset_bottom = 22.0
+texture = ExtResource("19_qvwwb")
+
+[node name="Debuff" type="TextureRect" parent="Canvas/RecipeBook/Menu6"]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 26.0
+offset_right = 454.0
+offset_bottom = 46.0
+texture = ExtResource("14_yhvps")
+
+[node name="Buffs" type="Label" parent="Canvas/RecipeBook/Menu6"]
+layout_mode = 0
+offset_left = 459.417
+offset_top = 1.0
+offset_right = 515.99994
+offset_bottom = 33.0
+scale = Vector2(1.5, 1.5)
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 16
+text = "+10%
+-5%"
+
+[node name="Seperator" type="VSeparator" parent="Canvas/RecipeBook/Menu6"]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 4.159973
+offset_right = 105.0
+offset_bottom = 44.840027
+theme_override_styles/separator = SubResource("StyleBoxLine_13dyv")
+
+[node name="Menu7" type="Button" parent="Canvas/RecipeBook"]
+z_index = 11
+layout_mode = 0
+offset_left = 384.00006
+offset_top = 456.25623
+offset_right = 914.0
+offset_bottom = 504.25623
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+disabled = true
+text = "Menu 7             +        +        +"
+alignment = 0
+
+[node name="Texture1" type="TextureRect" parent="Canvas/RecipeBook/Menu7"]
+layout_mode = 0
+offset_left = 111.67108
+offset_top = 1.0
+offset_right = 158.34216
+offset_bottom = 48.0
+texture = ExtResource("17_wijgc")
+
+[node name="Texture2" type="TextureRect" parent="Canvas/RecipeBook/Menu7"]
+layout_mode = 0
+offset_left = 173.76324
+offset_top = 1.0
+offset_right = 220.43433
+offset_bottom = 48.0
+texture = ExtResource("21_qqo6a")
+
+[node name="Texture3" type="TextureRect" parent="Canvas/RecipeBook/Menu7"]
+layout_mode = 0
+offset_left = 239.99994
+offset_top = 1.0
+offset_right = 286.67102
+offset_bottom = 48.0
+texture = ExtResource("22_8ekee")
+
+[node name="Texture4" type="TextureRect" parent="Canvas/RecipeBook/Menu7"]
+layout_mode = 0
+offset_left = 299.99994
+offset_top = 1.0
+offset_right = 346.67102
+offset_bottom = 48.0
+texture = ExtResource("16_bb0on")
+
+[node name="Buff" type="TextureRect" parent="Canvas/RecipeBook/Menu7"]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 2.0
+offset_right = 454.0
+offset_bottom = 22.0
+texture = ExtResource("25_qqo6a")
+
+[node name="Debuff" type="TextureRect" parent="Canvas/RecipeBook/Menu7"]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 26.0
+offset_right = 454.0
+offset_bottom = 46.0
+texture = ExtResource("13_wijgc")
+
+[node name="Buffs" type="Label" parent="Canvas/RecipeBook/Menu7"]
+layout_mode = 0
+offset_left = 459.417
+offset_top = 1.0
+offset_right = 515.99994
+offset_bottom = 33.0
+scale = Vector2(1.5, 1.5)
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 16
+text = "+3
+-5%"
+
+[node name="Seperator" type="VSeparator" parent="Canvas/RecipeBook/Menu7"]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 4.159973
+offset_right = 105.0
+offset_bottom = 44.840027
+theme_override_styles/separator = SubResource("StyleBoxLine_13dyv")
+
+[node name="BackToCooking" type="Button" parent="Canvas/RecipeBook"]
+layout_mode = 0
+offset_left = 784.0
+offset_top = 40.0
+offset_right = 912.0
+offset_bottom = 78.48195
+flat = true
+
+[node name="Texture" type="TextureRect" parent="Canvas/RecipeBook/BackToCooking"]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 39.065796
+texture = ExtResource("3_mqm5i")
+
+[node name="Label" type="Label" parent="Canvas/RecipeBook/BackToCooking"]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 38.48195
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+text = "Back"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="HP" type="TextureProgressBar" parent="Canvas"]
 anchors_preset = 5
 anchor_left = 0.5
@@ -1845,14 +2573,34 @@ offset_right = 1000.0
 offset_bottom = 619.9994
 color = Color(0, 0, 0, 1)
 
-[node name="victory" type="Panel" parent="Canvas"]
+[node name="NextDay" type="Control" parent="Canvas/Cinematic"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BG" type="ColorRect" parent="Canvas/Cinematic/NextDay"]
+layout_mode = 0
+offset_right = 1008.0
+offset_bottom = 600.0
+color = Color(0, 0, 0, 0)
+
+[node name="Text" type="Label" parent="Canvas/Cinematic/NextDay"]
+layout_mode = 0
+offset_right = 959.86707
+offset_bottom = 539.9252
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 48
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Victory" type="Panel" parent="Canvas"]
 visible = false
 z_index = 255
 offset_right = 963.0
 offset_bottom = 530.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_wijgc")
 
-[node name="Label" type="Label" parent="Canvas/victory"]
+[node name="Label" type="Label" parent="Canvas/Victory"]
 layout_mode = 0
 offset_left = 214.0
 offset_top = 141.0
@@ -1862,7 +2610,7 @@ theme_override_fonts/font = ExtResource("2_5q4fb")
 theme_override_font_sizes/font_size = 80
 text = "Voyage complete!"
 
-[node name="Button" type="Button" parent="Canvas/victory"]
+[node name="Button" type="Button" parent="Canvas/Victory"]
 z_index = 5
 layout_mode = 0
 offset_left = 258.0
@@ -1874,7 +2622,7 @@ theme_override_font_sizes/font_size = 64
 text = "Main Menu"
 flat = true
 
-[node name="Panel" type="Panel" parent="Canvas/victory/Button"]
+[node name="Panel" type="Panel" parent="Canvas/Victory/Button"]
 z_index = -1
 layout_mode = 0
 offset_right = 428.0
@@ -1899,6 +2647,7 @@ autoplay = "ShopFadein"
 [connection signal="pressed" from="Canvas/Shop/Food5" to="." method="ShopButtonPressed" binds= [7]]
 [connection signal="pressed" from="Canvas/Shop/Food6" to="." method="ShopButtonPressed" binds= [8]]
 [connection signal="pressed" from="Canvas/Shop/Reroll" to="." method="_on_reroll_pressed"]
+[connection signal="pressed" from="Canvas/Shop/RecipeBook" to="." method="_on_recipe_book_pressed"]
 [connection signal="pressed" from="Canvas/Shop/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="Canvas/Cooking/Menu1" to="." method="CookRecipe" binds= [0]]
 [connection signal="pressed" from="Canvas/Cooking/Menu2" to="." method="CookRecipe" binds= [1]]
@@ -1907,5 +2656,13 @@ autoplay = "ShopFadein"
 [connection signal="pressed" from="Canvas/Cooking/Menu5" to="." method="CookRecipe" binds= [4]]
 [connection signal="pressed" from="Canvas/Cooking/Menu6" to="." method="CookRecipe" binds= [5]]
 [connection signal="pressed" from="Canvas/Cooking/Menu7" to="." method="CookRecipe" binds= [6]]
+[connection signal="pressed" from="Canvas/RecipeBook/Menu1" to="." method="CookRecipe" binds= [0]]
+[connection signal="pressed" from="Canvas/RecipeBook/Menu2" to="." method="CookRecipe" binds= [1]]
+[connection signal="pressed" from="Canvas/RecipeBook/Menu3" to="." method="CookRecipe" binds= [2]]
+[connection signal="pressed" from="Canvas/RecipeBook/Menu4" to="." method="CookRecipe" binds= [3]]
+[connection signal="pressed" from="Canvas/RecipeBook/Menu5" to="." method="CookRecipe" binds= [4]]
+[connection signal="pressed" from="Canvas/RecipeBook/Menu6" to="." method="CookRecipe" binds= [5]]
+[connection signal="pressed" from="Canvas/RecipeBook/Menu7" to="." method="CookRecipe" binds= [6]]
+[connection signal="pressed" from="Canvas/RecipeBook/BackToCooking" to="." method="_on_back_to_cooking_pressed"]
 [connection signal="pressed" from="Canvas/Paused/Lag" to="." method="_on_lag_pressed"]
-[connection signal="pressed" from="Canvas/victory/Button" to="." method="_on_backtomenu_pressed"]
+[connection signal="pressed" from="Canvas/Victory/Button" to="." method="_on_backtomenu_pressed"]
