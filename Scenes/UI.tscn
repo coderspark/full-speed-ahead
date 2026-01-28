@@ -4,7 +4,7 @@
 [ext_resource type="FontFile" uid="uid://dqqnsnb5xkqx7" path="res://Assets/Fonts/8bitoperator_jve.ttf" id="2_5q4fb"]
 [ext_resource type="Texture2D" uid="uid://b6a7pab0tyxve" path="res://Assets/Art/UI/button.png" id="3_mqm5i"]
 [ext_resource type="Material" uid="uid://bc4ysxhwy2g0s" path="res://Assets/Other/Outline.tres" id="4_vqx31"]
-[ext_resource type="Texture2D" uid="uid://castaq8a8h8py" path="res://Assets/Art/Boats/basic_raft.png" id="5_13dyv"]
+[ext_resource type="Texture2D" uid="uid://crjnuw0sawjpr" path="res://Assets/Art/Boats/basic_raft.png" id="5_13dyv"]
 [ext_resource type="Theme" uid="uid://bj15hri4ia073" path="res://Assets/Other/UI.tres" id="5_j04uc"]
 [ext_resource type="Script" uid="uid://b5ae5sgnlj8u3" path="res://Scripts/AutoSizeText.gd" id="5_wunin"]
 [ext_resource type="Shader" uid="uid://bp6mwoabhhic" path="res://Assets/Other/outline.gdshader" id="9_b1goy"]
@@ -1089,13 +1089,35 @@ alignment = 0
 [node name="Label" type="Label" parent="Canvas/Shop/Reroll"]
 layout_mode = 0
 offset_left = 24.000008
-offset_top = 12.000002
-offset_right = 469.08203
-offset_bottom = 107.8147
+offset_right = 266.7721
+offset_bottom = 196.4303
 scale = Vector2(0.2965745, 0.2965745)
 theme = ExtResource("5_j04uc")
 theme_override_font_sizes/font_size = 80
 text = "Reroll"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="Coin" type="TextureRect" parent="Canvas/Shop/Reroll"]
+layout_mode = 0
+offset_left = 100.43439
+offset_top = 12.0
+offset_right = 136.43439
+offset_bottom = 47.99997
+texture = ExtResource("15_5q4fb")
+
+[node name="Cost" type="Label" parent="Canvas/Shop/Reroll"]
+layout_mode = 0
+offset_left = 136.43439
+offset_top = 2.0
+offset_right = 298.2823
+offset_bottom = 191.68665
+scale = Vector2(0.2965745, 0.2965745)
+theme = ExtResource("5_j04uc")
+theme_override_font_sizes/font_size = 80
+text = "FREE"
+vertical_alignment = 1
 clip_text = true
 
 [node name="Continue" type="Button" parent="Canvas/Shop"]
@@ -1834,7 +1856,7 @@ autoplay = "ShopFadein"
 [connection signal="pressed" from="Canvas/Shop/Food4" to="." method="ShopButtonPressed" binds= [6]]
 [connection signal="pressed" from="Canvas/Shop/Food5" to="." method="ShopButtonPressed" binds= [7]]
 [connection signal="pressed" from="Canvas/Shop/Food6" to="." method="ShopButtonPressed" binds= [8]]
-[connection signal="pressed" from="Canvas/Shop/Reroll" to="." method="ShopButtonPressed" binds= [8]]
+[connection signal="pressed" from="Canvas/Shop/Reroll" to="." method="_on_reroll_pressed"]
 [connection signal="pressed" from="Canvas/Shop/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="Canvas/Cooking/Menu1" to="." method="CookRecipe" binds= [0]]
 [connection signal="pressed" from="Canvas/Cooking/Menu2" to="." method="CookRecipe" binds= [1]]

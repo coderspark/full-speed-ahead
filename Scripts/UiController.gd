@@ -4,6 +4,7 @@ signal StartGame
 signal RestartGame
 signal AnimationFinished
 
+var ShopRerollCost := 0.0
 
 var ShopOpen = false
 
@@ -173,3 +174,16 @@ func IntitializeCutscene():
 
 func _on_continue_pressed() -> void:
 	$Animations.play("ShopFadeout")
+
+
+func _on_reroll_pressed() -> void:
+	if $"../Players/Player".coins >= ShopRerollCost:
+		$"../Players/Player".coins -= ShopRerollCost
+		$"../Players/Player".UpdateCoinCount()
+		RandomizeShopContents()
+		if ShopRerollCost == 0:
+			ShopRerollCost = 0.5
+		else:
+			ShopRerollCost *= 2
+		$Canvas/Shop/Reroll/Coin.show()
+		$Canvas/Shop/Reroll/Cost.text = str(ShopRerollCost)
