@@ -1,6 +1,7 @@
 extends Node2D
 
-var TimeOfDAy := 1000.0
+var TimeOfDAy := 700
+const DayStartTime = 700
 
 func _ready() -> void:
 	$UI/Canvas/Shop.show()

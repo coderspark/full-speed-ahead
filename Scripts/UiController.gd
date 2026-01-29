@@ -33,6 +33,7 @@ func _process(_delta: float) -> void:
 		paused = !paused
 		get_tree().paused = paused
 		$Canvas/Paused.visible = paused
+
 func gameover():
 	get_tree().paused = true
 	$Canvas/GameOver.visible = true
@@ -161,15 +162,15 @@ func CheckRecipeCraftable(id:int):
 	return true
 
 func CookRecipe(id:int):
-	
+	print("trying to cook smth up")
 	var Recipe = Global.Recipies[id]
 	for Item in Recipe:
 		if not Item in Inventory:
 			return false
 	for Item in Recipe:
 		RemoveFoodItemFromInventory(Item)
-		$Animations.play("next_day")
-
+	InitNextDay()
+		
 func IntitializeCutscene():
 	$Animations.play("Cinematic_fadein")
 	await $Animations.animation_finished
@@ -178,6 +179,12 @@ func IntitializeCutscene():
 func _on_continue_pressed() -> void:
 	$Animations.play("ShopFadeout")
 
+func InitNextDay():
+	$Animations.play("CookingFadeOut")
+	await $Animations.animation_finished
+	Global.CurrentDay += 1
+	$Animations.play("next_day")
+	await $Animations.animation_finished
 
 func _on_reroll_pressed() -> void:
 	if $"../Players/Player".coins >= ShopRerollCost:
@@ -204,3 +211,18 @@ func _on_recipe_book_pressed() -> void:
 
 func SetCorrectDay():
 	$Canvas/Cinematic/NextDay/Text.text = "DAY " + str(Global.CurrentDay)
+
+func SetCorrectProgress():
+	$Canvas/Cinematic/NextDay/Text2.text = "\n\nPROGRESS: " + "22%" # TEMPORARY - ADD PROGRESS COUNTER
+
+func NextDay():
+	$"..".TimeOfDAy = $"..".DayStartTime
+	$Animations.play("Cinematic_fadeout")
+	await $Animations.animation_finished
+	$"../Players/Player".boatvel = 0
+	$Canvas/Countdown/Animations.play("Countdown")
+	$"../Players/Player".GameStarted = false
+	$"../Players/Player".paused = false
+	Global.DayEnded = false
+	
+	
