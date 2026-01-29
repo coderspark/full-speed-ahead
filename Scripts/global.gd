@@ -3,7 +3,7 @@ extends Node
 var DayEnded = false
 
 var CurrentDay = 0
-const AdvanceTime = true
+const AdvanceTime = false
 
 const STARTER_BOAT = "Reinforced_motorboat"
 
