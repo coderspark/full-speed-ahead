@@ -45,36 +45,34 @@ func getoverlappingtiles() -> Array:
 	return res
 
 func _physics_process(_delta: float) -> void: 
-	if !GameStarted or Global.DayEnded:
-		return
-	
-	if Input.get_axis("move_left", "move_right") == 0:
-		delta_rot *= 0.9
-	delta_rot += Input.get_axis("move_left","move_right") * turn_velocity
-	if abs(delta_rot) >= max_turn_speed:
-		delta_rot = max_turn_speed * delta_rot/abs(delta_rot)
-	if isbounce:
-		boatvel = -30
-	rotation += delta_rot * 0.01
-	velocity = transform.x * boatvel
-	if boatvel < max_speed:
-		boatvel += 1
-	var overlap = getoverlappingtiles()
-	var pushingdirs = []
-	for t in overlap:
-		if t[0] == Vector2i(0, 3) && !isbounce && !t[1] in pushingdirs:
-			velocity += Vector2(sin(t[1]), cos(t[1])) * 10
-			pushingdirs.append(t[1])
-		if t[0] == Vector2i(0, 13) && !isbounce && !t[1] in pushingdirs:
-			velocity += Vector2(sin(t[1]), cos(t[1])) * 25
-			pushingdirs.append(t[1])
-		if t[0] == Vector2i(0, 14):
-			coins += 1 * coin_mult
-			$"../../TileMap".remove_coin(t[2])
-			UpdateCoinCount()
-		if t[0] == Vector2i(6, 0):
-			$"../..".finish()
-	pushingdirs = []
+	if GameStarted and !Global.DayEnded:	
+		if Input.get_axis("move_left", "move_right") == 0:
+			delta_rot *= 0.9
+		delta_rot += Input.get_axis("move_left","move_right") * turn_velocity
+		if abs(delta_rot) >= max_turn_speed:
+			delta_rot = max_turn_speed * delta_rot/abs(delta_rot)
+		if isbounce:
+			boatvel = -30
+		rotation += delta_rot * 0.01
+		velocity = transform.x * boatvel
+		if boatvel < max_speed:
+			boatvel += 1
+		var overlap = getoverlappingtiles()
+		var pushingdirs = []
+		for t in overlap:
+			if t[0] == Vector2i(0, 3) && !isbounce && !t[1] in pushingdirs:
+				velocity += Vector2(sin(t[1]), cos(t[1])) * 10
+				pushingdirs.append(t[1])
+			if t[0] == Vector2i(0, 13) && !isbounce && !t[1] in pushingdirs:
+				velocity += Vector2(sin(t[1]), cos(t[1])) * 25
+				pushingdirs.append(t[1])
+			if t[0] == Vector2i(0, 14):
+				coins += 1 * coin_mult
+				$"../../TileMap".remove_coin(t[2])
+				UpdateCoinCount()
+			if t[0] == Vector2i(6, 0):
+				$"../..".finish()
+		pushingdirs = []
 	move_and_slide()
 
 func _on_area_2d_body_entered(_body: Node2D) -> void:
@@ -118,6 +116,10 @@ func _on_ui_start_game() -> void:
 func EndDay():
 	GameStarted = false
 	while velocity != Vector2.ZERO:
-		velocity *= 0.9
+		velocity *= 0.95
 		await get_tree().create_timer(0.01,true,true,true).timeout
 		
+
+func GetProgress() -> int:
+	return floor((position.x + 80) / 160)
+	

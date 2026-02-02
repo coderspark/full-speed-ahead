@@ -16,7 +16,7 @@ func _on_ui_restart_game() -> void:
 
 func _process(delta: float) -> void:
 	if Global.AdvanceTime and $Players/Player.GameStarted and !$Players/Player.paused:
-		TimeOfDAy += 3
+		TimeOfDAy += 10
 		modulate = TimeToColorModulate(TimeOfDAy)
 		if TimeOfDAy > 1950 and not Global.DayEnded:
 			$UI.IntitializeCutscene()
