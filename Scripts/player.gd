@@ -44,8 +44,8 @@ func getoverlappingtiles() -> Array:
 			res.append([ttype, rot, coords])
 	return res
 
-func _physics_process(_delta: float) -> void: 
-	if GameStarted and !Global.DayEnded:	
+func _physics_process(_delta: float) -> void:
+	if GameStarted and !Global.DayEnded:
 		if Input.get_axis("move_left", "move_right") == 0:
 			delta_rot *= 0.9
 		delta_rot += Input.get_axis("move_left","move_right") * turn_velocity

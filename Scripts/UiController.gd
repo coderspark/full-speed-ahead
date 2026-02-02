@@ -213,7 +213,14 @@ func SetCorrectDay():
 	$Canvas/Cinematic/NextDay/Text.text = "DAY " + str(Global.CurrentDay)
 
 func SetCorrectProgress():
-	$Canvas/Cinematic/NextDay/Text2.text = "\n\nPROGRESS: " + str(floor($"../Players/Player".GetProgress() / Global.LevelData[Global.LevelName]["LengthDays"] * 8 * 100)) + "%"
+	print($"../Players/Player".GetProgress())
+	print(Global.LevelData[Global.LevelName]["LengthDays"] * 8)
+	print(float($"../Players/Player".GetProgress()) / float(Global.LevelData[Global.LevelName]["LengthDays"] * 8) * 100)
+	$Canvas/Cinematic/NextDay/Text2.text = "\n\nPROGRESS: " + str(
+		int(floor(
+			float($"../Players/Player".GetProgress()) / float(Global.LevelData[Global.LevelName]["LengthDays"] * 8)
+			 * 100)
+			)) + "%"
 
 func NextDay():
 	$"..".TimeOfDAy = $"..".DayStartTime
