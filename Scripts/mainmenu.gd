@@ -4,6 +4,7 @@ var game = preload("res://Scenes/MainScene.tscn")
 @onready var LevelBG = preload("res://Assets/Art/UI/WorldMap/worldmap.png")
 
 func _ready() -> void:
+	get_tree().paused = false
 	$Fade/Animations.play("fade_out")
 	await $Fade/Animations.animation_finished
 	$LevelSelect.hide()

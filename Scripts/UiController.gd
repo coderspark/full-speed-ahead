@@ -198,7 +198,8 @@ func _on_reroll_pressed() -> void:
 		$Canvas/Shop/Reroll/Coin.show()
 		$Canvas/Shop/Reroll/Cost.text = str(ShopRerollCost)
 func _on_backtomenu_pressed() -> void:
-	get_tree().paused = false
+	$"../../Fade/Animations".play("fade_in")
+	await $"../../Fade/Animations".animation_finished
 	get_tree().reload_current_scene()
 
 func _on_back_to_cooking_pressed() -> void:
@@ -213,12 +214,9 @@ func SetCorrectDay():
 	$Canvas/Cinematic/NextDay/Text.text = "DAY " + str(Global.CurrentDay)
 
 func SetCorrectProgress():
-	print($"../Players/Player".GetProgress())
-	print(Global.LevelData[Global.LevelName]["LengthDays"] * 8)
-	print(float($"../Players/Player".GetProgress()) / float(Global.LevelData[Global.LevelName]["LengthDays"] * 8) * 100)
 	$Canvas/Cinematic/NextDay/Text2.text = "\n\nPROGRESS: " + str(
 		int(floor(
-			float($"../Players/Player".GetProgress()) / float(Global.LevelData[Global.LevelName]["LengthDays"] * 8)
+			float($"../Players/Player".GetProgress()) / float(Global.LevelData[Global.LevelName]["LengthTiles"])
 			 * 100)
 			)) + "%"
 

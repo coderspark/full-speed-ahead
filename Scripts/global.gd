@@ -95,9 +95,9 @@ var Recipies = [
 ]
 var LevelName = ""
 var LevelData = {
-	"Engeland":{"StartCoinCount":10, "LengthDays":3},
-	"Portugal":{"StartCoinCount":20, "LengthDays":10},
-	"KaapdegoedeHoop":{"StartCoinCount":40000,"LengthDays":15},
-	"Jakarta":{"StartCoinCount":80,"LengthDays":25},
-	"Paaseiland":{"StartCoinCount":80,"LengthDays":30},
+	"Engeland":{"StartCoinCount":10, "LengthTiles":10, "Intermissions":[]},
+	"Portugal":{"StartCoinCount":20, "LengthTiles":25, "Intermissions":[]},
+	"KaapdegoedeHoop":{"StartCoinCount":40000,"LengthTiles":60, "Intermissions":[25]},
+	"Jakarta":{"StartCoinCount":80,"LengthTiles":100, "Intermissions":[25,60]},
+	"Paaseiland":{"StartCoinCount":80,"LengthTiles":150, "Intermissions":[25,100]},
 }
