@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://dbq85xa0fcnii"]
+[gd_scene load_steps=54 format=3 uid="uid://dbq85xa0fcnii"]
 
 [ext_resource type="Script" uid="uid://klae0u71y1go" path="res://Scripts/UiController.gd" id="1_wi7yl"]
 [ext_resource type="FontFile" uid="uid://dqqnsnb5xkqx7" path="res://Assets/Fonts/8bitoperator_jve.ttf" id="2_5q4fb"]
@@ -30,6 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://co0vjrp5sm16f" path="res://Assets/Art/Food/Gray_peas.png" id="22_8ekee"]
 [ext_resource type="Texture2D" uid="uid://d4artjbbww8x1" path="res://Assets/Art/Temp/heart_half.png" id="25_qqo6a"]
 [ext_resource type="Texture2D" uid="uid://ckwru7sps6jot" path="res://Assets/Art/UI/day_hud.png" id="30_yhvps"]
+[ext_resource type="Texture2D" uid="uid://bbbiqkrot01ou" path="res://Assets/Art/Temp/time_indicator.png" id="31_tb15e"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qxria"]
 bg_color = Color(0.19, 0.19, 0.19, 0.6666667)
@@ -2854,7 +2855,7 @@ offset_bottom = 39.0
 scale = Vector2(0.5, 0.5)
 theme_override_styles/panel = SubResource("StyleBoxTexture_mqm5i")
 
-[node name="Texture" type="TextureRect" parent="Canvas/HUD"]
+[node name="TimeOfDAy" type="TextureRect" parent="Canvas/HUD"]
 layout_mode = 0
 offset_left = 684.0
 offset_right = 964.0
@@ -2863,7 +2864,7 @@ mouse_filter = 2
 texture = ExtResource("30_yhvps")
 stretch_mode = 4
 
-[node name="Day" type="Label" parent="Canvas/HUD/Texture"]
+[node name="Day" type="Label" parent="Canvas/HUD/TimeOfDAy"]
 layout_mode = 0
 offset_left = 202.93915
 offset_top = 95.25273
@@ -2873,7 +2874,7 @@ theme_override_fonts/font = ExtResource("2_5q4fb")
 text = "Day 01"
 horizontal_alignment = 1
 
-[node name="Progress" type="Label" parent="Canvas/HUD/Texture"]
+[node name="Progress" type="Label" parent="Canvas/HUD/TimeOfDAy"]
 layout_mode = 0
 offset_left = 202.93915
 offset_top = 33.055336
@@ -2884,6 +2885,14 @@ theme_override_font_sizes/font_size = 32
 text = "22%"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="TimeIndicator" type="TextureRect" parent="Canvas/HUD/TimeOfDAy"]
+layout_mode = 0
+offset_left = 175.0
+offset_top = 78.482
+offset_right = 215.0
+offset_bottom = 118.482
+texture = ExtResource("31_tb15e")
 
 [node name="Animations" type="AnimationPlayer" parent="."]
 libraries = {

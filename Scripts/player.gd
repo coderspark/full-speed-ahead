@@ -112,7 +112,13 @@ func UpdateBoat(nam : String):
 
 func _on_ui_start_game() -> void:
 	velocity = Vector2.ZERO
+	boatvel = 0
 	GameStarted = true
+#Used in tutorial
+func StopShip():
+	velocity = Vector2.ZERO
+	boatvel = 0
+	GameStarted = false
 
 func EndDay():
 	GameStarted = false
