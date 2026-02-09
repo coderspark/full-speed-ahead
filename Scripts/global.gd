@@ -23,8 +23,8 @@ const BOAT_STATS = {
 		"coin_multiplier":1.0
 	},"Reinforced_raft":{
 		"cost":5,
-		"speed":3,
-		"turn_speed":3,
+		"speed":4,
+		"turn_speed":4,
 		"hp":3,
 		"coin_multiplier":1.1 
 	},"Basic_canoe":{
@@ -35,26 +35,26 @@ const BOAT_STATS = {
 		"coin_multiplier":1.5
 	},"Reinforced_canoe":{
 		"cost":15,
-		"speed":4,
-		"turn_speed":4,
+		"speed":6,
+		"turn_speed":7,
 		"hp":8,
 		"coin_multiplier":1.5
 	}, "Basic_sailboat":{
 		"cost":25,
 		"speed":6,
-		"turn_speed":3,
+		"turn_speed":4,
 		"hp":7,
 		"coin_multiplier":2.0
 	}, "Improved_sailboat":{
 		"cost":40,
 		"speed":7,
-		"turn_speed":4,
+		"turn_speed":5,
 		"hp":8,
 		"coin_multiplier":2.5
 	}, "Basic_motorboat":{
 		"cost":90,
-		"speed":9,
-		"turn_speed":5,
+		"speed":8,
+		"turn_speed":6,
 		"hp":10,
 		"coin_multiplier":3.0
 	}, "Reinforced_motorboat":{

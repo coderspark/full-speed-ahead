@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://v2hjcofj8iip"]
+[gd_scene load_steps=27 format=3 uid="uid://v2hjcofj8iip"]
 
 [ext_resource type="Script" uid="uid://c4d486soskj4u" path="res://Scripts/mainmenu.gd" id="1_3pujl"]
 [ext_resource type="Texture2D" uid="uid://bikvt55in0esa" path="res://Assets/Art/UI/Menu screen.png" id="1_cmhrf"]
@@ -32,6 +32,42 @@ texture = ExtResource("9_eybw1")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_awugs"]
 texture = ExtResource("11_hu3kb")
+
+[sub_resource type="Animation" id="Animation_hu3kb"]
+resource_name = "fall"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(229, -380), Vector2(229, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_vv4ip"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(229, -380)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_awugs"]
+_data = {
+&"RESET": SubResource("Animation_vv4ip"),
+&"fall": SubResource("Animation_hu3kb")
+}
 
 [sub_resource type="Animation" id="Animation_juwjy"]
 length = 0.001
@@ -274,8 +310,9 @@ scroll_active = false
 visible = false
 layout_mode = 0
 offset_left = 229.0
+offset_top = -380.0
 offset_right = 741.0
-offset_bottom = 384.0
+offset_bottom = 4.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_vv4ip")
 
 [node name="TextEdit" type="TextEdit" parent="LevelSelect/CoinSelect"]
@@ -321,12 +358,17 @@ theme_override_font_sizes/font_size = 48
 text = "Start"
 flat = true
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="LevelSelect/CoinSelect"]
+libraries = {
+&"": SubResource("AnimationLibrary_awugs")
+}
+
 [node name="Fade" type="ColorRect" parent="."]
 z_index = 100
-offset_left = -1038.0
-offset_top = -1718.0
-offset_right = 8930.0
-offset_bottom = 2762.0
+offset_left = -1031.0
+offset_top = -1754.0
+offset_right = 8937.0
+offset_bottom = 2726.0
 mouse_filter = 2
 color = Color(0, 0, 0, 0)
 
