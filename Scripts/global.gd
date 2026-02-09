@@ -7,7 +7,7 @@ var Coins = 0
 var BroughtCoins = 0
 const AdvanceTime = true
 
-const STARTER_BOAT = "Reinforced_motorboat"
+const STARTER_BOAT = "Basic_raft"
 
 const BOAT_SCALE_MODIFIERS : Dictionary = {
 	"Basic_raft": 0.5,

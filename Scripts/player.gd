@@ -111,6 +111,7 @@ func UpdateBoat(nam : String):
 	$Sprite.scale = Vector2(Global.BOAT_SCALE_MODIFIERS.get(nam,1.0),Global.BOAT_SCALE_MODIFIERS.get(nam,1.0))
 
 func _on_ui_start_game() -> void:
+	velocity = Vector2.ZERO
 	GameStarted = true
 
 func EndDay():
