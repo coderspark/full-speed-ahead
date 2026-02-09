@@ -208,8 +208,10 @@ func _on_reroll_pressed() -> void:
 		$Canvas/Shop/Reroll/Coin.show()
 		$Canvas/Shop/Reroll/Cost.text = str(ShopRerollCost)
 func _on_backtomenu_pressed() -> void:
-	$"../../Fade/Animations".play("fade_in")
-	await $"../../Fade/Animations".animation_finished
+	print("begone with thee")
+	#$"../../Fade/Animations".play("fade_in") # It's actually fading out but SOMEONE on this dev team doesn't know what fade in means
+	#await $"../../Fade/Animations".animation_finished
+	Global.Coins += $"../Players/Player".coins
 	get_tree().reload_current_scene()
 
 func _on_back_to_cooking_pressed() -> void:

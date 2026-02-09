@@ -19,8 +19,16 @@ func _on_play_pressed() -> void:
 	$Fade/Animations.play("fade_out")
 	await $Fade/Animations.animation_finished
 
+func CoinSelect(lvl:String):
+	Global.LevelName = lvl
+	$LevelSelect/CoinSelect.visible = true
+	$LevelSelect/CoinSelect/AnimationPlayer.play("fall")
+	await $LevelSelect/CoinSelect/AnimationPlayer.animation_finished
+	
 
-func StartGame(lvl:String):
+func StartGame():
+	Global.BroughtCoins = int($LevelSelect/CoinSelect/TextEdit.text)
+	Global.Coins -= Global.BroughtCoins
 	$LevelSelect/Paaseiland.disabled = true
 	$LevelSelect/Jakarta.disabled = true
 	$LevelSelect/KaapDeGoedeHoop.disabled = true
@@ -31,7 +39,6 @@ func StartGame(lvl:String):
 	await $Fade/Animations.animation_finished
 	get_tree().paused = false
 	$LevelSelect.queue_free()
-	Global.LevelName = lvl
 	Global.CurrentDay = 0
 	var n = game.instantiate()
 	n.name = "MainScene"
