@@ -1,5 +1,6 @@
 extends Node2D
 var game = preload("res://Scenes/MainScene.tscn")
+var tutorial = preload("res://Scenes/Tutorial_scene.tscn")
 
 @onready var LevelBG = preload("res://Assets/Art/UI/WorldMap/worldmap.png")
 
@@ -38,6 +39,7 @@ func StartGame():
 	await $Fade/Animations.animation_finished
 	get_tree().paused = false
 	$LevelSelect.queue_free()
+	Global.CurrentDay = 0
 	var n = game.instantiate()
 	n.name = "MainScene"
 	add_child(n)
@@ -98,3 +100,18 @@ Length: [color=00BF00]Short[/color]
 func _on_mouse_exited() -> void:
 	$LevelSelect/BG.texture = LevelBG
 	$LevelSelect/Info.text = ""
+
+
+func _on_tutorial_pressed() -> void:
+	$Fade/Animations.play("fade_in")
+	await $Fade/Animations.animation_finished
+	get_tree().paused = false
+	$LevelSelect.queue_free()
+	Global.LevelName = "Tutorial"
+	Global.CurrentDay = 0
+	var n = tutorial.instantiate()
+	n.name = "MainScene"
+	add_child(n)
+	$Camera.queue_free()
+	$Fade/Animations.play("fade_out")
+	await $Fade/Animations.animation_finished

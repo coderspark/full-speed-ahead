@@ -159,7 +159,7 @@ z_index = 3
 layout_mode = 0
 offset_left = 86.0
 offset_top = 157.0
-offset_right = 341.0
+offset_right = 384.0
 offset_bottom = 237.0
 mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -173,29 +173,29 @@ flat = true
 [node name="Panel2" type="Panel" parent="MainMenu/Play"]
 z_index = -1
 layout_mode = 0
-offset_right = 255.0
+offset_right = 298.0
 offset_bottom = 80.0
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxTexture_igs2m")
 
-[node name="Optons" type="Button" parent="MainMenu"]
+[node name="Tutorial" type="Button" parent="MainMenu"]
 z_index = 3
 layout_mode = 0
 offset_left = 86.0
 offset_top = 243.0
-offset_right = 341.0
+offset_right = 384.0
 offset_bottom = 323.0
 mouse_default_cursor_shape = 1
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("3_igs2m")
 theme_override_font_sizes/font_size = 64
-text = "OPTIONS"
+text = "TUTORIAL"
 flat = true
 
-[node name="Panel2" type="Panel" parent="MainMenu/Optons"]
+[node name="Panel2" type="Panel" parent="MainMenu/Tutorial"]
 z_index = -1
 layout_mode = 0
-offset_right = 255.0
+offset_right = 298.0
 offset_bottom = 80.0
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxTexture_igs2m")
@@ -205,7 +205,7 @@ z_index = 3
 layout_mode = 0
 offset_left = 86.0
 offset_top = 329.0
-offset_right = 341.0
+offset_right = 384.0
 offset_bottom = 409.0
 mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -217,7 +217,7 @@ flat = true
 [node name="Panel2" type="Panel" parent="MainMenu/Quit"]
 z_index = -1
 layout_mode = 0
-offset_right = 255.0
+offset_right = 298.0
 offset_bottom = 80.0
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxTexture_igs2m")
@@ -381,6 +381,7 @@ libraries = {
 position = Vector2(491.13043, 272)
 
 [connection signal="pressed" from="MainMenu/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MainMenu/Tutorial" to="." method="_on_tutorial_pressed"]
 [connection signal="pressed" from="MainMenu/Quit" to="." method="_on_quit_pressed"]
 [connection signal="finished" from="MainMenu/MainMenuMusic" to="MainMenu/MainMenuMusic" method="_on_finished"]
 [connection signal="mouse_entered" from="LevelSelect/Paaseiland" to="." method="_on_paaseiland_mouse_entered"]
