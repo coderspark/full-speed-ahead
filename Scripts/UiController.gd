@@ -14,6 +14,10 @@ var Inventory = {}
 var paused = false
 
 func _ready() -> void:
+	if Global.CurrentDay < 10:
+		$Canvas/HUD/Texture/Day.text = "Day 0" + str(Global.CurrentDay)
+	else:
+		$Canvas/HUD/Texture/Day.text = "Day " + str(Global.CurrentDay)
 	RandomizeShopContents()
 	FormatInventory(Inventory)
 	$Canvas/Shop.hide()
@@ -22,6 +26,7 @@ func CallStartGame():
 	StartGame.emit()
 
 func _process(_delta: float) -> void:
+	$Canvas/HUD/Texture/Progress.text = CalculatePercentage() + "%"
 	if Input.is_action_just_pressed("ADMIN"):
 		RandomizeShopContents()
 	if Input.is_action_just_pressed("pause"):
@@ -125,7 +130,7 @@ func OpenCookingMenu() -> void:
 func FormatInventory(Inv : Dictionary):
 	var Output : String
 	var Before = "[font=res://Assets/Fonts/8bitoperator_jve.ttf][font_size=24]"
-	Output += Before
+	Output = Before
 	for n : String in Inv.keys():
 		Output += "[img=32]res://Assets/Art/Food/" + n + ".png[/img]" + n.replace("_"," ") + ": " + str(Inv[n]) + "\n"
 	if Inv == {}:
@@ -183,6 +188,11 @@ func InitNextDay():
 	$Animations.play("CookingFadeOut")
 	await $Animations.animation_finished
 	Global.CurrentDay += 1
+	if Global.CurrentDay < 10:
+		$Canvas/HUD/Texture/Day.text = "Day 0" + str(Global.CurrentDay)
+	else:
+		$Canvas/HUD/Texture/Day.text = "Day " + str(Global.CurrentDay)
+		
 	$Animations.play("next_day")
 	await $Animations.animation_finished
 
@@ -214,11 +224,7 @@ func SetCorrectDay():
 	$Canvas/Cinematic/NextDay/Text.text = "DAY " + str(Global.CurrentDay)
 
 func SetCorrectProgress():
-	$Canvas/Cinematic/NextDay/Text2.text = "\n\nPROGRESS: " + str(
-		int(floor(
-			float($"../Players/Player".GetProgress()) / float(Global.LevelData[Global.LevelName]["LengthTiles"])
-			 * 100)
-			)) + "%"
+	$Canvas/Cinematic/NextDay/Text2.text = "\n\nPROGRESS: " + CalculatePercentage() + "%"
 
 func NextDay():
 	$"..".TimeOfDAy = $"..".DayStartTime
@@ -230,4 +236,5 @@ func NextDay():
 	$"../Players/Player".paused = false
 	Global.DayEnded = false
 	
-	
+func CalculatePercentage() -> String:
+	return str(int(clamp(float($"../Players/Player".GetProgress()) / float(Global.LevelData[Global.LevelName]["LengthTiles"] * 8 + 16) * 100,0,100)))

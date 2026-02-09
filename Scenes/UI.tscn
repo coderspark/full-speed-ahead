@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://dbq85xa0fcnii"]
+[gd_scene load_steps=53 format=3 uid="uid://dbq85xa0fcnii"]
 
 [ext_resource type="Script" uid="uid://klae0u71y1go" path="res://Scripts/UiController.gd" id="1_wi7yl"]
 [ext_resource type="FontFile" uid="uid://dqqnsnb5xkqx7" path="res://Assets/Fonts/8bitoperator_jve.ttf" id="2_5q4fb"]
@@ -29,6 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://bck2didbov47y" path="res://Assets/Art/Food/Meat.png" id="21_qqo6a"]
 [ext_resource type="Texture2D" uid="uid://co0vjrp5sm16f" path="res://Assets/Art/Food/Gray_peas.png" id="22_8ekee"]
 [ext_resource type="Texture2D" uid="uid://d4artjbbww8x1" path="res://Assets/Art/Temp/heart_half.png" id="25_qqo6a"]
+[ext_resource type="Texture2D" uid="uid://ckwru7sps6jot" path="res://Assets/Art/UI/day_hud.png" id="30_yhvps"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qxria"]
 bg_color = Color(0.19, 0.19, 0.19, 0.6666667)
@@ -55,29 +56,6 @@ shader_parameter/number_of_images = Vector2(1, 1)
 color = Color(1, 1, 1, 1)
 thickness = 3
 vertical = true
-
-[sub_resource type="GDScript" id="GDScript_hx8n4"]
-script/source = "extends TextureProgressBar
-
-var HP := 5.0
-var MAX_HP := 5.0
-
-func _ready() -> void:
-	Update()
-
-
-func Update():
-	if HP > MAX_HP:
-		HP = MAX_HP
-	max_value = 100
-
-	var hpPercent : float = HP / MAX_HP * 100
-	print(hpPercent)
-	var tween = create_tween()
-	tween.tween_property(self, \"value\",hpPercent,1).set_trans(Tween.TRANS_SINE)
-	tint_progress = Color.from_hsv(hpPercent/300,1,1)
-		
-"
 
 [sub_resource type="Animation" id="Animation_wi7yl"]
 resource_name = "Countdown"
@@ -252,14 +230,37 @@ _data = {
 &"RESET": SubResource("Animation_5q4fb")
 }
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mqm5i"]
-texture = ExtResource("15_5q4fb")
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wijgc"]
 bg_color = Color(0.23031491, 0.23031494, 0.23031494, 0.4862745)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wijgc"]
 texture = ExtResource("3_mqm5i")
+
+[sub_resource type="GDScript" id="GDScript_hx8n4"]
+script/source = "extends TextureProgressBar
+
+var HP := 5.0
+var MAX_HP := 5.0
+
+func _ready() -> void:
+	Update()
+
+
+func Update():
+	if HP > MAX_HP:
+		HP = MAX_HP
+	max_value = 100
+
+	var hpPercent : float = HP / MAX_HP * 100
+	print(hpPercent)
+	var tween = create_tween()
+	tween.tween_property(self, \"value\",hpPercent,1).set_trans(Tween.TRANS_SINE)
+	tint_progress = Color.from_hsv(hpPercent/300,1,1)
+		
+"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mqm5i"]
+texture = ExtResource("15_5q4fb")
 
 [sub_resource type="Animation" id="Animation_j04uc"]
 resource_name = "Cinematic_fadein"
@@ -2635,24 +2636,6 @@ text = "Back"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HP" type="TextureProgressBar" parent="Canvas"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -48.059875
-offset_top = 8.481949
-offset_right = 51.940125
-offset_bottom = 18.481949
-grow_horizontal = 2
-scale = Vector2(3, 3)
-pivot_offset = Vector2(50, 0)
-value = 1.0
-texture_under = ExtResource("12_612k1")
-texture_over = ExtResource("13_us6mg")
-texture_progress = ExtResource("14_8blbl")
-tint_progress = Color(1, 0, 0, 1)
-script = SubResource("GDScript_hx8n4")
-
 [node name="Countdown" type="ColorRect" parent="Canvas"]
 visible = false
 z_index = 4
@@ -2714,32 +2697,9 @@ theme_override_font_sizes/font_size = 21
 text = "Lag
 "
 
-[node name="Coins" type="Label" parent="Canvas"]
-z_index = 13
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 72.03946
-offset_top = -517.9342
-offset_right = 124.03946
-offset_bottom = -494.9342
-grow_vertical = 0
-scale = Vector2(3, 3)
-theme_override_fonts/font = ExtResource("2_5q4fb")
-theme_override_font_sizes/font_size = 16
-text = "0"
-
-[node name="Panel" type="Panel" parent="Canvas/Coins"]
-layout_mode = 0
-offset_left = -20.0
-offset_top = -1.0
-offset_right = 20.0
-offset_bottom = 39.0
-scale = Vector2(0.5, 0.5)
-theme_override_styles/panel = SubResource("StyleBoxTexture_mqm5i")
-
 [node name="Cinematic" type="Control" parent="Canvas"]
 visible = false
+z_index = 1
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -2831,6 +2791,87 @@ offset_right = 428.0
 offset_bottom = 72.0
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxTexture_wijgc")
+
+[node name="HUD" type="Control" parent="Canvas"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HP" type="TextureProgressBar" parent="Canvas/HUD"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 411.94012
+offset_top = 8.481949
+offset_right = 511.94012
+offset_bottom = 18.481949
+grow_horizontal = 2
+scale = Vector2(3, 3)
+pivot_offset = Vector2(50, 0)
+value = 1.0
+texture_under = ExtResource("12_612k1")
+texture_over = ExtResource("13_us6mg")
+texture_progress = ExtResource("14_8blbl")
+tint_progress = Color(1, 0, 0, 1)
+script = SubResource("GDScript_hx8n4")
+
+[node name="Coins" type="Label" parent="Canvas/HUD"]
+z_index = 13
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 72.03946
+offset_top = -17.934204
+offset_right = 124.03946
+offset_bottom = 5.065796
+grow_vertical = 0
+scale = Vector2(3, 3)
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 16
+text = "0"
+
+[node name="Panel" type="Panel" parent="Canvas/HUD/Coins"]
+layout_mode = 0
+offset_left = -20.0
+offset_top = -1.0
+offset_right = 20.0
+offset_bottom = 39.0
+scale = Vector2(0.5, 0.5)
+theme_override_styles/panel = SubResource("StyleBoxTexture_mqm5i")
+
+[node name="Texture" type="TextureRect" parent="Canvas/HUD"]
+layout_mode = 0
+offset_left = 684.0
+offset_right = 964.0
+offset_bottom = 265.46713
+mouse_filter = 2
+texture = ExtResource("30_yhvps")
+stretch_mode = 4
+
+[node name="Day" type="Label" parent="Canvas/HUD/Texture"]
+layout_mode = 0
+offset_left = 202.93915
+offset_top = 95.25273
+offset_right = 260.79352
+offset_bottom = 111.77301
+theme_override_fonts/font = ExtResource("2_5q4fb")
+text = "Day 01"
+horizontal_alignment = 1
+
+[node name="Progress" type="Label" parent="Canvas/HUD/Texture"]
+layout_mode = 0
+offset_left = 202.93915
+offset_top = 33.055336
+offset_right = 260.79352
+offset_bottom = 91.10268
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+text = "22%"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Animations" type="AnimationPlayer" parent="."]
 libraries = {

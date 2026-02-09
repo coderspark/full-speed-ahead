@@ -28,6 +28,7 @@ func StartGame(lvl:String):
 	$MainMenu/MainMenuMusic.queue_free()
 	$Fade/Animations.play("fade_in")
 	await $Fade/Animations.animation_finished
+	get_tree().paused = false
 	$LevelSelect.queue_free()
 	Global.LevelName = lvl
 	var n = game.instantiate()

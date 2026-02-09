@@ -78,8 +78,8 @@ func _physics_process(_delta: float) -> void:
 func _on_area_2d_body_entered(_body: Node2D) -> void:
 	delta_rot = 0
 	health -= 1
-	$"../../UI/Canvas/HP".HP = health
-	$"../../UI/Canvas/HP".Update()
+	$"../../UI/Canvas/HUD/HP".HP = health
+	$"../../UI/Canvas/HUD/HP".Update()
 	if health <= 0:
 		$"../../UI".gameover()
 		paused = true
@@ -93,7 +93,7 @@ func _on_shop_detection_body_entered(_body: Node2D) -> void:
 	get_tree().paused = true
 	
 func UpdateCoinCount():
-	$"../../UI/Canvas/Coins".text = str(coins)
+	$"../../UI/Canvas/HUD/Coins".text = str(coins)
 
 func UpdateBoat(nam : String):
 	MyBoat = nam
@@ -104,9 +104,9 @@ func UpdateBoat(nam : String):
 	turn_velocity = Global.BOAT_STATS[nam]["turn_speed"] / 30.0
 	coin_mult = Global.BOAT_STATS[nam]["coin_multiplier"]
 	velocity = Vector2.ZERO
-	$"../../UI/Canvas/HP".MAX_HP = max_health
-	$"../../UI/Canvas/HP".HP = health
-	$"../../UI/Canvas/HP".Update()
+	$"../../UI/Canvas/HUD/HP".MAX_HP = max_health
+	$"../../UI/Canvas/HUD/HP".HP = health
+	$"../../UI/Canvas/HUD/HP".Update()
 	$Sprite.texture = load("res://Assets/Art/Boats/" + MyBoat + ".png")
 	$Sprite.scale = Vector2(Global.BOAT_SCALE_MODIFIERS.get(nam,1.0),Global.BOAT_SCALE_MODIFIERS.get(nam,1.0))
 
@@ -121,5 +121,5 @@ func EndDay():
 		
 
 func GetProgress() -> int:
-	return floor((position.x + 80) / 160)
+	return float(floor((position.x + 80) / 16))
 	
