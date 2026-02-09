@@ -22,7 +22,7 @@ var MyBoat = ""
 
 var GameStarted = false
 func _ready() -> void:
-	coins = Global.LevelData[Global.LevelName]["StartCoinCount"]
+	coins = Global.BroughtCoins + Global.LevelData[Global.LevelName]["StartCoinCount"]
 	UpdateCoinCount()
 	UpdateBoat(Global.STARTER_BOAT)
 	

@@ -3,6 +3,8 @@ extends Node
 var DayEnded = false
 
 var CurrentDay = 0
+var Coins = 0
+var BroughtCoins = 0
 const AdvanceTime = true
 
 const STARTER_BOAT = "Reinforced_motorboat"

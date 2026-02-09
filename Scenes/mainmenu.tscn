@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://v2hjcofj8iip"]
+[gd_scene load_steps=24 format=3 uid="uid://v2hjcofj8iip"]
 
 [ext_resource type="Script" uid="uid://c4d486soskj4u" path="res://Scripts/mainmenu.gd" id="1_3pujl"]
 [ext_resource type="Texture2D" uid="uid://bikvt55in0esa" path="res://Assets/Art/UI/Menu screen.png" id="1_cmhrf"]
@@ -8,6 +8,9 @@
 [ext_resource type="AudioStream" uid="uid://dl8d6cchew8pf" path="res://Assets/Audio/title theme.wav" id="6_5326e"]
 [ext_resource type="Script" uid="uid://1e50qlieqvq2" path="res://Scripts/LoopPointMusic.gd" id="7_l2o7r"]
 [ext_resource type="Texture2D" uid="uid://d2qr2wp5kmb22" path="res://Assets/Art/UI/WorldMap/worldmap.png" id="8_juwjy"]
+[ext_resource type="Texture2D" uid="uid://cjfosfjesq1oq" path="res://Assets/Art/UI/Coinselect.png" id="9_eybw1"]
+[ext_resource type="Script" uid="uid://iyenki67kkxw" path="res://Scenes/textedit_numonly.gd" id="10_hu3kb"]
+[ext_resource type="Texture2D" uid="uid://bw2gvkaylchw8" path="res://Assets/Art/UI/coinicon.png" id="11_hu3kb"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_loy4s"]
 texture = ExtResource("1_cmhrf")
@@ -17,6 +20,18 @@ texture = ExtResource("2_d2nv2")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_igs2m"]
 texture = ExtResource("4_3pujl")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vv4ip"]
+texture = ExtResource("9_eybw1")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_awugs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c7wuu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2jq6c"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_awugs"]
+texture = ExtResource("11_hu3kb")
 
 [sub_resource type="Animation" id="Animation_juwjy"]
 length = 0.001
@@ -255,12 +270,63 @@ theme_override_fonts/mono_font = ExtResource("3_igs2m")
 bbcode_enabled = true
 scroll_active = false
 
+[node name="CoinSelect" type="Panel" parent="LevelSelect"]
+visible = false
+layout_mode = 0
+offset_left = 229.0
+offset_right = 741.0
+offset_bottom = 384.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_vv4ip")
+
+[node name="TextEdit" type="TextEdit" parent="LevelSelect/CoinSelect"]
+layout_mode = 0
+offset_left = 208.0
+offset_top = 216.0
+offset_right = 376.0
+offset_bottom = 272.0
+theme_override_fonts/font = ExtResource("3_igs2m")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxEmpty_awugs")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_c7wuu")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_2jq6c")
+placeholder_text = "Coins"
+script = ExtResource("10_hu3kb")
+
+[node name="Panel" type="Panel" parent="LevelSelect/CoinSelect"]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 217.0
+offset_right = 200.0
+offset_bottom = 277.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_awugs")
+
+[node name="Label" type="Label" parent="LevelSelect/CoinSelect"]
+layout_mode = 0
+offset_left = 79.0
+offset_top = 157.0
+offset_right = 433.0
+offset_bottom = 205.0
+theme_override_fonts/font = ExtResource("3_igs2m")
+theme_override_font_sizes/font_size = 48
+text = "Bring Extra Coins?"
+
+[node name="Button" type="Button" parent="LevelSelect/CoinSelect"]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 297.0
+offset_right = 375.0
+offset_bottom = 361.0
+theme_override_fonts/font = ExtResource("3_igs2m")
+theme_override_font_sizes/font_size = 48
+text = "Start"
+flat = true
+
 [node name="Fade" type="ColorRect" parent="."]
 z_index = 100
-offset_left = -1248.0
-offset_top = -1776.0
-offset_right = 8720.0
-offset_bottom = 2704.0
+offset_left = -1038.0
+offset_top = -1718.0
+offset_right = 8930.0
+offset_bottom = 2762.0
 mouse_filter = 2
 color = Color(0, 0, 0, 0)
 
@@ -277,16 +343,17 @@ position = Vector2(491.13043, 272)
 [connection signal="finished" from="MainMenu/MainMenuMusic" to="MainMenu/MainMenuMusic" method="_on_finished"]
 [connection signal="mouse_entered" from="LevelSelect/Paaseiland" to="." method="_on_paaseiland_mouse_entered"]
 [connection signal="mouse_exited" from="LevelSelect/Paaseiland" to="." method="_on_mouse_exited"]
-[connection signal="pressed" from="LevelSelect/Paaseiland" to="." method="StartGame" binds= ["Paaseiland"]]
+[connection signal="pressed" from="LevelSelect/Paaseiland" to="." method="CoinSelect" binds= ["Paaseiland"]]
 [connection signal="mouse_entered" from="LevelSelect/Jakarta" to="." method="_on_jakarta_mouse_entered"]
 [connection signal="mouse_exited" from="LevelSelect/Jakarta" to="." method="_on_mouse_exited"]
-[connection signal="pressed" from="LevelSelect/Jakarta" to="." method="StartGame" binds= ["Jakarta"]]
+[connection signal="pressed" from="LevelSelect/Jakarta" to="." method="CoinSelect" binds= ["Jakarta"]]
 [connection signal="mouse_entered" from="LevelSelect/KaapDeGoedeHoop" to="." method="_on_kaap_de_goede_hoop_mouse_entered"]
 [connection signal="mouse_exited" from="LevelSelect/KaapDeGoedeHoop" to="." method="_on_mouse_exited"]
-[connection signal="pressed" from="LevelSelect/KaapDeGoedeHoop" to="." method="StartGame" binds= ["KaapdegoedeHoop"]]
+[connection signal="pressed" from="LevelSelect/KaapDeGoedeHoop" to="." method="CoinSelect" binds= ["KaapDeGoedeHoop"]]
 [connection signal="mouse_entered" from="LevelSelect/Portugal" to="." method="_on_portugal_mouse_entered"]
 [connection signal="mouse_exited" from="LevelSelect/Portugal" to="." method="_on_mouse_exited"]
-[connection signal="pressed" from="LevelSelect/Portugal" to="." method="StartGame" binds= ["Portugal"]]
+[connection signal="pressed" from="LevelSelect/Portugal" to="." method="CoinSelect" binds= ["Portugal"]]
 [connection signal="mouse_entered" from="LevelSelect/Engeland" to="." method="_on_engeland_mouse_entered"]
 [connection signal="mouse_exited" from="LevelSelect/Engeland" to="." method="_on_mouse_exited"]
-[connection signal="pressed" from="LevelSelect/Engeland" to="." method="StartGame" binds= ["Engeland"]]
+[connection signal="pressed" from="LevelSelect/Engeland" to="." method="CoinSelect" binds= ["Engeland"]]
+[connection signal="pressed" from="LevelSelect/CoinSelect/Button" to="." method="StartGame"]

@@ -4,9 +4,9 @@
 [ext_resource type="FontFile" uid="uid://dqqnsnb5xkqx7" path="res://Assets/Fonts/8bitoperator_jve.ttf" id="2_5q4fb"]
 [ext_resource type="Texture2D" uid="uid://b6a7pab0tyxve" path="res://Assets/Art/UI/button.png" id="3_mqm5i"]
 [ext_resource type="Material" uid="uid://bc4ysxhwy2g0s" path="res://Assets/Other/Outline.tres" id="4_vqx31"]
-[ext_resource type="Texture2D" uid="uid://yceukdlf2h3n" path="res://Assets/Art/Boats/Basic_raft.png" id="5_13dyv"]
+[ext_resource type="Texture2D" uid="uid://castaq8a8h8py" path="res://Assets/Art/Boats/Basic_raft.png" id="5_13dyv"]
 [ext_resource type="Theme" uid="uid://bj15hri4ia073" path="res://Assets/Other/UI.tres" id="5_j04uc"]
-[ext_resource type="Script" uid="uid://b5ae5sgnlj8u3" path="res://Scripts/AutoSizeText.gd" id="5_wunin"]
+[ext_resource type="Script" path="res://Scripts/AutoSizeText.gd" id="5_wunin"]
 [ext_resource type="Shader" uid="uid://bp6mwoabhhic" path="res://Assets/Other/outline.gdshader" id="9_b1goy"]
 [ext_resource type="Texture2D" uid="uid://ddfu0ts0312lx" path="res://Assets/Art/Food/Beer.png" id="10_5q4fb"]
 [ext_resource type="Texture2D" uid="uid://48g3qlonocae" path="res://Assets/Art/Food/Green_peas.png" id="11_mqm5i"]
@@ -2718,7 +2718,7 @@ z_index = 10
 layout_mode = 0
 offset_top = 540.0
 offset_right = 1000.0
-offset_bottom = 619.9994
+offset_bottom = 619.99945
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
@@ -2781,6 +2781,7 @@ offset_right = 686.0
 offset_bottom = 338.0
 theme_override_fonts/font = ExtResource("2_5q4fb")
 theme_override_font_sizes/font_size = 64
+action_mode = 0
 text = "Main Menu"
 flat = true
 
