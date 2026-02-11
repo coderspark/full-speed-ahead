@@ -522,6 +522,18 @@ tracks/12/keys = {
 "update": 0,
 "values": [Vector2(26.400024, 382)]
 }
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("UI/Canvas/Cooking/Menu3:disabled")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_00ii5"]
 resource_name = "Tutorial01"
@@ -1171,13 +1183,13 @@ tracks/9/keys = {
 "times": PackedFloat32Array(0, 8, 12),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [Vector2(-117.64991, 220.84004), Vector2(-354.95166, 27.482363), Vector2(609, 100.25273)]
+"values": [Vector2(-117.64991, 220.84004), Vector2(-183, 95), Vector2(609, 100.25273)]
 }
 
 [sub_resource type="Animation" id="Animation_8cul1"]
 resource_name = "Tutorial06"
 length = 50.0
-step = 0.5
+step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -1336,6 +1348,18 @@ tracks/11/keys = {
 "update": 1,
 "values": ["", ""]
 }
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("UI/Canvas/Cooking/Menu3:disabled")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(9.5, 9.6, 9.7, 9.8, 9.900001, 10, 10.1, 10.2, 10.3, 10.400001, 10.5, 10.6, 10.7, 10.8, 10.900001, 11, 11.1, 11.2, 11.3, 47.99542),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, false]
+}
 
 [sub_resource type="Animation" id="Animation_osi25"]
 resource_name = "Tutorial07"
@@ -1457,10 +1481,13 @@ script = SubResource("GDScript_yj40s")
 
 [node name="UI" parent="." instance=ExtResource("2_fn0yv")]
 
+[node name="Menu3" parent="UI/Canvas/Cooking" index="4"]
+disabled = true
+
 [node name="Players" type="Node2D" parent="."]
 
 [node name="Player" parent="Players" instance=ExtResource("3_66aee")]
-position = Vector2(-340.006, 96)
+position = Vector2(-340.006, 97)
 
 [node name="Camera" parent="Players/Player" index="2"]
 enabled = false
