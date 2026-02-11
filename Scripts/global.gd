@@ -2,12 +2,21 @@ extends Node
 
 var DayEnded = false
 
+var Settings = []
+
+func _ready() -> void:
+	var Data : SaveLoadData = ResourceLoader.load(SAVE_NAME + SAVE_PATH + ".tres", "", ResourceLoader.CACHE_MODE_IGNORE).duplicate(true)
+	Settings = Data.Settings
+
 var CurrentDay = 1
 var Coins = 0
 var BroughtCoins = 0
 const AdvanceTime = true
 
 const STARTER_BOAT = "Basic_raft"
+
+const SAVE_PATH = "user://save/"
+const SAVE_NAME = "Save1.tres"
 
 const BOAT_SCALE_MODIFIERS : Dictionary = {
 	"Basic_raft": 0.5,

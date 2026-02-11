@@ -39,7 +39,7 @@ func StartGame():
 	await $Fade/Animations.animation_finished
 	get_tree().paused = false
 	$LevelSelect.queue_free()
-	Global.CurrentDay = 0
+	Global.CurrentDay = 1
 	var n = game.instantiate()
 	n.name = "MainScene"
 	add_child(n)

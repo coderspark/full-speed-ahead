@@ -15,6 +15,7 @@ func _on_ui_restart_game() -> void:
 	get_parent().RestartGame()
 
 func _process(delta: float) -> void:
+	
 	if Global.AdvanceTime and $Players/Player.GameStarted and !$Players/Player.paused:
 		TimeOfDAy += 0.5
 		$UI.UpdateTimeIndicator(TimeOfDAy)
@@ -35,3 +36,15 @@ func TimeToColorModulate(time:float) -> Color:
 		return Color.from_hsv(0, clampf((time-1700) / 400,0,0.5), clampf(1 - ((time-1700) / 400),0.5,1))
 	else:
 		return Color(1,1,1,1)
+
+func AutoSave():
+	var Data = SaveLoadData.new()
+	Data.CurrentLevelData["Name"] = Global.LevelName
+	Data.CurrentLevelData["Inventory"] = $UI.Inventory
+	Data.CurrentLevelData["PlayerPos"] = $Players/Player.position
+	Data.CurrentLevelData["Health"] = $Players/Player.health
+	Data.CurrentLevelData["BoatName"] = $Players/Player.MyBoat
+	Data.CurrentLevelData["Time"] = TimeOfDAy
+	Data.CurrentLevelData["Day"] = Global.CurrentDay
+	Data.SaveData["Coins"] = $Players/Player.coins
+	ResourceSaver.save(Data,Global.SAVE_PATH + Global.SAVE_NAME)
