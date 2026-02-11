@@ -14,6 +14,10 @@ var Inventory = {}
 var paused = false
 
 func _ready() -> void:
+	if Global.LevelName == "Tutorial":
+		AddFoodItemToInventory("Gin")
+		AddFoodItemToInventory("Plums")
+		AddFoodItemToInventory("Rice")
 	if Global.CurrentDay < 10:
 		$Canvas/HUD/TimeOfDAy/Day.text = "Day 0" + str(Global.CurrentDay)
 	else:

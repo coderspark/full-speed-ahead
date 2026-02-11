@@ -20,7 +20,7 @@ var coins = 0
 var MyBoat = ""
 
 
-var GameStarted = false
+@export var GameStarted = false
 func _ready() -> void:
 	coins = Global.BroughtCoins + Global.LevelData[Global.LevelName]["StartCoinCount"]
 	UpdateCoinCount()
@@ -97,8 +97,12 @@ func UpdateCoinCount():
 
 func UpdateBoat(nam : String):
 	MyBoat = nam
-	max_health = Global.BOAT_STATS[nam]["hp"]
-	health = max_health
+	if Global.LevelName == "Tutorial":
+		max_health = 5
+		health = 5
+	else:
+		max_health = Global.BOAT_STATS[nam]["hp"]
+		health = max_health
 	max_speed = Global.BOAT_STATS[nam]["speed"] * 10
 	max_turn_speed = Global.BOAT_STATS[nam]["turn_speed"]
 	turn_velocity = Global.BOAT_STATS[nam]["turn_speed"] / 30.0
