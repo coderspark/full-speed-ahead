@@ -7,7 +7,7 @@ var Coins = 0
 var BroughtCoins = 0
 const AdvanceTime = true
 
-const STARTER_BOAT = "Reinforced_motorboat"
+const STARTER_BOAT = "Basic_raft"
 
 const BOAT_SCALE_MODIFIERS : Dictionary = {
 	"Basic_raft": 0.5,
@@ -102,5 +102,5 @@ var LevelData = {
 	"KaapdegoedeHoop":{"StartCoinCount":40000,"LengthTiles":60, "Intermissions":[25]},
 	"Jakarta":{"StartCoinCount":80,"LengthTiles":100, "Intermissions":[25,60]},
 	"Paaseiland":{"StartCoinCount":80,"LengthTiles":150, "Intermissions":[25,100]},
-	"Tutorial":{"StartCoinCount":80,"LengthTiles":10},
+	"Tutorial":{"StartCoinCount":20,"LengthTiles":10},
 }

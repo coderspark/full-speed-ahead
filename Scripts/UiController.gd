@@ -15,9 +15,9 @@ var paused = false
 
 func _ready() -> void:
 	if Global.CurrentDay < 10:
-		$Canvas/HUD/Texture/Day.text = "Day 0" + str(Global.CurrentDay)
+		$Canvas/HUD/TimeOfDAy/Day.text = "Day 0" + str(Global.CurrentDay)
 	else:
-		$Canvas/HUD/Texture/Day.text = "Day " + str(Global.CurrentDay)
+		$Canvas/HUD/TimeOfDAy/Day.text = "Day " + str(Global.CurrentDay)
 	RandomizeShopContents()
 	FormatInventory(Inventory)
 	$Canvas/Shop.hide()
@@ -26,7 +26,7 @@ func CallStartGame():
 	StartGame.emit()
 
 func _process(_delta: float) -> void:
-	$Canvas/HUD/Texture/Progress.text = CalculatePercentage() + "%"
+	$Canvas/HUD/TimeOfDAy/Progress.text = CalculatePercentage() + "%"
 	if Input.is_action_just_pressed("ADMIN"):
 		RandomizeShopContents()
 	if Input.is_action_just_pressed("pause"):
@@ -189,9 +189,9 @@ func InitNextDay():
 	await $Animations.animation_finished
 	Global.CurrentDay += 1
 	if Global.CurrentDay < 10:
-		$Canvas/HUD/Texture/Day.text = "Day 0" + str(Global.CurrentDay)
+		$Canvas/HUD/TimeOfDAy/Day.text = "Day 0" + str(Global.CurrentDay)
 	else:
-		$Canvas/HUD/Texture/Day.text = "Day " + str(Global.CurrentDay)
+		$Canvas/HUD/TimeOfDAy/Day.text = "Day " + str(Global.CurrentDay)
 		
 	$Animations.play("next_day")
 	await $Animations.animation_finished
@@ -227,6 +227,16 @@ func SetCorrectDay():
 
 func SetCorrectProgress():
 	$Canvas/Cinematic/NextDay/Text2.text = "\n\nPROGRESS: " + CalculatePercentage() + "%"
+
+func UpdateTimeIndicator(tim:int):
+	#time is 700 - 1900
+	#verschil: 1200
+	#Indicator heeft 175 px
+	var time_diff : float = clamp(1900-tim,0,1200)
+	var time_value : float = time_diff / 1200
+	print(time_value)
+	var indicator_pos = 175.0 * (1 - time_value)
+	$Canvas/HUD/TimeOfDAy/TimeIndicator.position.x = indicator_pos
 
 func NextDay():
 	$"..".TimeOfDAy = $"..".DayStartTime

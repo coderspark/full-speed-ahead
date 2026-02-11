@@ -106,6 +106,7 @@ func _on_tutorial_pressed() -> void:
 	$Fade/Animations.play("fade_in")
 	await $Fade/Animations.animation_finished
 	get_tree().paused = false
+	$MainMenu.queue_free()
 	$LevelSelect.queue_free()
 	Global.LevelName = "Tutorial"
 	Global.CurrentDay = 0

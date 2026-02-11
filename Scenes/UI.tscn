@@ -1,12 +1,12 @@
-[gd_scene load_steps=53 format=3 uid="uid://dbq85xa0fcnii"]
+[gd_scene load_steps=54 format=3 uid="uid://dbq85xa0fcnii"]
 
 [ext_resource type="Script" uid="uid://klae0u71y1go" path="res://Scripts/UiController.gd" id="1_wi7yl"]
 [ext_resource type="FontFile" uid="uid://dqqnsnb5xkqx7" path="res://Assets/Fonts/8bitoperator_jve.ttf" id="2_5q4fb"]
 [ext_resource type="Texture2D" uid="uid://b6a7pab0tyxve" path="res://Assets/Art/UI/button.png" id="3_mqm5i"]
 [ext_resource type="Material" uid="uid://bc4ysxhwy2g0s" path="res://Assets/Other/Outline.tres" id="4_vqx31"]
-[ext_resource type="Texture2D" uid="uid://castaq8a8h8py" path="res://Assets/Art/Boats/Basic_raft.png" id="5_13dyv"]
+[ext_resource type="Texture2D" uid="uid://yceukdlf2h3n" path="res://Assets/Art/Boats/Basic_raft.png" id="5_13dyv"]
 [ext_resource type="Theme" uid="uid://bj15hri4ia073" path="res://Assets/Other/UI.tres" id="5_j04uc"]
-[ext_resource type="Script" path="res://Scripts/AutoSizeText.gd" id="5_wunin"]
+[ext_resource type="Script" uid="uid://b5ae5sgnlj8u3" path="res://Scripts/AutoSizeText.gd" id="5_wunin"]
 [ext_resource type="Shader" uid="uid://bp6mwoabhhic" path="res://Assets/Other/outline.gdshader" id="9_b1goy"]
 [ext_resource type="Texture2D" uid="uid://ddfu0ts0312lx" path="res://Assets/Art/Food/Beer.png" id="10_5q4fb"]
 [ext_resource type="Texture2D" uid="uid://48g3qlonocae" path="res://Assets/Art/Food/Green_peas.png" id="11_mqm5i"]
@@ -30,6 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://co0vjrp5sm16f" path="res://Assets/Art/Food/Gray_peas.png" id="22_8ekee"]
 [ext_resource type="Texture2D" uid="uid://d4artjbbww8x1" path="res://Assets/Art/Temp/heart_half.png" id="25_qqo6a"]
 [ext_resource type="Texture2D" uid="uid://ckwru7sps6jot" path="res://Assets/Art/UI/day_hud.png" id="30_yhvps"]
+[ext_resource type="Texture2D" uid="uid://bbbiqkrot01ou" path="res://Assets/Art/Temp/time_indicator.png" id="31_tb15e"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qxria"]
 bg_color = Color(0.19, 0.19, 0.19, 0.6666667)
@@ -250,7 +251,7 @@ func Update():
 	if HP > MAX_HP:
 		HP = MAX_HP
 	max_value = 100
-
+	$Text.text = str(int(HP)) + \"/\" + str(int(MAX_HP))
 	var hpPercent : float = HP / MAX_HP * 100
 	print(hpPercent)
 	var tween = create_tween()
@@ -2818,6 +2819,17 @@ texture_progress = ExtResource("14_8blbl")
 tint_progress = Color(1, 0, 0, 1)
 script = SubResource("GDScript_hx8n4")
 
+[node name="Text" type="Label" parent="Canvas/HUD/HP"]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 20.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0.30980393, 0.30980393, 0.30980393, 0.7058824)
+theme_override_fonts/font = ExtResource("2_5q4fb")
+text = "3/3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Coins" type="Label" parent="Canvas/HUD"]
 z_index = 13
 layout_mode = 1
@@ -2843,7 +2855,7 @@ offset_bottom = 39.0
 scale = Vector2(0.5, 0.5)
 theme_override_styles/panel = SubResource("StyleBoxTexture_mqm5i")
 
-[node name="Texture" type="TextureRect" parent="Canvas/HUD"]
+[node name="TimeOfDAy" type="TextureRect" parent="Canvas/HUD"]
 layout_mode = 0
 offset_left = 684.0
 offset_right = 964.0
@@ -2852,7 +2864,7 @@ mouse_filter = 2
 texture = ExtResource("30_yhvps")
 stretch_mode = 4
 
-[node name="Day" type="Label" parent="Canvas/HUD/Texture"]
+[node name="Day" type="Label" parent="Canvas/HUD/TimeOfDAy"]
 layout_mode = 0
 offset_left = 202.93915
 offset_top = 95.25273
@@ -2862,7 +2874,7 @@ theme_override_fonts/font = ExtResource("2_5q4fb")
 text = "Day 01"
 horizontal_alignment = 1
 
-[node name="Progress" type="Label" parent="Canvas/HUD/Texture"]
+[node name="Progress" type="Label" parent="Canvas/HUD/TimeOfDAy"]
 layout_mode = 0
 offset_left = 202.93915
 offset_top = 33.055336
@@ -2873,6 +2885,14 @@ theme_override_font_sizes/font_size = 32
 text = "22%"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="TimeIndicator" type="TextureRect" parent="Canvas/HUD/TimeOfDAy"]
+layout_mode = 0
+offset_left = 175.0
+offset_top = 78.482
+offset_right = 215.0
+offset_bottom = 118.482
+texture = ExtResource("31_tb15e")
 
 [node name="Animations" type="AnimationPlayer" parent="."]
 libraries = {
