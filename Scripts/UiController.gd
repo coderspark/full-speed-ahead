@@ -150,7 +150,6 @@ func FormatInventory(Inv : Dictionary):
 func UpdateCookableRecipies():
 	for ID in range(7):
 		$"Canvas/Cooking".get_node("Menu" + str(ID + 1)).disabled = !CheckRecipeCraftable(ID)
-		print(ID)
 
 func AddFoodItemToInventory(nam:String):
 	if Inventory.has(nam):
@@ -175,7 +174,6 @@ func CheckRecipeCraftable(id:int):
 	return true
 
 func CookRecipe(id:int):
-	print("trying to cook smth up")
 	var Recipe = Global.Recipies[id]
 	for Item in Recipe:
 		if not Item in Inventory:
@@ -242,7 +240,6 @@ func UpdateTimeIndicator(tim:int):
 	#Indicator heeft 175 px
 	var time_diff : float = clamp(1900-tim,0,1200)
 	var time_value : float = time_diff / 1200
-	print(time_value)
 	var indicator_pos = 175.0 * (1 - time_value)
 	$Canvas/HUD/TimeOfDAy/TimeIndicator.position.x = indicator_pos
 

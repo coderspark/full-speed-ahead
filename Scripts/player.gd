@@ -65,6 +65,8 @@ func _physics_process(_delta: float) -> void:
 			boatvel += 1
 		var overlap = getoverlappingtiles()
 		var pushingdirs = []
+		if GetProgress()/8 in Global.LevelData[Global.LevelName]["Intermissions"]:
+			print("intermission")
 		for t in overlap:
 			if t[0] == Vector2i(0, 3) && !isbounce && !t[1] in pushingdirs:
 				velocity += Vector2(sin(t[1]), cos(t[1])) * 10

@@ -11,7 +11,6 @@ func _ready() -> void:
 	$LevelSelect.hide()
 
 func _on_play_pressed() -> void:
-	print("PLAY")
 	$Fade/Animations.play("fade_in")
 	await $Fade/Animations.animation_finished
 	$MainMenu.hide()
