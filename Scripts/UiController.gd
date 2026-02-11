@@ -180,6 +180,7 @@ func CookRecipe(id:int):
 			return false
 	for Item in Recipe:
 		RemoveFoodItemFromInventory(Item)
+	$"../Players/Player".activebuffs = Global.RecipeBuffs[id]
 	InitNextDay()
 		
 func IntitializeCutscene():
