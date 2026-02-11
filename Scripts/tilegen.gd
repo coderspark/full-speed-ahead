@@ -53,6 +53,9 @@ func _ready() -> void:
 				break
 		map.append(tplate)
 	for t in range(len(map)):
+		if t in Global.LevelData[Global.LevelName]["Intermissions"]:
+			paste_template(-1, 6+(10*t))
+			continue
 		paste_template(map[t], 6+(10*t))
 	paste_template(-2, 6+(10*len(map)))
 	paste_template(-3, 12+(10*len(map)))

@@ -13,7 +13,7 @@ var Coins = 0
 var BroughtCoins = 0
 const AdvanceTime = true
 
-const STARTER_BOAT = "Basic_raft"
+const STARTER_BOAT = "Reinforced_motorboat"
 
 const SAVE_PATH = "user://save/"
 const SAVE_NAME = "Save1.tres"
@@ -108,8 +108,8 @@ var LevelName = "Tutorial"
 var LevelData = {
 	"Engeland":{"StartCoinCount":10, "LengthTiles":10, "Intermissions":[]},
 	"Portugal":{"StartCoinCount":20, "LengthTiles":25, "Intermissions":[]},
-	"KaapdegoedeHoop":{"StartCoinCount":40000,"LengthTiles":60, "Intermissions":[25]},
+	"KaapdegoedeHoop":{"StartCoinCount":40000,"LengthTiles":60, "Intermissions":[1]},
 	"Jakarta":{"StartCoinCount":80,"LengthTiles":100, "Intermissions":[25,60]},
 	"Paaseiland":{"StartCoinCount":80,"LengthTiles":150, "Intermissions":[25,100]},
-	"Tutorial":{"StartCoinCount":20,"LengthTiles":10},
+	"Tutorial":{"StartCoinCount":20,"LengthTiles":10, "Intermissions":[]},
 }
