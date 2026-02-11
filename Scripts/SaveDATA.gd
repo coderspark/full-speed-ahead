@@ -8,6 +8,7 @@ class_name SaveLoadData
 	"PlayerPos":Vector2(),
 	"Health":3,
 	"BoatName":"",
+	"LevelCoins":0,
 	"Time":700,
 	"Day":1,
 }

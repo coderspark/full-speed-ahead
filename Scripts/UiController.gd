@@ -14,6 +14,10 @@ var Inventory = {}
 var paused = false
 
 func _ready() -> void:
+	if Global.SaveFileLoaded:
+		var data = Global.SaveFile.CurrentLevelData
+		Inventory = data["Inventory"]
+	
 	if Global.LevelName == "Tutorial":
 		AddFoodItemToInventory("Gin")
 		AddFoodItemToInventory("Plums")

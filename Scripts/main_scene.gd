@@ -3,6 +3,8 @@ extends Node2D
 var TimeOfDAy := 700.0
 const DayStartTime = 700
 
+var LastAutosave = -1
+
 func _ready() -> void:
 	$UI/Canvas/Shop.show()
 	modulate = TimeToColorModulate(TimeOfDAy)
@@ -15,7 +17,9 @@ func _on_ui_restart_game() -> void:
 	get_parent().RestartGame()
 
 func _process(delta: float) -> void:
-	
+	if $Players/Player.GetProgress() > LastAutosave:
+		AutoSave()
+		LastAutosave = $Players/Player.GetProgress()
 	if Global.AdvanceTime and $Players/Player.GameStarted and !$Players/Player.paused:
 		TimeOfDAy += 0.5
 		$UI.UpdateTimeIndicator(TimeOfDAy)
@@ -48,3 +52,4 @@ func AutoSave():
 	Data.CurrentLevelData["Day"] = Global.CurrentDay
 	Data.SaveData["Coins"] = $Players/Player.coins
 	ResourceSaver.save(Data,Global.SAVE_PATH + Global.SAVE_NAME)
+	print("AUTOSAVE: An autosave was made.")

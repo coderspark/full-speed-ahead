@@ -4,9 +4,8 @@ var DayEnded = false
 
 var Settings = []
 
-func _ready() -> void:
-	var Data : SaveLoadData = ResourceLoader.load(SAVE_NAME + SAVE_PATH + ".tres", "", ResourceLoader.CACHE_MODE_IGNORE).duplicate(true)
-	Settings = Data.Settings
+var SaveFileLoaded = false
+var SaveFile : SaveLoadData = null
 
 var CurrentDay = 1
 var Coins = 0

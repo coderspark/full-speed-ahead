@@ -22,6 +22,12 @@ var MyBoat = ""
 
 @export var GameStarted = false
 func _ready() -> void:
+	if Global.SaveFileLoaded:
+		var data = Global.SaveFile.CurrentLevelData
+		position = data["PlayerPos"]
+		coins = data["PlayerPos"]
+		UpdateBoat(data["BoatName"])
+		health = data["Health"]
 	coins = Global.BroughtCoins + Global.LevelData[Global.LevelName]["StartCoinCount"]
 	UpdateCoinCount()
 	UpdateBoat(Global.STARTER_BOAT)
