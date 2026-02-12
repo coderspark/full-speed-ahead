@@ -3,9 +3,14 @@ extends Node2D
 var TimeOfDAy := 700.0
 const DayStartTime = 700
 
-var LastAutosave = -1
+var LastAutosave = -1000
 
 func _ready() -> void:
+	DirAccess.make_dir_absolute(Global.SAVE_PATH)
+	if Global.SaveFileLoaded:
+		var data = Global.SaveFile.CurrentLevelData
+		TimeOfDAy = data["Time"]
+		Global.CurrentDay = data["Day"]
 	$UI/Canvas/Shop.show()
 	modulate = TimeToColorModulate(TimeOfDAy)
 
@@ -16,8 +21,9 @@ func finish() -> void:
 func _on_ui_restart_game() -> void:
 	get_parent().RestartGame()
 
-func _process(delta: float) -> void:
-	if $Players/Player.GetProgress() > LastAutosave:
+func _process(_delta: float) -> void:
+	if $Players/Player.GetProgress() > LastAutosave + 32:
+		$UI/Canvas/HUD/Saving/Animation.play("Save")
 		AutoSave()
 		LastAutosave = $Players/Player.GetProgress()
 	if Global.AdvanceTime and $Players/Player.GameStarted and !$Players/Player.paused:
@@ -41,15 +47,21 @@ func TimeToColorModulate(time:float) -> Color:
 	else:
 		return Color(1,1,1,1)
 
-func AutoSave():
+func AutoSave(EraseGameData = false):
 	var Data = SaveLoadData.new()
-	Data.CurrentLevelData["Name"] = Global.LevelName
-	Data.CurrentLevelData["Inventory"] = $UI.Inventory
-	Data.CurrentLevelData["PlayerPos"] = $Players/Player.position
-	Data.CurrentLevelData["Health"] = $Players/Player.health
-	Data.CurrentLevelData["BoatName"] = $Players/Player.MyBoat
-	Data.CurrentLevelData["Time"] = TimeOfDAy
-	Data.CurrentLevelData["Day"] = Global.CurrentDay
-	Data.SaveData["Coins"] = $Players/Player.coins
+	if not EraseGameData:
+		Data.IsInGame = true
+		Data.CurrentLevelData["Name"] = Global.LevelName
+		Data.CurrentLevelData["Inventory"] = $UI.Inventory
+		Data.CurrentLevelData["PlayerPos"] = $Players/Player.position
+		Data.CurrentLevelData["PlayerRot"] = $Players/Player.rotation
+		Data.CurrentLevelData["Health"] = $Players/Player.health
+		Data.CurrentLevelData["IntermissionsReached"] = $Players/Player.IntermissionsReached
+		Data.CurrentLevelData["BoatName"] = $Players/Player.MyBoat
+		Data.CurrentLevelData["Time"] = TimeOfDAy
+		Data.CurrentLevelData["Day"] = Global.CurrentDay
+		Data.CurrentLevelData["Seed"] = $TileMap.SEED
+		Data.CurrentLevelData["LevelCoins"] = $Players/Player.coins
+	Data.SaveData["Coins"] = Global.Coins
 	ResourceSaver.save(Data,Global.SAVE_PATH + Global.SAVE_NAME)
 	print("AUTOSAVE: An autosave was made.")

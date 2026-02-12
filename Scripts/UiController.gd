@@ -13,11 +13,16 @@ var Inventory = {}
 
 var paused = false
 
+var ShopIntermission = false
+
 func _ready() -> void:
 	if Global.SaveFileLoaded:
 		var data = Global.SaveFile.CurrentLevelData
 		Inventory = data["Inventory"]
-	
+		$Canvas/Countdown/Animations.play("Countdown")
+	else:
+		ShopIntermission = false
+		$Animations.play("ShopFadein")
 	if Global.LevelName == "Tutorial":
 		AddFoodItemToInventory("Gin")
 		AddFoodItemToInventory("Plums")
@@ -38,11 +43,6 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("ADMIN"):
 		RandomizeShopContents()
 	if Input.is_action_just_pressed("pause"):
-		if ShopOpen:
-			ShopOpen = false
-			$Canvas/Shop.hide()
-			get_tree().paused = false
-			return
 		paused = !paused
 		get_tree().paused = paused
 		$Canvas/Paused.visible = paused
@@ -189,6 +189,18 @@ func IntitializeCutscene():
 
 func _on_continue_pressed() -> void:
 	$Animations.play("ShopFadeout")
+	await $Animations.animation_finished
+	if ShopIntermission:
+		$Animations.play("FadeToBlack")
+		await $Animations.animation_finished
+		$"../Players/Player".position.x += 50
+		$"../Players/Player".position.y = 80
+		$Animations.play("FadeBackToNormal")
+		await $Animations.animation_finished
+		$Canvas/Countdown/Animations.play("Countdown")
+	else:
+		$Canvas/Countdown/Animations.play("Countdown")
+		
 
 func InitNextDay():
 	$Animations.play("CookingFadeOut")
@@ -215,9 +227,10 @@ func _on_reroll_pressed() -> void:
 		$Canvas/Shop/Reroll/Cost.text = str(ShopRerollCost)
 func _on_backtomenu_pressed() -> void:
 	print("begone with thee")
-	#$"../../Fade/Animations".play("fade_in") # It's actually fading out but SOMEONE on this dev team doesn't know what fade in means
-	#await $"../../Fade/Animations".animation_finished
+	$Animations.play("FadeToBlack")
+	await $Animations.animation_finished
 	Global.Coins += $"../Players/Player".coins
+	$"..".AutoSave(true)
 	get_tree().reload_current_scene()
 
 func _on_back_to_cooking_pressed() -> void:

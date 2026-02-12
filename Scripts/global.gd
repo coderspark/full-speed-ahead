@@ -1,6 +1,6 @@
 extends Node
 
-var DayEnded = false
+var DayEnded : bool = false
 
 var Settings = []
 
@@ -15,7 +15,7 @@ const AdvanceTime = true
 const STARTER_BOAT = "Reinforced_motorboat"
 
 const SAVE_PATH = "user://save/"
-const SAVE_NAME = "Save1.tres"
+const SAVE_NAME = "Save.tres"
 
 const BOAT_SCALE_MODIFIERS : Dictionary = {
 	"Basic_raft": 0.5,

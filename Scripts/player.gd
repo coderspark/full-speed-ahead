@@ -9,7 +9,7 @@ var max_speed = 50
 var IsOwner = true
 var boatvel = 0
 var isbounce = false
-
+var isNavigating = false
 var health = 5
 var max_health = 5
 var coin_mult = 1.0
@@ -19,18 +19,26 @@ var coins = 0
 
 var MyBoat = ""
 
+var IntermissionsReached = []
 
+var elapsed = 0.0
 @export var GameStarted = false
 func _ready() -> void:
 	if Global.SaveFileLoaded:
 		var data = Global.SaveFile.CurrentLevelData
 		position = data["PlayerPos"]
-		coins = data["PlayerPos"]
+		rotation = data["PlayerRot"]
+		IntermissionsReached = data["IntermissionsReached"]
+		coins = data["LevelCoins"]
+		UpdateCoinCount()
 		UpdateBoat(data["BoatName"])
 		health = data["Health"]
-	coins = Global.BroughtCoins + Global.LevelData[Global.LevelName]["StartCoinCount"]
-	UpdateCoinCount()
-	UpdateBoat(Global.STARTER_BOAT)
+		$"../../UI/Canvas/HUD/HP".HP = health
+		$"../../UI/Canvas/HUD/HP".Update()
+	else:
+		coins = Global.BroughtCoins + Global.LevelData[Global.LevelName]["StartCoinCount"]
+		UpdateCoinCount()
+		UpdateBoat(Global.STARTER_BOAT)
 	
 
 func getoverlappingtiles() -> Array:
@@ -50,8 +58,13 @@ func getoverlappingtiles() -> Array:
 			res.append([ttype, rot, coords])
 	return res
 
-func _physics_process(_delta: float) -> void:
-	if GameStarted and !Global.DayEnded:
+func _physics_process(delta: float) -> void:
+	if isNavigating:
+		var dir = ($Navigation.get_next_path_position() - global_position).normalized()
+		velocity = dir * 1000 * delta
+		rotation = lerp_angle(rotation, dir.angle(),delta * 3)
+		move_and_slide()
+	elif GameStarted and !Global.DayEnded:
 		if Input.get_axis("move_left", "move_right") == 0:
 			delta_rot *= 0.9
 		delta_rot += Input.get_axis("move_left","move_right") * turn_velocity
@@ -62,11 +75,14 @@ func _physics_process(_delta: float) -> void:
 		rotation += delta_rot * 0.01
 		velocity = transform.x * boatvel
 		if boatvel < max_speed:
-			boatvel += 1
+			boatvel += 60 * delta
 		var overlap = getoverlappingtiles()
 		var pushingdirs = []
-		if GetProgress()/8 in Global.LevelData[Global.LevelName]["Intermissions"]:
-			print("intermission")
+		if int(float(GetProgress())/8) in Global.LevelData[Global.LevelName]["Intermissions"] and int(float(GetProgress())/8) not in IntermissionsReached:
+			isNavigating = true
+			IntermissionsReached.append(int(float(GetProgress())/8))
+			GameStarted = false
+			$Navigation.target_position = Vector2(position.x + 60,40)
 		for t in overlap:
 			if t[0] == Vector2i(0, 3) && !isbounce && !t[1] in pushingdirs:
 				velocity += Vector2(sin(t[1]), cos(t[1])) * 10
@@ -139,6 +155,22 @@ func EndDay():
 		await get_tree().create_timer(0.01,true,true,true).timeout
 		
 
-func GetProgress() -> int:
-	return float(floor((position.x + 80) / 16))
+func GetProgress() -> float:
+	return float(floorf((position.x + 80.0) / 16.0))
+	
+
+
+func _on_navigation_finished() -> void:
+	GameStarted = false
+	isNavigating = false
+	velocity = Vector2.ZERO
+	boatvel = 0
+	print(rotation)
+	print(rotation - 3 * PI/2 )
+	while rotation - 3 * PI/2 > 0.01:
+		print(rotation)
+		rotation = lerp_angle(rotation, 3 * PI/2, 0.016 * 3)
+		await get_tree().process_frame
+	$"../../UI".ShopIntermission = true
+	$"../../UI/Animations".play("ShopFadein")
 	

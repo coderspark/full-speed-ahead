@@ -14,6 +14,7 @@ func _input(event):
 			final_text += regex_match[i].get_string()
 
 	text = final_text
+	print(Global.Coins)
 	if int(text) > Global.Coins:
 		text = str(Global.Coins)
 	set_caret_column(text.length())

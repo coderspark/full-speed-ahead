@@ -9,8 +9,43 @@ func _ready() -> void:
 	$Fade/Animations.play("fade_out")
 	await $Fade/Animations.animation_finished
 	$LevelSelect.hide()
+	Global.SaveFile = ResourceLoader.load(Global.SAVE_PATH + Global.SAVE_NAME,"",ResourceLoader.CACHE_MODE_IGNORE).duplicate(true)
+	Global.Coins = Global.SaveFile.SaveData["Coins"]
+	$LevelSelect/Coins.text = str(Global.Coins)
 
 func _on_play_pressed() -> void:
+	$MainMenu/Animations.play("Play")
+
+func NewGame():
+	Global.SaveFile = SaveLoadData.new()
+	Global.Coins = Global.SaveFile.SaveData["Coins"]
+	$LevelSelect/Coins.text = str(Global.Coins)
+	LevelSelect()
+
+
+func LoadGame():
+	Global.SaveFileLoaded = true
+	Global.SaveFile = ResourceLoader.load(Global.SAVE_PATH + Global.SAVE_NAME,"",ResourceLoader.CACHE_MODE_IGNORE).duplicate(true)
+	Global.LevelName = Global.SaveFile.CurrentLevelData["Name"]
+	if Global.SaveFile.IsInGame:
+		$Fade/Animations.play("fade_in")
+		await $Fade/Animations.animation_finished
+		get_tree().paused = false
+		$LevelSelect.queue_free()
+		Global.CurrentDay = 1
+		var n = game.instantiate()
+		n.name = "MainScene"
+		add_child(n)
+		$MainMenu.queue_free()
+		$MainMenu/MainMenuMusic.queue_free()
+		$Camera.queue_free()
+		$Fade/Animations.play("fade_out")
+		await $Fade/Animations.animation_finished
+	else:
+		LevelSelect()
+
+func LevelSelect():
+	$LevelSelect/Coins.text = str(Global.Coins)
 	$Fade/Animations.play("fade_in")
 	await $Fade/Animations.animation_finished
 	$MainMenu.hide()
@@ -23,9 +58,9 @@ func CoinSelect(lvl:String):
 	$LevelSelect/CoinSelect.visible = true
 	$LevelSelect/CoinSelect/AnimationPlayer.play("fall")
 	await $LevelSelect/CoinSelect/AnimationPlayer.animation_finished
-	
 
 func StartGame():
+	Global.SaveFileLoaded = false
 	Global.BroughtCoins = int($LevelSelect/CoinSelect/TextEdit.text)
 	Global.Coins -= Global.BroughtCoins
 	$LevelSelect/Paaseiland.disabled = true
@@ -33,7 +68,8 @@ func StartGame():
 	$LevelSelect/KaapDeGoedeHoop.disabled = true
 	$LevelSelect/Portugal.disabled = true
 	$LevelSelect/Engeland.disabled = true
-	$MainMenu/MainMenuMusic.queue_free()
+	if $MainMenu/MainMenuMusic != null:
+		$MainMenu/MainMenuMusic.queue_free()
 	$Fade/Animations.play("fade_in")
 	await $Fade/Animations.animation_finished
 	get_tree().paused = false
@@ -47,7 +83,7 @@ func StartGame():
 	await $Fade/Animations.animation_finished
 
 func RestartGame():
-	
+	Global.SaveFileLoaded = false
 	$Fade/Animations.play("fade_in")
 	await $Fade/Animations.animation_finished
 	print(get_children())
@@ -115,3 +151,7 @@ func _on_tutorial_pressed() -> void:
 	$Camera.queue_free()
 	$Fade/Animations.play("fade_out")
 	await $Fade/Animations.animation_finished
+
+
+func _on_back_pressed() -> void:
+	$MainMenu/Animations.play("Un-Play")

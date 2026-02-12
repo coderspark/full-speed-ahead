@@ -44,13 +44,10 @@ position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_kyqiw")
 
 [node name="Navigation" type="NavigationAgent2D" parent="."]
+navigation_layers = 2
 path_postprocessing = 1
-avoidance_enabled = true
-avoidance_layers = 0
-avoidance_mask = 0
 debug_enabled = true
 
 [connection signal="body_entered" from="Collision Detector" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Collision Detector" to="." method="_on_collision_detector_body_exited"]
 [connection signal="body_entered" from="ShopDetection" to="." method="_on_shop_detection_body_entered"]
-[connection signal="navigation_finished" from="Navigation" to="." method="_on_navigation_finished"]
