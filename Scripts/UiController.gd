@@ -132,6 +132,29 @@ func ShopButtonPressed(id:int):
 func OpenCookingMenu() -> void:
 	FormatInventory(Inventory)
 	UpdateCookableRecipies()
+	# IF YOU KNOW A BETTER WAY FOR THIS, PLEASE IMPLEMENT IT
+	$Canvas/Cooking/Menu1/Buffs.text = "+10%\n-10%"
+	$Canvas/Cooking/Menu2/Buffs.text = "+10%\n-10%"
+	$Canvas/Cooking/Menu3/Buffs.text = "+10%\n-5%"
+	$Canvas/Cooking/Menu4/Buffs.text = "+3 HP\n-10%"
+	$Canvas/Cooking/Menu5/Buffs.text = "+10%\n-5%"
+	$Canvas/Cooking/Menu6/Buffs.text = "+10%\n-5%"
+	$Canvas/Cooking/Menu7/Buffs.text = "+3 HP\n-5%"
+	match Global.LastRecipe:
+		0:
+			$Canvas/Cooking/Menu1/Buffs.text = "+0%\n-20%"
+		1:
+			$Canvas/Cooking/Menu2/Buffs.text = "+0%\n-20%"
+		2:
+			$Canvas/Cooking/Menu3/Buffs.text = "+0%\n-10%"
+		3:
+			$Canvas/Cooking/Menu4/Buffs.text = "+0 HP\n-20%"
+		4:
+			$Canvas/Cooking/Menu5/Buffs.text = "+0%\n-10%"
+		5:
+			$Canvas/Cooking/Menu6/Buffs.text = "+0%\n-10%"
+		6:
+			$Canvas/Cooking/Menu7/Buffs.text = "+0 HP\n-10%"
 	$Canvas/Shop.hide()
 	$Animations.play("CookingFadein")
 
@@ -180,8 +203,17 @@ func CookRecipe(id:int):
 			return false
 	for Item in Recipe:
 		RemoveFoodItemFromInventory(Item)
-	$"../Players/Player".activebuffs = Global.RecipeBuffs[id]
+	var buffs = Global.RecipeBuffs[id]
+	# nerf buffs that were just applied last day
+	if Global.LastRecipe == id:
+		for i in range(4):
+			if buffs[i] > 0:
+				buffs[i] = 0
+			else:
+				buffs[i] *= 2.0
+	$"../Players/Player".activebuffs = buffs
 	$"../Players/Player".UpdateBuffs()
+	Global.LastRecipe = id
 	InitNextDay()
 		
 func IntitializeCutscene():
