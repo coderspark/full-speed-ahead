@@ -103,6 +103,16 @@ var Recipies = [
 	["Beer","Plums","Rice"],
 	["Gin","Meat","Gray_peas","Pickles"],
 ]
+var RecipeBuffs = [
+	[0.1,-0.1,0.0,0.0], # Speed, TurnSpeed, Health, CoinMultiplier
+	[0.0,0.1,0.0,-0.1],
+	[-0.05,0.0,0.0,0.1],
+	[0.0,0.0,3.0,-0.1],
+	[-0.05,0.1,0.0,0.0],
+	[0.0,-0.05,0.0,0.1],
+	[-0.05,0.0,3.0,0.0],
+]
+var LastRecipe = -1
 var LevelName = "Tutorial"
 var LevelData = {
 	"Engeland":{"StartCoinCount":10, "LengthTiles":10, "Intermissions":[]},

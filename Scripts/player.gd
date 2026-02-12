@@ -13,6 +13,7 @@ var isNavigating = false
 var health = 5
 var max_health = 5
 var coin_mult = 1.0
+var activebuffs = [0.0, 0.0, 0.0, 0.0] # Speed TurnSpeed Health CoinMultiplier
 
 var paused = false
 var coins = 0
@@ -173,4 +174,12 @@ func _on_navigation_finished() -> void:
 		await get_tree().process_frame
 	$"../../UI".ShopIntermission = true
 	$"../../UI/Animations".play("ShopFadein")
-	
+
+func UpdateBuffs():
+	max_health = Global.BOAT_STATS[MyBoat]["hp"] + activebuffs[2]
+	max_turn_speed = Global.BOAT_STATS[MyBoat]["turn_speed"] * (1+activebuffs[1])
+	max_speed = Global.BOAT_STATS[MyBoat]["speed"] * (1+activebuffs[0]) * 10
+	coin_mult = Global.BOAT_STATS[MyBoat]["coin_multiplier"] * (1+activebuffs[3])
+	turn_velocity = max_turn_speed / 30
+	$"../../UI/Canvas/HUD/HP".MAX_HP = max_health
+	$"../../UI/Canvas/HUD/HP".Update()
