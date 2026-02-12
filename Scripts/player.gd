@@ -52,11 +52,6 @@ func getoverlappingtiles() -> Array:
 	return res
 
 func _physics_process(_delta: float) -> void:
-	max_health = Global.BOAT_STATS[MyBoat]["hp"] * (1+activebuffs[2])
-	max_turn_speed = Global.BOAT_STATS[MyBoat]["turn_speed"] * (1+activebuffs[1])
-	max_speed = Global.BOAT_STATS[MyBoat]["speed"] * (1+activebuffs[0]) * 10
-	coin_mult = Global.BOAT_STATS[MyBoat]["coin_multiplier"] * (1+activebuffs[3])
-	turn_velocity = max_turn_speed / 30
 	if GameStarted and !Global.DayEnded:
 		if Input.get_axis("move_left", "move_right") == 0:
 			delta_rot *= 0.9
@@ -147,4 +142,12 @@ func EndDay():
 
 func GetProgress() -> int:
 	return float(floor((position.x + 80) / 16))
-	
+
+func UpdateBuffs():
+	max_health = Global.BOAT_STATS[MyBoat]["hp"] + activebuffs[2]
+	max_turn_speed = Global.BOAT_STATS[MyBoat]["turn_speed"] * (1+activebuffs[1])
+	max_speed = Global.BOAT_STATS[MyBoat]["speed"] * (1+activebuffs[0]) * 10
+	coin_mult = Global.BOAT_STATS[MyBoat]["coin_multiplier"] * (1+activebuffs[3])
+	turn_velocity = max_turn_speed / 30
+	$"../../UI/Canvas/HUD/HP".MAX_HP = max_health
+	$"../../UI/Canvas/HUD/HP".Update()
