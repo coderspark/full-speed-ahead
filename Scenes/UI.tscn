@@ -2297,19 +2297,6 @@ offset_right = 105.0
 offset_bottom = 44.840027
 theme_override_styles/separator = SubResource("StyleBoxLine_13dyv")
 
-[node name="starve" type="Button" parent="Canvas/Cooking"]
-z_index = 11
-layout_mode = 0
-offset_left = 26.400024
-offset_top = 458.25623
-offset_right = 288.0
-offset_bottom = 506.25623
-focus_mode = 0
-theme_override_fonts/font = ExtResource("2_5q4fb")
-theme_override_font_sizes/font_size = 32
-text = "Just let em starve"
-alignment = 0
-
 [node name="RecipeBook" type="Panel" parent="Canvas"]
 process_mode = 3
 visible = false
@@ -3208,7 +3195,6 @@ libraries = {
 [connection signal="pressed" from="Canvas/Cooking/Menu5" to="." method="CookRecipe" binds= [4]]
 [connection signal="pressed" from="Canvas/Cooking/Menu6" to="." method="CookRecipe" binds= [5]]
 [connection signal="pressed" from="Canvas/Cooking/Menu7" to="." method="CookRecipe" binds= [6]]
-[connection signal="pressed" from="Canvas/Cooking/starve" to="." method="InitNextDay"]
 [connection signal="pressed" from="Canvas/RecipeBook/Menu1" to="." method="CookRecipe" binds= [0]]
 [connection signal="pressed" from="Canvas/RecipeBook/Menu2" to="." method="CookRecipe" binds= [1]]
 [connection signal="pressed" from="Canvas/RecipeBook/Menu3" to="." method="CookRecipe" binds= [2]]

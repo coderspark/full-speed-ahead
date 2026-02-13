@@ -33,9 +33,9 @@ func _ready() -> void:
 		coins = data["LevelCoins"]
 		Global.LastRecipe = data["LastRecipe"]
 		activebuffs = data["ActiveBuffs"]
-		UpdateBuffs()
 		UpdateCoinCount()
 		UpdateBoat(Global.SaveFile.SaveData["BoatName"])
+		UpdateBuffs()
 		health = data["Health"]
 		$"../../UI/Canvas/HUD/HP".HP = health
 		$"../../UI/Canvas/HUD/HP".Update()
@@ -172,11 +172,9 @@ func _on_navigation_finished() -> void:
 	isNavigating = false
 	velocity = Vector2.ZERO
 	boatvel = 0
-	print(rotation)
-	print(rotation - 3 * PI/2 )
-	while rotation - 3 * PI/2 > 0.01:
+	while rotation - PI/2 > 0.01:
 		print(rotation)
-		rotation = lerp_angle(rotation, 3 * PI/2, 0.016 * 3)
+		rotation = lerp_angle(rotation, PI/2, 0.016 * 3)
 		await get_tree().process_frame
 	$"../../UI".ShopIntermission = true
 	$"../../UI/Animations".play("ShopFadein")

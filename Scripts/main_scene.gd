@@ -57,13 +57,14 @@ func AutoSave(EraseGameData = false):
 		Data.CurrentLevelData["PlayerRot"] = $Players/Player.rotation
 		Data.CurrentLevelData["Health"] = $Players/Player.health
 		Data.CurrentLevelData["IntermissionsReached"] = $Players/Player.IntermissionsReached
-		Data.CurrentLevelData["BoatName"] = $Players/Player.MyBoat
+		
 		Data.CurrentLevelData["LastRecipe"] = Global.LastRecipe
 		Data.CurrentLevelData["ActiveBuffs"] = $Players/Player.activebuffs
 		Data.CurrentLevelData["Time"] = TimeOfDAy
 		Data.CurrentLevelData["Day"] = Global.CurrentDay
 		Data.CurrentLevelData["Seed"] = $TileMap.SEED
 		Data.CurrentLevelData["LevelCoins"] = $Players/Player.coins
+	Data.SaveData["BoatName"] = $Players/Player.MyBoat
 	Data.SaveData["Coins"] = Global.Coins
 	ResourceSaver.save(Data,Global.SAVE_PATH + Global.SAVE_NAME)
 	print("AUTOSAVE: An autosave was made.")
