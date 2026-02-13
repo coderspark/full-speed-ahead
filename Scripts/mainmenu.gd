@@ -9,6 +9,7 @@ func _ready() -> void:
 	$Fade/Animations.play("fade_out")
 	await $Fade/Animations.animation_finished
 	$LevelSelect.hide()
+	DirAccess.make_dir_absolute(Global.SAVE_PATH)
 	if ResourceLoader.load(Global.SAVE_PATH + Global.SAVE_NAME,"",ResourceLoader.CACHE_MODE_IGNORE) == null:
 		ResourceSaver.save(SaveLoadData.new(),Global.SAVE_PATH + Global.SAVE_NAME)
 	Global.SaveFile = ResourceLoader.load(Global.SAVE_PATH + Global.SAVE_NAME,"",ResourceLoader.CACHE_MODE_IGNORE).duplicate(true)
