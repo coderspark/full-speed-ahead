@@ -16,6 +16,7 @@ var coin_mult = 1.0
 var activebuffs = [0.0, 0.0, 0.0, 0.0] # Speed TurnSpeed Health CoinMultiplier
 
 var paused = false
+var iframes = 0
 var coins = 0
 
 var MyBoat = ""
@@ -79,6 +80,16 @@ func _physics_process(delta: float) -> void:
 			delta_rot = max_turn_speed * delta_rot/abs(delta_rot)
 		if isbounce:
 			boatvel = -30
+		if iframes > 0:
+			if (iframes % 10) <= 5:
+				$Sprite.modulate = Color(1.0, 1.0, 1.0, 0.5)
+			else:
+				$Sprite.modulate = Color(1.0, 1.0, 1.0, 1.0)
+			$"Collision Detector/CollisionShape2D2".disabled = true
+			iframes -= 1
+			if iframes == 0:
+				$Sprite.modulate = Color(1.0, 1.0, 1.0, 1.0)
+				$"Collision Detector/CollisionShape2D2".disabled = false
 		rotation += delta_rot * 0.01
 		velocity = transform.x * boatvel
 		if boatvel < max_speed:
@@ -91,10 +102,10 @@ func _physics_process(delta: float) -> void:
 			GameStarted = false
 			$Navigation.target_position = Vector2(position.x + 60,40)
 		for t in overlap:
-			if t[0] == Vector2i(0, 3) && !isbounce && !t[1] in pushingdirs:
+			if t[0] == Vector2i(0, 3) && iframes == 0 && !t[1] in pushingdirs:
 				velocity += Vector2(sin(t[1]), cos(t[1])) * 10
 				pushingdirs.append(t[1])
-			if t[0] == Vector2i(0, 13) && !isbounce && !t[1] in pushingdirs:
+			if t[0] == Vector2i(0, 13) && iframes == 0 && !t[1] in pushingdirs:
 				velocity += Vector2(sin(t[1]), cos(t[1])) * 25
 				pushingdirs.append(t[1])
 			if t[0] == Vector2i(0, 14):
@@ -112,13 +123,13 @@ func _on_area_2d_body_entered(_body: Node2D) -> void:
 	$"../../UI/Canvas/HUD/HP".HP = health
 	$"../../UI/Canvas/HUD/HP".Update()
 	if health <= 0:
+		$Camera.traumatize(0.25)
 		$"../../UI".gameover()
 		paused = true
-	$Camera.shake()
-	isbounce = true
-func _on_collision_detector_body_exited(_body: Node2D) -> void:
-	isbounce = false
-
+	else:
+		$Camera.traumatize(0.2)
+	iframes = 75
+	boatvel = -30
 
 func _on_shop_detection_body_entered(_body: Node2D) -> void:
 	$"../../UI".ShowShop()
@@ -184,9 +195,11 @@ func _on_navigation_finished() -> void:
 
 func UpdateBuffs():
 	max_health = Global.BOAT_STATS[MyBoat]["hp"] + activebuffs[2]
+	health += activebuffs[2]
 	max_turn_speed = Global.BOAT_STATS[MyBoat]["turn_speed"] * (1+activebuffs[1])
 	max_speed = Global.BOAT_STATS[MyBoat]["speed"] * (1+activebuffs[0]) * 10
 	coin_mult = Global.BOAT_STATS[MyBoat]["coin_multiplier"] * (1+activebuffs[3])
 	turn_velocity = max_turn_speed / 30
 	$"../../UI/Canvas/HUD/HP".MAX_HP = max_health
+	$"../../UI/Canvas/HUD/HP".HP = health
 	$"../../UI/Canvas/HUD/HP".Update()

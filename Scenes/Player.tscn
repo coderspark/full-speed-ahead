@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cqmx4lw13bmqq" path="res://Scripts/player.gd" id="1_kyqiw"]
 [ext_resource type="Texture2D" uid="uid://duynbsilkpjra" path="res://Assets/Art/Boats/Improved_sailboat.png" id="2_kyqiw"]
-[ext_resource type="Script" uid="uid://drumpygcni0ew" path="res://Scripts/camera.gd" id="3_gntrk"]
+[ext_resource type="Script" uid="uid://c8g6ktdc8jrtq" path="res://Scenes/shake.gd" id="3_gntrk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gntrk"]
 size = Vector2(8.563637, 4)
@@ -26,6 +26,7 @@ shape = SubResource("RectangleShape2D_gntrk")
 texture = ExtResource("2_kyqiw")
 
 [node name="Camera" type="Camera2D" parent="."]
+process_mode = 3
 zoom = Vector2(2.81, 2.81)
 limit_top = 96
 limit_bottom = 96
