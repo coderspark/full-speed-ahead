@@ -114,6 +114,7 @@ func _on_area_2d_body_entered(_body: Node2D) -> void:
 	if health <= 0:
 		$"../../UI".gameover()
 		paused = true
+	$Camera.shake()
 	isbounce = true
 func _on_collision_detector_body_exited(_body: Node2D) -> void:
 	isbounce = false

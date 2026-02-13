@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cxv7wb44ynnkf"]
+[gd_scene load_steps=7 format=3 uid="uid://cxv7wb44ynnkf"]
 
 [ext_resource type="Script" uid="uid://cqmx4lw13bmqq" path="res://Scripts/player.gd" id="1_kyqiw"]
-[ext_resource type="Texture2D" uid="uid://b2tmbt6em7hbg" path="res://Assets/Art/Boats/Improved_sailboat.png" id="2_kyqiw"]
+[ext_resource type="Texture2D" uid="uid://duynbsilkpjra" path="res://Assets/Art/Boats/Improved_sailboat.png" id="2_kyqiw"]
+[ext_resource type="Script" uid="uid://drumpygcni0ew" path="res://Scripts/camera.gd" id="3_gntrk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gntrk"]
 size = Vector2(8.563637, 4)
@@ -28,6 +29,7 @@ texture = ExtResource("2_kyqiw")
 zoom = Vector2(2.81, 2.81)
 limit_top = 96
 limit_bottom = 96
+script = ExtResource("3_gntrk")
 
 [node name="Collision Detector" type="Area2D" parent="."]
 
