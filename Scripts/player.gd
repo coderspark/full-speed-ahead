@@ -31,15 +31,21 @@ func _ready() -> void:
 		rotation = data["PlayerRot"]
 		IntermissionsReached = data["IntermissionsReached"]
 		coins = data["LevelCoins"]
+		Global.LastRecipe = data["LastRecipe"]
+		activebuffs = data["ActiveBuffs"]
+		UpdateBuffs()
 		UpdateCoinCount()
-		UpdateBoat(data["BoatName"])
+		UpdateBoat(Global.SaveFile.SaveData["BoatName"])
 		health = data["Health"]
 		$"../../UI/Canvas/HUD/HP".HP = health
 		$"../../UI/Canvas/HUD/HP".Update()
 	else:
 		coins = Global.BroughtCoins + Global.LevelData[Global.LevelName]["StartCoinCount"]
 		UpdateCoinCount()
-		UpdateBoat(Global.STARTER_BOAT)
+		if Global.SaveFile.SaveData["BoatName"] == "":
+			UpdateBoat(Global.STARTER_BOAT)
+		else:
+			UpdateBoat(Global.SaveFile.SaveData["BoatName"])
 	
 
 func getoverlappingtiles() -> Array:
