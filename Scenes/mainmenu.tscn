@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://v2hjcofj8iip"]
+[gd_scene load_steps=36 format=3 uid="uid://v2hjcofj8iip"]
 
 [ext_resource type="Script" uid="uid://c4d486soskj4u" path="res://Scripts/mainmenu.gd" id="1_3pujl"]
 [ext_resource type="Texture2D" uid="uid://bikvt55in0esa" path="res://Assets/Art/UI/Menu screen.png" id="1_cmhrf"]
@@ -8,9 +8,11 @@
 [ext_resource type="AudioStream" uid="uid://dl8d6cchew8pf" path="res://Assets/Audio/title theme.wav" id="6_5326e"]
 [ext_resource type="Script" uid="uid://1e50qlieqvq2" path="res://Scripts/LoopPointMusic.gd" id="7_l2o7r"]
 [ext_resource type="Texture2D" uid="uid://d2qr2wp5kmb22" path="res://Assets/Art/UI/WorldMap/worldmap.png" id="8_juwjy"]
+[ext_resource type="Texture2D" uid="uid://bby3134rxpfex" path="res://Assets/Art/UI/pulse.png" id="9_awugs"]
 [ext_resource type="Texture2D" uid="uid://cjfosfjesq1oq" path="res://Assets/Art/UI/Coinselect.png" id="9_eybw1"]
 [ext_resource type="Script" uid="uid://iyenki67kkxw" path="res://Scripts/textedit_numonly.gd" id="10_hu3kb"]
 [ext_resource type="Texture2D" uid="uid://bw2gvkaylchw8" path="res://Assets/Art/UI/coinicon.png" id="11_hu3kb"]
+[ext_resource type="Texture2D" uid="uid://cm5h1c54c0p4o" path="res://Assets/Art/Temp/arrow (probably temporary ).png" id="12_vv4ip"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_loy4s"]
 texture = ExtResource("1_cmhrf")
@@ -543,6 +545,237 @@ _data = {
 &"Un-Play": SubResource("Animation_2jq6c")
 }
 
+[sub_resource type="Animation" id="Animation_72gy5"]
+resource_name = "pulse"
+length = 3.00001
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Paaseiland/Pulse:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.78431374), Color(1, 1, 1, 0.78431374), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Paaseiland/Pulse:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.2, 0.2), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Jakarta/Pulse:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.78431374), Color(1, 1, 1, 0.78431374), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Jakarta/Pulse:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.2, 0.2), Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("KaapDeGoedeHoop/Pulse:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.78431374), Color(1, 1, 1, 0.78431374), Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Portugal/Pulse:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.78431374), Color(1, 1, 1, 0.78431374), Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Engeland/Pulse:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.78431374), Color(1, 1, 1, 0.78431374), Color(1, 1, 1, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Engeland/Pulse:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.2, 0.2), Vector2(1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("KaapDeGoedeHoop/Pulse:scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.2, 0.2), Vector2(1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Portugal/Pulse:scale")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.2, 0.2), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_8wkh3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Paaseiland/Pulse:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.2, 0.2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Paaseiland/Pulse:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("KaapDeGoedeHoop/Pulse:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Portugal/Pulse:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Engeland/Pulse:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Engeland/Pulse:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.2, 0.2)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("KaapDeGoedeHoop/Pulse:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.016428, 1.016428)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Portugal/Pulse:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.016428, 1.016428)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m56cs"]
+_data = {
+&"RESET": SubResource("Animation_8wkh3"),
+&"pulse": SubResource("Animation_72gy5")
+}
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vv4ip"]
 texture = ExtResource("9_eybw1")
 
@@ -839,61 +1072,116 @@ anchors_preset = 0
 offset_right = 976.0
 offset_bottom = 544.0
 
+[node name="Animations" type="AnimationPlayer" parent="LevelSelect"]
+libraries = {
+&"": SubResource("AnimationLibrary_m56cs")
+}
+autoplay = "pulse"
+
 [node name="BG" type="TextureRect" parent="LevelSelect"]
 layout_mode = 0
-offset_right = 976.0
-offset_bottom = 544.0
+offset_right = 960.0
+offset_bottom = 540.0
 texture = ExtResource("8_juwjy")
+stretch_mode = 5
 
 [node name="Paaseiland" type="Button" parent="LevelSelect"]
 layout_mode = 0
-offset_left = 154.19934
-offset_top = 352.13644
-offset_right = 202.19934
-offset_bottom = 400.13644
+offset_left = 188.0
+offset_top = 349.0
+offset_right = 236.0
+offset_bottom = 397.0
 pivot_offset = Vector2(24, 24)
 focus_mode = 0
 flat = true
+
+[node name="Pulse" type="TextureRect" parent="LevelSelect/Paaseiland"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 48.0
+offset_bottom = 48.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(24, 24)
+texture = ExtResource("9_awugs")
 
 [node name="Jakarta" type="Button" parent="LevelSelect"]
 layout_mode = 0
-offset_left = 739.70386
-offset_top = 284.32654
-offset_right = 787.70386
-offset_bottom = 332.32654
+offset_left = 694.0
+offset_top = 282.0
+offset_right = 742.0
+offset_bottom = 330.0
 pivot_offset = Vector2(24, 24)
 focus_mode = 0
 flat = true
+
+[node name="Pulse" type="TextureRect" parent="LevelSelect/Jakarta"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 48.0
+offset_bottom = 48.0
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(24, 24)
+texture = ExtResource("9_awugs")
 
 [node name="KaapDeGoedeHoop" type="Button" parent="LevelSelect"]
 layout_mode = 0
-offset_left = 515.13257
-offset_top = 356.19745
-offset_right = 563.13257
-offset_bottom = 404.19745
+offset_left = 500.0
+offset_top = 354.0
+offset_right = 548.0
+offset_bottom = 402.0
 pivot_offset = Vector2(24, 24)
 focus_mode = 0
 flat = true
+
+[node name="Pulse" type="TextureRect" parent="LevelSelect/KaapDeGoedeHoop"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_right = 48.0
+offset_bottom = 48.0
+scale = Vector2(1.016428, 1.016428)
+pivot_offset = Vector2(24, 24)
+texture = ExtResource("9_awugs")
 
 [node name="Portugal" type="Button" parent="LevelSelect"]
 layout_mode = 0
-offset_left = 442.01553
-offset_top = 180.33208
-offset_right = 490.01553
-offset_bottom = 221.68365
+offset_left = 437.0
+offset_top = 180.0
+offset_right = 485.0
+offset_bottom = 220.0
 pivot_offset = Vector2(24, 24)
 focus_mode = 0
 flat = true
 
+[node name="Pulse" type="TextureRect" parent="LevelSelect/Portugal"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_top = -8.0
+offset_right = 48.0
+offset_bottom = 40.0
+scale = Vector2(1.016428, 1.016428)
+pivot_offset = Vector2(24, 24)
+texture = ExtResource("9_awugs")
+
 [node name="Engeland" type="Button" parent="LevelSelect"]
 layout_mode = 0
-offset_left = 466.52258
-offset_top = 139.66058
-offset_right = 514.5226
-offset_bottom = 180.33208
+offset_left = 466.523
+offset_top = 143.661
+offset_right = 514.523
+offset_bottom = 180.00041
 pivot_offset = Vector2(24, 24)
 focus_mode = 0
 flat = true
+
+[node name="Pulse" type="TextureRect" parent="LevelSelect/Engeland"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -8.522582
+offset_top = -5.660583
+offset_right = 39.477417
+offset_bottom = 42.339417
+scale = Vector2(0.2, 0.2)
+pivot_offset = Vector2(24, 24)
+texture = ExtResource("9_awugs")
 
 [node name="Info" type="RichTextLabel" parent="LevelSelect"]
 layout_mode = 0
@@ -910,7 +1198,6 @@ bbcode_enabled = true
 scroll_active = false
 
 [node name="CoinSelect" type="Panel" parent="LevelSelect"]
-visible = false
 layout_mode = 0
 offset_left = 229.0
 offset_top = -380.0
@@ -961,10 +1248,27 @@ theme_override_font_sizes/font_size = 48
 text = "Start"
 flat = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="LevelSelect/CoinSelect"]
+[node name="Animations" type="AnimationPlayer" parent="LevelSelect/CoinSelect"]
 libraries = {
 &"": SubResource("AnimationLibrary_awugs")
 }
+
+[node name="Back" type="Button" parent="LevelSelect/CoinSelect"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 162.0
+offset_right = 65.0
+offset_bottom = 200.0
+focus_mode = 0
+flat = true
+
+[node name="TextureRect" type="TextureRect" parent="LevelSelect/CoinSelect/Back"]
+layout_mode = 0
+offset_left = -40.0
+offset_bottom = 40.0
+scale = Vector2(-1, 1)
+pivot_offset = Vector2(40, 0)
+texture = ExtResource("12_vv4ip")
 
 [node name="Coins" type="Label" parent="LevelSelect"]
 z_index = 13
@@ -991,6 +1295,26 @@ offset_bottom = 39.0
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("11_hu3kb")
 
+[node name="RichTextLabel" type="RichTextLabel" parent="LevelSelect"]
+layout_mode = 0
+offset_left = 271.0
+offset_top = 464.0
+offset_right = 976.0
+offset_bottom = 504.0
+mouse_filter = 2
+bbcode_enabled = true
+text = "[font=res://Assets/Fonts/8bitoperator_jve.ttf][font_size=32]Choose your next destination!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BGBG" type="ColorRect" parent="LevelSelect"]
+z_index = -1
+layout_mode = 0
+offset_right = 960.0
+offset_bottom = 540.0
+mouse_filter = 2
+color = Color(0.6, 0.8627451, 1, 1)
+
 [node name="Fade" type="ColorRect" parent="."]
 z_index = 100
 offset_left = -1031.0
@@ -1006,7 +1330,7 @@ libraries = {
 }
 
 [node name="Camera" type="Camera2D" parent="."]
-position = Vector2(491.13043, 272)
+position = Vector2(480, 270)
 
 [connection signal="pressed" from="MainMenu/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MainMenu/New game" to="." method="NewGame"]
@@ -1031,3 +1355,4 @@ position = Vector2(491.13043, 272)
 [connection signal="mouse_exited" from="LevelSelect/Engeland" to="." method="_on_mouse_exited"]
 [connection signal="pressed" from="LevelSelect/Engeland" to="." method="CoinSelect" binds= ["Engeland"]]
 [connection signal="pressed" from="LevelSelect/CoinSelect/Button" to="." method="StartGame"]
+[connection signal="pressed" from="LevelSelect/CoinSelect/Back" to="." method="_on_back_coin_pressed"]

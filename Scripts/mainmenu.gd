@@ -59,8 +59,8 @@ func LevelSelect():
 func CoinSelect(lvl:String):
 	Global.LevelName = lvl
 	$LevelSelect/CoinSelect.visible = true
-	$LevelSelect/CoinSelect/AnimationPlayer.play("fall")
-	await $LevelSelect/CoinSelect/AnimationPlayer.animation_finished
+	$LevelSelect/CoinSelect/Animations.play("fall")
+	await $LevelSelect/CoinSelect/Animations.animation_finished
 
 func StartGame():
 	Global.SaveFileLoaded = false
@@ -157,3 +157,7 @@ func _on_tutorial_pressed() -> void:
 
 func _on_back_pressed() -> void:
 	$MainMenu/Animations.play("Un-Play")
+
+
+func _on_back_coin_pressed() -> void:
+	$LevelSelect/CoinSelect/Animations.play_backwards("fall")

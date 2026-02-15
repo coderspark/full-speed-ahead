@@ -23,6 +23,8 @@ var MyBoat = ""
 
 var IntermissionsReached = []
 
+const IframeLength = 120
+
 var elapsed = 0.0
 @export var GameStarted = false
 func _ready() -> void:
@@ -130,7 +132,7 @@ func _on_area_2d_body_entered(_body: Node2D) -> void:
 		paused = true
 	else:
 		$Camera.traumatize(0.2)
-	iframes = 75
+	iframes = IframeLength
 	boatvel = -30
 
 func _on_shop_detection_body_entered(_body: Node2D) -> void:
@@ -143,8 +145,8 @@ func UpdateCoinCount():
 func UpdateBoat(nam : String):
 	MyBoat = nam
 	if Global.LevelName == "Tutorial":
-		max_health = 5
-		health = 5
+		max_health = 20
+		health = 20
 	else:
 		max_health = Global.BOAT_STATS[nam]["hp"]
 		health = max_health
