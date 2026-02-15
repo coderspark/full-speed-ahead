@@ -26,6 +26,8 @@ var IntermissionsReached = []
 var elapsed = 0.0
 @export var GameStarted = false
 func _ready() -> void:
+	if Global.SaveFile == null:
+		Global.SaveFile = SaveLoadData.new()
 	if Global.SaveFileLoaded:
 		var data = Global.SaveFile.CurrentLevelData
 		position = data["PlayerPos"]
@@ -115,7 +117,7 @@ func _physics_process(delta: float) -> void:
 			if t[0] == Vector2i(6, 0):
 				$"../..".finish()
 		pushingdirs = []
-	move_and_slide()
+		move_and_slide()
 
 func _on_area_2d_body_entered(_body: Node2D) -> void:
 	delta_rot = 0
@@ -161,6 +163,7 @@ func _on_ui_start_game() -> void:
 	velocity = Vector2.ZERO
 	boatvel = 0
 	GameStarted = true
+	
 #Used in tutorial
 func StopShip():
 	velocity = Vector2.ZERO
@@ -184,12 +187,13 @@ func _on_navigation_finished() -> void:
 	isNavigating = false
 	velocity = Vector2.ZERO
 	boatvel = 0
-	while rotation - PI/2 > 0.01:
-		print(rotation)
-		rotation = lerp_angle(rotation, PI/2, 0.016 * 3)
+	while abs(rotation) - PI > 0.01:
+		rotation = lerp_angle(rotation, PI, 0.016 * 3)
 		await get_tree().process_frame
 	$"../../UI".ShopIntermission = true
 	$"../../UI/Animations".play("ShopFadein")
+	if Global.LevelName == "Tutorial":
+		$"../../Animation".play("Tutorial07")
 
 func UpdateBuffs():
 	max_health = Global.BOAT_STATS[MyBoat]["hp"] + activebuffs[2]

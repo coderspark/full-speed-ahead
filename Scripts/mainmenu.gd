@@ -89,7 +89,6 @@ func RestartGame():
 	Global.SaveFileLoaded = false
 	$Fade/Animations.play("fade_in")
 	await $Fade/Animations.animation_finished
-	print(get_children())
 	$MainScene.name = "1"
 	var n = game.instantiate()
 	n.name = "MainScene"

@@ -61,21 +61,21 @@ const BOAT_STATS = {
 		"coin_multiplier":2.5
 	}, "Basic_motorboat":{
 		"cost":90,
-		"speed":8,
-		"turn_speed":6,
-		"hp":10,
+		"speed":6,
+		"turn_speed":8,
+		"hp":15,
 		"coin_multiplier":3.0
 	}, "Reinforced_motorboat":{
 		"cost":130,
-		"speed":9,
-		"turn_speed":7,
-		"hp":15,
+		"speed":6,
+		"turn_speed":9,
+		"hp":20,
 		"coin_multiplier":3.5
 	}, "Aircraft_carrier":{
 		"cost":300,
 		"speed":4,
 		"turn_speed":3,
-		"hp":30,
+		"hp":40,
 		"coin_multiplier":5
 	}
 }
@@ -122,5 +122,5 @@ var LevelData = {
 	"KaapdegoedeHoop":{"StartCoinCount":40000,"LengthTiles":60, "Intermissions":[1]},
 	"Jakarta":{"StartCoinCount":80,"LengthTiles":100, "Intermissions":[25,60]},
 	"Paaseiland":{"StartCoinCount":80,"LengthTiles":150, "Intermissions":[25,100]},
-	"Tutorial":{"StartCoinCount":20,"LengthTiles":10, "Intermissions":[]},
+	"Tutorial":{"StartCoinCount":20,"LengthTiles":10, "Intermissions":[13]},
 }

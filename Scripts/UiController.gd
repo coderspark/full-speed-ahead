@@ -22,7 +22,8 @@ func _ready() -> void:
 		$Canvas/Countdown/Animations.play("Countdown")
 	else:
 		ShopIntermission = false
-		$Animations.play("ShopFadein")
+		if not Global.LevelName == "Tutorial":
+			$Animations.play("ShopFadein")
 	if Global.LevelName == "Tutorial":
 		AddFoodItemToInventory("Gin")
 		AddFoodItemToInventory("Plums")
@@ -229,6 +230,8 @@ func _on_continue_pressed() -> void:
 		await $Animations.animation_finished
 		$"../Players/Player".position.x += 50
 		$"../Players/Player".position.y = 80
+		$"../Players/Player".rotation_degrees = 0
+		
 		$Animations.play("FadeBackToNormal")
 		await $Animations.animation_finished
 		$Canvas/Countdown/Animations.play("Countdown")

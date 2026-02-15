@@ -21,13 +21,13 @@ func finish() -> void:
 func _on_ui_restart_game() -> void:
 	get_parent().RestartGame()
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	if $Players/Player.GetProgress() > LastAutosave + 32:
 		$UI/Canvas/HUD/Saving/Animation.play("Save")
 		AutoSave()
 		LastAutosave = $Players/Player.GetProgress()
 	if Global.AdvanceTime and $Players/Player.GameStarted and !$Players/Player.paused:
-		TimeOfDAy += 0.5
+		TimeOfDAy += 30.0 * delta
 		$UI.UpdateTimeIndicator(TimeOfDAy)
 		modulate = TimeToColorModulate(TimeOfDAy)
 		if TimeOfDAy > 1950 and not Global.DayEnded or Input.is_action_just_pressed("ADMIN2"):
