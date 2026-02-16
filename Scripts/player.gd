@@ -100,7 +100,7 @@ func _physics_process(delta: float) -> void:
 			boatvel += 60 * delta
 		var overlap = getoverlappingtiles()
 		var pushingdirs = []
-		if int(float(GetProgress())/10) in Global.LevelData[Global.LevelName]["Intermissions"] and int(float(GetProgress())/8) not in IntermissionsReached:
+		if int(float(GetProgress())/10) in Global.LevelData[Global.LevelName]["Intermissions"] and int(float(GetProgress())/10) not in IntermissionsReached:
 			isNavigating = true
 			IntermissionsReached.append(int(float(GetProgress())/10))
 			GameStarted = false

@@ -1262,7 +1262,7 @@ tracks/9/keys = {
 "times": PackedFloat32Array(0, 8, 12),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [Vector2(-117.64991, 220.84004), Vector2(-183, 95), Vector2(609, 100.25273)]
+"values": [Vector2(-117.64991, 220.84004), Vector2(-183, 95), Vector2(611, 100.253)]
 }
 
 [sub_resource type="Animation" id="Animation_8cul1"]
@@ -1519,7 +1519,7 @@ tracks/4/keys = {
 "times": PackedFloat32Array(2),
 "transitions": PackedFloat32Array(1),
 "values": [{
-"args": ["During your travels, you might come along these \"intermission cities\". \\ Here, you can restock on supplies, and spend your coins on new boats!"],
+"args": ["During your travels, you might come along these \"intermission cities\". Here, you can restock on supplies, and spend your coins on new boats!"],
 "method": &"TypewriterEffect"
 }]
 }
