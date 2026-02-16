@@ -37,7 +37,7 @@ func remove_coin(pos: Vector2i) -> void:
 	set_cell(pos, 0, Vector2i(0, 0), 0)
 
 func _ready() -> void:
-	var number_of_templates = 101
+	var number_of_templates = 105
 	var difficulties = []
 	
 	RAND = RandomNumberGenerator.new()
