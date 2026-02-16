@@ -421,6 +421,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Player" parent="Players" instance=ExtResource("1_nhkr4")]
 position = Vector2(-336, 95.25273)
+GameStarted = null
 
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
 process_mode = 3

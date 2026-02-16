@@ -17,7 +17,7 @@ var activebuffs = [0.0, 0.0, 0.0, 0.0] # Speed TurnSpeed Health CoinMultiplier
 
 var paused = false
 var iframes = 0
-var coins = 0
+var coins := 0.0
 
 var MyBoat = ""
 
@@ -147,7 +147,7 @@ func _on_shop_detection_body_entered(_body: Node2D) -> void:
 	get_tree().paused = true
 	
 func UpdateCoinCount():
-	$"../../UI/Canvas/HUD/Coins".text = str(coins)
+	$"../../UI/Canvas/HUD/Coins".text = str(coins.)
 
 func UpdateBoat(nam : String):
 	MyBoat = nam

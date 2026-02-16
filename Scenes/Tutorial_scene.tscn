@@ -27,8 +27,6 @@ func finish() -> void:
 	get_tree().paused = true
 
 func _process(delta: float) -> void:
-	print($Players/Player.GetProgress())
-	print($Players/Player.GetProgress() / 10)
 	if Input.is_key_pressed(KEY_TAB):
 		Engine.time_scale = 10
 	else:
