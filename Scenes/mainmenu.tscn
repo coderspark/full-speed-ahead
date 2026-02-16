@@ -1016,7 +1016,7 @@ offset_left = 86.0
 offset_top = 243.0
 offset_right = 384.0
 offset_bottom = 323.00003
-mouse_default_cursor_shape = 1
+mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("3_igs2m")
 theme_override_font_sizes/font_size = 64
@@ -1093,6 +1093,7 @@ offset_right = 236.0
 offset_bottom = 397.0
 pivot_offset = Vector2(24, 24)
 focus_mode = 0
+mouse_default_cursor_shape = 2
 flat = true
 
 [node name="Pulse" type="TextureRect" parent="LevelSelect/Paaseiland"]
@@ -1112,6 +1113,7 @@ offset_right = 742.0
 offset_bottom = 330.0
 pivot_offset = Vector2(24, 24)
 focus_mode = 0
+mouse_default_cursor_shape = 2
 flat = true
 
 [node name="Pulse" type="TextureRect" parent="LevelSelect/Jakarta"]
@@ -1131,6 +1133,7 @@ offset_right = 548.0
 offset_bottom = 402.0
 pivot_offset = Vector2(24, 24)
 focus_mode = 0
+mouse_default_cursor_shape = 2
 flat = true
 
 [node name="Pulse" type="TextureRect" parent="LevelSelect/KaapDeGoedeHoop"]
@@ -1150,6 +1153,7 @@ offset_right = 485.0
 offset_bottom = 220.0
 pivot_offset = Vector2(24, 24)
 focus_mode = 0
+mouse_default_cursor_shape = 2
 flat = true
 
 [node name="Pulse" type="TextureRect" parent="LevelSelect/Portugal"]
@@ -1170,6 +1174,7 @@ offset_right = 514.523
 offset_bottom = 180.00041
 pivot_offset = Vector2(24, 24)
 focus_mode = 0
+mouse_default_cursor_shape = 2
 flat = true
 
 [node name="Pulse" type="TextureRect" parent="LevelSelect/Engeland"]

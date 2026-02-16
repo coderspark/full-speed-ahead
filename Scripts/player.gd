@@ -73,7 +73,7 @@ func getoverlappingtiles() -> Array:
 func _physics_process(delta: float) -> void:
 	if isNavigating:
 		var dir = ($Navigation.get_next_path_position() - global_position).normalized()
-		velocity = dir * 1000 * delta
+		velocity = dir * 2000 * delta
 		rotation = lerp_angle(rotation, dir.angle(),delta * 3)
 		move_and_slide()
 	elif GameStarted and !Global.DayEnded:
@@ -100,11 +100,12 @@ func _physics_process(delta: float) -> void:
 			boatvel += 60 * delta
 		var overlap = getoverlappingtiles()
 		var pushingdirs = []
-		if int(float(GetProgress())/8) in Global.LevelData[Global.LevelName]["Intermissions"] and int(float(GetProgress())/8) not in IntermissionsReached:
+		if int(float(GetProgress())/10) in Global.LevelData[Global.LevelName]["Intermissions"] and int(float(GetProgress())/8) not in IntermissionsReached:
 			isNavigating = true
-			IntermissionsReached.append(int(float(GetProgress())/8))
+			IntermissionsReached.append(int(float(GetProgress())/10))
 			GameStarted = false
-			$Navigation.target_position = Vector2(position.x + 60,40)
+			print(Vector2(GetProgress()*16 + 35,45))
+			$Navigation.target_position = Vector2(position.x + 35,45)
 		for t in overlap:
 			if t[0] == Vector2i(0, 3) && iframes == 0 && !t[1] in pushingdirs:
 				velocity += Vector2(sin(t[1]), cos(t[1])) * 10
@@ -122,6 +123,8 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 
 func _on_area_2d_body_entered(_body: Node2D) -> void:
+	if !GameStarted or isNavigating or paused or Global.DayEnded:
+		return
 	delta_rot = 0
 	health -= 1
 	$"../../UI/Canvas/HUD/HP".HP = health
@@ -190,7 +193,7 @@ func _on_navigation_finished() -> void:
 	velocity = Vector2.ZERO
 	boatvel = 0
 	while abs(rotation) - PI > 0.01:
-		rotation = lerp_angle(rotation, PI, 0.016 * 3)
+		rotation = lerp_angle(rotation, PI, 0.016)
 		await get_tree().process_frame
 	$"../../UI".ShopIntermission = true
 	$"../../UI/Animations".play("ShopFadein")
