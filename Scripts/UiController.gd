@@ -13,6 +13,8 @@ var Inventory = {}
 
 var paused = false
 
+var IsStarving = false
+
 var ShopIntermission = false
 
 func _ready() -> void:
@@ -172,8 +174,17 @@ func FormatInventory(Inv : Dictionary):
 
 
 func UpdateCookableRecipies():
+	var nofood = true
 	for ID in range(7):
+		if CheckRecipeCraftable(ID) == true:
+			nofood = false
 		$"Canvas/Cooking".get_node("Menu" + str(ID + 1)).disabled = !CheckRecipeCraftable(ID)
+	if nofood:
+		$"Canvas/Cooking/Label".visible = false
+		for i in range(7):
+			$"Canvas/Cooking".get_node("Menu" + str(i + 1)).visible = false
+		$"Canvas/Cooking/starvetext".visible = true
+		$"Canvas/Cooking/Continue".visible = true
 
 func AddFoodItemToInventory(nam:String):
 	if Inventory.has(nam):
@@ -267,6 +278,7 @@ func _on_backtomenu_pressed() -> void:
 	$Animations.play("FadeToBlack")
 	await $Animations.animation_finished
 	Global.Coins += $"../Players/Player".coins
+	Global.LevelSelecting = true
 	$"..".AutoSave(true)
 	get_tree().reload_current_scene()
 
@@ -305,3 +317,11 @@ func NextDay():
 	
 func CalculatePercentage() -> String:
 	return str(int(clamp(float($"../Players/Player".GetProgress()) / float(Global.LevelData[Global.LevelName]["LengthTiles"] * 8 + 16) * 100,0,100)))
+
+
+func _starve() -> void:
+	$"../Players/Player".activebuffs = [0.0, 0.0, 0.0, 0.0]
+	$"../Players/Player".UpdateBuffs()
+	Global.LastRecipe = -1
+	IsStarving = true
+	InitNextDay()

@@ -5,6 +5,9 @@ var tutorial = preload("res://Scenes/Tutorial_scene.tscn")
 @onready var LevelBG = preload("res://Assets/Art/UI/WorldMap/worldmap.png")
 
 func _ready() -> void:
+	if Global.LevelSelecting == true:
+		Global.LevelSelecting = false
+		LoadGame()
 	get_tree().paused = false
 	$Fade/Animations.play("fade_out")
 	await $Fade/Animations.animation_finished

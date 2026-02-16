@@ -17,6 +17,7 @@ class_name SaveLoadData
 	"Time":700,
 	"Day":1,
 	"Seed":1,
+	"IsStarving":false,
 }
 
 @export var SaveData = {

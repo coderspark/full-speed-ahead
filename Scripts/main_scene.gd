@@ -11,6 +11,7 @@ func _ready() -> void:
 		var data = Global.SaveFile.CurrentLevelData
 		TimeOfDAy = data["Time"]
 		Global.CurrentDay = data["Day"]
+		$"UI".IsStarving = data["IsStarving"]
 	$UI/Canvas/Shop.show()
 	modulate = TimeToColorModulate(TimeOfDAy)
 
@@ -32,11 +33,14 @@ func _process(delta: float) -> void:
 		modulate = TimeToColorModulate(TimeOfDAy)
 		if TimeOfDAy > 1950 and not Global.DayEnded or Input.is_action_just_pressed("ADMIN2"):
 			$UI.IntitializeCutscene()
-			$Players/Player.EndDay()
-			Global.DayEnded = true
-			await $UI.AnimationFinished
-			$UI.OpenCookingMenu()
-			await $UI.AnimationFinished
+			if $"UI".IsStarving == true:
+				$"UI".gameover()
+			else:
+				$Players/Player.EndDay()
+				Global.DayEnded = true
+				await $UI.AnimationFinished
+				$UI.OpenCookingMenu()
+				await $UI.AnimationFinished
 		
 
 func TimeToColorModulate(time:float) -> Color:
@@ -64,6 +68,7 @@ func AutoSave(EraseGameData = false):
 		Data.CurrentLevelData["Day"] = Global.CurrentDay
 		Data.CurrentLevelData["Seed"] = $TileMap.SEED
 		Data.CurrentLevelData["LevelCoins"] = $Players/Player.coins
+		Data.CurrentLevelData["IsStarving"] = $"UI".IsStarving
 	Data.SaveData["BoatName"] = $Players/Player.MyBoat
 	Data.SaveData["Coins"] = Global.Coins
 	ResourceSaver.save(Data,Global.SAVE_PATH + Global.SAVE_NAME)

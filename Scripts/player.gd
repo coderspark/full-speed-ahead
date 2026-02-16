@@ -130,10 +130,14 @@ func _on_area_2d_body_entered(_body: Node2D) -> void:
 	$"../../UI/Canvas/HUD/HP".HP = health
 	$"../../UI/Canvas/HUD/HP".Update()
 	if health <= 0:
+		if $Camera.enabled == false:
+			$"../../Camera".traumatize(0.25)
 		$Camera.traumatize(0.25)
 		$"../../UI".gameover()
 		paused = true
 	else:
+		if $Camera.enabled == false:
+			$"../../Camera".traumatize(0.2)
 		$Camera.traumatize(0.2)
 	iframes = IframeLength
 	boatvel = -30

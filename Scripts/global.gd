@@ -10,7 +10,8 @@ var SaveFile : SaveLoadData = null
 var CurrentDay = 1
 var Coins = 0
 var BroughtCoins = 0
-const AdvanceTime = false
+var LevelSelecting = false
+const AdvanceTime = true
 
 const STARTER_BOAT = "Basic_raft"
 
