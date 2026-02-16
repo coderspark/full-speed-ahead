@@ -1700,7 +1700,7 @@ offset_bottom = 196.4303
 scale = Vector2(0.2965745, 0.2965745)
 theme = ExtResource("5_j04uc")
 theme_override_font_sizes/font_size = 80
-text = "Recipe book"
+text = "Open recipe book"
 horizontal_alignment = 1
 vertical_alignment = 1
 clip_text = true
@@ -2320,7 +2320,7 @@ offset_right = 959.86707
 offset_bottom = 48.0
 theme_override_fonts/font = ExtResource("2_5q4fb")
 theme_override_font_sizes/font_size = 96
-text = "RECIPIES"
+text = "RECIPES"
 horizontal_alignment = 1
 
 [node name="Label" type="RichTextLabel" parent="Canvas/RecipeBook"]
