@@ -17,7 +17,7 @@ func _ready() -> void:
 		ResourceSaver.save(SaveLoadData.new(),Global.SAVE_PATH + Global.SAVE_NAME)
 	Global.SaveFile = ResourceLoader.load(Global.SAVE_PATH + Global.SAVE_NAME,"",ResourceLoader.CACHE_MODE_IGNORE).duplicate(true)
 	Global.Coins = Global.SaveFile.SaveData["Coins"]
-	$LevelSelect/Coins.text = str(Global.Coins)
+	$LevelSelect/Coins.text = str("%.1f" % Global.Coins)
 
 func _on_play_pressed() -> void:
 	$MainMenu/Animations.play("Play")
@@ -25,7 +25,7 @@ func _on_play_pressed() -> void:
 func NewGame():
 	Global.SaveFile = SaveLoadData.new()
 	Global.Coins = Global.SaveFile.SaveData["Coins"]
-	$LevelSelect/Coins.text = str(Global.Coins)
+	$LevelSelect/Coins.text = str("%.1f" % Global.Coins)
 	LevelSelect()
 
 
@@ -51,7 +51,7 @@ func LoadGame():
 		LevelSelect()
 
 func LevelSelect():
-	$LevelSelect/Coins.text = str(Global.Coins)
+	$LevelSelect/Coins.text = str("%.1f" % Global.Coins)
 	$Fade/Animations.play("fade_in")
 	await $Fade/Animations.animation_finished
 	$MainMenu.hide()

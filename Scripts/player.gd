@@ -147,7 +147,7 @@ func _on_shop_detection_body_entered(_body: Node2D) -> void:
 	get_tree().paused = true
 	
 func UpdateCoinCount():
-	$"../../UI/Canvas/HUD/Coins".text = str(coins.)
+	$"../../UI/Canvas/HUD/Coins".text = str("%.1f" % coins)
 
 func UpdateBoat(nam : String):
 	MyBoat = nam
