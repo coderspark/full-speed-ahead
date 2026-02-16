@@ -43,41 +43,41 @@ const BOAT_STATS = {
 		"hp":5,
 		"coin_multiplier":1.5
 	},"Reinforced_canoe":{
-		"cost":15,
-		"speed":6,
-		"turn_speed":7,
+		"cost":25,
+		"speed":5,
+		"turn_speed":6,
 		"hp":8,
 		"coin_multiplier":1.5
 	}, "Basic_sailboat":{
-		"cost":25,
-		"speed":6,
-		"turn_speed":4,
-		"hp":7,
+		"cost":40,
+		"speed":5,
+		"turn_speed":8,
+		"hp":10,
 		"coin_multiplier":2.0
 	}, "Improved_sailboat":{
-		"cost":40,
-		"speed":7,
-		"turn_speed":5,
-		"hp":8,
+		"cost":60,
+		"speed":6,
+		"turn_speed":9,
+		"hp":15,
 		"coin_multiplier":2.5
 	}, "Basic_motorboat":{
 		"cost":90,
-		"speed":6,
+		"speed":7,
 		"turn_speed":8,
 		"hp":15,
 		"coin_multiplier":3.0
 	}, "Reinforced_motorboat":{
 		"cost":130,
-		"speed":6,
+		"speed":7,
 		"turn_speed":9,
 		"hp":20,
 		"coin_multiplier":3.5
 	}, "Aircraft_carrier":{
 		"cost":300,
-		"speed":4,
-		"turn_speed":3,
+		"speed":6,
+		"turn_speed":4,
 		"hp":40,
-		"coin_multiplier":5
+		"coin_multiplier":10
 	}
 }
 var FoodItems = {
