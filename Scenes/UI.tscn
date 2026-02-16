@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://dbq85xa0fcnii"]
+[gd_scene load_steps=63 format=3 uid="uid://dbq85xa0fcnii"]
 
 [ext_resource type="Script" uid="uid://klae0u71y1go" path="res://Scripts/UiController.gd" id="1_wi7yl"]
 [ext_resource type="FontFile" uid="uid://dqqnsnb5xkqx7" path="res://Assets/Fonts/8bitoperator_jve.ttf" id="2_5q4fb"]
@@ -238,6 +238,140 @@ texture = ExtResource("3_mqm5i")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wijgc"]
 bg_color = Color(0.23031491, 0.23031494, 0.23031494, 0.4862745)
+
+[sub_resource type="Animation" id="Animation_45jp6"]
+resource_name = "Win"
+length = 3.5
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 1.1, 1.2, 1.3000001, 1.4, 1.5, 1.6, 1.7, 1.8000001, 1.9, 2, 2.1000001, 2.2, 2.3, 2.4, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["", "V", "Vo", "Voy", "Voya", "Voyag", "Voyage", "Voyage ", "Voyage c", "Voyage co", "Voyage com", "Voyage comp", "Voyage compl", "Voyage comple", "Voyage complet", "Voyage complete", "Voyage complete!"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Button:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Button:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 3, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_q6a8d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Button:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Button:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6lb63"]
+_data = {
+&"RESET": SubResource("Animation_q6a8d"),
+&"Win": SubResource("Animation_45jp6")
+}
 
 [sub_resource type="GDScript" id="GDScript_hx8n4"]
 script/source = "extends TextureProgressBar
@@ -3105,22 +3239,26 @@ vertical_alignment = 1
 
 [node name="Victory" type="Panel" parent="Canvas"]
 visible = false
+modulate = Color(1, 1, 1, 0)
 z_index = 255
-offset_right = 963.0
-offset_bottom = 530.0
+offset_right = 960.0
+offset_bottom = 540.0
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_wijgc")
 
 [node name="Label" type="Label" parent="Canvas/Victory"]
 layout_mode = 0
-offset_left = 214.0
 offset_top = 141.0
-offset_right = 754.0
+offset_right = 960.0
 offset_bottom = 221.0
 theme_override_fonts/font = ExtResource("2_5q4fb")
 theme_override_font_sizes/font_size = 80
-text = "Voyage complete!"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Button" type="Button" parent="Canvas/Victory"]
+visible = false
+modulate = Color(1, 1, 1, 0)
 z_index = 5
 layout_mode = 0
 offset_left = 258.0
@@ -3140,6 +3278,11 @@ offset_right = 428.0
 offset_bottom = 72.0
 mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxTexture_wijgc")
+
+[node name="Anims" type="AnimationPlayer" parent="Canvas/Victory"]
+libraries = {
+&"": SubResource("AnimationLibrary_6lb63")
+}
 
 [node name="HUD" type="Control" parent="Canvas"]
 layout_mode = 3

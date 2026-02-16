@@ -79,7 +79,7 @@ func _physics_process(delta: float) -> void:
 	elif GameStarted and !Global.DayEnded:
 		if Input.get_axis("move_left", "move_right") == 0:
 			delta_rot *= 0.9
-		delta_rot += Input.get_axis("move_left","move_right") * turn_velocity
+		delta_rot += Input.get_axis("move_left","move_right") * turn_velocity * 60 * delta
 		if abs(delta_rot) >= max_turn_speed:
 			delta_rot = max_turn_speed * delta_rot/abs(delta_rot)
 		if isbounce:

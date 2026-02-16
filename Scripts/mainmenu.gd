@@ -5,19 +5,21 @@ var tutorial = preload("res://Scenes/Tutorial_scene.tscn")
 @onready var LevelBG = preload("res://Assets/Art/UI/WorldMap/worldmap.png")
 
 func _ready() -> void:
+	get_tree().paused = false
+	$Fade.color = Color.BLACK
 	if Global.LevelSelecting == true:
 		Global.LevelSelecting = false
 		LoadGame()
-	get_tree().paused = false
-	$Fade/Animations.play("fade_out")
-	await $Fade/Animations.animation_finished
-	$LevelSelect.hide()
-	DirAccess.make_dir_absolute(Global.SAVE_PATH)
-	if ResourceLoader.load(Global.SAVE_PATH + Global.SAVE_NAME,"",ResourceLoader.CACHE_MODE_IGNORE) == null:
-		ResourceSaver.save(SaveLoadData.new(),Global.SAVE_PATH + Global.SAVE_NAME)
-	Global.SaveFile = ResourceLoader.load(Global.SAVE_PATH + Global.SAVE_NAME,"",ResourceLoader.CACHE_MODE_IGNORE).duplicate(true)
-	Global.Coins = Global.SaveFile.SaveData["Coins"]
-	$LevelSelect/Coins.text = str("%.1f" % Global.Coins)
+	else:
+		$Fade/Animations.play("fade_out")
+		await $Fade/Animations.animation_finished
+		$LevelSelect.hide()
+		DirAccess.make_dir_absolute(Global.SAVE_PATH)
+		if ResourceLoader.load(Global.SAVE_PATH + Global.SAVE_NAME,"",ResourceLoader.CACHE_MODE_IGNORE) == null:
+			ResourceSaver.save(SaveLoadData.new(),Global.SAVE_PATH + Global.SAVE_NAME)
+		Global.SaveFile = ResourceLoader.load(Global.SAVE_PATH + Global.SAVE_NAME,"",ResourceLoader.CACHE_MODE_IGNORE).duplicate(true)
+		Global.Coins = Global.SaveFile.SaveData["Coins"]
+		$LevelSelect/Coins.text = str("%.1f" % Global.Coins)
 
 func _on_play_pressed() -> void:
 	$MainMenu/Animations.play("Play")
@@ -52,7 +54,10 @@ func LoadGame():
 
 func LevelSelect():
 	$LevelSelect/Coins.text = str("%.1f" % Global.Coins)
-	$Fade/Animations.play("fade_in")
+	if Global.LevelSelecting == true:
+		Global.LevelSelecting = false
+	else:
+		$Fade/Animations.play("fade_in")
 	await $Fade/Animations.animation_finished
 	$MainMenu.hide()
 	$LevelSelect.show()
