@@ -55,7 +55,7 @@ func _ready() -> void:
 		var weights = [0.0, 0.0, 0.0, 0.0, 0.0]
 		for i in range(5):
 			const E = 2.718281828
-			var a = clampf(float(n) / 15.0, 0, 4)
+			var a = clampf(float(n) / 25.0, 0, 4)
 			weights[i] = pow(E, 0 - (pow(float(i)-a,2.0)/0.72)) # strange math 
 		var difficulty = RAND.rand_weighted(PackedFloat32Array(weights))
 		var tplate = 0

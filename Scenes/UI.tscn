@@ -1,12 +1,12 @@
-[gd_scene load_steps=63 format=3 uid="uid://dbq85xa0fcnii"]
+[gd_scene load_steps=77 format=3 uid="uid://dbq85xa0fcnii"]
 
 [ext_resource type="Script" uid="uid://klae0u71y1go" path="res://Scripts/UiController.gd" id="1_wi7yl"]
 [ext_resource type="FontFile" uid="uid://dqqnsnb5xkqx7" path="res://Assets/Fonts/8bitoperator_jve.ttf" id="2_5q4fb"]
 [ext_resource type="Texture2D" uid="uid://b6a7pab0tyxve" path="res://Assets/Art/UI/button.png" id="3_mqm5i"]
 [ext_resource type="Material" uid="uid://bc4ysxhwy2g0s" path="res://Assets/Other/Outline.tres" id="4_vqx31"]
-[ext_resource type="Texture2D" uid="uid://yceukdlf2h3n" path="res://Assets/Art/Boats/Basic_raft.png" id="5_13dyv"]
+[ext_resource type="Texture2D" uid="uid://castaq8a8h8py" path="res://Assets/Art/Boats/Basic_raft.png" id="5_13dyv"]
 [ext_resource type="Theme" uid="uid://bj15hri4ia073" path="res://Assets/Other/UI.tres" id="5_j04uc"]
-[ext_resource type="Script" uid="uid://b5ae5sgnlj8u3" path="res://Scripts/AutoSizeText.gd" id="5_wunin"]
+[ext_resource type="Script" path="res://Scripts/AutoSizeText.gd" id="5_wunin"]
 [ext_resource type="Shader" uid="uid://bp6mwoabhhic" path="res://Assets/Other/outline.gdshader" id="9_b1goy"]
 [ext_resource type="Texture2D" uid="uid://ddfu0ts0312lx" path="res://Assets/Art/Food/Beer.png" id="10_5q4fb"]
 [ext_resource type="Texture2D" uid="uid://48g3qlonocae" path="res://Assets/Art/Food/Green_peas.png" id="11_mqm5i"]
@@ -31,7 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://d4artjbbww8x1" path="res://Assets/Art/Temp/heart_half.png" id="25_qqo6a"]
 [ext_resource type="Texture2D" uid="uid://ckwru7sps6jot" path="res://Assets/Art/UI/day_hud.png" id="30_yhvps"]
 [ext_resource type="Texture2D" uid="uid://bbbiqkrot01ou" path="res://Assets/Art/Temp/time_indicator.png" id="31_tb15e"]
-[ext_resource type="Texture2D" uid="uid://bsv50jkchv85b" path="res://Assets/Art/UI/moon.png" id="32_qqo6a"]
+[ext_resource type="Texture2D" uid="uid://cbygdkrts87qp" path="res://Assets/Art/UI/moon.png" id="32_qqo6a"]
 [ext_resource type="Texture2D" uid="uid://ccdl0u3h0pxwl" path="res://Assets/Art/UI/sun.png" id="33_8ekee"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qxria"]
@@ -54,6 +54,57 @@ shader_parameter/pattern = 0
 shader_parameter/inside = false
 shader_parameter/add_margins = true
 shader_parameter/number_of_images = Vector2(1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qqo6a"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.19076231, 0.19076234, 0.19076231, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8ekee"]
+texture = ExtResource("15_8blbl")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j0pu8"]
+texture = ExtResource("10_5q4fb")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6maro"]
+texture = ExtResource("17_wijgc")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_45jp6"]
+texture = ExtResource("22_8ekee")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q6a8d"]
+texture = ExtResource("11_mqm5i")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6lb63"]
+texture = ExtResource("21_qqo6a")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dgrhb"]
+texture = ExtResource("16_bb0on")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wypb4"]
+texture = ExtResource("19_tb15e")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y1m5i"]
+texture = ExtResource("18_yhvps")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dm5gj"]
+texture = ExtResource("20_qvwwb")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qoydj"]
+texture = ExtResource("12_jnovg")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lolh4"]
+texture = ExtResource("14_us6mg")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gqamb"]
+texture = ExtResource("13_612k1")
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_13dyv"]
 color = Color(1, 1, 1, 1)
@@ -239,6 +290,69 @@ texture = ExtResource("3_mqm5i")
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wijgc"]
 bg_color = Color(0.23031491, 0.23031494, 0.23031494, 0.4862745)
 
+[sub_resource type="Animation" id="Animation_q6a8d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Button:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Button:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_45jp6"]
 resource_name = "Win"
 length = 3.5
@@ -302,69 +416,6 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_q6a8d"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Label:text")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [""]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Button:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Button:modulate")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6lb63"]
@@ -1863,6 +1914,234 @@ theme_override_font_sizes/font_size = 32
 text = "Continue"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="BoughtItems" type="Panel" parent="Canvas/Shop"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 489.0
+offset_right = 909.0
+offset_bottom = 529.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qqo6a")
+
+[node name="Panel1" type="Panel" parent="Canvas/Shop/BoughtItems"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_8ekee")
+
+[node name="Label" type="Label" parent="Canvas/Shop/BoughtItems/Panel1"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 3.0
+offset_right = 76.0
+offset_bottom = 35.0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+text = " 0"
+
+[node name="Panel2" type="Panel" parent="Canvas/Shop/BoughtItems"]
+layout_mode = 0
+offset_left = 64.0
+offset_right = 104.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_j0pu8")
+
+[node name="Label" type="Label" parent="Canvas/Shop/BoughtItems/Panel2"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 3.0
+offset_right = 76.0
+offset_bottom = 35.0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+text = " 0"
+
+[node name="Panel3" type="Panel" parent="Canvas/Shop/BoughtItems"]
+layout_mode = 0
+offset_left = 128.0
+offset_right = 168.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_6maro")
+
+[node name="Label" type="Label" parent="Canvas/Shop/BoughtItems/Panel3"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 3.0
+offset_right = 76.0
+offset_bottom = 35.0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+text = " 0"
+
+[node name="Panel4" type="Panel" parent="Canvas/Shop/BoughtItems"]
+layout_mode = 0
+offset_left = 192.0
+offset_right = 232.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_45jp6")
+
+[node name="Label" type="Label" parent="Canvas/Shop/BoughtItems/Panel4"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 3.0
+offset_right = 76.0
+offset_bottom = 35.0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+text = " 0"
+
+[node name="Panel5" type="Panel" parent="Canvas/Shop/BoughtItems"]
+layout_mode = 0
+offset_left = 256.0
+offset_right = 296.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_q6a8d")
+
+[node name="Label" type="Label" parent="Canvas/Shop/BoughtItems/Panel5"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 3.0
+offset_right = 76.0
+offset_bottom = 35.0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+text = " 0"
+
+[node name="Panel6" type="Panel" parent="Canvas/Shop/BoughtItems"]
+layout_mode = 0
+offset_left = 320.0
+offset_right = 360.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_6lb63")
+
+[node name="Label" type="Label" parent="Canvas/Shop/BoughtItems/Panel6"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 3.0
+offset_right = 76.0
+offset_bottom = 35.0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+text = " 0"
+
+[node name="Panel7" type="Panel" parent="Canvas/Shop/BoughtItems"]
+layout_mode = 0
+offset_left = 384.0
+offset_right = 424.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_dgrhb")
+
+[node name="Label" type="Label" parent="Canvas/Shop/BoughtItems/Panel7"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 3.0
+offset_right = 76.0
+offset_bottom = 35.0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+text = " 0"
+
+[node name="Panel8" type="Panel" parent="Canvas/Shop/BoughtItems"]
+layout_mode = 0
+offset_left = 448.0
+offset_right = 488.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_wypb4")
+
+[node name="Label" type="Label" parent="Canvas/Shop/BoughtItems/Panel8"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 3.0
+offset_right = 76.0
+offset_bottom = 35.0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+text = " 0"
+
+[node name="Panel9" type="Panel" parent="Canvas/Shop/BoughtItems"]
+layout_mode = 0
+offset_left = 512.0
+offset_right = 552.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_y1m5i")
+
+[node name="Label" type="Label" parent="Canvas/Shop/BoughtItems/Panel9"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 3.0
+offset_right = 76.0
+offset_bottom = 35.0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+text = " 0"
+
+[node name="Panel10" type="Panel" parent="Canvas/Shop/BoughtItems"]
+layout_mode = 0
+offset_left = 576.0
+offset_right = 616.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_dm5gj")
+
+[node name="Label" type="Label" parent="Canvas/Shop/BoughtItems/Panel10"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 3.0
+offset_right = 76.0
+offset_bottom = 35.0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+text = " 0"
+
+[node name="Panel11" type="Panel" parent="Canvas/Shop/BoughtItems"]
+layout_mode = 0
+offset_left = 640.0
+offset_right = 680.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_qoydj")
+
+[node name="Label" type="Label" parent="Canvas/Shop/BoughtItems/Panel11"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 3.0
+offset_right = 76.0
+offset_bottom = 35.0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+text = " 0"
+
+[node name="Panel12" type="Panel" parent="Canvas/Shop/BoughtItems"]
+layout_mode = 0
+offset_left = 704.0
+offset_right = 744.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_lolh4")
+
+[node name="Label" type="Label" parent="Canvas/Shop/BoughtItems/Panel12"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 3.0
+offset_right = 76.0
+offset_bottom = 35.0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+text = " 0"
+
+[node name="Panel13" type="Panel" parent="Canvas/Shop/BoughtItems"]
+layout_mode = 0
+offset_left = 768.0
+offset_right = 808.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_gqamb")
+
+[node name="Label" type="Label" parent="Canvas/Shop/BoughtItems/Panel13"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 3.0
+offset_right = 76.0
+offset_bottom = 35.0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+text = " 0"
 
 [node name="Cooking" type="Panel" parent="Canvas"]
 process_mode = 3
