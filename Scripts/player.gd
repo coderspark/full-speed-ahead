@@ -211,6 +211,8 @@ func UpdateBuffs():
 	max_speed = Global.BOAT_STATS[MyBoat]["speed"] * (1+activebuffs[0]) * 10
 	coin_mult = Global.BOAT_STATS[MyBoat]["coin_multiplier"] * (1+activebuffs[3])
 	turn_velocity = max_turn_speed / 30
+	if health > max_health:
+		health = max_health
 	$"../../UI/Canvas/HUD/HP".MAX_HP = max_health
 	$"../../UI/Canvas/HUD/HP".HP = health
 	$"../../UI/Canvas/HUD/HP".Update()

@@ -139,10 +139,10 @@ func OpenCookingMenu() -> void:
 	$Canvas/Cooking/Menu1/Buffs.text = "+10%\n-10%"
 	$Canvas/Cooking/Menu2/Buffs.text = "+10%\n-10%"
 	$Canvas/Cooking/Menu3/Buffs.text = "+10%\n-5%"
-	$Canvas/Cooking/Menu4/Buffs.text = "+3 HP\n-10%"
+	$Canvas/Cooking/Menu4/Buffs.text = "+1 HP\n-10%"
 	$Canvas/Cooking/Menu5/Buffs.text = "+10%\n-5%"
 	$Canvas/Cooking/Menu6/Buffs.text = "+10%\n-5%"
-	$Canvas/Cooking/Menu7/Buffs.text = "+3 HP\n-5%"
+	$Canvas/Cooking/Menu7/Buffs.text = "+2 HP\n-5%"
 	match Global.LastRecipe:
 		0:
 			$Canvas/Cooking/Menu1/Buffs.text = "+0%\n-20%"
