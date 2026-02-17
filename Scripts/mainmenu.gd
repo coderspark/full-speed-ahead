@@ -114,33 +114,33 @@ func _on_paaseiland_mouse_entered() -> void:
 	$LevelSelect/BG.texture = preload("res://Assets/Art/UI/WorldMap/worldmap5.png")
 	$LevelSelect/Info.text = "[font_size=30]Paaseiland
 Difficulty: [color=D30000]Hard[/color]
-Length: [color=D30000]Long[/color]
+Length: [color=D30000]~ 25 Days[/color]
 "
 
 func _on_jakarta_mouse_entered() -> void:
 	$LevelSelect/BG.texture = preload("res://Assets/Art/UI/WorldMap/worldmap4.png")
 	$LevelSelect/Info.text = "[font_size=30]Jakarta
 Difficulty: [color=D30000]Hard[/color]
-Length: [color=D30000]Long[/color]
+Length: [color=D30000]~ 25 Days[/color]
 "
 
 func _on_kaap_de_goede_hoop_mouse_entered() -> void:
 	$LevelSelect/BG.texture = preload("res://Assets/Art/UI/WorldMap/worldmap3.png")
 	$LevelSelect/Info.text = "[font_size=30]Kaap de goede hoop
 Difficulty: [color=FFA500]Medium[/color]
-Length: [color=FFA500]Medium[/color]
+Length: [color=FFA500]~10 Days[/color]
 "
 func _on_portugal_mouse_entered() -> void:
 	$LevelSelect/BG.texture = preload("res://Assets/Art/UI/WorldMap/worldmap2.png")
 	$LevelSelect/Info.text = "[font_size=30]Portugal
 Difficulty: [color=00BF00]Easy[/color]
-Length: [color=00BF00]Short[/color]
+Length: [color=00BF00]~5 Days[/color]
 "
 func _on_engeland_mouse_entered() -> void:
 	$LevelSelect/BG.texture = preload("res://Assets/Art/UI/WorldMap/worldmap1.png")
 	$LevelSelect/Info.text = "[font_size=30]Engeland
 Difficulty: [color=00BF00]Easy[/color]
-Length: [color=00BF00]Short[/color]
+Length: [color=00BF00]~ 2 Days[/color]
 "
 
 func _on_mouse_exited() -> void:

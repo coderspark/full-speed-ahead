@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 [gd_scene load_steps=82 format=3 uid="uid://dbq85xa0fcnii"]
+=======
+[gd_scene load_steps=78 format=3 uid="uid://dbq85xa0fcnii"]
+>>>>>>> e0e4826 (AAAAAAAAAAAAA)
 
 [ext_resource type="Script" uid="uid://klae0u71y1go" path="res://Scripts/UiController.gd" id="1_wi7yl"]
 [ext_resource type="FontFile" uid="uid://dqqnsnb5xkqx7" path="res://Assets/Fonts/8bitoperator_jve.ttf" id="2_5q4fb"]
@@ -1364,8 +1368,7 @@ grow_horizontal = 2
 theme_override_fonts/font = ExtResource("2_5q4fb")
 theme_override_font_sizes/font_size = 32
 action_mode = 0
-text = "RESET
-"
+text = "MENU"
 flat = true
 
 [node name="Bg" type="Panel" parent="Canvas/GameOver/restart"]
@@ -3953,7 +3956,7 @@ libraries = {
 &"": SubResource("AnimationLibrary_b1goy")
 }
 
-[connection signal="pressed" from="Canvas/GameOver/restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Canvas/GameOver/restart" to="." method="_on_deathmenu_pressed"]
 [connection signal="pressed" from="Canvas/GameOver/quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="Canvas/Shop/Boat1" to="." method="ShopButtonPressed" binds= [0]]
 [connection signal="pressed" from="Canvas/Shop/Boat2" to="." method="ShopButtonPressed" binds= [1]]

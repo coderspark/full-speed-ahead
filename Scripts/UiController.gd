@@ -60,10 +60,15 @@ func gameover():
 	get_tree().paused = true
 	$Canvas/GameOver.visible = true
 
-func _on_restart_pressed() -> void:
-	get_tree().paused = false
-	$Canvas/GameOver/restart.disabled = true
-	RestartGame.emit()
+func _on_deathmenu_pressed() -> void:
+	print("begone with thee")
+	$Animations.play("FadeToBlack")
+	await $Animations.animation_finished
+	Global.Coins += Global.BroughtCoins / 2.0
+	Global.BroughtCoins = 0
+	Global.LevelSelecting = true
+	$"..".AutoSave(true)
+	get_tree().reload_current_scene()
 
 func _on_button_pressed() -> void:
 	'''
