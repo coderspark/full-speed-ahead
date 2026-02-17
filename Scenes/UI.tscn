@@ -1,61 +1,3985 @@
-[gd_scene load_steps=7 format=3 uid="uid://cg0emm81rktqu"]
+[gd_scene load_steps=82 format=3 uid="uid://cg0emm81rktqu"]
 
-[ext_resource type="Script" uid="uid://cqmx4lw13bmqq" path="res://Scripts/player.gd" id="1_dewlx"]
-[ext_resource type="Texture2D" uid="uid://b2tmbt6em7hbg" path="res://Assets/Art/Boats/Improved_sailboat.png" id="2_hfhsn"]
-[ext_resource type="Script" uid="uid://c8g6ktdc8jrtq" path="res://Scripts/shake.gd" id="3_qwshj"]
+[ext_resource type="Script" uid="uid://klae0u71y1go" path="res://Scripts/UiController.gd" id="1_wi7yl"]
+[ext_resource type="FontFile" uid="uid://dqqnsnb5xkqx7" path="res://Assets/Fonts/8bitoperator_jve.ttf" id="2_5q4fb"]
+[ext_resource type="Texture2D" uid="uid://b6a7pab0tyxve" path="res://Assets/Art/UI/button.png" id="3_mqm5i"]
+[ext_resource type="Material" uid="uid://bc4ysxhwy2g0s" path="res://Assets/Other/Outline.tres" id="4_vqx31"]
+[ext_resource type="Texture2D" uid="uid://yceukdlf2h3n" path="res://Assets/Art/Boats/Basic_raft.png" id="5_13dyv"]
+[ext_resource type="Theme" uid="uid://bj15hri4ia073" path="res://Assets/Other/UI.tres" id="5_j04uc"]
+[ext_resource type="Script" uid="uid://b5ae5sgnlj8u3" path="res://Scripts/AutoSizeText.gd" id="5_wunin"]
+[ext_resource type="Shader" uid="uid://bp6mwoabhhic" path="res://Assets/Other/outline.gdshader" id="9_b1goy"]
+[ext_resource type="Texture2D" uid="uid://ddfu0ts0312lx" path="res://Assets/Art/Food/Beer.png" id="10_5q4fb"]
+[ext_resource type="Texture2D" uid="uid://o1lkaeiikyn3" path="res://Assets/Art/Temp/heart_full.png" id="10_8ekee"]
+[ext_resource type="Texture2D" uid="uid://48g3qlonocae" path="res://Assets/Art/Food/Green_peas.png" id="11_mqm5i"]
+[ext_resource type="Texture2D" uid="uid://drj77blyscrtv" path="res://Assets/Art/UI/under.png" id="12_612k1"]
+[ext_resource type="Texture2D" uid="uid://cuhqy5hyng077" path="res://Assets/Art/Food/Stockfish.png" id="12_jnovg"]
+[ext_resource type="Texture2D" uid="uid://cy06c06hp1473" path="res://Assets/Art/Food/Wine.png" id="13_612k1"]
+[ext_resource type="Texture2D" uid="uid://cxq572smso73i" path="res://Assets/Art/UI/over.png" id="13_us6mg"]
+[ext_resource type="Texture2D" uid="uid://lq770elr4qd3" path="res://Assets/Art/UI/speed i need this.png" id="13_wijgc"]
+[ext_resource type="Texture2D" uid="uid://ykh1qxd24nqw" path="res://Assets/Art/UI/progress.png" id="14_8blbl"]
+[ext_resource type="Texture2D" uid="uid://ju0cfa87q7y7" path="res://Assets/Art/Food/White_beans.png" id="14_us6mg"]
+[ext_resource type="Texture2D" uid="uid://hr83bwn7weob" path="res://Assets/Art/UI/turnspeed.png" id="14_yhvps"]
+[ext_resource type="Texture2D" uid="uid://bw2gvkaylchw8" path="res://Assets/Art/UI/coinicon.png" id="15_5q4fb"]
+[ext_resource type="Texture2D" uid="uid://c07wlrhqphoo1" path="res://Assets/Art/Food/Bacon.png" id="15_8blbl"]
+[ext_resource type="Texture2D" uid="uid://yj8xo7xqt78s" path="res://Assets/Art/Food/Pickles.png" id="16_bb0on"]
+[ext_resource type="Texture2D" uid="uid://cxk55vrinnveb" path="res://Assets/Art/Food/Gin.png" id="17_wijgc"]
+[ext_resource type="Texture2D" uid="uid://c748m3q710kh1" path="res://Assets/Art/Food/Rice.png" id="18_yhvps"]
+[ext_resource type="Texture2D" uid="uid://djigu2aubplr8" path="res://Assets/Art/UI/coinmultiplier.png" id="19_qvwwb"]
+[ext_resource type="Texture2D" uid="uid://m23texk02jt4" path="res://Assets/Art/Food/Plums.png" id="19_tb15e"]
+[ext_resource type="Texture2D" uid="uid://behdyw227rco3" path="res://Assets/Art/Food/Sauerkraut.png" id="20_qvwwb"]
+[ext_resource type="Texture2D" uid="uid://bck2didbov47y" path="res://Assets/Art/Food/Meat.png" id="21_qqo6a"]
+[ext_resource type="Texture2D" uid="uid://co0vjrp5sm16f" path="res://Assets/Art/Food/Gray_peas.png" id="22_8ekee"]
+[ext_resource type="Texture2D" uid="uid://d4artjbbww8x1" path="res://Assets/Art/Temp/heart_half.png" id="25_qqo6a"]
+[ext_resource type="Texture2D" uid="uid://ckwru7sps6jot" path="res://Assets/Art/UI/day_hud.png" id="30_yhvps"]
+[ext_resource type="Texture2D" uid="uid://bbbiqkrot01ou" path="res://Assets/Art/Temp/time_indicator.png" id="31_tb15e"]
+[ext_resource type="Texture2D" uid="uid://bsv50jkchv85b" path="res://Assets/Art/UI/moon.png" id="32_qqo6a"]
+[ext_resource type="Texture2D" uid="uid://ccdl0u3h0pxwl" path="res://Assets/Art/UI/sun.png" id="33_8ekee"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gntrk"]
-size = Vector2(8.563637, 4)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qxria"]
+bg_color = Color(0.19, 0.19, 0.19, 0.6666667)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dewec"]
-size = Vector2(12, 6)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f140w"]
+texture = ExtResource("3_mqm5i")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kyqiw"]
-size = Vector2(13, 6)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b1goy"]
+texture = ExtResource("3_mqm5i")
 
-[node name="Player" type="CharacterBody2D"]
-collision_layer = 128
-script = ExtResource("1_dewlx")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vqx31"]
+texture = ExtResource("3_mqm5i")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1.71, 0)
-scale = Vector2(1.1, 1.1)
-shape = SubResource("RectangleShape2D_gntrk")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n04ve"]
+shader = ExtResource("9_b1goy")
+shader_parameter/color = Color(0, 0, 0, 1)
+shader_parameter/width = 1.0
+shader_parameter/pattern = 0
+shader_parameter/inside = false
+shader_parameter/add_margins = true
+shader_parameter/number_of_images = Vector2(1, 1)
 
-[node name="Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("2_hfhsn")
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qqo6a"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.19076231, 0.19076234, 0.19076231, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
 
-[node name="Camera" type="Camera2D" parent="."]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8ekee"]
+texture = ExtResource("15_8blbl")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_j0pu8"]
+texture = ExtResource("10_5q4fb")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6maro"]
+texture = ExtResource("17_wijgc")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_45jp6"]
+texture = ExtResource("22_8ekee")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q6a8d"]
+texture = ExtResource("11_mqm5i")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6lb63"]
+texture = ExtResource("21_qqo6a")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dgrhb"]
+texture = ExtResource("16_bb0on")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wypb4"]
+texture = ExtResource("19_tb15e")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y1m5i"]
+texture = ExtResource("18_yhvps")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dm5gj"]
+texture = ExtResource("20_qvwwb")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qoydj"]
+texture = ExtResource("12_jnovg")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lolh4"]
+texture = ExtResource("14_us6mg")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gqamb"]
+texture = ExtResource("13_612k1")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8ekee"]
+load_path = "res://.godot/imported/button.png-7bf39ec41f5470cd3f2a19a483cb226a.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q8m6m"]
+texture = SubResource("CompressedTexture2D_8ekee")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1lsdj"]
+load_path = "res://.godot/imported/button.png-7bf39ec41f5470cd3f2a19a483cb226a.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mtrk6"]
+texture = SubResource("CompressedTexture2D_1lsdj")
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_13dyv"]
+color = Color(1, 1, 1, 1)
+thickness = 3
+vertical = true
+
+[sub_resource type="Animation" id="Animation_wi7yl"]
+resource_name = "Countdown"
+length = 4.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.70000005, 1.0000002, 1.0999997, 1.7000002, 2.0000002, 2.0999997, 2.7, 3.0000002, 3.0999997, 3.6999998),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -100), Vector2(0, 20), Vector2(0, 20), Vector2(0, -100), Vector2(0, 20), Vector2(0, 20), Vector2(0, -100), Vector2(0, 20), Vector2(0, 20), Vector2(0, -100), Vector2(0, 20)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:theme_override_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.70000005, 1.0000002, 1.7000002, 2.0000002, 2.7, 3.0000002, 3.6999998, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.0000002, 2.0000002, 3.0000002, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": ["3
+", "2", "1", "GO", "4"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Label:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.099999905, 1.0000002, 1.0999997, 2.0000002, 2.0999997, 3.0000002, 3.0999997),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true, false, true, false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(3.6999998, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.0885599, 0.0885599, 0.0885599, 0.4117647), Color(0.09, 0.09, 0.09, 0)]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../..")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"CallStartGame"
+}]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_5q4fb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(512, -240)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:theme_override_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["5"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Label:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.0885599, 0.0885599, 0.0885599, 0.4117647)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mqm5i"]
+_data = {
+&"Countdown": SubResource("Animation_wi7yl"),
+&"RESET": SubResource("Animation_5q4fb")
+}
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wijgc"]
+texture = ExtResource("3_mqm5i")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wijgc"]
+bg_color = Color(0.23031491, 0.23031494, 0.23031494, 0.4862745)
+
+[sub_resource type="Animation" id="Animation_q6a8d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Button:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Button:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_45jp6"]
+resource_name = "Win"
+length = 3.5
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 1.1, 1.2, 1.3000001, 1.4, 1.5, 1.6, 1.7, 1.8000001, 1.9, 2, 2.1000001, 2.2, 2.3, 2.4, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["", "V", "Vo", "Voy", "Voya", "Voyag", "Voyage", "Voyage ", "Voyage c", "Voyage co", "Voyage com", "Voyage comp", "Voyage compl", "Voyage comple", "Voyage complet", "Voyage complete", "Voyage complete!"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Button:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Button:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 3, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6lb63"]
+_data = {
+&"RESET": SubResource("Animation_q6a8d"),
+&"Win": SubResource("Animation_45jp6")
+}
+
+[sub_resource type="GDScript" id="GDScript_hx8n4"]
+script/source = "extends TextureProgressBar
+
+var HP := 5.0
+var MAX_HP := 5.0
+
+func _ready() -> void:
+	Update()
+
+
+func Update():
+	if HP > MAX_HP:
+		HP = MAX_HP
+	max_value = 100
+	$Text.text = str(int(HP)) + \"/\" + str(int(MAX_HP))
+	var hpPercent : float = HP / MAX_HP * 100
+	var tween = create_tween()
+	tween.tween_property(self, \"value\",hpPercent,1).set_trans(Tween.TRANS_SINE)
+	tint_progress = Color.from_hsv(hpPercent/300,1,1)
+		
+"
+
+[sub_resource type="Animation" id="Animation_6maro"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Canvas/HUD/Saving:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Canvas/HUD/Saving:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Saving game"]
+}
+
+[sub_resource type="Animation" id="Animation_j0pu8"]
+resource_name = "Save"
+length = 2.00005
+step = 0.16666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Canvas/HUD/Saving:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.44313726), Color(1, 1, 1, 0.44313726), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Canvas/HUD/Saving:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.33333334, 0.5, 0.6666667, 0.8333334, 1, 1.1666667, 1.3333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["Saving game", "Saving game.", "Saving game..", "Saving game...", "Saving game", "Saving game.", "Saving game..", "Saving game...", "Saving game"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_45jp6"]
+_data = {
+&"RESET": SubResource("Animation_6maro"),
+&"Save": SubResource("Animation_j0pu8")
+}
+
+[sub_resource type="Animation" id="Animation_j04uc"]
+resource_name = "Cinematic_fadein"
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Canvas/Cinematic/Top:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -80), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Canvas/Cinematic/Bottom:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 540), Vector2(0, 460)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Canvas/Cinematic:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Canvas/Cinematic/NextDay/BG:color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Canvas/Cinematic/NextDay/BG:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Canvas/Cinematic/NextDay/Text:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Canvas/Cinematic/NextDay/Text2:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_b1goy"]
+resource_name = "Cinematic_fadeout"
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Canvas/Cinematic/Top:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -80)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Canvas/Cinematic/Bottom:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 459.8178), Vector2(0, 540)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Canvas/Cinematic:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_wijgc"]
+resource_name = "CookingFadeOut"
+length = 0.5
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Canvas/Cooking:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Canvas/Cooking:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_612k1"]
+resource_name = "CookingFadein"
+length = 0.5
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Canvas/Cooking:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Canvas/Cooking:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_8ekee"]
+resource_name = "FadeBackToNormal"
+length = 0.5
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Canvas/Cinematic:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Canvas/Cinematic:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Canvas/Cinematic/NextDay:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Canvas/Cinematic/NextDay:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Canvas/Cinematic/NextDay/Text:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Canvas/Cinematic/NextDay/Text2:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Canvas/Cinematic/NextDay/BG:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Canvas/Cinematic/NextDay/BG:color")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_qqo6a"]
+resource_name = "FadeToBlack"
+length = 0.5
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Canvas/Cinematic:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Canvas/Cinematic:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Canvas/Cinematic/NextDay:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Canvas/Cinematic/NextDay:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Canvas/Cinematic/NextDay/Text:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Canvas/Cinematic/NextDay/Text2:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Canvas/Cinematic/NextDay/BG:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Canvas/Cinematic/NextDay/BG:color")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_vqx31"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Canvas/Cinematic/Top:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -80)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Canvas/Cinematic/Bottom:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 540)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Canvas/Cinematic:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Canvas/Cooking:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Canvas/Cooking:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Canvas/Shop:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Canvas/Shop:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Canvas/Cinematic/NextDay/Text:text")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Canvas/Cinematic:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Canvas/Cinematic/NextDay/Text2:text")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["
+
+"]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Canvas/Cinematic/NextDay/BG:color")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Canvas/Cinematic/NextDay/BG:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Canvas/Cinematic/NextDay/Text:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Canvas/Cinematic/NextDay/Text2:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Canvas/Cinematic/NextDay:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Canvas/Cinematic/NextDay:modulate")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_yhvps"]
+resource_name = "ShopFadein"
+length = 0.5
+step = 0.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Canvas/Shop:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Canvas/Shop:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_tb15e"]
+resource_name = "ShopFadeout"
+length = 0.5
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Canvas/Shop:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Canvas/Shop:modulate")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_qvwwb"]
+resource_name = "next_day"
+length = 5.5
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Canvas/Cinematic/NextDay/BG:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 5, 5.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Canvas/Cinematic/NextDay/Text:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 1.1, 1.2, 1.3000001),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": ["", "D", "DA", "DAY", "DAY "]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.4, 3.9, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": [],
+"method": &"SetCorrectDay"
+}, {
+"args": [],
+"method": &"SetCorrectProgress"
+}, {
+"args": [],
+"method": &"NextDay"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Canvas/Cinematic:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Canvas/Cinematic:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Canvas/Cinematic/NextDay/Text2:text")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 2.5, 2.6000001, 2.7, 2.8, 2.9, 3, 3.1000001, 3.2, 3.3, 3.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["
+
+", "
+
+P", "
+
+PR", "
+
+PRO", "
+
+PROG", "
+
+PROGR", "
+
+PROGRE", "
+
+PROGRES", "
+
+PROGRESS", "
+
+PROGRESS:", "
+
+PROGRESS: "]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Canvas/Cinematic/NextDay/BG:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 5.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Canvas/Cinematic/NextDay/Text:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 5.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Canvas/Cinematic/NextDay/Text2:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 5.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b1goy"]
+_data = {
+&"Cinematic_fadein": SubResource("Animation_j04uc"),
+&"Cinematic_fadeout": SubResource("Animation_b1goy"),
+&"CookingFadeOut": SubResource("Animation_wijgc"),
+&"CookingFadein": SubResource("Animation_612k1"),
+&"FadeBackToNormal": SubResource("Animation_8ekee"),
+&"FadeToBlack": SubResource("Animation_qqo6a"),
+&"RESET": SubResource("Animation_vqx31"),
+&"ShopFadein": SubResource("Animation_yhvps"),
+&"ShopFadeout": SubResource("Animation_tb15e"),
+&"next_day": SubResource("Animation_qvwwb")
+}
+
+[node name="UI" type="Control"]
 process_mode = 3
-zoom = Vector2(2.81, 2.81)
-limit_top = 96
-limit_bottom = 96
-script = ExtResource("3_qwshj")
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_wi7yl")
 
-[node name="Collision Detector" type="Area2D" parent="."]
+[node name="Canvas" type="CanvasLayer" parent="."]
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Collision Detector"]
-position = Vector2(1, 0)
-shape = SubResource("RectangleShape2D_dewec")
+[node name="GameOver" type="Panel" parent="Canvas"]
+process_mode = 2
+visible = false
+z_index = 4
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -640.0443
+offset_bottom = -360.02493
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qxria")
 
-[node name="ShopDetection" type="Area2D" parent="."]
-collision_layer = 4
-collision_mask = 4
+[node name="restart" type="Button" parent="Canvas/GameOver"]
+z_index = 6
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -64.0
+offset_top = 57.991966
+offset_right = 64.0
+offset_bottom = 97.99197
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+action_mode = 0
+text = "RESET
+"
+flat = true
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="ShopDetection"]
-position = Vector2(0.5, 0)
-shape = SubResource("RectangleShape2D_kyqiw")
+[node name="Bg" type="Panel" parent="Canvas/GameOver/restart"]
+z_index = -2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxTexture_f140w")
 
-[node name="Navigation" type="NavigationAgent2D" parent="."]
-target_desired_distance = 5.0
-path_postprocessing = 1
-avoidance_enabled = true
-radius = 20.0
-max_speed = 1000.0
-avoidance_layers = 2
-avoidance_mask = 2
+[node name="quit" type="Button" parent="Canvas/GameOver"]
+z_index = 6
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = 12.012466
+offset_right = 64.0
+offset_bottom = 52.012466
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+action_mode = 0
+text = "QUIT
+"
+flat = true
 
-[connection signal="body_entered" from="Collision Detector" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Collision Detector" to="." method="_on_collision_detector_body_exited"]
-[connection signal="body_entered" from="ShopDetection" to="." method="_on_shop_detection_body_entered"]
-[connection signal="navigation_finished" from="Navigation" to="." method="_on_navigation_finished"]
+[node name="Bg" type="Panel" parent="Canvas/GameOver/quit"]
+z_index = -2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxTexture_f140w")
+
+[node name="TopText" type="Label" parent="Canvas/GameOver"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -90.0
+offset_right = 90.0
+offset_bottom = 48.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 48
+text = "GAME OVER"
+
+[node name="Shop" type="Panel" parent="Canvas"]
+process_mode = 3
+modulate = Color(1, 1, 1, 0)
+z_index = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -0.13293457
+offset_bottom = -0.0748291
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qxria")
+
+[node name="TopText" type="Label" parent="Canvas/Shop"]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 959.86707
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 96
+text = "SHOP"
+horizontal_alignment = 1
+
+[node name="Boat1" type="Button" parent="Canvas/Shop"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_left = 24.0
+offset_top = 96.0
+offset_right = 474.0
+offset_bottom = 192.0
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_b1goy")
+
+[node name="Texture" type="TextureRect" parent="Canvas/Shop/Boat1"]
+z_index = 1
+material = ExtResource("4_vqx31")
+layout_mode = 0
+offset_left = 24.03946
+offset_top = 1.0000004
+offset_right = 120.03946
+offset_bottom = 97.0
+texture = ExtResource("5_13dyv")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Canvas/Shop/Boat1"]
+layout_mode = 0
+offset_left = 155.99998
+offset_top = 11.999999
+offset_right = 884.3162
+offset_bottom = 254.77203
+scale = Vector2(0.2965745, 0.2965745)
+theme = ExtResource("5_j04uc")
+theme_override_font_sizes/font_size = 80
+text = "Basic raft"
+clip_text = true
+script = ExtResource("5_wunin")
+max_font_size = 80
+
+[node name="Coin" type="TextureRect" parent="Canvas/Shop/Boat1"]
+layout_mode = 0
+offset_left = 155.99997
+offset_top = 36.0
+offset_right = 179.99997
+offset_bottom = 60.0
+texture = ExtResource("15_5q4fb")
+stretch_mode = 5
+
+[node name="Boat2" type="Button" parent="Canvas/Shop"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_left = 24.0
+offset_top = 201.0
+offset_right = 474.0
+offset_bottom = 297.0
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_b1goy")
+
+[node name="Texture" type="TextureRect" parent="Canvas/Shop/Boat2"]
+material = ExtResource("4_vqx31")
+layout_mode = 0
+offset_left = 24.03946
+offset_right = 120.03946
+offset_bottom = 96.0
+texture = ExtResource("5_13dyv")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Canvas/Shop/Boat2"]
+layout_mode = 0
+offset_left = 155.99997
+offset_top = 11.99999
+offset_right = 884.31616
+offset_bottom = 254.77208
+scale = Vector2(0.2965745, 0.2965745)
+theme = ExtResource("5_j04uc")
+theme_override_font_sizes/font_size = 80
+text = "Basic raft"
+clip_text = true
+script = ExtResource("5_wunin")
+max_font_size = 80
+
+[node name="Coin" type="TextureRect" parent="Canvas/Shop/Boat2"]
+layout_mode = 0
+offset_left = 155.99997
+offset_top = 36.0
+offset_right = 179.99997
+offset_bottom = 60.0
+texture = ExtResource("15_5q4fb")
+stretch_mode = 5
+
+[node name="Boat3" type="Button" parent="Canvas/Shop"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_left = 24.0
+offset_top = 307.0
+offset_right = 474.0
+offset_bottom = 403.0
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_b1goy")
+
+[node name="Texture" type="TextureRect" parent="Canvas/Shop/Boat3"]
+material = ExtResource("4_vqx31")
+layout_mode = 0
+offset_left = 24.03724
+offset_right = 120.03724
+offset_bottom = 96.0
+texture = ExtResource("5_13dyv")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Canvas/Shop/Boat3"]
+layout_mode = 0
+offset_left = 155.99776
+offset_top = 12.000009
+offset_right = 884.31384
+offset_bottom = 254.77199
+scale = Vector2(0.2965745, 0.2965745)
+theme = ExtResource("5_j04uc")
+theme_override_font_sizes/font_size = 80
+text = "Basic raft"
+clip_text = true
+script = ExtResource("5_wunin")
+max_font_size = 80
+
+[node name="Coin" type="TextureRect" parent="Canvas/Shop/Boat3"]
+layout_mode = 0
+offset_left = 155.99997
+offset_top = 36.0
+offset_right = 179.99997
+offset_bottom = 60.0
+texture = ExtResource("15_5q4fb")
+stretch_mode = 5
+
+[node name="Wharf" type="Button" parent="Canvas/Shop"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_left = 26.0
+offset_top = 420.0
+offset_right = 230.0
+offset_bottom = 478.25623
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_vqx31")
+alignment = 0
+
+[node name="Label" type="Label" parent="Canvas/Shop/Wharf"]
+layout_mode = 0
+offset_right = 687.8541
+offset_bottom = 196.4303
+scale = Vector2(0.2965745, 0.2965745)
+theme = ExtResource("5_j04uc")
+theme_override_font_sizes/font_size = 96
+text = "Your boats"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="Repair" type="Button" parent="Canvas/Shop"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_left = 233.0
+offset_top = 420.0
+offset_right = 474.0
+offset_bottom = 478.25623
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_vqx31")
+disabled = true
+alignment = 0
+
+[node name="Label" type="RichTextLabel" parent="Canvas/Shop/Repair"]
+layout_mode = 0
+offset_right = 812.61206
+offset_bottom = 196.4303
+scale = Vector2(0.2965745, 0.2965745)
+mouse_filter = 2
+theme = ExtResource("5_j04uc")
+bbcode_enabled = true
+text = "[font=res://Assets/Fonts/8bitoperator_jve.ttf][font_size=80]Repair boat ([img=80]res://Assets/Art/UI/coinicon.png[/img]10)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Food1" type="Button" parent="Canvas/Shop"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_left = 504.0
+offset_top = 97.0
+offset_right = 708.0
+offset_bottom = 192.0
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_vqx31")
+
+[node name="Texture" type="TextureRect" parent="Canvas/Shop/Food1"]
+material = SubResource("ShaderMaterial_n04ve")
+layout_mode = 0
+offset_left = 12.0
+offset_top = 11.0
+offset_right = 84.0
+offset_bottom = 83.0
+texture = ExtResource("5_13dyv")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Canvas/Shop/Food1"]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 11.0
+offset_right = 460.15808
+offset_bottom = 253.77203
+scale = Vector2(0.2965745, 0.2965745)
+theme = ExtResource("5_j04uc")
+theme_override_font_sizes/font_size = 80
+text = "Sauerkraut"
+clip_text = true
+
+[node name="Coin" type="TextureRect" parent="Canvas/Shop/Food1"]
+layout_mode = 0
+offset_left = 95.99997
+offset_top = 35.0
+offset_right = 119.99997
+offset_bottom = 59.0
+texture = ExtResource("15_5q4fb")
+stretch_mode = 5
+
+[node name="Food2" type="Button" parent="Canvas/Shop"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_left = 720.0
+offset_top = 96.0
+offset_right = 924.0
+offset_bottom = 191.0
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_vqx31")
+
+[node name="Texture" type="TextureRect" parent="Canvas/Shop/Food2"]
+material = SubResource("ShaderMaterial_n04ve")
+layout_mode = 0
+offset_left = 12.0
+offset_top = 11.0
+offset_right = 84.0
+offset_bottom = 83.0
+texture = ExtResource("5_13dyv")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Canvas/Shop/Food2"]
+layout_mode = 0
+offset_left = 96.00001
+offset_top = 11.000002
+offset_right = 460.1582
+offset_bottom = 253.77203
+scale = Vector2(0.2965745, 0.2965745)
+theme = ExtResource("5_j04uc")
+theme_override_font_sizes/font_size = 80
+text = "Sauerkraut"
+clip_text = true
+
+[node name="Coin" type="TextureRect" parent="Canvas/Shop/Food2"]
+layout_mode = 0
+offset_left = 95.99997
+offset_top = 35.0
+offset_right = 119.99997
+offset_bottom = 59.0
+texture = ExtResource("15_5q4fb")
+stretch_mode = 5
+
+[node name="Food3" type="Button" parent="Canvas/Shop"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_left = 504.0
+offset_top = 201.84003
+offset_right = 708.0
+offset_bottom = 296.84003
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_vqx31")
+
+[node name="Texture" type="TextureRect" parent="Canvas/Shop/Food3"]
+material = SubResource("ShaderMaterial_n04ve")
+layout_mode = 0
+offset_left = 12.0
+offset_top = 11.0
+offset_right = 84.0
+offset_bottom = 83.0
+texture = ExtResource("5_13dyv")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Canvas/Shop/Food3"]
+layout_mode = 0
+offset_left = 96.00001
+offset_top = 11.000002
+offset_right = 460.15808
+offset_bottom = 253.77203
+scale = Vector2(0.2965745, 0.2965745)
+theme = ExtResource("5_j04uc")
+theme_override_font_sizes/font_size = 80
+text = "Groen Erwten"
+clip_text = true
+
+[node name="Coin" type="TextureRect" parent="Canvas/Shop/Food3"]
+layout_mode = 0
+offset_left = 95.99997
+offset_top = 35.0
+offset_right = 119.99997
+offset_bottom = 59.0
+texture = ExtResource("15_5q4fb")
+stretch_mode = 5
+
+[node name="Food4" type="Button" parent="Canvas/Shop"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_left = 720.0
+offset_top = 200.84003
+offset_right = 924.0
+offset_bottom = 295.84003
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_vqx31")
+
+[node name="Texture" type="TextureRect" parent="Canvas/Shop/Food4"]
+material = SubResource("ShaderMaterial_n04ve")
+layout_mode = 0
+offset_left = 12.0
+offset_top = 11.0
+offset_right = 84.0
+offset_bottom = 83.0
+texture = ExtResource("5_13dyv")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Canvas/Shop/Food4"]
+layout_mode = 0
+offset_left = 96.00001
+offset_top = 11.000002
+offset_right = 460.1582
+offset_bottom = 253.77203
+scale = Vector2(0.2965745, 0.2965745)
+theme = ExtResource("5_j04uc")
+theme_override_font_sizes/font_size = 80
+text = "Groen Erwten"
+clip_text = true
+
+[node name="Coin" type="TextureRect" parent="Canvas/Shop/Food4"]
+layout_mode = 0
+offset_left = 95.99997
+offset_top = 35.0
+offset_right = 119.99997
+offset_bottom = 59.0
+texture = ExtResource("15_5q4fb")
+stretch_mode = 5
+
+[node name="Food5" type="Button" parent="Canvas/Shop"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_left = 504.0
+offset_top = 307.0
+offset_right = 708.0
+offset_bottom = 402.0
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_vqx31")
+
+[node name="Texture" type="TextureRect" parent="Canvas/Shop/Food5"]
+material = SubResource("ShaderMaterial_n04ve")
+layout_mode = 0
+offset_left = 12.0
+offset_top = 11.0
+offset_right = 84.0
+offset_bottom = 83.0
+texture = ExtResource("5_13dyv")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Canvas/Shop/Food5"]
+layout_mode = 0
+offset_left = 96.00001
+offset_top = 11.000002
+offset_right = 460.15808
+offset_bottom = 253.77203
+scale = Vector2(0.2965745, 0.2965745)
+theme = ExtResource("5_j04uc")
+theme_override_font_sizes/font_size = 80
+text = "Groen Erwten"
+clip_text = true
+
+[node name="Coin" type="TextureRect" parent="Canvas/Shop/Food5"]
+layout_mode = 0
+offset_left = 95.99997
+offset_top = 35.0
+offset_right = 119.99997
+offset_bottom = 59.0
+texture = ExtResource("15_5q4fb")
+stretch_mode = 5
+
+[node name="Food6" type="Button" parent="Canvas/Shop"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_left = 720.0
+offset_top = 306.0
+offset_right = 924.0
+offset_bottom = 401.0
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxTexture_vqx31")
+
+[node name="Texture" type="TextureRect" parent="Canvas/Shop/Food6"]
+material = SubResource("ShaderMaterial_n04ve")
+layout_mode = 0
+offset_left = 12.0
+offset_top = 11.0
+offset_right = 84.0
+offset_bottom = 83.0
+texture = ExtResource("5_13dyv")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Canvas/Shop/Food6"]
+layout_mode = 0
+offset_left = 96.00001
+offset_top = 11.000002
+offset_right = 460.15845
+offset_bottom = 253.77203
+scale = Vector2(0.2965745, 0.2965745)
+theme = ExtResource("5_j04uc")
+theme_override_font_sizes/font_size = 80
+text = "Groen Erwten"
+clip_text = true
+
+[node name="Coin" type="TextureRect" parent="Canvas/Shop/Food6"]
+layout_mode = 0
+offset_left = 95.99997
+offset_top = 35.0
+offset_right = 119.99997
+offset_bottom = 59.0
+texture = ExtResource("15_5q4fb")
+stretch_mode = 5
+
+[node name="Reroll" type="Button" parent="Canvas/Shop"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_left = 504.0
+offset_top = 420.0
+offset_right = 708.0
+offset_bottom = 478.25623
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_vqx31")
+alignment = 0
+
+[node name="Label" type="Label" parent="Canvas/Shop/Reroll"]
+layout_mode = 0
+offset_left = 24.000008
+offset_right = 266.7721
+offset_bottom = 196.4303
+scale = Vector2(0.2965745, 0.2965745)
+theme = ExtResource("5_j04uc")
+theme_override_font_sizes/font_size = 80
+text = "Reroll"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="Coin" type="TextureRect" parent="Canvas/Shop/Reroll"]
+layout_mode = 0
+offset_left = 100.43439
+offset_top = 12.0
+offset_right = 136.43439
+offset_bottom = 47.99997
+texture = ExtResource("15_5q4fb")
+
+[node name="Cost" type="Label" parent="Canvas/Shop/Reroll"]
+layout_mode = 0
+offset_left = 136.43439
+offset_top = 2.0
+offset_right = 298.2823
+offset_bottom = 191.68665
+scale = Vector2(0.2965745, 0.2965745)
+theme = ExtResource("5_j04uc")
+theme_override_font_sizes/font_size = 80
+text = "FREE"
+vertical_alignment = 1
+clip_text = true
+
+[node name="RecipeBook" type="Button" parent="Canvas/Shop"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_left = 720.0
+offset_top = 418.0
+offset_right = 924.0
+offset_bottom = 476.25623
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_vqx31")
+alignment = 0
+
+[node name="Label" type="Label" parent="Canvas/Shop/RecipeBook"]
+layout_mode = 0
+offset_right = 687.85425
+offset_bottom = 196.4303
+scale = Vector2(0.2965745, 0.2965745)
+theme = ExtResource("5_j04uc")
+theme_override_font_sizes/font_size = 80
+text = "Open recipe book"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="Continue" type="Button" parent="Canvas/Shop"]
+layout_mode = 0
+offset_left = 784.0
+offset_top = 40.0
+offset_right = 928.0
+offset_bottom = 78.48195
+text = "Continue"
+flat = true
+
+[node name="Texture" type="TextureRect" parent="Canvas/Shop/Continue"]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 39.065796
+texture = ExtResource("3_mqm5i")
+
+[node name="Label" type="Label" parent="Canvas/Shop/Continue"]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 38.48195
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+text = "Continue"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BoughtItems" type="Panel" parent="Canvas/Shop"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 489.0
+offset_right = 909.0
+offset_bottom = 529.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qqo6a")
+
+[node name="Panel1" type="Panel" parent="Canvas/Shop/BoughtItems"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_8ekee")
+
+[node name="Label" type="Label" parent="Canvas/Shop/BoughtItems/Panel1"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 3.0
+offset_right = 76.0
+offset_bottom = 35.0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+text = " 0"
+
+[node name="Panel2" type="Panel" parent="Canvas/Shop/BoughtItems"]
+layout_mode = 0
+offset_left = 64.0
+offset_right = 104.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_j0pu8")
+
+[node name="Label" type="Label" parent="Canvas/Shop/BoughtItems/Panel2"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 3.0
+offset_right = 76.0
+offset_bottom = 35.0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+text = " 0"
+
+[node name="Panel3" type="Panel" parent="Canvas/Shop/BoughtItems"]
+layout_mode = 0
+offset_left = 128.0
+offset_right = 168.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_6maro")
+
+[node name="Label" type="Label" parent="Canvas/Shop/BoughtItems/Panel3"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 3.0
+offset_right = 76.0
+offset_bottom = 35.0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+text = " 0"
+
+[node name="Panel4" type="Panel" parent="Canvas/Shop/BoughtItems"]
+layout_mode = 0
+offset_left = 192.0
+offset_right = 232.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_45jp6")
+
+[node name="Label" type="Label" parent="Canvas/Shop/BoughtItems/Panel4"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 3.0
+offset_right = 76.0
+offset_bottom = 35.0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+text = " 0"
+
+[node name="Panel5" type="Panel" parent="Canvas/Shop/BoughtItems"]
+layout_mode = 0
+offset_left = 256.0
+offset_right = 296.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_q6a8d")
+
+[node name="Label" type="Label" parent="Canvas/Shop/BoughtItems/Panel5"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 3.0
+offset_right = 76.0
+offset_bottom = 35.0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+text = " 0"
+
+[node name="Panel6" type="Panel" parent="Canvas/Shop/BoughtItems"]
+layout_mode = 0
+offset_left = 320.0
+offset_right = 360.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_6lb63")
+
+[node name="Label" type="Label" parent="Canvas/Shop/BoughtItems/Panel6"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 3.0
+offset_right = 76.0
+offset_bottom = 35.0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+text = " 0"
+
+[node name="Panel7" type="Panel" parent="Canvas/Shop/BoughtItems"]
+layout_mode = 0
+offset_left = 384.0
+offset_right = 424.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_dgrhb")
+
+[node name="Label" type="Label" parent="Canvas/Shop/BoughtItems/Panel7"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 3.0
+offset_right = 76.0
+offset_bottom = 35.0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+text = " 0"
+
+[node name="Panel8" type="Panel" parent="Canvas/Shop/BoughtItems"]
+layout_mode = 0
+offset_left = 448.0
+offset_right = 488.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_wypb4")
+
+[node name="Label" type="Label" parent="Canvas/Shop/BoughtItems/Panel8"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 3.0
+offset_right = 76.0
+offset_bottom = 35.0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+text = " 0"
+
+[node name="Panel9" type="Panel" parent="Canvas/Shop/BoughtItems"]
+layout_mode = 0
+offset_left = 512.0
+offset_right = 552.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_y1m5i")
+
+[node name="Label" type="Label" parent="Canvas/Shop/BoughtItems/Panel9"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 3.0
+offset_right = 76.0
+offset_bottom = 35.0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+text = " 0"
+
+[node name="Panel10" type="Panel" parent="Canvas/Shop/BoughtItems"]
+layout_mode = 0
+offset_left = 576.0
+offset_right = 616.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_dm5gj")
+
+[node name="Label" type="Label" parent="Canvas/Shop/BoughtItems/Panel10"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 3.0
+offset_right = 76.0
+offset_bottom = 35.0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+text = " 0"
+
+[node name="Panel11" type="Panel" parent="Canvas/Shop/BoughtItems"]
+layout_mode = 0
+offset_left = 640.0
+offset_right = 680.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_qoydj")
+
+[node name="Label" type="Label" parent="Canvas/Shop/BoughtItems/Panel11"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 3.0
+offset_right = 76.0
+offset_bottom = 35.0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+text = " 0"
+
+[node name="Panel12" type="Panel" parent="Canvas/Shop/BoughtItems"]
+layout_mode = 0
+offset_left = 704.0
+offset_right = 744.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_lolh4")
+
+[node name="Label" type="Label" parent="Canvas/Shop/BoughtItems/Panel12"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 3.0
+offset_right = 76.0
+offset_bottom = 35.0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+text = " 0"
+
+[node name="Panel13" type="Panel" parent="Canvas/Shop/BoughtItems"]
+layout_mode = 0
+offset_left = 768.0
+offset_right = 808.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_gqamb")
+
+[node name="Label" type="Label" parent="Canvas/Shop/BoughtItems/Panel13"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 3.0
+offset_right = 76.0
+offset_bottom = 35.0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+text = " 0"
+
+[node name="Boats" type="Panel" parent="Canvas"]
+process_mode = 3
+visible = false
+z_index = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -0.13293457
+offset_bottom = -0.0748291
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qxria")
+
+[node name="TopText" type="Label" parent="Canvas/Boats"]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 959.86707
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 96
+text = "WHARF"
+horizontal_alignment = 1
+
+[node name="BackToCooking" type="Button" parent="Canvas/Boats"]
+layout_mode = 0
+offset_left = 784.0
+offset_top = 40.0
+offset_right = 912.0
+offset_bottom = 78.48195
+flat = true
+
+[node name="Texture" type="TextureRect" parent="Canvas/Boats/BackToCooking"]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 39.065796
+texture = ExtResource("3_mqm5i")
+
+[node name="Label" type="Label" parent="Canvas/Boats/BackToCooking"]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 38.48195
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+text = "Back"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="RichTextLabel" parent="Canvas/Boats"]
+z_index = 11
+layout_mode = 0
+offset_left = 26.400024
+offset_top = 91.065796
+offset_right = 331.94012
+offset_bottom = 499.5255
+mouse_filter = 2
+bbcode_enabled = true
+text = "[font=res://Assets/Fonts/8bitoperator_jve.ttf][font_size=24][img=32]res://Assets/Art/Food/Stockfish.png[/img] Stockfish: 1 portion"
+
+[node name="Info" type="Control" parent="Canvas/Boats"]
+visible = false
+anchors_preset = 0
+offset_top = -40.0
+offset_right = 40.0
+mouse_filter = 2
+
+[node name="Image" type="TextureRect" parent="Canvas/Boats/Info"]
+layout_mode = 0
+offset_left = 332.0
+offset_top = 122.0
+offset_right = 442.0
+offset_bottom = 232.0
+mouse_filter = 2
+texture = ExtResource("5_13dyv")
+
+[node name="Name" type="Label" parent="Canvas/Boats/Info"]
+layout_mode = 0
+offset_left = 457.0
+offset_top = 146.0
+offset_right = 721.0
+offset_bottom = 210.0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 48
+text = "Basic raft"
+
+[node name="HP" type="Label" parent="Canvas/Boats/Info"]
+layout_mode = 0
+offset_left = 408.0
+offset_top = 236.0
+offset_right = 456.0
+offset_bottom = 276.0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+text = "3 HP"
+vertical_alignment = 1
+
+[node name="texture" type="TextureRect" parent="Canvas/Boats/Info/HP"]
+layout_mode = 0
+offset_left = -56.0
+offset_top = 1.0
+offset_right = -16.0
+offset_bottom = 41.0
+texture = ExtResource("10_8ekee")
+
+[node name="Speed" type="Label" parent="Canvas/Boats/Info"]
+layout_mode = 0
+offset_left = 408.0
+offset_top = 286.0
+offset_right = 456.0
+offset_bottom = 326.0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+text = "6"
+vertical_alignment = 1
+
+[node name="texture" type="TextureRect" parent="Canvas/Boats/Info/Speed"]
+layout_mode = 0
+offset_left = -56.0
+offset_top = 1.0
+offset_right = -16.0
+offset_bottom = 41.0
+texture = ExtResource("13_wijgc")
+
+[node name="TurnSpeed" type="Label" parent="Canvas/Boats/Info"]
+layout_mode = 0
+offset_left = 408.0
+offset_top = 336.0
+offset_right = 456.0
+offset_bottom = 376.0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+text = "6"
+vertical_alignment = 1
+
+[node name="texture" type="TextureRect" parent="Canvas/Boats/Info/TurnSpeed"]
+layout_mode = 0
+offset_left = -56.0
+offset_top = 1.0
+offset_right = -16.0
+offset_bottom = 41.0
+texture = ExtResource("14_yhvps")
+
+[node name="CoinMult" type="Label" parent="Canvas/Boats/Info"]
+layout_mode = 0
+offset_left = 408.0
+offset_top = 385.0
+offset_right = 456.0
+offset_bottom = 425.0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+text = "6"
+vertical_alignment = 1
+
+[node name="texture" type="TextureRect" parent="Canvas/Boats/Info/CoinMult"]
+layout_mode = 0
+offset_left = -56.0
+offset_top = 1.0
+offset_right = -16.0
+offset_bottom = 41.0
+mouse_filter = 2
+texture = ExtResource("19_qvwwb")
+
+[node name="Select" type="Button" parent="Canvas/Boats/Info"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_left = 349.0
+offset_top = 442.0
+offset_right = 541.0
+offset_bottom = 490.0
+focus_mode = 0
+mouse_filter = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_b1goy")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_q8m6m")
+theme_override_styles/hover = SubResource("StyleBoxTexture_mtrk6")
+text = "Select"
+
+[node name="Hovers" type="Control" parent="Canvas/Boats"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="Cooking" type="Panel" parent="Canvas"]
+process_mode = 3
+visible = false
+modulate = Color(1, 1, 1, 0)
+z_index = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -0.13293457
+offset_bottom = -0.0748291
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TopText" type="Label" parent="Canvas/Cooking"]
+z_index = 11
+layout_mode = 0
+offset_top = 1.0
+offset_right = 959.86707
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 96
+text = "COOKING"
+horizontal_alignment = 1
+
+[node name="Label" type="RichTextLabel" parent="Canvas/Cooking"]
+z_index = 11
+layout_mode = 0
+offset_left = 26.400024
+offset_top = 91.065796
+offset_right = 331.94012
+offset_bottom = 499.5255
+bbcode_enabled = true
+text = "[font=res://Assets/Fonts/8bitoperator_jve.ttf][font_size=24][img=32]res://Assets/Art/Food/Stockfish.png[/img] Stockfish: 1 portion"
+
+[node name="Menu1" type="Button" parent="Canvas/Cooking"]
+z_index = 11
+layout_mode = 0
+offset_left = 384.00006
+offset_top = 96.0
+offset_right = 914.0
+offset_bottom = 144.0
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+text = "Menu 1             +        +"
+alignment = 0
+
+[node name="Texture1" type="TextureRect" parent="Canvas/Cooking/Menu1"]
+layout_mode = 0
+offset_left = 111.67108
+offset_top = 1.0
+offset_right = 158.34216
+offset_bottom = 48.0
+texture = ExtResource("10_5q4fb")
+
+[node name="Texture2" type="TextureRect" parent="Canvas/Cooking/Menu1"]
+layout_mode = 0
+offset_left = 173.76324
+offset_top = 1.0
+offset_right = 220.43433
+offset_bottom = 48.0
+texture = ExtResource("11_mqm5i")
+
+[node name="Texture3" type="TextureRect" parent="Canvas/Cooking/Menu1"]
+layout_mode = 0
+offset_left = 239.99994
+offset_top = 1.0
+offset_right = 286.67102
+offset_bottom = 48.0
+texture = ExtResource("12_jnovg")
+
+[node name="Buff" type="TextureRect" parent="Canvas/Cooking/Menu1"]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 2.0
+offset_right = 454.0
+offset_bottom = 22.0
+texture = ExtResource("13_wijgc")
+
+[node name="Debuff" type="TextureRect" parent="Canvas/Cooking/Menu1"]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 26.0
+offset_right = 454.0
+offset_bottom = 46.0
+texture = ExtResource("14_yhvps")
+
+[node name="Buffs" type="Label" parent="Canvas/Cooking/Menu1"]
+layout_mode = 0
+offset_left = 459.417
+offset_top = 1.0
+offset_right = 515.99994
+offset_bottom = 33.0
+scale = Vector2(1.5, 1.5)
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 16
+text = "+10%
+-10%"
+
+[node name="Seperator" type="VSeparator" parent="Canvas/Cooking/Menu1"]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 4.159973
+offset_right = 105.0
+offset_bottom = 44.840027
+theme_override_styles/separator = SubResource("StyleBoxLine_13dyv")
+
+[node name="Menu2" type="Button" parent="Canvas/Cooking"]
+z_index = 11
+layout_mode = 0
+offset_left = 384.00006
+offset_top = 156.0
+offset_right = 914.0
+offset_bottom = 204.0
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+text = "Menu 2             +        +        +"
+alignment = 0
+
+[node name="Texture1" type="TextureRect" parent="Canvas/Cooking/Menu2"]
+layout_mode = 0
+offset_left = 111.67108
+offset_top = 1.0
+offset_right = 158.34216
+offset_bottom = 48.0
+texture = ExtResource("13_612k1")
+
+[node name="Texture2" type="TextureRect" parent="Canvas/Cooking/Menu2"]
+layout_mode = 0
+offset_left = 173.76324
+offset_top = 1.0
+offset_right = 220.43433
+offset_bottom = 48.0
+texture = ExtResource("14_us6mg")
+
+[node name="Texture3" type="TextureRect" parent="Canvas/Cooking/Menu2"]
+layout_mode = 0
+offset_left = 239.99994
+offset_top = 1.0
+offset_right = 286.67102
+offset_bottom = 48.0
+texture = ExtResource("15_8blbl")
+
+[node name="Texture4" type="TextureRect" parent="Canvas/Cooking/Menu2"]
+layout_mode = 0
+offset_left = 299.99994
+offset_top = 1.0
+offset_right = 346.67102
+offset_bottom = 48.0
+texture = ExtResource("16_bb0on")
+
+[node name="Buff" type="TextureRect" parent="Canvas/Cooking/Menu2"]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 2.0
+offset_right = 454.0
+offset_bottom = 22.0
+texture = ExtResource("14_yhvps")
+
+[node name="Debuff" type="TextureRect" parent="Canvas/Cooking/Menu2"]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 26.0
+offset_right = 454.0
+offset_bottom = 46.0
+texture = ExtResource("19_qvwwb")
+
+[node name="Buffs" type="Label" parent="Canvas/Cooking/Menu2"]
+layout_mode = 0
+offset_left = 459.417
+offset_top = 1.0
+offset_right = 515.99994
+offset_bottom = 33.0
+scale = Vector2(1.5, 1.5)
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 16
+text = "+10%
+-10%"
+
+[node name="Seperator" type="VSeparator" parent="Canvas/Cooking/Menu2"]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 4.159973
+offset_right = 105.0
+offset_bottom = 44.840027
+theme_override_styles/separator = SubResource("StyleBoxLine_13dyv")
+
+[node name="Menu3" type="Button" parent="Canvas/Cooking"]
+z_index = 11
+layout_mode = 0
+offset_left = 384.00006
+offset_top = 216.0
+offset_right = 914.0
+offset_bottom = 264.0
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+text = "Menu 3             +        +"
+alignment = 0
+
+[node name="Texture1" type="TextureRect" parent="Canvas/Cooking/Menu3"]
+layout_mode = 0
+offset_left = 111.67108
+offset_top = 1.0
+offset_right = 158.34216
+offset_bottom = 48.0
+texture = ExtResource("17_wijgc")
+
+[node name="Texture2" type="TextureRect" parent="Canvas/Cooking/Menu3"]
+layout_mode = 0
+offset_left = 173.76324
+offset_top = 1.0
+offset_right = 220.43433
+offset_bottom = 48.0
+texture = ExtResource("18_yhvps")
+
+[node name="Texture3" type="TextureRect" parent="Canvas/Cooking/Menu3"]
+layout_mode = 0
+offset_left = 239.99994
+offset_top = 1.0
+offset_right = 286.67102
+offset_bottom = 48.0
+texture = ExtResource("19_tb15e")
+
+[node name="Buff" type="TextureRect" parent="Canvas/Cooking/Menu3"]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 2.0
+offset_right = 454.0
+offset_bottom = 22.0
+texture = ExtResource("19_qvwwb")
+
+[node name="Debuff" type="TextureRect" parent="Canvas/Cooking/Menu3"]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 26.0
+offset_right = 454.0
+offset_bottom = 46.0
+texture = ExtResource("13_wijgc")
+
+[node name="Buffs" type="Label" parent="Canvas/Cooking/Menu3"]
+layout_mode = 0
+offset_left = 459.417
+offset_top = 1.0
+offset_right = 515.99994
+offset_bottom = 33.0
+scale = Vector2(1.5, 1.5)
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 16
+text = "+10%
+-5%"
+
+[node name="Seperator" type="VSeparator" parent="Canvas/Cooking/Menu3"]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 4.159973
+offset_right = 105.0
+offset_bottom = 44.840027
+theme_override_styles/separator = SubResource("StyleBoxLine_13dyv")
+
+[node name="Menu4" type="Button" parent="Canvas/Cooking"]
+z_index = 11
+layout_mode = 0
+offset_left = 384.00006
+offset_top = 276.0
+offset_right = 914.0
+offset_bottom = 324.0
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+text = "Menu 4             +        +"
+alignment = 0
+
+[node name="Texture1" type="TextureRect" parent="Canvas/Cooking/Menu4"]
+layout_mode = 0
+offset_left = 111.67108
+offset_top = 1.0
+offset_right = 158.34216
+offset_bottom = 48.0
+texture = ExtResource("13_612k1")
+
+[node name="Texture2" type="TextureRect" parent="Canvas/Cooking/Menu4"]
+layout_mode = 0
+offset_left = 173.76324
+offset_top = 1.0
+offset_right = 220.43433
+offset_bottom = 48.0
+texture = ExtResource("20_qvwwb")
+
+[node name="Texture3" type="TextureRect" parent="Canvas/Cooking/Menu4"]
+layout_mode = 0
+offset_left = 239.99994
+offset_top = 1.0
+offset_right = 286.67102
+offset_bottom = 48.0
+texture = ExtResource("21_qqo6a")
+
+[node name="Buff" type="TextureRect" parent="Canvas/Cooking/Menu4"]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 2.0
+offset_right = 454.0
+offset_bottom = 22.0
+texture = ExtResource("25_qqo6a")
+
+[node name="Debuff" type="TextureRect" parent="Canvas/Cooking/Menu4"]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 26.0
+offset_right = 454.0
+offset_bottom = 46.0
+texture = ExtResource("19_qvwwb")
+
+[node name="Buffs" type="Label" parent="Canvas/Cooking/Menu4"]
+layout_mode = 0
+offset_left = 459.417
+offset_top = 1.0
+offset_right = 515.99994
+offset_bottom = 33.0
+scale = Vector2(1.5, 1.5)
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 16
+text = "+1 HP 
+-10%"
+
+[node name="Seperator" type="VSeparator" parent="Canvas/Cooking/Menu4"]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 4.159973
+offset_right = 105.0
+offset_bottom = 44.840027
+theme_override_styles/separator = SubResource("StyleBoxLine_13dyv")
+
+[node name="Menu5" type="Button" parent="Canvas/Cooking"]
+z_index = 11
+layout_mode = 0
+offset_left = 384.00006
+offset_top = 336.0
+offset_right = 914.0
+offset_bottom = 384.0
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+text = "Menu 5             +        +"
+alignment = 0
+
+[node name="Texture1" type="TextureRect" parent="Canvas/Cooking/Menu5"]
+layout_mode = 0
+offset_left = 111.67108
+offset_top = 1.0
+offset_right = 158.34216
+offset_bottom = 48.0
+texture = ExtResource("17_wijgc")
+
+[node name="Texture2" type="TextureRect" parent="Canvas/Cooking/Menu5"]
+layout_mode = 0
+offset_left = 173.76324
+offset_top = 1.0
+offset_right = 220.43433
+offset_bottom = 48.0
+texture = ExtResource("11_mqm5i")
+
+[node name="Texture3" type="TextureRect" parent="Canvas/Cooking/Menu5"]
+layout_mode = 0
+offset_left = 239.99994
+offset_top = 1.0
+offset_right = 286.67102
+offset_bottom = 48.0
+texture = ExtResource("15_8blbl")
+
+[node name="Buff" type="TextureRect" parent="Canvas/Cooking/Menu5"]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 2.0
+offset_right = 454.0
+offset_bottom = 22.0
+texture = ExtResource("14_yhvps")
+
+[node name="Debuff" type="TextureRect" parent="Canvas/Cooking/Menu5"]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 26.0
+offset_right = 454.0
+offset_bottom = 46.0
+texture = ExtResource("13_wijgc")
+
+[node name="Buffs" type="Label" parent="Canvas/Cooking/Menu5"]
+layout_mode = 0
+offset_left = 459.417
+offset_top = 1.0
+offset_right = 515.99994
+offset_bottom = 33.0
+scale = Vector2(1.5, 1.5)
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 16
+text = "+10%
+-5%"
+
+[node name="Seperator" type="VSeparator" parent="Canvas/Cooking/Menu5"]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 4.159973
+offset_right = 105.0
+offset_bottom = 44.840027
+theme_override_styles/separator = SubResource("StyleBoxLine_13dyv")
+
+[node name="Menu6" type="Button" parent="Canvas/Cooking"]
+z_index = 11
+layout_mode = 0
+offset_left = 384.00006
+offset_top = 396.0
+offset_right = 914.0
+offset_bottom = 444.0
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+text = "Menu 6             +        +"
+alignment = 0
+
+[node name="Texture1" type="TextureRect" parent="Canvas/Cooking/Menu6"]
+layout_mode = 0
+offset_left = 111.67108
+offset_top = 1.0
+offset_right = 158.34216
+offset_bottom = 48.0
+texture = ExtResource("10_5q4fb")
+
+[node name="Texture2" type="TextureRect" parent="Canvas/Cooking/Menu6"]
+layout_mode = 0
+offset_left = 173.76324
+offset_top = 1.0
+offset_right = 220.43433
+offset_bottom = 48.0
+texture = ExtResource("19_tb15e")
+
+[node name="Texture3" type="TextureRect" parent="Canvas/Cooking/Menu6"]
+layout_mode = 0
+offset_left = 239.99994
+offset_top = 1.0
+offset_right = 286.67102
+offset_bottom = 48.0
+texture = ExtResource("18_yhvps")
+
+[node name="Buff" type="TextureRect" parent="Canvas/Cooking/Menu6"]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 2.0
+offset_right = 454.0
+offset_bottom = 22.0
+texture = ExtResource("19_qvwwb")
+
+[node name="Debuff" type="TextureRect" parent="Canvas/Cooking/Menu6"]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 26.0
+offset_right = 454.0
+offset_bottom = 46.0
+texture = ExtResource("14_yhvps")
+
+[node name="Buffs" type="Label" parent="Canvas/Cooking/Menu6"]
+layout_mode = 0
+offset_left = 459.417
+offset_top = 1.0
+offset_right = 515.99994
+offset_bottom = 33.0
+scale = Vector2(1.5, 1.5)
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 16
+text = "+10%
+-5%"
+
+[node name="Seperator" type="VSeparator" parent="Canvas/Cooking/Menu6"]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 4.159973
+offset_right = 105.0
+offset_bottom = 44.840027
+theme_override_styles/separator = SubResource("StyleBoxLine_13dyv")
+
+[node name="Menu7" type="Button" parent="Canvas/Cooking"]
+z_index = 11
+layout_mode = 0
+offset_left = 384.00006
+offset_top = 456.25623
+offset_right = 914.0
+offset_bottom = 504.25623
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+text = "Menu 7             +        +        +"
+alignment = 0
+
+[node name="Texture1" type="TextureRect" parent="Canvas/Cooking/Menu7"]
+layout_mode = 0
+offset_left = 111.67108
+offset_top = 1.0
+offset_right = 158.34216
+offset_bottom = 48.0
+texture = ExtResource("17_wijgc")
+
+[node name="Texture2" type="TextureRect" parent="Canvas/Cooking/Menu7"]
+layout_mode = 0
+offset_left = 173.76324
+offset_top = 1.0
+offset_right = 220.43433
+offset_bottom = 48.0
+texture = ExtResource("21_qqo6a")
+
+[node name="Texture3" type="TextureRect" parent="Canvas/Cooking/Menu7"]
+layout_mode = 0
+offset_left = 239.99994
+offset_top = 1.0
+offset_right = 286.67102
+offset_bottom = 48.0
+texture = ExtResource("22_8ekee")
+
+[node name="Texture4" type="TextureRect" parent="Canvas/Cooking/Menu7"]
+layout_mode = 0
+offset_left = 299.99994
+offset_top = 1.0
+offset_right = 346.67102
+offset_bottom = 48.0
+texture = ExtResource("16_bb0on")
+
+[node name="Buff" type="TextureRect" parent="Canvas/Cooking/Menu7"]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 2.0
+offset_right = 454.0
+offset_bottom = 22.0
+texture = ExtResource("25_qqo6a")
+
+[node name="Debuff" type="TextureRect" parent="Canvas/Cooking/Menu7"]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 26.0
+offset_right = 454.0
+offset_bottom = 46.0
+texture = ExtResource("13_wijgc")
+
+[node name="Buffs" type="Label" parent="Canvas/Cooking/Menu7"]
+layout_mode = 0
+offset_left = 459.417
+offset_top = 1.0
+offset_right = 515.99994
+offset_bottom = 33.0
+scale = Vector2(1.5, 1.5)
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 16
+text = "+2 HP
+-5%"
+
+[node name="Seperator" type="VSeparator" parent="Canvas/Cooking/Menu7"]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 4.159973
+offset_right = 105.0
+offset_bottom = 44.840027
+theme_override_styles/separator = SubResource("StyleBoxLine_13dyv")
+
+[node name="starvetext" type="Label" parent="Canvas/Cooking"]
+visible = false
+layout_mode = 0
+offset_left = 90.0
+offset_top = 146.0
+offset_right = 903.0
+offset_bottom = 245.0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 48
+text = "You are not able to cook any recipes!
+You have 1 day before your crew will starve."
+
+[node name="Continue" type="Button" parent="Canvas/Cooking"]
+visible = false
+layout_mode = 0
+offset_left = 352.0
+offset_top = 285.0
+offset_right = 612.0
+offset_bottom = 363.133
+text = "Continue"
+flat = true
+
+[node name="Texture" type="TextureRect" parent="Canvas/Cooking/Continue"]
+layout_mode = 0
+offset_right = 260.0
+offset_bottom = 78.133
+texture = ExtResource("3_mqm5i")
+
+[node name="Label" type="Label" parent="Canvas/Cooking/Continue"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 10.0
+offset_right = 245.0
+offset_bottom = 74.0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 64
+text = "Continue"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RecipeBook" type="Panel" parent="Canvas"]
+process_mode = 3
+visible = false
+z_index = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -0.13293457
+offset_bottom = -0.0748291
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TopText" type="Label" parent="Canvas/RecipeBook"]
+z_index = 11
+layout_mode = 0
+offset_top = 1.0
+offset_right = 959.86707
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 96
+text = "RECIPES"
+horizontal_alignment = 1
+
+[node name="Label" type="RichTextLabel" parent="Canvas/RecipeBook"]
+z_index = 11
+layout_mode = 0
+offset_left = 26.400024
+offset_top = 91.065796
+offset_right = 331.94012
+offset_bottom = 499.5255
+bbcode_enabled = true
+text = "[font=res://Assets/Fonts/8bitoperator_jve.ttf][font_size=24][img=32]res://Assets/Art/Food/Stockfish.png[/img] Stockfish: 1 portion"
+
+[node name="Menu1" type="Button" parent="Canvas/RecipeBook"]
+z_index = 11
+layout_mode = 0
+offset_left = 384.00006
+offset_top = 96.0
+offset_right = 914.0
+offset_bottom = 144.0
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+disabled = true
+text = "Menu 1             +        +"
+alignment = 0
+
+[node name="Texture1" type="TextureRect" parent="Canvas/RecipeBook/Menu1"]
+layout_mode = 0
+offset_left = 111.67108
+offset_top = 1.0
+offset_right = 158.34216
+offset_bottom = 48.0
+texture = ExtResource("10_5q4fb")
+
+[node name="Texture2" type="TextureRect" parent="Canvas/RecipeBook/Menu1"]
+layout_mode = 0
+offset_left = 173.76324
+offset_top = 1.0
+offset_right = 220.43433
+offset_bottom = 48.0
+texture = ExtResource("11_mqm5i")
+
+[node name="Texture3" type="TextureRect" parent="Canvas/RecipeBook/Menu1"]
+layout_mode = 0
+offset_left = 239.99994
+offset_top = 1.0
+offset_right = 286.67102
+offset_bottom = 48.0
+texture = ExtResource("12_jnovg")
+
+[node name="Buff" type="TextureRect" parent="Canvas/RecipeBook/Menu1"]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 2.0
+offset_right = 454.0
+offset_bottom = 22.0
+texture = ExtResource("13_wijgc")
+
+[node name="Debuff" type="TextureRect" parent="Canvas/RecipeBook/Menu1"]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 26.0
+offset_right = 454.0
+offset_bottom = 46.0
+texture = ExtResource("14_yhvps")
+
+[node name="Buffs" type="Label" parent="Canvas/RecipeBook/Menu1"]
+layout_mode = 0
+offset_left = 459.417
+offset_top = 1.0
+offset_right = 515.99994
+offset_bottom = 33.0
+scale = Vector2(1.5, 1.5)
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 16
+text = "+10%
+-10%"
+
+[node name="Seperator" type="VSeparator" parent="Canvas/RecipeBook/Menu1"]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 4.159973
+offset_right = 105.0
+offset_bottom = 44.840027
+theme_override_styles/separator = SubResource("StyleBoxLine_13dyv")
+
+[node name="Menu2" type="Button" parent="Canvas/RecipeBook"]
+z_index = 11
+layout_mode = 0
+offset_left = 384.00006
+offset_top = 156.0
+offset_right = 914.0
+offset_bottom = 204.0
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+disabled = true
+text = "Menu 2             +        +        +"
+alignment = 0
+
+[node name="Texture1" type="TextureRect" parent="Canvas/RecipeBook/Menu2"]
+layout_mode = 0
+offset_left = 111.67108
+offset_top = 1.0
+offset_right = 158.34216
+offset_bottom = 48.0
+texture = ExtResource("13_612k1")
+
+[node name="Texture2" type="TextureRect" parent="Canvas/RecipeBook/Menu2"]
+layout_mode = 0
+offset_left = 173.76324
+offset_top = 1.0
+offset_right = 220.43433
+offset_bottom = 48.0
+texture = ExtResource("14_us6mg")
+
+[node name="Texture3" type="TextureRect" parent="Canvas/RecipeBook/Menu2"]
+layout_mode = 0
+offset_left = 239.99994
+offset_top = 1.0
+offset_right = 286.67102
+offset_bottom = 48.0
+texture = ExtResource("15_8blbl")
+
+[node name="Texture4" type="TextureRect" parent="Canvas/RecipeBook/Menu2"]
+layout_mode = 0
+offset_left = 299.99994
+offset_top = 1.0
+offset_right = 346.67102
+offset_bottom = 48.0
+texture = ExtResource("16_bb0on")
+
+[node name="Buff" type="TextureRect" parent="Canvas/RecipeBook/Menu2"]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 2.0
+offset_right = 454.0
+offset_bottom = 22.0
+texture = ExtResource("14_yhvps")
+
+[node name="Debuff" type="TextureRect" parent="Canvas/RecipeBook/Menu2"]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 26.0
+offset_right = 454.0
+offset_bottom = 46.0
+texture = ExtResource("19_qvwwb")
+
+[node name="Buffs" type="Label" parent="Canvas/RecipeBook/Menu2"]
+layout_mode = 0
+offset_left = 459.417
+offset_top = 1.0
+offset_right = 515.99994
+offset_bottom = 33.0
+scale = Vector2(1.5, 1.5)
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 16
+text = "+10%
+-10%"
+
+[node name="Seperator" type="VSeparator" parent="Canvas/RecipeBook/Menu2"]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 4.159973
+offset_right = 105.0
+offset_bottom = 44.840027
+theme_override_styles/separator = SubResource("StyleBoxLine_13dyv")
+
+[node name="Menu3" type="Button" parent="Canvas/RecipeBook"]
+z_index = 11
+layout_mode = 0
+offset_left = 384.00006
+offset_top = 216.0
+offset_right = 914.0
+offset_bottom = 264.0
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+disabled = true
+text = "Menu 3             +        +"
+alignment = 0
+
+[node name="Texture1" type="TextureRect" parent="Canvas/RecipeBook/Menu3"]
+layout_mode = 0
+offset_left = 111.67108
+offset_top = 1.0
+offset_right = 158.34216
+offset_bottom = 48.0
+texture = ExtResource("17_wijgc")
+
+[node name="Texture2" type="TextureRect" parent="Canvas/RecipeBook/Menu3"]
+layout_mode = 0
+offset_left = 173.76324
+offset_top = 1.0
+offset_right = 220.43433
+offset_bottom = 48.0
+texture = ExtResource("18_yhvps")
+
+[node name="Texture3" type="TextureRect" parent="Canvas/RecipeBook/Menu3"]
+layout_mode = 0
+offset_left = 239.99994
+offset_top = 1.0
+offset_right = 286.67102
+offset_bottom = 48.0
+texture = ExtResource("19_tb15e")
+
+[node name="Buff" type="TextureRect" parent="Canvas/RecipeBook/Menu3"]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 2.0
+offset_right = 454.0
+offset_bottom = 22.0
+texture = ExtResource("19_qvwwb")
+
+[node name="Debuff" type="TextureRect" parent="Canvas/RecipeBook/Menu3"]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 26.0
+offset_right = 454.0
+offset_bottom = 46.0
+texture = ExtResource("13_wijgc")
+
+[node name="Buffs" type="Label" parent="Canvas/RecipeBook/Menu3"]
+layout_mode = 0
+offset_left = 459.417
+offset_top = 1.0
+offset_right = 515.99994
+offset_bottom = 33.0
+scale = Vector2(1.5, 1.5)
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 16
+text = "+10%
+-5%"
+
+[node name="Seperator" type="VSeparator" parent="Canvas/RecipeBook/Menu3"]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 4.159973
+offset_right = 105.0
+offset_bottom = 44.840027
+theme_override_styles/separator = SubResource("StyleBoxLine_13dyv")
+
+[node name="Menu4" type="Button" parent="Canvas/RecipeBook"]
+z_index = 11
+layout_mode = 0
+offset_left = 384.00006
+offset_top = 276.0
+offset_right = 914.0
+offset_bottom = 324.0
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+disabled = true
+text = "Menu 4             +        +"
+alignment = 0
+
+[node name="Texture1" type="TextureRect" parent="Canvas/RecipeBook/Menu4"]
+layout_mode = 0
+offset_left = 111.67108
+offset_top = 1.0
+offset_right = 158.34216
+offset_bottom = 48.0
+texture = ExtResource("13_612k1")
+
+[node name="Texture2" type="TextureRect" parent="Canvas/RecipeBook/Menu4"]
+layout_mode = 0
+offset_left = 173.76324
+offset_top = 1.0
+offset_right = 220.43433
+offset_bottom = 48.0
+texture = ExtResource("20_qvwwb")
+
+[node name="Texture3" type="TextureRect" parent="Canvas/RecipeBook/Menu4"]
+layout_mode = 0
+offset_left = 239.99994
+offset_top = 1.0
+offset_right = 286.67102
+offset_bottom = 48.0
+texture = ExtResource("21_qqo6a")
+
+[node name="Buff" type="TextureRect" parent="Canvas/RecipeBook/Menu4"]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 2.0
+offset_right = 454.0
+offset_bottom = 22.0
+texture = ExtResource("25_qqo6a")
+
+[node name="Debuff" type="TextureRect" parent="Canvas/RecipeBook/Menu4"]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 26.0
+offset_right = 454.0
+offset_bottom = 46.0
+texture = ExtResource("19_qvwwb")
+
+[node name="Buffs" type="Label" parent="Canvas/RecipeBook/Menu4"]
+layout_mode = 0
+offset_left = 459.417
+offset_top = 1.0
+offset_right = 515.99994
+offset_bottom = 33.0
+scale = Vector2(1.5, 1.5)
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 16
+text = "+1 HP 
+-10%"
+
+[node name="Seperator" type="VSeparator" parent="Canvas/RecipeBook/Menu4"]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 4.159973
+offset_right = 105.0
+offset_bottom = 44.840027
+theme_override_styles/separator = SubResource("StyleBoxLine_13dyv")
+
+[node name="Menu5" type="Button" parent="Canvas/RecipeBook"]
+z_index = 11
+layout_mode = 0
+offset_left = 384.00006
+offset_top = 336.0
+offset_right = 914.0
+offset_bottom = 384.0
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+disabled = true
+text = "Menu 5             +        +"
+alignment = 0
+
+[node name="Texture1" type="TextureRect" parent="Canvas/RecipeBook/Menu5"]
+layout_mode = 0
+offset_left = 111.67108
+offset_top = 1.0
+offset_right = 158.34216
+offset_bottom = 48.0
+texture = ExtResource("17_wijgc")
+
+[node name="Texture2" type="TextureRect" parent="Canvas/RecipeBook/Menu5"]
+layout_mode = 0
+offset_left = 173.76324
+offset_top = 1.0
+offset_right = 220.43433
+offset_bottom = 48.0
+texture = ExtResource("11_mqm5i")
+
+[node name="Texture3" type="TextureRect" parent="Canvas/RecipeBook/Menu5"]
+layout_mode = 0
+offset_left = 239.99994
+offset_top = 1.0
+offset_right = 286.67102
+offset_bottom = 48.0
+texture = ExtResource("15_8blbl")
+
+[node name="Buff" type="TextureRect" parent="Canvas/RecipeBook/Menu5"]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 2.0
+offset_right = 454.0
+offset_bottom = 22.0
+texture = ExtResource("14_yhvps")
+
+[node name="Debuff" type="TextureRect" parent="Canvas/RecipeBook/Menu5"]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 26.0
+offset_right = 454.0
+offset_bottom = 46.0
+texture = ExtResource("13_wijgc")
+
+[node name="Buffs" type="Label" parent="Canvas/RecipeBook/Menu5"]
+layout_mode = 0
+offset_left = 459.417
+offset_top = 1.0
+offset_right = 515.99994
+offset_bottom = 33.0
+scale = Vector2(1.5, 1.5)
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 16
+text = "+10%
+-5%"
+
+[node name="Seperator" type="VSeparator" parent="Canvas/RecipeBook/Menu5"]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 4.159973
+offset_right = 105.0
+offset_bottom = 44.840027
+theme_override_styles/separator = SubResource("StyleBoxLine_13dyv")
+
+[node name="Menu6" type="Button" parent="Canvas/RecipeBook"]
+z_index = 11
+layout_mode = 0
+offset_left = 384.00006
+offset_top = 396.0
+offset_right = 914.0
+offset_bottom = 444.0
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+disabled = true
+text = "Menu 6             +        +"
+alignment = 0
+
+[node name="Texture1" type="TextureRect" parent="Canvas/RecipeBook/Menu6"]
+layout_mode = 0
+offset_left = 111.67108
+offset_top = 1.0
+offset_right = 158.34216
+offset_bottom = 48.0
+texture = ExtResource("10_5q4fb")
+
+[node name="Texture2" type="TextureRect" parent="Canvas/RecipeBook/Menu6"]
+layout_mode = 0
+offset_left = 173.76324
+offset_top = 1.0
+offset_right = 220.43433
+offset_bottom = 48.0
+texture = ExtResource("19_tb15e")
+
+[node name="Texture3" type="TextureRect" parent="Canvas/RecipeBook/Menu6"]
+layout_mode = 0
+offset_left = 239.99994
+offset_top = 1.0
+offset_right = 286.67102
+offset_bottom = 48.0
+texture = ExtResource("18_yhvps")
+
+[node name="Buff" type="TextureRect" parent="Canvas/RecipeBook/Menu6"]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 2.0
+offset_right = 454.0
+offset_bottom = 22.0
+texture = ExtResource("19_qvwwb")
+
+[node name="Debuff" type="TextureRect" parent="Canvas/RecipeBook/Menu6"]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 26.0
+offset_right = 454.0
+offset_bottom = 46.0
+texture = ExtResource("14_yhvps")
+
+[node name="Buffs" type="Label" parent="Canvas/RecipeBook/Menu6"]
+layout_mode = 0
+offset_left = 459.417
+offset_top = 1.0
+offset_right = 515.99994
+offset_bottom = 33.0
+scale = Vector2(1.5, 1.5)
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 16
+text = "+10%
+-5%"
+
+[node name="Seperator" type="VSeparator" parent="Canvas/RecipeBook/Menu6"]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 4.159973
+offset_right = 105.0
+offset_bottom = 44.840027
+theme_override_styles/separator = SubResource("StyleBoxLine_13dyv")
+
+[node name="Menu7" type="Button" parent="Canvas/RecipeBook"]
+z_index = 11
+layout_mode = 0
+offset_left = 384.00006
+offset_top = 456.25623
+offset_right = 914.0
+offset_bottom = 504.25623
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+disabled = true
+text = "Menu 7             +        +        +"
+alignment = 0
+
+[node name="Texture1" type="TextureRect" parent="Canvas/RecipeBook/Menu7"]
+layout_mode = 0
+offset_left = 111.67108
+offset_top = 1.0
+offset_right = 158.34216
+offset_bottom = 48.0
+texture = ExtResource("17_wijgc")
+
+[node name="Texture2" type="TextureRect" parent="Canvas/RecipeBook/Menu7"]
+layout_mode = 0
+offset_left = 173.76324
+offset_top = 1.0
+offset_right = 220.43433
+offset_bottom = 48.0
+texture = ExtResource("21_qqo6a")
+
+[node name="Texture3" type="TextureRect" parent="Canvas/RecipeBook/Menu7"]
+layout_mode = 0
+offset_left = 239.99994
+offset_top = 1.0
+offset_right = 286.67102
+offset_bottom = 48.0
+texture = ExtResource("22_8ekee")
+
+[node name="Texture4" type="TextureRect" parent="Canvas/RecipeBook/Menu7"]
+layout_mode = 0
+offset_left = 299.99994
+offset_top = 1.0
+offset_right = 346.67102
+offset_bottom = 48.0
+texture = ExtResource("16_bb0on")
+
+[node name="Buff" type="TextureRect" parent="Canvas/RecipeBook/Menu7"]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 2.0
+offset_right = 454.0
+offset_bottom = 22.0
+texture = ExtResource("25_qqo6a")
+
+[node name="Debuff" type="TextureRect" parent="Canvas/RecipeBook/Menu7"]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 26.0
+offset_right = 454.0
+offset_bottom = 46.0
+texture = ExtResource("13_wijgc")
+
+[node name="Buffs" type="Label" parent="Canvas/RecipeBook/Menu7"]
+layout_mode = 0
+offset_left = 459.417
+offset_top = 1.0
+offset_right = 515.99994
+offset_bottom = 33.0
+scale = Vector2(1.5, 1.5)
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 16
+text = "+2 HP
+-5%"
+
+[node name="Seperator" type="VSeparator" parent="Canvas/RecipeBook/Menu7"]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 4.159973
+offset_right = 105.0
+offset_bottom = 44.840027
+theme_override_styles/separator = SubResource("StyleBoxLine_13dyv")
+
+[node name="BackToCooking" type="Button" parent="Canvas/RecipeBook"]
+layout_mode = 0
+offset_left = 784.0
+offset_top = 40.0
+offset_right = 912.0
+offset_bottom = 78.48195
+flat = true
+
+[node name="Texture" type="TextureRect" parent="Canvas/RecipeBook/BackToCooking"]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 39.065796
+texture = ExtResource("3_mqm5i")
+
+[node name="Label" type="Label" parent="Canvas/RecipeBook/BackToCooking"]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 38.48195
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+text = "Back"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Countdown" type="ColorRect" parent="Canvas"]
+visible = false
+z_index = 4
+offset_right = 320.0
+offset_bottom = 180.0
+scale = Vector2(3, 3)
+mouse_filter = 2
+color = Color(0.0885599, 0.0885599, 0.0885599, 0.4117647)
+
+[node name="Label" type="Label" parent="Canvas/Countdown"]
+visible = false
+layout_mode = 0
+offset_left = 512.0
+offset_top = -240.0
+offset_right = 832.0
+offset_bottom = -35.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 100
+text = "5"
+horizontal_alignment = 1
+
+[node name="Animations" type="AnimationPlayer" parent="Canvas/Countdown"]
+libraries = {
+&"": SubResource("AnimationLibrary_mqm5i")
+}
+
+[node name="Paused" type="ColorRect" parent="Canvas"]
+visible = false
+z_index = 4
+offset_top = -3.0
+offset_right = 320.0
+offset_bottom = 178.99986
+scale = Vector2(3, 3)
+mouse_filter = 2
+color = Color(0.0885599, 0.0885599, 0.0885599, 0.4117647)
+
+[node name="Label" type="Label" parent="Canvas/Paused"]
+layout_mode = 0
+offset_left = 128.00002
+offset_top = 11.0
+offset_right = 194.00002
+offset_bottom = 41.0
+scale = Vector2(0.170195, 0.170195)
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 145
+text = "Paused"
+horizontal_alignment = 1
+
+[node name="Button2" type="Button" parent="Canvas/Paused"]
+z_index = 5
+layout_mode = 0
+offset_left = 123.0
+offset_top = 96.333336
+offset_right = 193.00002
+offset_bottom = 120.333336
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 16
+action_mode = 0
+text = "Quit"
+flat = true
+
+[node name="Panel" type="Panel" parent="Canvas/Paused/Button2"]
+z_index = -1
+layout_mode = 0
+offset_left = -6.3333335
+offset_top = 2.6666617
+offset_right = 73.666664
+offset_bottom = 22.666662
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxTexture_wijgc")
+
+[node name="Button" type="Button" parent="Canvas/Paused"]
+z_index = 5
+layout_mode = 0
+offset_left = 123.0
+offset_top = 69.333336
+offset_right = 193.0
+offset_bottom = 93.333336
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 16
+action_mode = 0
+text = "Main Menu"
+flat = true
+
+[node name="Panel" type="Panel" parent="Canvas/Paused/Button"]
+z_index = -1
+layout_mode = 0
+offset_left = -6.3333335
+offset_top = 2.6666617
+offset_right = 73.666664
+offset_bottom = 22.666662
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxTexture_wijgc")
+
+[node name="Cinematic" type="Control" parent="Canvas"]
+visible = false
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Top" type="ColorRect" parent="Canvas/Cinematic"]
+z_index = 10
+layout_mode = 0
+offset_top = -80.0
+offset_right = 1000.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Bottom" type="ColorRect" parent="Canvas/Cinematic"]
+z_index = 10
+layout_mode = 0
+offset_top = 540.0
+offset_right = 1000.0
+offset_bottom = 619.99945
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="NextDay" type="Control" parent="Canvas/Cinematic"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BG" type="ColorRect" parent="Canvas/Cinematic/NextDay"]
+layout_mode = 0
+offset_right = 1008.0
+offset_bottom = 600.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="Text" type="Label" parent="Canvas/Cinematic/NextDay"]
+layout_mode = 0
+offset_right = 959.86707
+offset_bottom = 539.9252
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 48
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Text2" type="Label" parent="Canvas/Cinematic/NextDay"]
+layout_mode = 0
+offset_right = 959.86707
+offset_bottom = 539.9252
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 48
+text = "
+
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Victory" type="Panel" parent="Canvas"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+z_index = 255
+offset_right = 960.0
+offset_bottom = 540.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wijgc")
+
+[node name="Label" type="Label" parent="Canvas/Victory"]
+layout_mode = 0
+offset_top = 141.0
+offset_right = 960.0
+offset_bottom = 221.0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 80
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Canvas/Victory"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+z_index = 5
+layout_mode = 0
+offset_left = 258.0
+offset_top = 266.0
+offset_right = 686.0
+offset_bottom = 338.0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 64
+action_mode = 0
+text = "Main Menu"
+flat = true
+
+[node name="Panel" type="Panel" parent="Canvas/Victory/Button"]
+z_index = -1
+layout_mode = 0
+offset_right = 428.0
+offset_bottom = 72.0
+mouse_filter = 1
+theme_override_styles/panel = SubResource("StyleBoxTexture_wijgc")
+
+[node name="Anims" type="AnimationPlayer" parent="Canvas/Victory"]
+libraries = {
+&"": SubResource("AnimationLibrary_6lb63")
+}
+
+[node name="HUD" type="Control" parent="Canvas"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HP" type="TextureProgressBar" parent="Canvas/HUD"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 411.94012
+offset_top = 8.481949
+offset_right = 511.94012
+offset_bottom = 18.481949
+grow_horizontal = 2
+scale = Vector2(3, 3)
+pivot_offset = Vector2(50, 0)
+value = 1.0
+texture_under = ExtResource("12_612k1")
+texture_over = ExtResource("13_us6mg")
+texture_progress = ExtResource("14_8blbl")
+tint_progress = Color(1, 0, 0, 1)
+script = SubResource("GDScript_hx8n4")
+
+[node name="Text" type="Label" parent="Canvas/HUD/HP"]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 20.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0.30980393, 0.30980393, 0.30980393, 0.7058824)
+theme_override_fonts/font = ExtResource("2_5q4fb")
+text = "3/3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Coins" type="Label" parent="Canvas/HUD"]
+z_index = 13
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 72.03946
+offset_top = -17.934204
+offset_right = 124.03946
+offset_bottom = 5.065796
+grow_vertical = 0
+scale = Vector2(3, 3)
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 16
+text = "0"
+
+[node name="Panel" type="TextureRect" parent="Canvas/HUD/Coins"]
+layout_mode = 0
+offset_left = -20.0
+offset_top = -1.0
+offset_right = 20.0
+offset_bottom = 39.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("15_5q4fb")
+
+[node name="TimeOfDAy" type="TextureRect" parent="Canvas/HUD"]
+layout_mode = 0
+offset_left = 684.0
+offset_right = 964.0
+offset_bottom = 265.46713
+mouse_filter = 2
+texture = ExtResource("30_yhvps")
+stretch_mode = 4
+
+[node name="Day" type="Label" parent="Canvas/HUD/TimeOfDAy"]
+layout_mode = 0
+offset_left = 202.93915
+offset_top = 95.25273
+offset_right = 260.79352
+offset_bottom = 111.77301
+theme_override_fonts/font = ExtResource("2_5q4fb")
+text = "Day 01"
+horizontal_alignment = 1
+
+[node name="Progress" type="Label" parent="Canvas/HUD/TimeOfDAy"]
+layout_mode = 0
+offset_left = 202.93915
+offset_top = 33.055336
+offset_right = 260.79352
+offset_bottom = 91.10268
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+text = "22%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TimeIndicator" type="TextureRect" parent="Canvas/HUD/TimeOfDAy"]
+layout_mode = 0
+offset_top = 78.0
+offset_right = 40.0
+offset_bottom = 118.0
+texture = ExtResource("31_tb15e")
+
+[node name="Moon1" type="TextureRect" parent="Canvas/HUD/TimeOfDAy"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 33.0
+offset_right = 49.0
+offset_bottom = 129.66666
+scale = Vector2(0.6, 0.6)
+mouse_filter = 2
+texture = ExtResource("32_qqo6a")
+stretch_mode = 5
+
+[node name="Moon2" type="TextureRect" parent="Canvas/HUD/TimeOfDAy"]
+layout_mode = 0
+offset_left = 166.0
+offset_top = 33.0
+offset_right = 206.0
+offset_bottom = 129.66666
+scale = Vector2(0.6, 0.6)
+mouse_filter = 2
+texture = ExtResource("32_qqo6a")
+stretch_mode = 5
+
+[node name="Sun" type="TextureRect" parent="Canvas/HUD/TimeOfDAy"]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 33.0
+offset_right = 126.0
+offset_bottom = 129.66666
+scale = Vector2(0.6, 0.6)
+mouse_filter = 2
+texture = ExtResource("33_8ekee")
+stretch_mode = 5
+
+[node name="Saving" type="Label" parent="Canvas/HUD"]
+layout_mode = 0
+offset_left = 874.0
+offset_top = 517.0
+offset_right = 972.0
+offset_bottom = 540.0
+theme_override_colors/font_color = Color(1, 1, 1, 0)
+theme_override_fonts/font = ExtResource("2_5q4fb")
+text = "Saving game"
+
+[node name="Animation" type="AnimationPlayer" parent="Canvas/HUD/Saving"]
+root_node = NodePath("../../../..")
+libraries = {
+&"": SubResource("AnimationLibrary_45jp6")
+}
+
+[node name="Animations" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_b1goy")
+}
+
+[connection signal="pressed" from="Canvas/GameOver/restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Canvas/GameOver/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Canvas/Shop/Boat1" to="." method="ShopButtonPressed" binds= [0]]
+[connection signal="pressed" from="Canvas/Shop/Boat2" to="." method="ShopButtonPressed" binds= [1]]
+[connection signal="pressed" from="Canvas/Shop/Boat3" to="." method="ShopButtonPressed" binds= [2]]
+[connection signal="pressed" from="Canvas/Shop/Wharf" to="." method="_on_boats_pressed"]
+[connection signal="pressed" from="Canvas/Shop/Repair" to="." method="_on_boats_pressed"]
+[connection signal="pressed" from="Canvas/Shop/Food1" to="." method="ShopButtonPressed" binds= [3]]
+[connection signal="pressed" from="Canvas/Shop/Food2" to="." method="ShopButtonPressed" binds= [4]]
+[connection signal="pressed" from="Canvas/Shop/Food3" to="." method="ShopButtonPressed" binds= [5]]
+[connection signal="pressed" from="Canvas/Shop/Food4" to="." method="ShopButtonPressed" binds= [6]]
+[connection signal="pressed" from="Canvas/Shop/Food5" to="." method="ShopButtonPressed" binds= [7]]
+[connection signal="pressed" from="Canvas/Shop/Food6" to="." method="ShopButtonPressed" binds= [8]]
+[connection signal="pressed" from="Canvas/Shop/Reroll" to="." method="_on_reroll_pressed"]
+[connection signal="pressed" from="Canvas/Shop/RecipeBook" to="." method="_on_recipe_book_pressed"]
+[connection signal="pressed" from="Canvas/Shop/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="Canvas/Boats/BackToCooking" to="." method="_on_back_to_cooking_pressed"]
+[connection signal="pressed" from="Canvas/Boats/Info/Select" to="." method="_on_select_pressed"]
+[connection signal="pressed" from="Canvas/Cooking/Menu1" to="." method="CookRecipe" binds= [0]]
+[connection signal="pressed" from="Canvas/Cooking/Menu2" to="." method="CookRecipe" binds= [1]]
+[connection signal="pressed" from="Canvas/Cooking/Menu3" to="." method="CookRecipe" binds= [2]]
+[connection signal="pressed" from="Canvas/Cooking/Menu4" to="." method="CookRecipe" binds= [3]]
+[connection signal="pressed" from="Canvas/Cooking/Menu5" to="." method="CookRecipe" binds= [4]]
+[connection signal="pressed" from="Canvas/Cooking/Menu6" to="." method="CookRecipe" binds= [5]]
+[connection signal="pressed" from="Canvas/Cooking/Menu7" to="." method="CookRecipe" binds= [6]]
+[connection signal="pressed" from="Canvas/Cooking/Continue" to="." method="_starve"]
+[connection signal="pressed" from="Canvas/RecipeBook/BackToCooking" to="." method="_on_back_to_cooking_pressed"]
+[connection signal="pressed" from="Canvas/Paused/Button2" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Canvas/Paused/Button" to="." method="_on_backtomenu_pressed"]
+[connection signal="pressed" from="Canvas/Victory/Button" to="." method="_on_backtomenu_pressed"]
