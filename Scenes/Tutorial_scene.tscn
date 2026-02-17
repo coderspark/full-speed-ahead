@@ -2197,6 +2197,7 @@ pivot_offset = Vector2(24, 24)
 texture = ExtResource("10_rbidr")
 
 [connection signal="StartGame" from="UI" to="Players/Player" method="_on_ui_start_game"]
+[connection signal="finished" from="Music" to="Music" method="_on_finished"]
 
 [editable path="UI"]
 [editable path="Players/Player"]

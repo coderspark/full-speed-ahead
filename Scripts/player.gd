@@ -41,6 +41,7 @@ func _ready() -> void:
 		activebuffs = data["ActiveBuffs"]
 		UpdateCoinCount()
 		UpdateBoat(Global.SaveFile.SaveData["BoatName"])
+		Boats = Global.SaveFile.SaveData["Boats"]
 		UpdateBuffs()
 		health = data["Health"]
 		$"../../UI/Canvas/HUD/HP".HP = health
@@ -168,6 +169,7 @@ func UpdateBoat(nam : String):
 	$"../../UI/Canvas/HUD/HP".MAX_HP = max_health
 	$"../../UI/Canvas/HUD/HP".HP = health
 	$"../../UI/Canvas/HUD/HP".Update()
+	$"../../UI/Canvas/Shop/Repair/Label".text = "[font=res://Assets/Fonts/8bitoperator_jve.ttf][font_size=80]Repair boat ([img=80]res://Assets/Art/UI/coinicon.png[/img]" + str(clampi(ceil(Global.BOAT_STATS[MyBoat]["cost"] / 2),5,50)) + ")"
 	$Sprite.texture = load("res://Assets/Art/Boats/" + MyBoat + ".png")
 	$Sprite.scale = Vector2(Global.BOAT_SCALE_MODIFIERS.get(nam,1.0),Global.BOAT_SCALE_MODIFIERS.get(nam,1.0))
 
@@ -218,6 +220,12 @@ func UpdateBuffs():
 		max_health = 20
 	if health > max_health:
 		health = max_health
+	$"../../UI/Canvas/HUD/HP".MAX_HP = max_health
+	$"../../UI/Canvas/HUD/HP".HP = health
+	$"../../UI/Canvas/HUD/HP".Update()
+
+func heal():
+	health = max_health
 	$"../../UI/Canvas/HUD/HP".MAX_HP = max_health
 	$"../../UI/Canvas/HUD/HP".HP = health
 	$"../../UI/Canvas/HUD/HP".Update()

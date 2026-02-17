@@ -19,15 +19,11 @@ var ShopIntermission = false
 
 var hoverCheck = preload("res://Scenes/hover_check.tscn")
 
+var wharf_lock_name = ""
+
 func _ready() -> void:
 	print("IM ALIVE@@!W@!@!@!@!@!@")
-	for n in range(10):
-		var H : Control = hoverCheck.instantiate()
-		$Canvas/Boats.add_child(H)
-		H.name = "Hover" + str(n)
-		H.position = Vector2(26,91+(31*n))
-		H._on_hover.connect(_on_hover)
-		H._on_hover_exited.connect(_on_hover_exited)
+
 	if Global.SaveFileLoaded:
 		var data = Global.SaveFile.CurrentLevelData
 		Inventory = data["Inventory"]
@@ -92,12 +88,18 @@ func RandomizeShopContents():
 		while n in Boats:
 			n = Global.BOAT_STATS.keys().pick_random()
 		Boats.append(n)
-		$Canvas/Shop.get_node("Boat" + str(i + 1)).disabled = false
-		var text = n.replace_char(95,32) # "_" -> " "
-		text = text + "\n" + "      " + str(Global.BOAT_STATS[n]["cost"])
-		get_node("Canvas/Shop/Boat" + str(i+1) + "/Label").text = text
-		get_node("Canvas/Shop/Boat" + str(i+1) + "/Coin").show()
-		get_node("Canvas/Shop/Boat" + str(i+1) + "/Texture").texture = load("res://Assets/Art/Boats/" + n + ".png")
+		if n in $"../Players/Player".Boats:
+			$Canvas/Shop.get_node("Boat" + str(i + 1)).disabled = true
+			$Canvas/Shop.get_node("Boat" + str(i + 1) + "/Texture").texture = load("res://Assets/Art/Boats/" + n + ".png")
+			$Canvas/Shop.get_node("Boat" + str(i + 1) + "/Label").text = "Owned"
+			$Canvas/Shop.get_node("Boat" + str(i + 1) + "/Coin").hide()
+		else:
+			$Canvas/Shop.get_node("Boat" + str(i + 1)).disabled = false
+			var text = n.replace_char(95,32) # "_" -> " "
+			text = text + "\n" + "      " + str(Global.BOAT_STATS[n]["cost"])
+			get_node("Canvas/Shop/Boat" + str(i+1) + "/Label").text = text
+			get_node("Canvas/Shop/Boat" + str(i+1) + "/Coin").show()
+			get_node("Canvas/Shop/Boat" + str(i+1) + "/Texture").texture = load("res://Assets/Art/Boats/" + n + ".png")
 	current_shop_contents = Boats
 	var Food : Array = []
 	for i in range(6):
@@ -113,6 +115,11 @@ func RandomizeShopContents():
 		
 		get_node("Canvas/Shop/Food" + str(i+1) + "/Texture").texture = load("res://Assets/Art/Food/" + n + ".png")
 	current_shop_contents.append_array(Food)
+	if $"../Players/Player".health >= $"../Players/Player".max_health:
+		$Canvas/Shop/Repair.disabled = true
+	else:
+		$Canvas/Shop/Repair.disabled = false
+	
 	
 func ShowShop():
 	get_tree().paused = true
@@ -120,7 +127,9 @@ func ShowShop():
 	ShopOpen = true
 
 func ShopButtonPressed(id:int):
-	if id <= 2:
+	if id == -1:
+		$"../Players/Player".heal()
+	elif id <= 2:
 		if Global.BOAT_STATS[current_shop_contents[id]]["cost"] <= $"../Players/Player".coins:
 			$"../Players/Player".coins -= Global.BOAT_STATS[current_shop_contents[id]]["cost"]
 			$"../Players/Player".UpdateCoinCount()
@@ -188,8 +197,18 @@ func FormatBoats(Boats: Array):
 	Output = Before
 	for n : String in Boats:
 		Output += "[img=32]res://Assets/Art/Boats/" + n + ".png[/img]" + n.replace("_"," ") + "\n"
+
 	if Boats == []:
 		Output += "You don't own any boats!"
+	for n in $Canvas/Boats/Hovers.get_children():
+		n.name = "DWUGAgd" + str(randi())
+		n.queue_free()
+	for n in range(Boats.size()):
+		var H : Control = hoverCheck.instantiate()
+		$Canvas/Boats/Hovers.add_child(H)
+		H.name = "Hover" + str(n)
+		H.position = Vector2(26,91+(31*n))
+		H._on_pressed.connect(_on_pressed)
 	$Canvas/Boats/Label.text = Output
 
 func UpdateCookableRecipies():
@@ -368,20 +387,24 @@ func _on_boats_pressed() -> void:
 	$Canvas/Shop.hide()
 	$Canvas/Boats.show()
 
-func _on_hover(id:int) -> void:
+func _on_pressed(id:int):
 	print(id)
 	if $"../Players/Player".Boats.size() <= id:
-		_on_hover_exited()
+		$Canvas/Boats/Info.hide()
 		return
 	$Canvas/Boats/Info.show()
 	var BoatName : String = $"../Players/Player".Boats[id]
+	wharf_lock_name = BoatName
 	$Canvas/Boats/Info/Image.texture = load("res://Assets/Art/Boats/" + BoatName + ".png")
 	$Canvas/Boats/Info/Name.text = BoatName.replace("_", " ")
 	$Canvas/Boats/Info/HP.text = str(Global.BOAT_STATS[BoatName]["hp"]) + " HP"
 	$Canvas/Boats/Info/Speed.text = str(Global.BOAT_STATS[BoatName]["speed"])
 	$Canvas/Boats/Info/TurnSpeed.text = str(Global.BOAT_STATS[BoatName]["turn_speed"])
 	$Canvas/Boats/Info/CoinMult.text = str(Global.BOAT_STATS[BoatName]["coin_multiplier"]) + "x"
-
-func _on_hover_exited():
-	$Canvas/Boats/Info.hide()
 	
+
+
+func _on_select_pressed() -> void:
+	if wharf_lock_name == "":
+		return
+	$"../Players/Player".UpdateBoat(wharf_lock_name)

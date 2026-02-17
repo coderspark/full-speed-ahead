@@ -432,3 +432,4 @@ looppoint = 16
 
 [connection signal="RestartGame" from="UI" to="." method="_on_ui_restart_game"]
 [connection signal="StartGame" from="UI" to="Players/Player" method="_on_ui_start_game"]
+[connection signal="finished" from="Music" to="Music" method="_on_finished"]
