@@ -17,7 +17,17 @@ var IsStarving = false
 
 var ShopIntermission = false
 
+var hoverCheck = preload("res://Scenes/hover_check.tscn")
+
 func _ready() -> void:
+	print("IM ALIVE@@!W@!@!@!@!@!@")
+	for n in range(10):
+		var H : Control = hoverCheck.instantiate()
+		$Canvas/Boats.add_child(H)
+		H.name = "Hover" + str(n)
+		H.position = Vector2(26,91+(31*n))
+		H._on_hover.connect(_on_hover)
+		H._on_hover_exited.connect(_on_hover_exited)
 	if Global.SaveFileLoaded:
 		var data = Global.SaveFile.CurrentLevelData
 		Inventory = data["Inventory"]
@@ -114,10 +124,10 @@ func ShopButtonPressed(id:int):
 		if Global.BOAT_STATS[current_shop_contents[id]]["cost"] <= $"../Players/Player".coins:
 			$"../Players/Player".coins -= Global.BOAT_STATS[current_shop_contents[id]]["cost"]
 			$"../Players/Player".UpdateCoinCount()
-			#$Canvas/Shop.get_node("Boat" + str(id + 1)).disabled = true
-			#$Canvas/Shop.get_node("Boat" + str(id + 1) + "/Texture").texture = preload("res://Assets/Art/Temp/sold_out.png")
-			#$Canvas/Shop.get_node("Boat" + str(id + 1) + "/Label").text = "SOLD OUT"
-			#$Canvas/Shop.get_node("Boat" + str(id + 1) + "/Coin").hide()
+			$Canvas/Shop.get_node("Boat" + str(id + 1)).disabled = true
+			$Canvas/Shop.get_node("Boat" + str(id + 1) + "/Texture").texture = preload("res://Assets/Art/Temp/sold_out.png")
+			$Canvas/Shop.get_node("Boat" + str(id + 1) + "/Label").text = "Purchased"
+			$Canvas/Shop.get_node("Boat" + str(id + 1) + "/Coin").hide()
 			$"../Players/Player".UpdateBoat(current_shop_contents[id])
 	else:
 		if Global.FoodItems[current_shop_contents[id]][0] <= $"../Players/Player".coins:
@@ -172,6 +182,15 @@ func FormatInventory(Inv : Dictionary):
 	$Canvas/Cooking/Label.text = Output
 	$Canvas/RecipeBook/Label.text = Output
 
+func FormatBoats(Boats: Array):
+	var Output : String
+	var Before = "[font=res://Assets/Fonts/8bitoperator_jve.ttf][font_size=24]"
+	Output = Before
+	for n : String in Boats:
+		Output += "[img=32]res://Assets/Art/Boats/" + n + ".png[/img]" + n.replace("_"," ") + "\n"
+	if Boats == []:
+		Output += "You don't own any boats!"
+	$Canvas/Boats/Label.text = Output
 
 func UpdateCookableRecipies():
 	var nofood = true
@@ -284,6 +303,7 @@ func _on_backtomenu_pressed() -> void:
 
 func _on_back_to_cooking_pressed() -> void:
 	$Canvas/RecipeBook.hide()
+	$Canvas/Boats.hide()
 	$Canvas/Shop.show()
 
 func _on_recipe_book_pressed() -> void:
@@ -325,3 +345,27 @@ func _starve() -> void:
 	Global.LastRecipe = -1
 	IsStarving = true
 	InitNextDay()
+
+
+func _on_boats_pressed() -> void:
+	FormatBoats($"../Players/Player".Boats)
+	$Canvas/Shop.hide()
+	$Canvas/Boats.show()
+
+func _on_hover(id:int) -> void:
+	print(id)
+	if $"../Players/Player".Boats.size() <= id:
+		_on_hover_exited()
+		return
+	$Canvas/Boats/Info.show()
+	var BoatName : String = $"../Players/Player".Boats[id]
+	$Canvas/Boats/Info/Image.texture = load("res://Assets/Art/Boats/" + BoatName + ".png")
+	$Canvas/Boats/Info/Name.text = BoatName.replace("_", " ")
+	$Canvas/Boats/Info/HP.text = str(Global.BOAT_STATS[BoatName]["hp"]) + " HP"
+	$Canvas/Boats/Info/Speed.text = str(Global.BOAT_STATS[BoatName]["speed"])
+	$Canvas/Boats/Info/TurnSpeed.text = str(Global.BOAT_STATS[BoatName]["turn_speed"])
+	$Canvas/Boats/Info/CoinMult.text = str(Global.BOAT_STATS[BoatName]["coin_multiplier"]) + "x"
+
+func _on_hover_exited():
+	$Canvas/Boats/Info.hide()
+	

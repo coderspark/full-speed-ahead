@@ -20,6 +20,7 @@ var iframes = 0
 var coins := 0.0
 
 var MyBoat = ""
+var Boats = []
 
 var IntermissionsReached = []
 
@@ -151,6 +152,8 @@ func UpdateCoinCount():
 
 func UpdateBoat(nam : String):
 	MyBoat = nam
+	if not nam in Boats:
+		Boats.append(nam)
 	if Global.LevelName == "Tutorial":
 		max_health = 20
 		health = 20

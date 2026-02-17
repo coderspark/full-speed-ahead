@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://dbq85xa0fcnii"]
+[gd_scene load_steps=64 format=3 uid="uid://dbq85xa0fcnii"]
 
 [ext_resource type="Script" uid="uid://klae0u71y1go" path="res://Scripts/UiController.gd" id="1_wi7yl"]
 [ext_resource type="FontFile" uid="uid://dqqnsnb5xkqx7" path="res://Assets/Fonts/8bitoperator_jve.ttf" id="2_5q4fb"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://b5ae5sgnlj8u3" path="res://Scripts/AutoSizeText.gd" id="5_wunin"]
 [ext_resource type="Shader" uid="uid://bp6mwoabhhic" path="res://Assets/Other/outline.gdshader" id="9_b1goy"]
 [ext_resource type="Texture2D" uid="uid://ddfu0ts0312lx" path="res://Assets/Art/Food/Beer.png" id="10_5q4fb"]
+[ext_resource type="Texture2D" uid="uid://o1lkaeiikyn3" path="res://Assets/Art/Temp/heart_full.png" id="10_8ekee"]
 [ext_resource type="Texture2D" uid="uid://48g3qlonocae" path="res://Assets/Art/Food/Green_peas.png" id="11_mqm5i"]
 [ext_resource type="Texture2D" uid="uid://drj77blyscrtv" path="res://Assets/Art/UI/under.png" id="12_612k1"]
 [ext_resource type="Texture2D" uid="uid://cuhqy5hyng077" path="res://Assets/Art/Food/Stockfish.png" id="12_jnovg"]
@@ -1433,9 +1434,9 @@ stretch_mode = 5
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 0
 offset_left = 24.0
-offset_top = 240.0
+offset_top = 201.0
 offset_right = 408.0
-offset_bottom = 336.0
+offset_bottom = 297.0
 focus_mode = 0
 theme_override_styles/normal = SubResource("StyleBoxTexture_b1goy")
 
@@ -1475,10 +1476,10 @@ stretch_mode = 5
 [node name="Boat3" type="Button" parent="Canvas/Shop"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 0
-offset_left = 24.00222
-offset_top = 384.0
-offset_right = 408.0
-offset_bottom = 480.0
+offset_left = 24.0
+offset_top = 307.0
+offset_right = 407.99777
+offset_bottom = 403.0
 focus_mode = 0
 theme_override_styles/normal = SubResource("StyleBoxTexture_b1goy")
 
@@ -1514,6 +1515,31 @@ offset_right = 179.99997
 offset_bottom = 60.0
 texture = ExtResource("15_5q4fb")
 stretch_mode = 5
+
+[node name="Wharf" type="Button" parent="Canvas/Shop"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 0
+offset_left = 26.0
+offset_top = 420.0
+offset_right = 230.0
+offset_bottom = 478.25623
+focus_mode = 0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_vqx31")
+alignment = 0
+
+[node name="Label" type="Label" parent="Canvas/Shop/Wharf"]
+layout_mode = 0
+offset_right = 687.8541
+offset_bottom = 196.4303
+scale = Vector2(0.2965745, 0.2965745)
+theme = ExtResource("5_j04uc")
+theme_override_font_sizes/font_size = 96
+text = "Your boats"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
 
 [node name="Food1" type="Button" parent="Canvas/Shop"]
 custom_minimum_size = Vector2(32, 32)
@@ -1863,6 +1889,162 @@ theme_override_font_sizes/font_size = 32
 text = "Continue"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Boats" type="Panel" parent="Canvas"]
+process_mode = 3
+z_index = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -0.13293457
+offset_bottom = -0.0748291
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qxria")
+
+[node name="TopText" type="Label" parent="Canvas/Boats"]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 959.86707
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 96
+text = "WHARF"
+horizontal_alignment = 1
+
+[node name="BackToCooking" type="Button" parent="Canvas/Boats"]
+layout_mode = 0
+offset_left = 784.0
+offset_top = 40.0
+offset_right = 912.0
+offset_bottom = 78.48195
+flat = true
+
+[node name="Texture" type="TextureRect" parent="Canvas/Boats/BackToCooking"]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 39.065796
+texture = ExtResource("3_mqm5i")
+
+[node name="Label" type="Label" parent="Canvas/Boats/BackToCooking"]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 38.48195
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+text = "Back"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="RichTextLabel" parent="Canvas/Boats"]
+z_index = 11
+layout_mode = 0
+offset_left = 26.400024
+offset_top = 91.065796
+offset_right = 331.94012
+offset_bottom = 499.5255
+bbcode_enabled = true
+text = "[font=res://Assets/Fonts/8bitoperator_jve.ttf][font_size=24][img=32]res://Assets/Art/Food/Stockfish.png[/img] Stockfish: 1 portion"
+
+[node name="Info" type="Control" parent="Canvas/Boats"]
+anchors_preset = 0
+offset_top = -40.0
+offset_right = 40.0
+
+[node name="Image" type="TextureRect" parent="Canvas/Boats/Info"]
+layout_mode = 0
+offset_left = 332.0
+offset_top = 122.0
+offset_right = 442.0
+offset_bottom = 232.0
+texture = ExtResource("5_13dyv")
+
+[node name="Name" type="Label" parent="Canvas/Boats/Info"]
+layout_mode = 0
+offset_left = 457.0
+offset_top = 146.0
+offset_right = 721.0
+offset_bottom = 210.0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 48
+text = "Basic raft"
+
+[node name="HP" type="Label" parent="Canvas/Boats/Info"]
+layout_mode = 0
+offset_left = 408.0
+offset_top = 236.0
+offset_right = 456.0
+offset_bottom = 276.0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+text = "3 HP"
+vertical_alignment = 1
+
+[node name="texture" type="TextureRect" parent="Canvas/Boats/Info/HP"]
+layout_mode = 0
+offset_left = -56.0
+offset_top = 1.0
+offset_right = -16.0
+offset_bottom = 41.0
+texture = ExtResource("10_8ekee")
+
+[node name="Speed" type="Label" parent="Canvas/Boats/Info"]
+layout_mode = 0
+offset_left = 408.0
+offset_top = 286.0
+offset_right = 456.0
+offset_bottom = 326.0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+text = "6"
+vertical_alignment = 1
+
+[node name="texture" type="TextureRect" parent="Canvas/Boats/Info/Speed"]
+layout_mode = 0
+offset_left = -56.0
+offset_top = 1.0
+offset_right = -16.0
+offset_bottom = 41.0
+texture = ExtResource("13_wijgc")
+
+[node name="TurnSpeed" type="Label" parent="Canvas/Boats/Info"]
+layout_mode = 0
+offset_left = 408.0
+offset_top = 336.0
+offset_right = 456.0
+offset_bottom = 376.0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+text = "6"
+vertical_alignment = 1
+
+[node name="texture" type="TextureRect" parent="Canvas/Boats/Info/TurnSpeed"]
+layout_mode = 0
+offset_left = -56.0
+offset_top = 1.0
+offset_right = -16.0
+offset_bottom = 41.0
+texture = ExtResource("14_yhvps")
+
+[node name="CoinMult" type="Label" parent="Canvas/Boats/Info"]
+layout_mode = 0
+offset_left = 408.0
+offset_top = 385.0
+offset_right = 456.0
+offset_bottom = 425.0
+theme_override_fonts/font = ExtResource("2_5q4fb")
+theme_override_font_sizes/font_size = 32
+text = "6"
+vertical_alignment = 1
+
+[node name="texture" type="TextureRect" parent="Canvas/Boats/Info/CoinMult"]
+layout_mode = 0
+offset_left = -56.0
+offset_top = 1.0
+offset_right = -16.0
+offset_bottom = 41.0
+texture = ExtResource("19_qvwwb")
 
 [node name="Cooking" type="Panel" parent="Canvas"]
 process_mode = 3
@@ -3390,6 +3572,7 @@ offset_top = 33.0
 offset_right = 49.0
 offset_bottom = 129.66666
 scale = Vector2(0.6, 0.6)
+mouse_filter = 2
 texture = ExtResource("32_qqo6a")
 stretch_mode = 5
 
@@ -3400,6 +3583,7 @@ offset_top = 33.0
 offset_right = 206.0
 offset_bottom = 129.66666
 scale = Vector2(0.6, 0.6)
+mouse_filter = 2
 texture = ExtResource("32_qqo6a")
 stretch_mode = 5
 
@@ -3410,6 +3594,7 @@ offset_top = 33.0
 offset_right = 126.0
 offset_bottom = 129.66666
 scale = Vector2(0.6, 0.6)
+mouse_filter = 2
 texture = ExtResource("33_8ekee")
 stretch_mode = 5
 
@@ -3439,6 +3624,7 @@ libraries = {
 [connection signal="pressed" from="Canvas/Shop/Boat1" to="." method="ShopButtonPressed" binds= [0]]
 [connection signal="pressed" from="Canvas/Shop/Boat2" to="." method="ShopButtonPressed" binds= [1]]
 [connection signal="pressed" from="Canvas/Shop/Boat3" to="." method="ShopButtonPressed" binds= [2]]
+[connection signal="pressed" from="Canvas/Shop/Wharf" to="." method="_on_boats_pressed"]
 [connection signal="pressed" from="Canvas/Shop/Food1" to="." method="ShopButtonPressed" binds= [3]]
 [connection signal="pressed" from="Canvas/Shop/Food2" to="." method="ShopButtonPressed" binds= [4]]
 [connection signal="pressed" from="Canvas/Shop/Food3" to="." method="ShopButtonPressed" binds= [5]]
@@ -3448,21 +3634,8 @@ libraries = {
 [connection signal="pressed" from="Canvas/Shop/Reroll" to="." method="_on_reroll_pressed"]
 [connection signal="pressed" from="Canvas/Shop/RecipeBook" to="." method="_on_recipe_book_pressed"]
 [connection signal="pressed" from="Canvas/Shop/Continue" to="." method="_on_continue_pressed"]
-[connection signal="pressed" from="Canvas/Cooking/Menu1" to="." method="CookRecipe" binds= [0]]
-[connection signal="pressed" from="Canvas/Cooking/Menu2" to="." method="CookRecipe" binds= [1]]
-[connection signal="pressed" from="Canvas/Cooking/Menu3" to="." method="CookRecipe" binds= [2]]
-[connection signal="pressed" from="Canvas/Cooking/Menu4" to="." method="CookRecipe" binds= [3]]
-[connection signal="pressed" from="Canvas/Cooking/Menu5" to="." method="CookRecipe" binds= [4]]
-[connection signal="pressed" from="Canvas/Cooking/Menu6" to="." method="CookRecipe" binds= [5]]
-[connection signal="pressed" from="Canvas/Cooking/Menu7" to="." method="CookRecipe" binds= [6]]
+[connection signal="pressed" from="Canvas/Boats/BackToCooking" to="." method="_on_back_to_cooking_pressed"]
 [connection signal="pressed" from="Canvas/Cooking/Continue" to="." method="_starve"]
-[connection signal="pressed" from="Canvas/RecipeBook/Menu1" to="." method="CookRecipe" binds= [0]]
-[connection signal="pressed" from="Canvas/RecipeBook/Menu2" to="." method="CookRecipe" binds= [1]]
-[connection signal="pressed" from="Canvas/RecipeBook/Menu3" to="." method="CookRecipe" binds= [2]]
-[connection signal="pressed" from="Canvas/RecipeBook/Menu4" to="." method="CookRecipe" binds= [3]]
-[connection signal="pressed" from="Canvas/RecipeBook/Menu5" to="." method="CookRecipe" binds= [4]]
-[connection signal="pressed" from="Canvas/RecipeBook/Menu6" to="." method="CookRecipe" binds= [5]]
-[connection signal="pressed" from="Canvas/RecipeBook/Menu7" to="." method="CookRecipe" binds= [6]]
 [connection signal="pressed" from="Canvas/RecipeBook/BackToCooking" to="." method="_on_back_to_cooking_pressed"]
 [connection signal="pressed" from="Canvas/Paused/Lag" to="." method="_on_lag_pressed"]
 [connection signal="pressed" from="Canvas/Paused/Button2" to="." method="_on_quit_pressed"]

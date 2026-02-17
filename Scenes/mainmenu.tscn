@@ -1057,6 +1057,7 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_igs2m")
 process_mode = 3
 stream = ExtResource("6_5326e")
 autoplay = true
+bus = &"Music"
 script = ExtResource("7_l2o7r")
 looppoint = 16
 

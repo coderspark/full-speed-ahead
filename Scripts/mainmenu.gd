@@ -71,6 +71,7 @@ func CoinSelect(lvl:String):
 	await $LevelSelect/CoinSelect/Animations.animation_finished
 
 func StartGame():
+	$LevelSelect/CoinSelect/Button.disabled = true
 	Global.SaveFileLoaded = false
 	Global.BroughtCoins = int($LevelSelect/CoinSelect/TextEdit.text)
 	Global.Coins -= Global.BroughtCoins

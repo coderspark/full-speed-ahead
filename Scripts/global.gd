@@ -2,8 +2,6 @@ extends Node
 
 var DayEnded : bool = false
 
-var Settings = []
-
 var SaveFileLoaded = false
 var SaveFile : SaveLoadData = null
 
@@ -76,7 +74,7 @@ const BOAT_STATS = {
 		"cost":300,
 		"speed":6,
 		"turn_speed":4,
-		"hp":40,
+		"hp":60,
 		"coin_multiplier":10
 	}
 }
@@ -124,4 +122,9 @@ var LevelData = {
 	"Jakarta":{"StartCoinCount":80,"LengthTiles":100, "Intermissions":[25,60]},
 	"Paaseiland":{"StartCoinCount":80,"LengthTiles":150, "Intermissions":[25,100]},
 	"Tutorial":{"StartCoinCount":20,"LengthTiles":13, "Intermissions":[11]},
+}
+
+var Settings = {
+	"MasterVolume":1.0,
+	"MusicVolume":1.0,
 }
