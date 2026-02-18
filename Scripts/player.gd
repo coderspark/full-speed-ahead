@@ -31,6 +31,8 @@ var elapsed = 0.0
 func _ready() -> void:
 	if Global.SaveFile == null:
 		Global.SaveFile = SaveLoadData.new()
+	Boats = Global.SaveFile.SaveData["Boats"]
+	
 	if Global.SaveFileLoaded:
 		var data = Global.SaveFile.CurrentLevelData
 		position = data["PlayerPos"]
@@ -41,7 +43,7 @@ func _ready() -> void:
 		activebuffs = data["ActiveBuffs"]
 		UpdateCoinCount()
 		UpdateBoat(Global.SaveFile.SaveData["BoatName"])
-		Boats = Global.SaveFile.SaveData["Boats"]
+		
 		UpdateBuffs()
 		health = data["Health"]
 		$"../../UI/Canvas/HUD/HP".HP = health

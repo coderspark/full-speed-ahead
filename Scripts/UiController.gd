@@ -110,11 +110,6 @@ func RandomizeShopContents():
 		get_node("Canvas/Shop/Food" + str(i+1) + "/Coin").show()
 		get_node("Canvas/Shop/Food" + str(i+1) + "/Texture").texture = load("res://Assets/Art/Food/" + n + ".png")
 	current_shop_contents.append_array(Food)
-	if $"../Players/Player".health >= $"../Players/Player".max_health:
-		$Canvas/Shop/Repair.disabled = true
-	else:
-		$Canvas/Shop/Repair.disabled = false
-	
 	
 func ShowShop():
 	var nameids = {
@@ -196,7 +191,7 @@ func FormatInventory(Inv : Dictionary):
 	var Output : String
 	var Before = "[font=res://Assets/Fonts/8bitoperator_jve.ttf][font_size=24]"
 	Output = Before
-	for n : String in Inv.keys():
+	for n : String in Inv.keys(): 
 		Output += "[img=32]res://Assets/Art/Food/" + n + ".png[/img]" + n.replace("_"," ") + ": " + str(Inv[n]) + "\n"
 	if Inv == {}:
 		Output += "Empty"
