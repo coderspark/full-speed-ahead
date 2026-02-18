@@ -118,6 +118,23 @@ func RandomizeShopContents():
 	
 	
 func ShowShop():
+	var nameids = {
+		"Bacon":1,
+		"Beer":2,
+		"Gin":3,
+		"Gray_peas":4,
+		"Green_peas":5,
+		"Meat":6,
+		"Pickles":7,
+		"Plums":8,
+		"Rice":9,
+		"Sauerkraut":10,
+		"Stockfish":11,
+		"White_beans":12,
+		"Wine":13,
+	}
+	for nam in Inventory:
+		$"Canvas/Shop/BoughtItems".get_node("Panel" + str(nameids[nam])).get_node("Label").text = " " + str(Inventory[nam])
 	get_tree().paused = true
 	$Canvas/Shop.show()
 	ShopOpen = true
