@@ -112,12 +112,14 @@ load_path = "res://.godot/imported/button.png-7bf39ec41f5470cd3f2a19a483cb226a.c
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_q8m6m"]
 texture = SubResource("CompressedTexture2D_8ekee")
+modulate_color = Color(0.4817894, 0.48178953, 0.48178923, 1)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1lsdj"]
 load_path = "res://.godot/imported/button.png-7bf39ec41f5470cd3f2a19a483cb226a.ctex"
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mtrk6"]
 texture = SubResource("CompressedTexture2D_1lsdj")
+modulate_color = Color(0.737193, 0.7371929, 0.7371929, 1)
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_13dyv"]
 color = Color(1, 1, 1, 1)
@@ -2209,7 +2211,6 @@ text = " 0"
 
 [node name="Boats" type="Panel" parent="Canvas"]
 process_mode = 3
-visible = false
 z_index = 2
 anchors_preset = 15
 anchor_right = 1.0
@@ -2267,7 +2268,6 @@ bbcode_enabled = true
 text = "[font=res://Assets/Fonts/8bitoperator_jve.ttf][font_size=24][img=32]res://Assets/Art/Food/Stockfish.png[/img] Stockfish: 1 portion"
 
 [node name="Info" type="Control" parent="Canvas/Boats"]
-visible = false
 anchors_preset = 0
 offset_top = -40.0
 offset_right = 40.0
@@ -2377,7 +2377,6 @@ offset_top = 442.0
 offset_right = 541.0
 offset_bottom = 490.0
 focus_mode = 0
-mouse_filter = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_5q4fb")
 theme_override_font_sizes/font_size = 32

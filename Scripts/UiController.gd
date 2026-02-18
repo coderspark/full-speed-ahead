@@ -70,15 +70,6 @@ func _on_deathmenu_pressed() -> void:
 	$"..".AutoSave(true)
 	get_tree().reload_current_scene()
 
-func _on_button_pressed() -> void:
-	'''
-	TODO: Player laten weten welke boat hij wordt 
-	
-	Je kan shop_current_id gebruiken voor welke button is geklikt
-	'''
-	print("klik")
-
-
 func _on_lag_pressed() -> void:
 	Engine.max_fps = 4
 
@@ -410,6 +401,7 @@ func _on_pressed(id:int):
 
 
 func _on_select_pressed() -> void:
+	print(wharf_lock_name)
 	if wharf_lock_name == "":
 		return
 	$"../Players/Player".UpdateBoat(wharf_lock_name)
