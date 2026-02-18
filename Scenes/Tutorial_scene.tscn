@@ -1,7 +1,7 @@
 [gd_scene load_steps=35 format=4 uid="uid://23dsrjsfa5fn"]
 
 [ext_resource type="Texture2D" uid="uid://bhd74a0trijaw" path="res://Assets/Art/tiles.png" id="1_usxk2"]
-[ext_resource type="PackedScene" uid="uid://dbq85xa0fcnii" path="res://Scenes/UI.tscn" id="2_fn0yv"]
+[ext_resource type="PackedScene" uid="uid://cg0emm81rktqu" path="res://Scenes/UI.tscn" id="2_fn0yv"]
 [ext_resource type="PackedScene" uid="uid://cxv7wb44ynnkf" path="res://Scenes/Player.tscn" id="3_66aee"]
 [ext_resource type="FontFile" uid="uid://dqqnsnb5xkqx7" path="res://Assets/Fonts/8bitoperator_jve.ttf" id="3_putd5"]
 [ext_resource type="AudioStream" uid="uid://dl8d6cchew8pf" path="res://Assets/Audio/title theme.wav" id="4_qojiq"]
@@ -23,7 +23,8 @@ func _ready() -> void:
 	modulate = TimeToColorModulate(TimeOfDAy)
 
 func finish() -> void:
-	$UI/Canvas/Victory.show()
+	print(\"finish\")
+	$UI/Canvas/Victory/Anims.play(\"Win\")
 	get_tree().paused = true
 
 func _process(delta: float) -> void:

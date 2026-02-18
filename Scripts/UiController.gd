@@ -341,8 +341,9 @@ func _on_backtomenu_pressed() -> void:
 	$Animations.play("FadeToBlack")
 	await $Animations.animation_finished
 	Global.Coins += $"../Players/Player".coins
-	Global.LevelSelecting = true
-	$"..".AutoSave(true)
+	if not Global.LevelName == "Tutorial":
+		Global.LevelSelecting = true
+		$"..".AutoSave(true)
 	get_tree().reload_current_scene()
 
 func _on_back_to_cooking_pressed() -> void:
@@ -380,7 +381,7 @@ func NextDay():
 	Global.DayEnded = false
 	
 func CalculatePercentage() -> String:
-	return str(int(clamp(float($"../Players/Player".GetProgress()) / float(Global.LevelData[Global.LevelName]["LengthTiles"] * 8 + 16) * 100,0,100)))
+	return str(int(clamp(float($"../Players/Player".GetProgress()) / float(Global.LevelData[Global.LevelName]["LengthTiles"] * 10) * 100,0,100)))
 
 
 func _starve() -> void:
