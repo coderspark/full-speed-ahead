@@ -108,7 +108,6 @@ func RandomizeShopContents():
 		text = text + "\n" + "      " + str(Global.FoodItems[n][0])
 		get_node("Canvas/Shop/Food" + str(i+1) + "/Label").text = text
 		get_node("Canvas/Shop/Food" + str(i+1) + "/Coin").show()
-		
 		get_node("Canvas/Shop/Food" + str(i+1) + "/Texture").texture = load("res://Assets/Art/Food/" + n + ".png")
 	current_shop_contents.append_array(Food)
 	if $"../Players/Player".health >= $"../Players/Player".max_health:
@@ -124,14 +123,14 @@ func ShowShop():
 
 func ShopButtonPressed(id:int):
 	if id == -1:
-		$"../Players/Player".heal()
+		if $"../Players/Player".coins >= clampi(ceil(Global.BOAT_STATS[$"../Players/Player".MyBoat]["cost"] / 2),5,50):
+			$"../Players/Player".heal()
 	elif id <= 2:
 		if Global.BOAT_STATS[current_shop_contents[id]]["cost"] <= $"../Players/Player".coins:
 			$"../Players/Player".coins -= Global.BOAT_STATS[current_shop_contents[id]]["cost"]
 			$"../Players/Player".UpdateCoinCount()
 			$Canvas/Shop.get_node("Boat" + str(id + 1)).disabled = true
-			$Canvas/Shop.get_node("Boat" + str(id + 1) + "/Texture").texture = preload("res://Assets/Art/Temp/sold_out.png")
-			$Canvas/Shop.get_node("Boat" + str(id + 1) + "/Label").text = "Purchased"
+			$Canvas/Shop.get_node("Boat" + str(id + 1) + "/Label").text = "Owned"
 			$Canvas/Shop.get_node("Boat" + str(id + 1) + "/Coin").hide()
 			$"../Players/Player".UpdateBoat(current_shop_contents[id])
 	else:
