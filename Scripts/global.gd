@@ -68,7 +68,7 @@ const BOAT_STATS = {
 		"cost":130,
 		"speed":7,
 		"turn_speed":9,
-		"hp":20,
+		"hp":25,
 		"coin_multiplier":3.5
 	}, "Aircraft_carrier":{
 		"cost":300,

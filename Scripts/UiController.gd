@@ -31,6 +31,7 @@ func _ready() -> void:
 	else:
 		ShopIntermission = false
 		if not Global.LevelName == "Tutorial":
+			ShowShop()
 			$Animations.play("ShopFadein")
 	if Global.LevelName == "Tutorial":
 		AddFoodItemToInventory("Gin")
@@ -112,6 +113,8 @@ func RandomizeShopContents():
 	current_shop_contents.append_array(Food)
 	
 func ShowShop():
+	ShopRerollCost = 0.0
+	$Canvas/Shop/Reroll/Cost.text = "FREE"
 	var nameids = {
 		"Bacon":1,
 		"Beer":2,
@@ -129,7 +132,6 @@ func ShowShop():
 	}
 	for nam in Inventory:
 		$"Canvas/Shop/BoughtItems".get_node("Panel" + str(nameids[nam])).get_node("Label").text = " " + str(Inventory[nam])
-	get_tree().paused = true
 	$Canvas/Shop.show()
 	ShopOpen = true
 

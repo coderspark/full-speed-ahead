@@ -31,7 +31,7 @@ var elapsed = 0.0
 func _ready() -> void:
 	if Global.SaveFile == null:
 		Global.SaveFile = SaveLoadData.new()
-	Boats = Global.SaveFile.SaveData["Boats"]
+	Boats = Global.SaveFile.SaveData.get("Boats",[])
 	
 	if Global.SaveFileLoaded:
 		var data = Global.SaveFile.CurrentLevelData
@@ -207,6 +207,7 @@ func _on_navigation_finished() -> void:
 		rotation = lerp_angle(rotation, PI, 0.016)
 		await get_tree().process_frame
 	$"../../UI".ShopIntermission = true
+	$"../../UI".ShowShop()
 	$"../../UI/Animations".play("ShopFadein")
 	if Global.LevelName == "Tutorial":
 		$"../../Animation".play("Tutorial07")
